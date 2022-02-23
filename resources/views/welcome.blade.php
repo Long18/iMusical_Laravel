@@ -1382,7 +1382,7 @@
                                         </div>
                                         <div class="agent-brief">
                                             <h6>
-                                                <a href="team-details.html">William Seklo</a>
+                                                <a href="team-details.html">William</a>
                                             </h6>
                                             <small>Estate Agents</small>
                                         </div>
@@ -1497,7 +1497,7 @@
                                         </div>
                                         <div class="agent-brief">
                                             <h6>
-                                                <a href="team-details.html">William Seklo</a>
+                                                <a href="team-details.html">William</a>
                                             </h6>
                                             <small>Estate Agents</small>
                                         </div>
@@ -1612,7 +1612,7 @@
                                         </div>
                                         <div class="agent-brief">
                                             <h6>
-                                                <a href="team-details.html">William Seklo</a>
+                                                <a href="team-details.html">William</a>
                                             </h6>
                                             <small>Estate Agents</small>
                                         </div>
@@ -1727,7 +1727,7 @@
                                         </div>
                                         <div class="agent-brief">
                                             <h6>
-                                                <a href="team-details.html">William Seklo</a>
+                                                <a href="team-details.html">William</a>
                                             </h6>
                                             <small>Estate Agents</small>
                                         </div>
@@ -1842,7 +1842,7 @@
                                         </div>
                                         <div class="agent-brief">
                                             <h6>
-                                                <a href="team-details.html">William Seklo</a>
+                                                <a href="team-details.html">William</a>
                                             </h6>
                                             <small>Estate Agents</small>
                                         </div>
@@ -2406,7 +2406,7 @@
                                             <img src="{{('public/frontend/img/testimonial/1.jpg')}}" alt="#">
                                         </div>
                                         <div class="ltn__testimoni-name-designation">
-                                            <h5>Jacob William</h5>
+                                            <h5>William Morningstar</h5>
                                             <label>Selling Agents</label>
                                         </div>
                                     </div>
@@ -2430,7 +2430,7 @@
                                             <img src="{{('public/frontend/img/testimonial/2.jpg')}}" alt="#">
                                         </div>
                                         <div class="ltn__testimoni-name-designation">
-                                            <h5>Kelian Anderson</h5>
+                                            <h5>William Morningstar</h5>
                                             <label>Selling Agents</label>
                                         </div>
                                     </div>
@@ -2454,7 +2454,7 @@
                                             <img src="{{('public/frontend/img/testimonial/3.jpg')}}" alt="#">
                                         </div>
                                         <div class="ltn__testimoni-name-designation">
-                                            <h5>Adam Joseph</h5>
+                                            <h5>William Morningstar</h5>
                                             <label>Selling Agents</label>
                                         </div>
                                     </div>
@@ -2478,7 +2478,7 @@
                                             <img src="{{('public/frontend/img/testimonial/4.jpg')}}" alt="#">
                                         </div>
                                         <div class="ltn__testimoni-name-designation">
-                                            <h5>James Carter</h5>
+                                            <h5>William Morningstar</h5>
                                             <label>Selling Agents</label>
                                         </div>
                                     </div>
