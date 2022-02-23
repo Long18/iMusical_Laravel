@@ -1,132 +1,3262 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!doctype html>
+<html class="no-js" lang="zxx">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Địt mẹ thằng đầu buồi rẻ rách</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Quarter - Real Estate HTML Template</title>
+        <meta name="robots" content="noindex, follow"/>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Place favicon.png in the root directory -->
+        <link rel="shortcut icon" href="{{('public/frontend/img/favicon.png')}}"type="image/x-icon"/>
+        <!-- Font Icons css -->
+        <link rel="stylesheet" href="{{('public/frontend/css/font-icons.css')}}">
+        <!-- plugins css -->
+        <link rel="stylesheet" href="{{('public/frontend/css/plugins.css')}}">
+        <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="{{('public/frontend/css/style.css')}}">
+        <!-- Responsive css -->
+        <link rel="stylesheet" href="{{('public/frontend/css/responsive.css')}}">
     </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Địt mẹ thằng đầu buồi rẻ rách has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
+    <body>
+        <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+        <!-- Add your site or application content here -->
+        <!-- Body main wrapper start -->
+        <div class="body-wrapper">
+            <!-- HEADER AREA START (header-5) -->
+            <header class="ltn__header-area ltn__header-5 ltn__header-transparent--- gradient-color-4---">
+                <!-- ltn__header-top-area start -->
+                <div class="ltn__header-top-area section-bg-6 top-area-color-white---">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="ltn__top-bar-menu">
+                                    <ul>
+                                        <li>
+                                            <a href="mailto:info@webmail.com?Subject=Flower%20greetings%20to%20you">
+                                                <i class="icon-mail"></i>
+                                                info@webmail.com
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="locations.html">
+                                                <i class="icon-placeholder"></i>
+                                                15/A, Nest Tower, NYC
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Địt mẹ thằng đầu buồi rẻ rách, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Địt mẹ thằng đầu buồi rẻ rách News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Địt mẹ thằng đầu buồi rẻ rách News is a community driven portal and newsletter aggregating all of the latest and most important news in the Địt mẹ thằng đầu buồi rẻ rách ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Địt mẹ thằng đầu buồi rẻ rách's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
+                            <div class="col-md-5">
+                                <div class="top-bar-right text-end">
+                                    <div class="ltn__top-bar-menu">
+                                        <ul>
+                                            <li class="d-none">
+                                                <!-- ltn__language-menu -->
+                                                <div class="ltn__drop-menu ltn__currency-menu ltn__language-menu">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#" class="dropdown-toggle">
+                                                                <span class="active-currency">English</span>
+                                                            </a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="#">Arabic</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">Bengali</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">Chinese</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">English</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">French</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">Hindi</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <!-- ltn__social-media -->
+                                                <div class="ltn__social-media">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#" title="Facebook">
+                                                                <i class="fab fa-facebook-f"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" title="Twitter">
+                                                                <i class="fab fa-twitter"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" title="Instagram">
+                                                                <i class="fab fa-instagram"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" title="Dribbble">
+                                                                <i class="fab fa-dribbble"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <!-- header-top-btn -->
+                                                <div class="header-top-btn">
+                                                    <a href="add-listing.html">Add Listing</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
+                <!-- ltn__header-top-area end -->
+                <!-- ltn__header-middle-area start -->
+                <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="site-logo-wrap">
+                                    <div class="site-logo">
+                                        <a href="index.html">
+                                            <img src="{{('public/frontend/img/logo.png')}}" alt="Logo">
+                                        </a>
+                                    </div>
+                                    <div class="get-support clearfix d-none">
+                                        <div class="get-support-icon">
+                                            <i class="icon-call"></i>
+                                        </div>
+                                        <div class="get-support-info">
+                                            <h6>Get Support</h6>
+                                            <h4>
+                                                <a href="tel:+123456789">123-456-789-10</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col header-menu-column">
+                                <div class="header-menu d-none d-xl-block">
+                                    <nav>
+                                        <div class="ltn__main-menu">
+                                            <ul>
+                                                <li class="menu-icon">
+                                                    <a href="#">Home</a>
+                                                    <ul class="sub-menu menu-pages-img-show">
+                                                        <li>
+                                                            <a href="index.html">Home Style 01</a>
+                                                            <img src="{{('public/frontend/img/home-demos/home-1.jpg')}}" alt="#">
+                                                        </li>
+                                                        <li>
+                                                            <a href="index-2.html">Home Style 02</a>
+                                                            <img src="{{('public/frontend/img/home-demos/home-2.jpg')}}" alt="#">
+                                                        </li>
+                                                        <li>
+                                                            <a href="index-3.html">Home Style 03</a>
+                                                            <img src="{{('public/frontend/img/home-demos/home-3.jpg')}}" alt="#">
+                                                        </li>
+                                                        <li>
+                                                            <a href="index-4.html">Home Style 04</a>
+                                                            <img src="{{('public/frontend/img/home-demos/home-4.jpg')}}" alt="#">
+                                                        </li>
+                                                        <li>
+                                                            <a href="index-5.html">
+                                                                Home Style 05 <span class="menu-item-badge">video</span>
+                                                            </a>
+                                                            <img src="{{('public/frontend/img/home-demos/home-5.jpg')}}" alt="#">
+                                                        </li>
+                                                        <li>
+                                                            <a href="index-6.html">Home Style 06</a>
+                                                            <img src="{{('public/frontend/img/home-demos/home-6.jpg')}}" alt="#">
+                                                        </li>
+                                                        <li>
+                                                            <a href="index-7.html">Home Style 07</a>
+                                                            <img src="{{('public/frontend/img/home-demos/home-7.jpg')}}" alt="#">
+                                                        </li>
+                                                        <li>
+                                                            <a href="index-8.html">Home Style 08</a>
+                                                            <img src="{{('public/frontend/img/home-demos/home-8.jpg')}}" alt="#">
+                                                        </li>
+                                                        <li>
+                                                            <a href="index-9.html">Home Style 09</a>
+                                                            <img src="{{('public/frontend/img/home-demos/home-9.jpg')}}" alt="#">
+                                                        </li>
+                                                        <li>
+                                                            <a href="index-10.html">
+                                                                Home Style 10 <span class="menu-item-badge">Map</span>
+                                                            </a>
+                                                            <img src="{{('public/frontend/img/home-demos/home-10.jpg')}}" alt="#">
+                                                        </li>
+                                                        <li>
+                                                            <a href="index-11.html">Home Style 11</a>
+                                                            <img src="{{('public/frontend/img/home-demos/home-11.jpg')}}" alt="#">
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-icon">
+                                                    <a href="#">About</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="about.html">About</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="service.html">Services</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="service-details.html">Service Details</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="portfolio.html">Portfolio</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="portfolio-2.html">Portfolio - 02</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="portfolio-details.html">Portfolio Details</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="team.html">Team</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="team-details.html">Team Details</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="faq.html">FAQ</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="locations.html">Google Map Locations</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-icon">
+                                                    <a href="#">Shop</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="shop.html">Shop</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="shop-grid.html">Shop Grid</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="shop-left-sidebar.html">Shop Left sidebar</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="shop-right-sidebar.html">Shop right sidebar</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="product-details.html">Shop details </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                Other Pages <span class="float-end">>></span>
+                                                            </a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="cart.html">Cart</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="wishlist.html">Wishlist</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="checkout.html">Checkout</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="order-tracking.html">Order Tracking</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="account.html">My Account</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="login.html">Sign in</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="register.html">Register</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-icon">
+                                                    <a href="#">News</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="blog.html">News</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="blog-grid.html">News Grid</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="blog-left-sidebar.html">News Left sidebar</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="blog-right-sidebar.html">News Right sidebar</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="blog-details.html">News details</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-icon">
+                                                    <a href="#">Pages</a>
+                                                    <ul class="mega-menu">
+                                                        <li>
+                                                            <a href="#">Inner Pages</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="portfolio.html">Portfolio</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="portfolio-2.html">Portfolio - 02</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="portfolio-details.html">Portfolio Details</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="team.html">Team</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="team-details.html">Team Details</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="faq.html">FAQ</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Inner Pages</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="history.html">History</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="add-listing.html">Add Listing</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="locations.html">Google Map Locations</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="404.html">404</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="contact.html">Contact</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="coming-soon.html">Coming Soon</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Shop Pages</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="shop.html">Shop</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="shop-left-sidebar.html">Shop Left sidebar</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="shop-right-sidebar.html">Shop right sidebar</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="shop-grid.html">Shop Grid</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="product-details.html">Shop details </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="cart.html">Cart</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <a href="shop.html">
+                                                                <img src="{{('public/frontend/img/banner/menu-banner-1.jpg')}}" alt="#">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="contact.html">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col ltn__header-options ltn__header-options-2 mb-sm-20">
+                                <!-- header-search-1 -->
+                                <div class="header-search-wrap">
+                                    <div class="header-search-1">
+                                        <div class="search-icon">
+                                            <i class="icon-search for-search-show"></i>
+                                            <i class="icon-cancel  for-search-close"></i>
+                                        </div>
+                                    </div>
+                                    <div class="header-search-1-form">
+                                        <form id="#" method="get" action="#">
+                                            <input type="text" name="search" value="" placeholder="Search here..."/>
+                                            <button type="submit">
+                                                <span>
+                                                    <i class="icon-search"></i>
+                                                </span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- user-menu -->
+                                <div class="ltn__drop-menu user-menu">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-user"></i>
+                                            </a>
+                                            <ul>
+                                                <li>
+                                                    <a href="login.html">Sign in</a>
+                                                </li>
+                                                <li>
+                                                    <a href="register.html">Register</a>
+                                                </li>
+                                                <li>
+                                                    <a href="account.html">My Account</a>
+                                                </li>
+                                                <li>
+                                                    <a href="wishlist.html">Wishlist</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- mini-cart -->
+                                <div class="mini-cart-icon">
+                                    <a href="#ltn__utilize-cart-menu" class="ltn__utilize-toggle">
+                                        <i class="icon-shopping-cart"></i>
+                                        <sup>2</sup>
+                                    </a>
+                                </div>
+                                <!-- mini-cart -->
+                                <!-- Mobile Menu Button -->
+                                <div class="mobile-menu-toggle d-xl-none">
+                                    <a href="#ltn__utilize-mobile-menu" class="ltn__utilize-toggle">
+                                        <svg viewBox="0 0 800 600">
+                                            <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
+                                            <path d="M300,320 L540,320" id="middle"></path>
+                                            <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                    Địt mẹ thằng đầu buồi rẻ rách v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                </div>
+                <!-- ltn__header-middle-area end -->
+            </header>
+            <!-- HEADER AREA END -->
+            <!-- Utilize Cart Menu Start -->
+            <div id="ltn__utilize-cart-menu" class="ltn__utilize ltn__utilize-cart-menu">
+                <div class="ltn__utilize-menu-inner ltn__scrollbar">
+                    <div class="ltn__utilize-menu-head">
+                        <span class="ltn__utilize-menu-title">Cart</span>
+                        <button class="ltn__utilize-close">×</button>
+                    </div>
+                    <div class="mini-cart-product-area ltn__scrollbar">
+                        <div class="mini-cart-item clearfix">
+                            <div class="mini-cart-img">
+                                <a href="#">
+                                    <img src="{{('public/frontend/img/product/1.png')}}" alt="Image">
+                                </a>
+                                <span class="mini-cart-item-delete">
+                                    <i class="icon-cancel"></i>
+                                </span>
+                            </div>
+                            <div class="mini-cart-info">
+                                <h6>
+                                    <a href="#">Wheel Bearing Retainer</a>
+                                </h6>
+                                <span class="mini-cart-quantity">1 x $65.00</span>
+                            </div>
+                        </div>
+                        <div class="mini-cart-item clearfix">
+                            <div class="mini-cart-img">
+                                <a href="#">
+                                    <img src="{{('public/frontend/img/product/2.png')}}" alt="Image">
+                                </a>
+                                <span class="mini-cart-item-delete">
+                                    <i class="icon-cancel"></i>
+                                </span>
+                            </div>
+                            <div class="mini-cart-info">
+                                <h6>
+                                    <a href="#">3 Rooms Manhattan</a>
+                                </h6>
+                                <span class="mini-cart-quantity">1 x $85.00</span>
+                            </div>
+                        </div>
+                        <div class="mini-cart-item clearfix">
+                            <div class="mini-cart-img">
+                                <a href="#">
+                                    <img src="{{('public/frontend/img/product/3.png')}}" alt="Image">
+                                </a>
+                                <span class="mini-cart-item-delete">
+                                    <i class="icon-cancel"></i>
+                                </span>
+                            </div>
+                            <div class="mini-cart-info">
+                                <h6>
+                                    <a href="#">OE Replica Wheels</a>
+                                </h6>
+                                <span class="mini-cart-quantity">1 x $92.00</span>
+                            </div>
+                        </div>
+                        <div class="mini-cart-item clearfix">
+                            <div class="mini-cart-img">
+                                <a href="#">
+                                    <img src="img/product/4.png" alt="Image">
+                                </a>
+                                <span class="mini-cart-item-delete">
+                                    <i class="icon-cancel"></i>
+                                </span>
+                            </div>
+                            <div class="mini-cart-info">
+                                <h6>
+                                    <a href="#">Shock Mount Insulator</a>
+                                </h6>
+                                <span class="mini-cart-quantity">1 x $68.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mini-cart-footer">
+                        <div class="mini-cart-sub-total">
+                            <h5>
+                                Subtotal: <span>$310.00</span>
+                            </h5>
+                        </div>
+                        <div class="btn-wrapper">
+                            <a href="cart.html" class="theme-btn-1 btn btn-effect-1">View Cart</a>
+                            <a href="cart.html" class="theme-btn-2 btn btn-effect-2">Checkout</a>
+                        </div>
+                        <p>Free Shipping on All Orders Over $100!</p>
                     </div>
                 </div>
             </div>
+            <!-- Utilize Cart Menu End -->
+            <!-- Utilize Mobile Menu Start -->
+            <div id="ltn__utilize-mobile-menu" class="ltn__utilize ltn__utilize-mobile-menu">
+                <div class="ltn__utilize-menu-inner ltn__scrollbar">
+                    <div class="ltn__utilize-menu-head">
+                        <div class="site-logo">
+                            <a href="index.html">
+                                <img src="{{('public/frontend/img/logo.png')}}" alt="Logo">
+                            </a>
+                        </div>
+                        <button class="ltn__utilize-close">×</button>
+                    </div>
+                    <div class="ltn__utilize-menu-search-form">
+                        <form action="#">
+                            <input type="text" placeholder="Search...">
+                            <button>
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="ltn__utilize-menu">
+                        <ul>
+                            <li>
+                                <a href="#">Home</a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="index.html">Home Style 01</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-2.html">Home Style 02</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-3.html">Home Style 03</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-4.html">Home Style 04</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-5.html">
+                                            Home Style 05  <span class="menu-item-badge">video</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="index-6.html">Home Style 06</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-7.html">Home Style 07</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-8.html">Home Style 08</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-9.html">Home Style 09</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-10.html">
+                                            Home Style 10 <span class="menu-item-badge">Map</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="index-11.html">Home Style 11</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="about.html">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="service.html">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="service-details.html">Service Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio.html">Portfolio</a>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio-2.html">Portfolio - 02</a>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio-details.html">Portfolio Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="team.html">Team</a>
+                                    </li>
+                                    <li>
+                                        <a href="team-details.html">Team Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="faq.html">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="locations.html">Google Map Locations</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Shop</a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="shop.html">Shop</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop-grid.html">Shop Grid</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop-left-sidebar.html">Shop Left sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop-right-sidebar.html">Shop right sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a href="product-details.html">Shop details </a>
+                                    </li>
+                                    <li>
+                                        <a href="cart.html">Cart</a>
+                                    </li>
+                                    <li>
+                                        <a href="wishlist.html">Wishlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="checkout.html">Checkout</a>
+                                    </li>
+                                    <li>
+                                        <a href="order-tracking.html">Order Tracking</a>
+                                    </li>
+                                    <li>
+                                        <a href="account.html">My Account</a>
+                                    </li>
+                                    <li>
+                                        <a href="login.html">Sign in</a>
+                                    </li>
+                                    <li>
+                                        <a href="register.html">Register</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">News</a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="blog.html">News</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-grid.html">News Grid</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-left-sidebar.html">News Left sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-right-sidebar.html">News Right sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-details.html">News details</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Pages</a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="about.html">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="service.html">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="service-details.html">Service Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio.html">Portfolio</a>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio-2.html">Portfolio - 02</a>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio-details.html">Portfolio Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="team.html">Team</a>
+                                    </li>
+                                    <li>
+                                        <a href="team-details.html">Team Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="faq.html">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="history.html">History</a>
+                                    </li>
+                                    <li>
+                                        <a href="add-listing.html">Add Listing</a>
+                                    </li>
+                                    <li>
+                                        <a href="locations.html">Google Map Locations</a>
+                                    </li>
+                                    <li>
+                                        <a href="404.html">404</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">Contact</a>
+                                    </li>
+                                    <li>
+                                        <a href="coming-soon.html">Coming Soon</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ltn__utilize-buttons ltn__utilize-buttons-2">
+                        <ul>
+                            <li>
+                                <a href="account.html" title="My Account">
+                                    <span class="utilize-btn-icon">
+                                        <i class="far fa-user"></i>
+                                    </span>
+                                    My Account
+                        
+                                </a>
+                            </li>
+                            <li>
+                                <a href="wishlist.html" title="Wishlist">
+                                    <span class="utilize-btn-icon">
+                                        <i class="far fa-heart"></i>
+                                        <sup>3</sup>
+                                    </span>
+                                    Wishlist
+                        
+                                </a>
+                            </li>
+                            <li>
+                                <a href="cart.html" title="Shoping Cart">
+                                    <span class="utilize-btn-icon">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <sup>5</sup>
+                                    </span>
+                                    Shoping Cart
+                        
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ltn__social-media-2">
+                        <ul>
+                            <li>
+                                <a href="#" title="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Linkedin">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Utilize Mobile Menu End -->
+            <div class="ltn__utilize-overlay"></div>
+            <!-- SLIDER AREA START (slider-3) -->
+            <div class="ltn__slider-area ltn__slider-3  section-bg-1">
+                <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1">
+                    <!-- ltn__slide-item -->
+                    <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal ltn__slide-item-3">
+                        <div class="ltn__slide-item-inner">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 align-self-center">
+                                        <div class="slide-item-info">
+                                            <div class="slide-item-info-inner ltn__slide-animation">
+                                                <div class="slide-video mb-50 d-none">
+                                                    <a class="ltn__video-icon-2 ltn__video-icon-2-border" href="https://www.youtube.com/embed/tlThdr3O5Qo" data-rel="lightcase:myCollection">
+                                                        <i class="fa fa-play"></i>
+                                                    </a>
+                                                </div>
+                                                <h6 class="slide-sub-title white-color--- animated">
+                                                    <span>
+                                                        <i class="fas fa-home"></i>
+                                                    </span>
+                                                    Real Estate Agency
+                                                </h6>
+                                                <h1 class="slide-title animated ">
+                                                    Find Your Dream <br>House By Us
+                                                </h1>
+                                                <div class="slide-brief animated">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                                </div>
+                                                <div class="btn-wrapper animated">
+                                                    <a href="about.html" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
+                                                    <a class="ltn__video-play-btn bg-white" href="https://www.youtube.com/embed/HnbMYzdjuBs?autoplay=1&amp;showinfo=0" data-rel="lightcase">
+                                                        <i class="icon-play  ltn__secondary-color"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slide-item-img">
+                                            <img src="{{('public/frontend/img/slider/21.png')}}" alt="#">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ltn__slide-item -->
+                    <div class="ltn__slide-item ltn__slide-item-2  ltn__slide-item-3-normal ltn__slide-item-3">
+                        <div class="ltn__slide-item-inner  text-right text-end">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 align-self-center">
+                                        <div class="slide-item-info">
+                                            <div class="slide-item-info-inner ltn__slide-animation">
+                                                <h6 class="slide-sub-title white-color--- animated">
+                                                    <span>
+                                                        <i class="fas fa-home"></i>
+                                                    </span>
+                                                    Real Estate Agency
+                                                </h6>
+                                                <h1 class="slide-title animated ">
+                                                    The Right Place <br>of House Finding
+                                                </h1>
+                                                <div class="slide-brief animated">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                                </div>
+                                                <div class="btn-wrapper animated">
+                                                    <a href="service.html" class="theme-btn-1 btn btn-effect-1">OUR SERVICES</a>
+                                                    <a href="about.html" class="btn btn-transparent btn-effect-3">LEARN MORE</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slide-item-img slide-img-left">
+                                            <img src="{{('public/frontend/img/slider/21.png')}}" alt="#">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+            </div>
+            <!-- SLIDER AREA END -->
+            <!-- CAR DEALER FORM AREA START -->
+            <div class="ltn__car-dealer-form-area mt--65 mt-120 pb-115---">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ltn__car-dealer-form-tab">
+                                <div class="ltn__tab-menu  text-uppercase d-none">
+                                    <div class="nav">
+                                        <a class="active show" data-bs-toggle="tab" href="#ltn__form_tab_1_1">
+                                            <i class="fas fa-car"></i>
+                                            Find A Car
+                                        </a>
+                                        <a data-bs-toggle="tab" href="#ltn__form_tab_1_2" class="">
+                                            <i class="far fa-user"></i>
+                                            Get a Dealer
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="tab-content bg-white box-shadow-1 ltn__border position-relative pb-10">
+                                    <div class="tab-pane fade active show" id="ltn__form_tab_1_1">
+                                        <div class="car-dealer-form-inner">
+                                            <form action="#" class="ltn__car-dealer-form-box row">
+                                                <div class="ltn__car-dealer-form-item ltn__custom-icon---- ltn__icon-car---- col-lg-3 col-md-6">
+                                                    <select class="nice-select">
+                                                        <option>Choose Area</option>
+                                                        <option>chicago</option>
+                                                        <option>London</option>
+                                                        <option>Los Angeles</option>
+                                                        <option>New York</option>
+                                                        <option>New Jersey</option>
+                                                    </select>
+                                                </div>
+                                                <div class="ltn__car-dealer-form-item ltn__custom-icon---- ltn__icon-meter---- col-lg-3 col-md-6">
+                                                    <select class="nice-select">
+                                                        <option>Property Status</option>
+                                                        <option>Open house</option>
+                                                        <option>Rent</option>
+                                                        <option>Sale</option>
+                                                        <option>Sold</option>
+                                                    </select>
+                                                </div>
+                                                <div class="ltn__car-dealer-form-item ltn__custom-icon---- ltn__icon-calendar---- col-lg-3 col-md-6">
+                                                    <select class="nice-select">
+                                                        <option>Property Type</option>
+                                                        <option>Apartment</option>
+                                                        <option>Co-op</option>
+                                                        <option>Condo</option>
+                                                        <option>Single Family Home</option>
+                                                    </select>
+                                                </div>
+                                                <div class="ltn__car-dealer-form-item ltn__custom-icon ltn__icon-calendar col-lg-3 col-md-6">
+                                                    <div class="btn-wrapper text-center mt-0">
+                                                        <!-- <button type="submit" class="btn theme-btn-1 btn-effect-1 text-uppercase">Search Inventory</button> -->
+                                                        <a href="shop-right-sidebar.html" class="btn theme-btn-1 btn-effect-1 text-uppercase">Find Now</a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="ltn__form_tab_1_2">
+                                        <div class="car-dealer-form-inner">
+                                            <form action="#" class="ltn__car-dealer-form-box row">
+                                                <div class="ltn__car-dealer-form-item ltn__custom-icon---- ltn__icon-car---- col-lg-3 col-md-6">
+                                                    <select class="nice-select">
+                                                        <option>Choose Area</option>
+                                                        <option>chicago</option>
+                                                        <option>London</option>
+                                                        <option>Los Angeles</option>
+                                                        <option>New York</option>
+                                                        <option>New Jersey</option>
+                                                    </select>
+                                                </div>
+                                                <div class="ltn__car-dealer-form-item ltn__custom-icon---- ltn__icon-meter---- col-lg-3 col-md-6">
+                                                    <select class="nice-select">
+                                                        <option>Property Status</option>
+                                                        <option>Open house</option>
+                                                        <option>Rent</option>
+                                                        <option>Sale</option>
+                                                        <option>Sold</option>
+                                                    </select>
+                                                </div>
+                                                <div class="ltn__car-dealer-form-item ltn__custom-icon---- ltn__icon-calendar---- col-lg-3 col-md-6">
+                                                    <select class="nice-select">
+                                                        <option>Property Type</option>
+                                                        <option>Apartment</option>
+                                                        <option>Co-op</option>
+                                                        <option>Condo</option>
+                                                        <option>Single Family Home</option>
+                                                    </select>
+                                                </div>
+                                                <div class="ltn__car-dealer-form-item ltn__custom-icon ltn__icon-calendar col-lg-3 col-md-6">
+                                                    <div class="btn-wrapper text-center mt-0">
+                                                        <!-- <button type="submit" class="btn theme-btn-1 btn-effect-1 text-uppercase">Search Inventory</button> -->
+                                                        <a href="shop-right-sidebar.html" class="btn theme-btn-1 btn-effect-1 text-uppercase">Search Properties</a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CAR DEALER FORM AREA END -->
+            <!-- ABOUT US AREA START -->
+            <div class="ltn__about-us-area pt-120 pb-90 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 align-self-center">
+                            <div class="about-us-img-wrap about-img-left">
+                                <img src="{{('public/frontend/img/others/7.png')}}" alt="About Us Image">
+                                <div class="about-us-img-info about-us-img-info-2 about-us-img-info-3">
+                                    <div class="ltn__video-img ltn__animation-pulse1">
+                                        <img src="{{('public/frontend/img/others/8.png')}}" alt="video popup bg image">
+                                        <a class="ltn__video-icon-2 ltn__video-icon-2-border---" href="https://www.youtube.com/embed/X7R-q9rsrtU?autoplay=1&showinfo=0" data-rel="lightcase:myCollection">
+                                            <i class="fa fa-play"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 align-self-center">
+                            <div class="about-us-info-wrap">
+                                <div class="section-title-area ltn__section-title-2--- mb-20">
+                                    <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">About Us</h6>
+                                    <h1 class="section-title">
+                                        The Leading Real Estate
+                                Rental Marketplace<span>.</span>
+                                    </h1>
+                                    <p>Over 39,000 people work for us in more than 70 countries all over the
+                                This breadth of global coverage, combined with specialist services</p>
+                                </div>
+                                <ul class="ltn__list-item-half clearfix">
+                                    <li>
+                                        <i class="flaticon-home-2"></i>
+                                        Smart Home Design
+                            
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-mountain"></i>
+                                        Beautiful Scene Around
+                            
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-heart"></i>
+                                        Exceptional Lifestyle
+                            
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-secure"></i>
+                                        Complete 24/7 Security
+                            
+                                    </li>
+                                </ul>
+                                <div class="ltn__callout bg-overlay-theme-05  mt-30">
+                                    <p>
+                                        "Enimad minim veniam quis nostrud exercitation <br>llamco laboris. Lorem ipsum dolor sit amet" 
+                                    </p>
+                                </div>
+                                <div class="btn-wrapper animated">
+                                    <a href="service.html" class="theme-btn-1 btn btn-effect-1">OUR SERVICES</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ABOUT US AREA END -->
+            <!-- COUNTER UP AREA START -->
+            <div class="ltn__counterup-area section-bg-1 pt-120 pb-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 align-self-center">
+                            <div class="ltn__counterup-item text-color-white---">
+                                <div class="counter-icon">
+                                    <i class="flaticon-select"></i>
+                                </div>
+                                <h1>
+                                    <span class="counter">560</span>
+                                    <span class="counterUp-icon">+</span>
+                                </h1>
+                                <h6>Total Area Sq</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 align-self-center">
+                            <div class="ltn__counterup-item text-color-white---">
+                                <div class="counter-icon">
+                                    <i class="flaticon-office"></i>
+                                </div>
+                                <h1>
+                                    <span class="counter">197</span>
+                                    <span class="counterUp-letter">K</span>
+                                    <span class="counterUp-icon">+</span>
+                                </h1>
+                                <h6>Apartments Sold</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 align-self-center">
+                            <div class="ltn__counterup-item text-color-white---">
+                                <div class="counter-icon">
+                                    <i class="flaticon-excavator"></i>
+                                </div>
+                                <h1>
+                                    <span class="counter">268</span>
+                                    <span class="counterUp-icon">+</span>
+                                </h1>
+                                <h6>Total Constructions</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 align-self-center">
+                            <div class="ltn__counterup-item text-color-white---">
+                                <div class="counter-icon">
+                                    <i class="flaticon-armchair"></i>
+                                </div>
+                                <h1>
+                                    <span class="counter">340</span>
+                                    <span class="counterUp-icon">+</span>
+                                </h1>
+                                <h6>Apartio Rooms</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- COUNTER UP AREA END -->
+            <!-- ABOUT US AREA START -->
+            <div class="ltn__about-us-area pt-120 pb-90 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 align-self-center">
+                            <div class="about-us-info-wrap">
+                                <div class="section-title-area ltn__section-title-2--- mb-30">
+                                    <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">About Us</h6>
+                                    <h1 class="section-title">Today Sells Properties</h1>
+                                    <p>Houzez allow you to design unlimited panels and real estate custom
+                                forms to capture leads and keep record of all information</p>
+                                </div>
+                                <ul class="ltn__list-item-1 ltn__list-item-1-before clearfix">
+                                    <li>Live Music Cocerts at Luviana</li>
+                                    <li>Our SecretIsland Boat Tour is Just for You</li>
+                                    <li>Live Music Cocerts at Luviana</li>
+                                    <li>Live Music Cocerts at Luviana</li>
+                                </ul>
+                                <ul class="ltn__list-item-2 ltn__list-item-2-before ltn__flat-info">
+                                    <li>
+                                        <span>
+                                            3 <i class="flaticon-bed"></i>
+                                        </span>
+                                        Bedrooms
+                            
+                                    </li>
+                                    <li>
+                                        <span>
+                                            2 <i class="flaticon-clean"></i>
+                                        </span>
+                                        Bathrooms
+                            
+                                    </li>
+                                    <li>
+                                        <span>
+                                            2 <i class="flaticon-car"></i>
+                                        </span>
+                                        Car parking
+                            
+                                    </li>
+                                    <li>
+                                        <span>
+                                            3450 <i class="flaticon-square-shape-design-interface-tool-symbol"></i>
+                                        </span>
+                                        square Ft
+                            
+                                    </li>
+                                </ul>
+                                <ul class="ltn__list-item-2 ltn__list-item-2-before--- ltn__list-item-2-img mb-50">
+                                    <li>
+                                        <a href="{{('public/frontend/img/img-slide/11.jpg')}}" data-rel="lightcase:myCollection">
+                                            <img src="{{('public/frontend/img/img-slide/11.jpg')}}" alt="Image">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{('public/frontend/img/img-slide/12.jpg')}}" data-rel="lightcase:myCollection">
+                                            <img src="{{('public/frontend/img/img-slide/12.jpg')}}" alt="Image">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{('public/frontend/img/img-slide/13.jpg')}}" data-rel="lightcase:myCollection">
+                                            <img src="{{('public/frontend/img/img-slide/13.jpg')}}" alt="Image">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 align-self-center">
+                            <div class="about-us-img-wrap about-img-right">
+                                <img src="{{('public/frontend/img/others/9.png')}}" alt="About Us Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ABOUT US AREA END -->
+            <!-- FEATURE AREA START ( Feature - 6) -->
+            <div class="ltn__feature-area section-bg-1 pt-120 pb-90 mb-120---">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title-area ltn__section-title-2--- text-center">
+                                <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Our Services</h6>
+                                <h1 class="section-title">Our Main Focus</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ltn__custom-gutter--- justify-content-center">
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white  box-shadow-1">
+                                <div class="ltn__feature-icon">
+                                    <!-- <span><i class="flaticon-house"></i></span> -->
+                                    <img src="{{('public/frontend/img/icons/icon-img/21.png')}}" alt="#">
+                                </div>
+                                <div class="ltn__feature-info">
+                                    <h3>
+                                        <a href="service-details.html">Buy a home</a>
+                                    </h3>
+                                    <p>over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
+                                    <a class="ltn__service-btn" href="service-details.html">
+                                        Find A Home <i class="flaticon-right-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white  box-shadow-1 active">
+                                <div class="ltn__feature-icon">
+                                    <!-- <span><i class="flaticon-house-3"></i></span> -->
+                                    <img src="{{('public/frontend/img/icons/icon-img/22.png')}}" alt="#">
+                                </div>
+                                <div class="ltn__feature-info">
+                                    <h3>
+                                        <a href="service-details.html">Rent a home</a>
+                                    </h3>
+                                    <p>over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
+                                    <a class="ltn__service-btn" href="service-details.html">
+                                        Find A Home <i class="flaticon-right-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white  box-shadow-1">
+                                <div class="ltn__feature-icon">
+                                    <!-- <span><i class="flaticon-deal-1"></i></span> -->
+                                    <img src="{{('public/frontend/img/icons/icon-img/23.png')}}" alt="#">
+                                </div>
+                                <div class="ltn__feature-info">
+                                    <h3>
+                                        <a href="service-details.html">Sell a home</a>
+                                    </h3>
+                                    <p>over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
+                                    <a class="ltn__service-btn" href="service-details.html">
+                                        Find A Home <i class="flaticon-right-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FEATURE AREA END -->
+            <!-- PRODUCT SLIDER AREA START -->
+            <div class="ltn__product-slider-area ltn__product-gutter pt-115 pb-90 plr--7">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title-area ltn__section-title-2--- text-center">
+                                <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Properties</h6>
+                                <h1 class="section-title">Featured Listings</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ltn__product-slider-item-four-active-full-width slick-arrow-1">
+                        <!-- ltn__product-item -->
+                        <div class="col-lg-12">
+                            <div class="ltn__product-item ltn__product-item-4 text-center---">
+                                <div class="product-img">
+                                    <a href="product-details.html">
+                                        <img src="{{('public/frontend/img/product-3/1.jpg')}}" alt="#">
+                                    </a>
+                                    <div class="product-badge">
+                                        <ul>
+                                            <li class="sale-badge bg-green">For Rent</li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-img-location-gallery">
+                                        <div class="product-img-location">
+                                            <ul>
+                                                <li>
+                                                    <a href="locations.html">
+                                                        <i class="flaticon-pin"></i>
+                                                        Belmont Gardens, Chicago
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-img-gallery">
+                                            <ul>
+                                                <li>
+                                                    <a href="product-details.html">
+                                                        <i class="fas fa-camera"></i>
+                                                        4
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="product-details.html">
+                                                        <i class="fas fa-film"></i>
+                                                        2
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span>
+                                            $34,900<label>/Month</label>
+                                        </span>
+                                    </div>
+                                    <h2 class="product-title">
+                                        <a href="product-details.html">New Apartment Nice View</a>
+                                    </h2>
+                                    <div class="product-description">
+                                        <p>
+                                            Beautiful Huge 1 Family House In Heart Of <br>Westbury. Newly Renovated With New Wood
+                                        </p>
+                                    </div>
+                                    <ul class="ltn__list-item-2 ltn__list-item-2-before">
+                                        <li>
+                                            <span>
+                                                3 <i class="flaticon-bed"></i>
+                                            </span>
+                                            Bedrooms
+                                
+                                        </li>
+                                        <li>
+                                            <span>
+                                                2 <i class="flaticon-clean"></i>
+                                            </span>
+                                            Bathrooms
+                                
+                                        </li>
+                                        <li>
+                                            <span>
+                                                3450 <i class="flaticon-square-shape-design-interface-tool-symbol"></i>
+                                            </span>
+                                            square Ft
+                                
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-info-bottom">
+                                    <div class="real-estate-agent">
+                                        <div class="agent-img">
+                                            <a href="team-details.html">
+                                                <img src="{{('public/frontend/img/blog/author.jpg')}}" alt="#">
+                                            </a>
+                                        </div>
+                                        <div class="agent-brief">
+                                            <h6>
+                                                <a href="team-details.html">William Seklo</a>
+                                            </h6>
+                                            <small>Estate Agents</small>
+                                        </div>
+                                    </div>
+                                    <div class="product-hover-action">
+                                        <ul>
+                                            <li>
+                                                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+                                                    <i class="flaticon-expand"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
+                                                    <i class="flaticon-heart-1"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="product-details.html" title="Product Details">
+                                                    <i class="flaticon-add"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ltn__product-item -->
+                        <div class="col-lg-12">
+                            <div class="ltn__product-item ltn__product-item-4 text-center---">
+                                <div class="product-img">
+                                    <a href="product-details.html">
+                                        <img src="{{('public/frontend/img/product-3/2.jpg')}}" alt="#">
+                                    </a>
+                                    <div class="product-badge">
+                                        <ul>
+                                            <li class="sale-badge bg-green---">For Sale</li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-img-location-gallery">
+                                        <div class="product-img-location">
+                                            <ul>
+                                                <li>
+                                                    <a href="locations.html">
+                                                        <i class="flaticon-pin"></i>
+                                                        Belmont Gardens, Chicago
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-img-gallery">
+                                            <ul>
+                                                <li>
+                                                    <a href="product-details.html">
+                                                        <i class="fas fa-camera"></i>
+                                                        4
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="product-details.html">
+                                                        <i class="fas fa-film"></i>
+                                                        2
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span>
+                                            $34,900<label>/Month</label>
+                                        </span>
+                                    </div>
+                                    <h2 class="product-title">
+                                        <a href="product-details.html">Modern Apartments</a>
+                                    </h2>
+                                    <div class="product-description">
+                                        <p>
+                                            Beautiful Huge 1 Family House In Heart Of <br>Westbury. Newly Renovated With New Wood
+                                        </p>
+                                    </div>
+                                    <ul class="ltn__list-item-2 ltn__list-item-2-before">
+                                        <li>
+                                            <span>
+                                                3 <i class="flaticon-bed"></i>
+                                            </span>
+                                            Bedrooms
+                                
+                                        </li>
+                                        <li>
+                                            <span>
+                                                2 <i class="flaticon-clean"></i>
+                                            </span>
+                                            Bathrooms
+                                
+                                        </li>
+                                        <li>
+                                            <span>
+                                                3450 <i class="flaticon-square-shape-design-interface-tool-symbol"></i>
+                                            </span>
+                                            square Ft
+                                
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-info-bottom">
+                                    <div class="real-estate-agent">
+                                        <div class="agent-img">
+                                            <a href="team-details.html">
+                                                <img src="{{('public/frontend/img/blog/author.jpg')}}" alt="#">
+                                            </a>
+                                        </div>
+                                        <div class="agent-brief">
+                                            <h6>
+                                                <a href="team-details.html">William Seklo</a>
+                                            </h6>
+                                            <small>Estate Agents</small>
+                                        </div>
+                                    </div>
+                                    <div class="product-hover-action">
+                                        <ul>
+                                            <li>
+                                                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+                                                    <i class="flaticon-expand"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
+                                                    <i class="flaticon-heart-1"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="product-details.html" title="Product Details">
+                                                    <i class="flaticon-add"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ltn__product-item -->
+                        <div class="col-lg-12">
+                            <div class="ltn__product-item ltn__product-item-4 text-center---">
+                                <div class="product-img">
+                                    <a href="product-details.html">
+                                        <img src="{{('public/frontend/img/product-3/3.jpg')}}" alt="#">
+                                    </a>
+                                    <div class="product-badge">
+                                        <ul>
+                                            <li class="sale-badge bg-green">For Rent</li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-img-location-gallery">
+                                        <div class="product-img-location">
+                                            <ul>
+                                                <li>
+                                                    <a href="locations.html">
+                                                        <i class="flaticon-pin"></i>
+                                                        Belmont Gardens, Chicago
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-img-gallery">
+                                            <ul>
+                                                <li>
+                                                    <a href="product-details.html">
+                                                        <i class="fas fa-camera"></i>
+                                                        4
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="product-details.html">
+                                                        <i class="fas fa-film"></i>
+                                                        2
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span>
+                                            $34,900<label>/Month</label>
+                                        </span>
+                                    </div>
+                                    <h2 class="product-title">
+                                        <a href="product-details.html">Comfortable Apartment</a>
+                                    </h2>
+                                    <div class="product-description">
+                                        <p>
+                                            Beautiful Huge 1 Family House In Heart Of <br>Westbury. Newly Renovated With New Wood
+                                        </p>
+                                    </div>
+                                    <ul class="ltn__list-item-2 ltn__list-item-2-before">
+                                        <li>
+                                            <span>
+                                                3 <i class="flaticon-bed"></i>
+                                            </span>
+                                            Bedrooms
+                                
+                                        </li>
+                                        <li>
+                                            <span>
+                                                2 <i class="flaticon-clean"></i>
+                                            </span>
+                                            Bathrooms
+                                
+                                        </li>
+                                        <li>
+                                            <span>
+                                                3450 <i class="flaticon-square-shape-design-interface-tool-symbol"></i>
+                                            </span>
+                                            square Ft
+                                
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-info-bottom">
+                                    <div class="real-estate-agent">
+                                        <div class="agent-img">
+                                            <a href="team-details.html">
+                                                <img src="{{('public/frontend/img/blog/author.jpg')}}" alt="#">
+                                            </a>
+                                        </div>
+                                        <div class="agent-brief">
+                                            <h6>
+                                                <a href="team-details.html">William Seklo</a>
+                                            </h6>
+                                            <small>Estate Agents</small>
+                                        </div>
+                                    </div>
+                                    <div class="product-hover-action">
+                                        <ul>
+                                            <li>
+                                                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+                                                    <i class="flaticon-expand"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
+                                                    <i class="flaticon-heart-1"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="product-details.html" title="Product Details">
+                                                    <i class="flaticon-add"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ltn__product-item -->
+                        <div class="col-lg-12">
+                            <div class="ltn__product-item ltn__product-item-4 text-center---">
+                                <div class="product-img">
+                                    <a href="product-details.html">
+                                        <img src="{{('public/frontend/img/product-3/4.jpg')}}" alt="#">
+                                    </a>
+                                    <div class="product-badge">
+                                        <ul>
+                                            <li class="sale-badge bg-green">For Rent</li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-img-location-gallery">
+                                        <div class="product-img-location">
+                                            <ul>
+                                                <li>
+                                                    <a href="locations.html">
+                                                        <i class="flaticon-pin"></i>
+                                                        Belmont Gardens, Chicago
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-img-gallery">
+                                            <ul>
+                                                <li>
+                                                    <a href="product-details.html">
+                                                        <i class="fas fa-camera"></i>
+                                                        4
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="product-details.html">
+                                                        <i class="fas fa-film"></i>
+                                                        2
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span>
+                                            $34,900<label>/Month</label>
+                                        </span>
+                                    </div>
+                                    <h2 class="product-title">
+                                        <a href="product-details.html">Luxury villa in Rego Park </a>
+                                    </h2>
+                                    <div class="product-description">
+                                        <p>
+                                            Beautiful Huge 1 Family House In Heart Of <br>Westbury. Newly Renovated With New Wood
+                                        </p>
+                                    </div>
+                                    <ul class="ltn__list-item-2 ltn__list-item-2-before">
+                                        <li>
+                                            <span>
+                                                3 <i class="flaticon-bed"></i>
+                                            </span>
+                                            Bedrooms
+                                
+                                        </li>
+                                        <li>
+                                            <span>
+                                                2 <i class="flaticon-clean"></i>
+                                            </span>
+                                            Bathrooms
+                                
+                                        </li>
+                                        <li>
+                                            <span>
+                                                3450 <i class="flaticon-square-shape-design-interface-tool-symbol"></i>
+                                            </span>
+                                            square Ft
+                                
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-info-bottom">
+                                    <div class="real-estate-agent">
+                                        <div class="agent-img">
+                                            <a href="team-details.html">
+                                                <img src="{{('public/frontend/img/blog/author.jpg')}}" alt="#">
+                                            </a>
+                                        </div>
+                                        <div class="agent-brief">
+                                            <h6>
+                                                <a href="team-details.html">William Seklo</a>
+                                            </h6>
+                                            <small>Estate Agents</small>
+                                        </div>
+                                    </div>
+                                    <div class="product-hover-action">
+                                        <ul>
+                                            <li>
+                                                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+                                                    <i class="flaticon-expand"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
+                                                    <i class="flaticon-heart-1"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="product-details.html" title="Product Details">
+                                                    <i class="flaticon-add"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ltn__product-item -->
+                        <div class="col-lg-12">
+                            <div class="ltn__product-item ltn__product-item-4 text-center---">
+                                <div class="product-img">
+                                    <a href="product-details.html">
+                                        <img src="{{('public/frontend/img/product-3/5.jpg')}}" alt="#">
+                                    </a>
+                                    <div class="product-badge">
+                                        <ul>
+                                            <li class="sale-badge bg-green">For Rent</li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-img-location-gallery">
+                                        <div class="product-img-location">
+                                            <ul>
+                                                <li>
+                                                    <a href="locations.html">
+                                                        <i class="flaticon-pin"></i>
+                                                        Belmont Gardens, Chicago
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-img-gallery">
+                                            <ul>
+                                                <li>
+                                                    <a href="product-details.html">
+                                                        <i class="fas fa-camera"></i>
+                                                        4
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="product-details.html">
+                                                        <i class="fas fa-film"></i>
+                                                        2
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span>
+                                            $34,900<label>/Month</label>
+                                        </span>
+                                    </div>
+                                    <h2 class="product-title">
+                                        <a href="product-details.html">Beautiful Flat in Manhattan </a>
+                                    </h2>
+                                    <div class="product-description">
+                                        <p>
+                                            Beautiful Huge 1 Family House In Heart Of <br>Westbury. Newly Renovated With New Wood
+                                        </p>
+                                    </div>
+                                    <ul class="ltn__list-item-2 ltn__list-item-2-before">
+                                        <li>
+                                            <span>
+                                                3 <i class="flaticon-bed"></i>
+                                            </span>
+                                            Bedrooms
+                                
+                                        </li>
+                                        <li>
+                                            <span>
+                                                2 <i class="flaticon-clean"></i>
+                                            </span>
+                                            Bathrooms
+                                
+                                        </li>
+                                        <li>
+                                            <span>
+                                                3450 <i class="flaticon-square-shape-design-interface-tool-symbol"></i>
+                                            </span>
+                                            square Ft
+                                
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-info-bottom">
+                                    <div class="real-estate-agent">
+                                        <div class="agent-img">
+                                            <a href="team-details.html">
+                                                <img src="{{('public/frontend/img/blog/author.jpg')}}" alt="#">
+                                            </a>
+                                        </div>
+                                        <div class="agent-brief">
+                                            <h6>
+                                                <a href="team-details.html">William Seklo</a>
+                                            </h6>
+                                            <small>Estate Agents</small>
+                                        </div>
+                                    </div>
+                                    <div class="product-hover-action">
+                                        <ul>
+                                            <li>
+                                                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+                                                    <i class="flaticon-expand"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
+                                                    <i class="flaticon-heart-1"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="product-details.html" title="Product Details">
+                                                    <i class="flaticon-add"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+            <!-- PRODUCT SLIDER AREA END -->
+            <!-- APARTMENTS PLAN AREA START -->
+            <div class="ltn__apartments-plan-area pt-115--- pb-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title-area ltn__section-title-2--- text-center">
+                                <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Apartment Sketch</h6>
+                                <h1 class="section-title">Apartments Plan</h1>
+                            </div>
+                            <div class="ltn__tab-menu ltn__tab-menu-3 ltn__tab-menu-top-right-- text-uppercase--- text-center">
+                                <div class="nav">
+                                    <a data-bs-toggle="tab" href="#liton_tab_3_1">The Studio</a>
+                                    <a class="active show" data-bs-toggle="tab" href="#liton_tab_3_2">Deluxe Portion</a>
+                                    <a data-bs-toggle="tab" href="#liton_tab_3_3" class="">Penthouse</a>
+                                    <a data-bs-toggle="tab" href="#liton_tab_3_4" class="">Top Garden</a>
+                                    <a data-bs-toggle="tab" href="#liton_tab_3_5" class="">Double Height</a>
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane fade" id="liton_tab_3_1">
+                                    <div class="ltn__apartments-tab-content-inner">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="apartments-plan-info ltn__secondary-bg text-color-white">
+                                                    <h2>The Studio</h2>
+                                                    <p>Enimad minim veniam quis nostrud exercitation ullamco laboris.
+                                                Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo
+                                                eiusmod tempor.Incididunt labore et dolore magna aliqua.
+                                                sed ayd minim veniam.</p>
+                                                    <div class="apartments-info-list apartments-info-list-color mt-40">
+                                                        <ul>
+                                                            <li>
+                                                                <label>Total Area</label>
+                                                                <span>2800 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Bedroom</label>
+                                                                <span>150 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Bathroom</label>
+                                                                <span>45 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Belcony/Pets</label>
+                                                                <span>Allowed</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Lounge</label>
+                                                                <span>650 Sq. Ft</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="apartments-plan-img">
+                                                    <img src="{{('public/frontend/img/others/10.png')}}" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade active show" id="liton_tab_3_2">
+                                    <div class="ltn__product-tab-content-inner">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="apartments-plan-info ltn__secondary-bg text-color-white">
+                                                    <h2>Deluxe Portion</h2>
+                                                    <p>Enimad minim veniam quis nostrud exercitation ullamco laboris.
+                                                Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo
+                                                eiusmod tempor.Incididunt labore et dolore magna aliqua.
+                                                sed ayd minim veniam.</p>
+                                                    <div class="apartments-info-list apartments-info-list-color mt-40">
+                                                        <ul>
+                                                            <li>
+                                                                <label>Total Area</label>
+                                                                <span>2800 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Bedroom</label>
+                                                                <span>150 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Bathroom</label>
+                                                                <span>45 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Belcony/Pets</label>
+                                                                <span>Allowed</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Lounge</label>
+                                                                <span>650 Sq. Ft</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="apartments-plan-img">
+                                                    <img src="{{('public/frontend/img/others/10.png')}}" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="liton_tab_3_3">
+                                    <div class="ltn__product-tab-content-inner">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="apartments-plan-info ltn__secondary-bg text-color-white">
+                                                    <h2>Penthouse</h2>
+                                                    <p>Enimad minim veniam quis nostrud exercitation ullamco laboris.
+                                                Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo
+                                                eiusmod tempor.Incididunt labore et dolore magna aliqua.
+                                                sed ayd minim veniam.</p>
+                                                    <div class="apartments-info-list apartments-info-list-color mt-40">
+                                                        <ul>
+                                                            <li>
+                                                                <label>Total Area</label>
+                                                                <span>2800 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Bedroom</label>
+                                                                <span>150 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Bathroom</label>
+                                                                <span>45 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Belcony/Pets</label>
+                                                                <span>Allowed</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Lounge</label>
+                                                                <span>650 Sq. Ft</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="apartments-plan-img">
+                                                    <img src="{{('public/frontend/img/others/10.png')}}" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="liton_tab_3_4">
+                                    <div class="ltn__product-tab-content-inner">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="apartments-plan-info ltn__secondary-bg text-color-white">
+                                                    <h2>Top Garden</h2>
+                                                    <p>Enimad minim veniam quis nostrud exercitation ullamco laboris.
+                                                Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo
+                                                eiusmod tempor.Incididunt labore et dolore magna aliqua.
+                                                sed ayd minim veniam.</p>
+                                                    <div class="apartments-info-list apartments-info-list-color mt-40">
+                                                        <ul>
+                                                            <li>
+                                                                <label>Total Area</label>
+                                                                <span>2800 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Bedroom</label>
+                                                                <span>150 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Bathroom</label>
+                                                                <span>45 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Belcony/Pets</label>
+                                                                <span>Allowed</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Lounge</label>
+                                                                <span>650 Sq. Ft</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="apartments-plan-img">
+                                                    <img src="{{('public/frontend/img/others/10.png')}}" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="liton_tab_3_5">
+                                    <div class="ltn__product-tab-content-inner">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="apartments-plan-info ltn__secondary-bg text-color-white">
+                                                    <h2>Double Height</h2>
+                                                    <p>Enimad minim veniam quis nostrud exercitation ullamco laboris.
+                                                Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo
+                                                eiusmod tempor.Incididunt labore et dolore magna aliqua.
+                                                sed ayd minim veniam.</p>
+                                                    <div class="apartments-info-list apartments-info-list-color mt-40">
+                                                        <ul>
+                                                            <li>
+                                                                <label>Total Area</label>
+                                                                <span>2800 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Bedroom</label>
+                                                                <span>150 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Bathroom</label>
+                                                                <span>45 Sq. Ft</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Belcony/Pets</label>
+                                                                <span>Allowed</span>
+                                                            </li>
+                                                            <li>
+                                                                <label>Lounge</label>
+                                                                <span>650 Sq. Ft</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="apartments-plan-img">
+                                                    <img src="{{('public/frontend/img/others/10.png')}}" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- APARTMENTS PLAN AREA END -->
+            <!-- VIDEO AREA START -->
+            <div class="ltn__video-popup-area ltn__video-popup-margin---">
+                <div class="ltn__video-bg-img ltn__video-popup-height-600--- bg-overlay-black-30 bg-image bg-fixed ltn__animation-pulse1" data-bs-bg="{{('public/frontend/img/bg/19.jpg')}}">
+                    <a class="ltn__video-icon-2 ltn__video-icon-2-border---" href="https://www.youtube.com/embed/X7R-q9rsrtU?autoplay=1&showinfo=0" data-rel="lightcase:myCollection">
+                        <i class="fa fa-play"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- VIDEO AREA END -->
+            <!-- CATEGORY AREA START -->
+            <div class="ltn__category-area section-bg-1-- ltn__primary-bg before-bg-1 bg-image bg-overlay-theme-black-5--0 pt-115 pb-90 d-none" data-bs-bg="{{('public/frontend/img/bg/5.jpg')}}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title-area ltn__section-title-2 text-center">
+                                <h1 class="section-title white-color">Top Categories</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ltn__category-slider-active slick-arrow-1">
+                        <div class="col-12">
+                            <div class="ltn__category-item ltn__category-item-4 text-center">
+                                <div class="ltn__category-item-img">
+                                    <a href="shop.html">
+                                        <i class="flaticon-car"></i>
+                                    </a>
+                                </div>
+                                <div class="ltn__category-item-name">
+                                    <h4>
+                                        <a href="shop.html">Parking Space</a>
+                                    </h4>
+                                </div>
+                                <div class="ltn__category-item-btn">
+                                    <a href="shop.html">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="ltn__category-item ltn__category-item-4 text-center">
+                                <div class="ltn__category-item-img">
+                                    <a href="shop.html">
+                                        <i class="flaticon-car"></i>
+                                    </a>
+                                </div>
+                                <div class="ltn__category-item-name">
+                                    <h4>
+                                        <a href="shop.html">Parking Space</a>
+                                    </h4>
+                                </div>
+                                <div class="ltn__category-item-btn">
+                                    <a href="shop.html">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="ltn__category-item ltn__category-item-4 text-center">
+                                <div class="ltn__category-item-img">
+                                    <a href="shop.html">
+                                        <i class="flaticon-car"></i>
+                                    </a>
+                                </div>
+                                <div class="ltn__category-item-name">
+                                    <h4>
+                                        <a href="shop.html">Parking Space</a>
+                                    </h4>
+                                </div>
+                                <div class="ltn__category-item-btn">
+                                    <a href="shop.html">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="ltn__category-item ltn__category-item-4 text-center">
+                                <div class="ltn__category-item-img">
+                                    <a href="shop.html">
+                                        <i class="flaticon-car"></i>
+                                    </a>
+                                </div>
+                                <div class="ltn__category-item-name">
+                                    <h4>
+                                        <a href="shop.html">Parking Space</a>
+                                    </h4>
+                                </div>
+                                <div class="ltn__category-item-btn">
+                                    <a href="shop.html">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="ltn__category-item ltn__category-item-4 text-center">
+                                <div class="ltn__category-item-img">
+                                    <a href="shop.html">
+                                        <i class="flaticon-car"></i>
+                                    </a>
+                                </div>
+                                <div class="ltn__category-item-name">
+                                    <h4>
+                                        <a href="shop.html">Parking Space</a>
+                                    </h4>
+                                </div>
+                                <div class="ltn__category-item-btn">
+                                    <a href="shop.html">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="ltn__category-item ltn__category-item-4 text-center">
+                                <div class="ltn__category-item-img">
+                                    <a href="shop.html">
+                                        <i class="flaticon-car"></i>
+                                    </a>
+                                </div>
+                                <div class="ltn__category-item-name">
+                                    <h4>
+                                        <a href="shop.html">Parking Space</a>
+                                    </h4>
+                                </div>
+                                <div class="ltn__category-item-btn">
+                                    <a href="shop.html">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CATEGORY AREA END -->
+            <!-- CATEGORY AREA START -->
+            <div class="ltn__category-area ltn__product-gutter section-bg-1--- pt-115 pb-90 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title-area ltn__section-title-2--- text-center">
+                                <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Our Aminities</h6>
+                                <h1 class="section-title">Building Aminities</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ltn__category-slider-active--- slick-arrow-1 justify-content-center">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="ltn__category-item ltn__category-item-5 text-center">
+                                <a href="shop.html">
+                                    <span class="category-icon">
+                                        <i class="flaticon-car"></i>
+                                    </span>
+                                    <span class="category-title">Parking Space</span>
+                                    <span class="category-btn">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="ltn__category-item ltn__category-item-5 text-center">
+                                <a href="shop.html">
+                                    <span class="category-icon">
+                                        <i class="flaticon-swimming"></i>
+                                    </span>
+                                    <span class="category-title">Swimming Pool</span>
+                                    <span class="category-btn">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="ltn__category-item ltn__category-item-5 text-center">
+                                <a href="shop.html">
+                                    <span class="category-icon">
+                                        <i class="flaticon-secure-shield"></i>
+                                    </span>
+                                    <span class="category-title">Private Security</span>
+                                    <span class="category-btn">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="ltn__category-item ltn__category-item-5 text-center">
+                                <a href="shop.html">
+                                    <span class="category-icon">
+                                        <i class="flaticon-stethoscope"></i>
+                                    </span>
+                                    <span class="category-title">Medical Center</span>
+                                    <span class="category-btn">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="ltn__category-item ltn__category-item-5 text-center">
+                                <a href="shop.html">
+                                    <span class="category-icon">
+                                        <i class="flaticon-book"></i>
+                                    </span>
+                                    <span class="category-title">Library Area</span>
+                                    <span class="category-btn">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="ltn__category-item ltn__category-item-5 text-center">
+                                <a href="shop.html">
+                                    <span class="category-icon">
+                                        <i class="flaticon-bed-1"></i>
+                                    </span>
+                                    <span class="category-title">King Size Beds</span>
+                                    <span class="category-btn">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="ltn__category-item ltn__category-item-5 text-center">
+                                <a href="shop.html">
+                                    <span class="category-icon">
+                                        <i class="flaticon-home-2"></i>
+                                    </span>
+                                    <span class="category-title">Smart Homes</span>
+                                    <span class="category-btn">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="ltn__category-item ltn__category-item-5 text-center">
+                                <a href="shop.html">
+                                    <span class="category-icon">
+                                        <i class="flaticon-slider"></i>
+                                    </span>
+                                    <span class="category-title">Kid’s Playland</span>
+                                    <span class="category-btn">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CATEGORY AREA END -->
+            <!-- TESTIMONIAL AREA START (testimonial-7) -->
+            <div class="ltn__testimonial-area section-bg-1--- bg-image-top pt-115 pb-70" data-bs-bg="{{('public/frontend/img/bg/20.jpg')}}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title-area ltn__section-title-2--- text-center">
+                                <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Our Testimonial</h6>
+                                <h1 class="section-title">Clients Feedback</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ltn__testimonial-slider-5-active slick-arrow-1">
+                        <div class="col-lg-4">
+                            <div class="ltn__testimonial-item ltn__testimonial-item-7">
+                                <div class="ltn__testimoni-info">
+                                    <p>
+                                        <i class="flaticon-left-quote-1"></i>
+                                        Precious ipsum dolor sit amet
+                                consectetur adipisicing elit, sed dos
+                                mod tempor incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad min
+                                veniam, quis nostrud Precious ips
+                                um dolor sit amet, consecte
+                                    </p>
+                                    <div class="ltn__testimoni-info-inner">
+                                        <div class="ltn__testimoni-img">
+                                            <img src="{{('public/frontend/img/testimonial/1.jpg')}}" alt="#">
+                                        </div>
+                                        <div class="ltn__testimoni-name-designation">
+                                            <h5>Jacob William</h5>
+                                            <label>Selling Agents</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="ltn__testimonial-item ltn__testimonial-item-7">
+                                <div class="ltn__testimoni-info">
+                                    <p>
+                                        <i class="flaticon-left-quote-1"></i>
+                                        Precious ipsum dolor sit amet
+                                consectetur adipisicing elit, sed dos
+                                mod tempor incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad min
+                                veniam, quis nostrud Precious ips
+                                um dolor sit amet, consecte
+                                    </p>
+                                    <div class="ltn__testimoni-info-inner">
+                                        <div class="ltn__testimoni-img">
+                                            <img src="{{('public/frontend/img/testimonial/2.jpg')}}" alt="#">
+                                        </div>
+                                        <div class="ltn__testimoni-name-designation">
+                                            <h5>Kelian Anderson</h5>
+                                            <label>Selling Agents</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="ltn__testimonial-item ltn__testimonial-item-7">
+                                <div class="ltn__testimoni-info">
+                                    <p>
+                                        <i class="flaticon-left-quote-1"></i>
+                                        Precious ipsum dolor sit amet
+                                consectetur adipisicing elit, sed dos
+                                mod tempor incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad min
+                                veniam, quis nostrud Precious ips
+                                um dolor sit amet, consecte
+                                    </p>
+                                    <div class="ltn__testimoni-info-inner">
+                                        <div class="ltn__testimoni-img">
+                                            <img src="{{('public/frontend/img/testimonial/3.jpg')}}" alt="#">
+                                        </div>
+                                        <div class="ltn__testimoni-name-designation">
+                                            <h5>Adam Joseph</h5>
+                                            <label>Selling Agents</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="ltn__testimonial-item ltn__testimonial-item-7">
+                                <div class="ltn__testimoni-info">
+                                    <p>
+                                        <i class="flaticon-left-quote-1"></i>
+                                        Precious ipsum dolor sit amet
+                                consectetur adipisicing elit, sed dos
+                                mod tempor incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad min
+                                veniam, quis nostrud Precious ips
+                                um dolor sit amet, consecte
+                                    </p>
+                                    <div class="ltn__testimoni-info-inner">
+                                        <div class="ltn__testimoni-img">
+                                            <img src="{{('public/frontend/img/testimonial/4.jpg')}}" alt="#">
+                                        </div>
+                                        <div class="ltn__testimoni-name-designation">
+                                            <h5>James Carter</h5>
+                                            <label>Selling Agents</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+            <!-- TESTIMONIAL AREA END -->
+            <!-- BRAND LOGO AREA START -->
+            <div class="ltn__brand-logo-area ltn__brand-logo-1 section-bg-1 pt-290 pb-110 plr--9 d-none">
+                <div class="container-fluid">
+                    <div class="row ltn__brand-logo-active">
+                        <div class="col-lg-12">
+                            <div class="ltn__brand-logo-item">
+                                <img src="{{('public/frontend/img/brand-logo/1.png')}}" alt="Brand Logo">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="ltn__brand-logo-item">
+                                <img src="{{('public/frontend/img/brand-logo/2.png')}}" alt="Brand Logo">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="ltn__brand-logo-item">
+                                <img src="{{('public/frontend/img/brand-logo/3.png')}}" alt="Brand Logo">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="ltn__brand-logo-item">
+                                <img src="{{('public/frontend/img/brand-logo/4.png')}}" alt="Brand Logo">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="ltn__brand-logo-item">
+                                <img src="{{('public/frontend/img/brand-logo/5.png')}}" alt="Brand Logo">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="ltn__brand-logo-item">
+                                <img src="{{('public/frontend/img/brand-logo/3.png')}}" alt="Brand Logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- BRAND LOGO AREA END -->
+            <!-- BLOG AREA START (blog-3) -->
+            <div class="ltn__blog-area pt-115--- pb-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title-area ltn__section-title-2--- text-center">
+                                <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">News &Blogs</h6>
+                                <h1 class="section-title">Leatest News Feeds</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
+                        <!-- Blog Item -->
+                        <div class="col-lg-12">
+                            <div class="ltn__blog-item ltn__blog-item-3">
+                                <div class="ltn__blog-img">
+                                    <a href="blog-details.html">
+                                        <img src="{{('public/frontend/img/blog/1.jpg')}}" alt="#">
+                                    </a>
+                                </div>
+                                <div class="ltn__blog-brief">
+                                    <div class="ltn__blog-meta">
+                                        <ul>
+                                            <li class="ltn__blog-author">
+                                                <a href="#">
+                                                    <i class="far fa-user"></i>
+                                                    by: Admin
+                                                </a>
+                                            </li>
+                                            <li class="ltn__blog-tags">
+                                                <a href="#">
+                                                    <i class="fas fa-tags"></i>
+                                                    Decorate
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h3 class="ltn__blog-title">
+                                        <a href="blog-details.html">10 Brilliant Ways To Decorate Your Home</a>
+                                    </h3>
+                                    <div class="ltn__blog-meta-btn">
+                                        <div class="ltn__blog-meta">
+                                            <ul>
+                                                <li class="ltn__blog-date">
+                                                    <i class="far fa-calendar-alt"></i>
+                                                    June 24, 2021
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ltn__blog-btn">
+                                            <a href="blog-details.html">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Blog Item -->
+                        <div class="col-lg-12">
+                            <div class="ltn__blog-item ltn__blog-item-3">
+                                <div class="ltn__blog-img">
+                                    <a href="blog-details.html">
+                                        <img src="{{('public/frontend/img/blog/2.jpg')}}" alt="#">
+                                    </a>
+                                </div>
+                                <div class="ltn__blog-brief">
+                                    <div class="ltn__blog-meta">
+                                        <ul>
+                                            <li class="ltn__blog-author">
+                                                <a href="#">
+                                                    <i class="far fa-user"></i>
+                                                    by: Admin
+                                                </a>
+                                            </li>
+                                            <li class="ltn__blog-tags">
+                                                <a href="#">
+                                                    <i class="fas fa-tags"></i>
+                                                    Interior
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h3 class="ltn__blog-title">
+                                        <a href="blog-details.html">The Most Inspiring Interior Design Of 2021</a>
+                                    </h3>
+                                    <div class="ltn__blog-meta-btn">
+                                        <div class="ltn__blog-meta">
+                                            <ul>
+                                                <li class="ltn__blog-date">
+                                                    <i class="far fa-calendar-alt"></i>
+                                                    July 23, 2021
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ltn__blog-btn">
+                                            <a href="blog-details.html">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Blog Item -->
+                        <div class="col-lg-12">
+                            <div class="ltn__blog-item ltn__blog-item-3">
+                                <div class="ltn__blog-img">
+                                    <a href="blog-details.html">
+                                        <img src="{{('public/frontend/img/blog/3.jpg')}}" alt="#">
+                                    </a>
+                                </div>
+                                <div class="ltn__blog-brief">
+                                    <div class="ltn__blog-meta">
+                                        <ul>
+                                            <li class="ltn__blog-author">
+                                                <a href="#">
+                                                    <i class="far fa-user"></i>
+                                                    by: Admin
+                                                </a>
+                                            </li>
+                                            <li class="ltn__blog-tags">
+                                                <a href="#">
+                                                    <i class="fas fa-tags"></i>
+                                                    Estate
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h3 class="ltn__blog-title">
+                                        <a href="blog-details.html">Recent Commercial Real Estate Transactions</a>
+                                    </h3>
+                                    <div class="ltn__blog-meta-btn">
+                                        <div class="ltn__blog-meta">
+                                            <ul>
+                                                <li class="ltn__blog-date">
+                                                    <i class="far fa-calendar-alt"></i>
+                                                    May 22, 2021
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ltn__blog-btn">
+                                            <a href="blog-details.html">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Blog Item -->
+                        <div class="col-lg-12">
+                            <div class="ltn__blog-item ltn__blog-item-3">
+                                <div class="ltn__blog-img">
+                                    <a href="blog-details.html">
+                                        <img src="{{('public/frontend/img/blog/4.jpg')}}" alt="#">
+                                    </a>
+                                </div>
+                                <div class="ltn__blog-brief">
+                                    <div class="ltn__blog-meta">
+                                        <ul>
+                                            <li class="ltn__blog-author">
+                                                <a href="#">
+                                                    <i class="far fa-user"></i>
+                                                    by: Admin
+                                                </a>
+                                            </li>
+                                            <li class="ltn__blog-tags">
+                                                <a href="#">
+                                                    <i class="fas fa-tags"></i>
+                                                    Room
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h3 class="ltn__blog-title">
+                                        <a href="blog-details.html">Renovating a Living Room? Experts Share Their Secrets</a>
+                                    </h3>
+                                    <div class="ltn__blog-meta-btn">
+                                        <div class="ltn__blog-meta">
+                                            <ul>
+                                                <li class="ltn__blog-date">
+                                                    <i class="far fa-calendar-alt"></i>
+                                                    June 24, 2021
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ltn__blog-btn">
+                                            <a href="blog-details.html">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Blog Item -->
+                        <div class="col-lg-12">
+                            <div class="ltn__blog-item ltn__blog-item-3">
+                                <div class="ltn__blog-img">
+                                    <a href="blog-details.html">
+                                        <img src="{{('public/frontend/img/blog/5.jpg')}}" alt="#">
+                                    </a>
+                                </div>
+                                <div class="ltn__blog-brief">
+                                    <div class="ltn__blog-meta">
+                                        <ul>
+                                            <li class="ltn__blog-author">
+                                                <a href="#">
+                                                    <i class="far fa-user"></i>
+                                                    by: Admin
+                                                </a>
+                                            </li>
+                                            <li class="ltn__blog-tags">
+                                                <a href="#">
+                                                    <i class="fas fa-tags"></i>
+                                                    Trends
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h3 class="ltn__blog-title">
+                                        <a href="blog-details.html">7 home trends that will shape your house in 2021</a>
+                                    </h3>
+                                    <div class="ltn__blog-meta-btn">
+                                        <div class="ltn__blog-meta">
+                                            <ul>
+                                                <li class="ltn__blog-date">
+                                                    <i class="far fa-calendar-alt"></i>
+                                                    June 24, 2021
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ltn__blog-btn">
+                                            <a href="blog-details.html">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+            <!-- BLOG AREA END -->
+            <!-- CALL TO ACTION START (call-to-action-6) -->
+            <div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bs-bg="img/1.jpg--">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="call-to-action-inner call-to-action-inner-6 ltn__secondary-bg position-relative text-center---">
+                                <div class="coll-to-info text-color-white">
+                                    <h1>Looking for a dream home?</h1>
+                                    <p>We can help you realize your dream of a new home</p>
+                                </div>
+                                <div class="btn-wrapper">
+                                    <a class="btn btn-effect-3 btn-white" href="contact.html">
+                                        Explore Properties <i class="icon-next"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CALL TO ACTION END -->
+            <!-- FOOTER AREA START -->
+            <footer class="ltn__footer-area  ">
+                <div class="footer-top-area  section-bg-2 plr--5">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                                <div class="footer-widget footer-about-widget">
+                                    <div class="footer-logo">
+                                        <div class="site-logo">
+                                            <img src="{{('public/frontend/img/logo-2.png')}}" alt="Logo">
+                                        </div>
+                                    </div>
+                                    <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p>
+                                    <div class="footer-address">
+                                        <ul>
+                                            <li>
+                                                <div class="footer-address-icon">
+                                                    <i class="icon-placeholder"></i>
+                                                </div>
+                                                <div class="footer-address-info">
+                                                    <p>Brooklyn, New York, United States</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="footer-address-icon">
+                                                    <i class="icon-call"></i>
+                                                </div>
+                                                <div class="footer-address-info">
+                                                    <p>
+                                                        <a href="tel:+0123-456789">+0123-456789</a>
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="footer-address-icon">
+                                                    <i class="icon-mail"></i>
+                                                </div>
+                                                <div class="footer-address-info">
+                                                    <p>
+                                                        <a href="mailto:example@example.com">example@example.com</a>
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="ltn__social-media mt-20">
+                                        <ul>
+                                            <li>
+                                                <a href="#" title="Facebook">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Twitter">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Linkedin">
+                                                    <i class="fab fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Youtube">
+                                                    <i class="fab fa-youtube"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                                <div class="footer-widget footer-menu-widget clearfix">
+                                    <h4 class="footer-title">Company</h4>
+                                    <div class="footer-menu">
+                                        <ul>
+                                            <li>
+                                                <a href="about.html">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="blog.html">Blog</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop.html">All Products</a>
+                                            </li>
+                                            <li>
+                                                <a href="locations.html">Locations Map</a>
+                                            </li>
+                                            <li>
+                                                <a href="faq.html">FAQ</a>
+                                            </li>
+                                            <li>
+                                                <a href="contact.html">Contact us</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                                <div class="footer-widget footer-menu-widget clearfix">
+                                    <h4 class="footer-title">Services</h4>
+                                    <div class="footer-menu">
+                                        <ul>
+                                            <li>
+                                                <a href="order-tracking.html">Order tracking</a>
+                                            </li>
+                                            <li>
+                                                <a href="wishlist.html">Wish List</a>
+                                            </li>
+                                            <li>
+                                                <a href="login.html">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="account.html">My account</a>
+                                            </li>
+                                            <li>
+                                                <a href="about.html">Terms &Conditions</a>
+                                            </li>
+                                            <li>
+                                                <a href="about.html">Promotional Offers</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                                <div class="footer-widget footer-menu-widget clearfix">
+                                    <h4 class="footer-title">Customer Care</h4>
+                                    <div class="footer-menu">
+                                        <ul>
+                                            <li>
+                                                <a href="login.html">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="account.html">My account</a>
+                                            </li>
+                                            <li>
+                                                <a href="wishlist.html">Wish List</a>
+                                            </li>
+                                            <li>
+                                                <a href="order-tracking.html">Order tracking</a>
+                                            </li>
+                                            <li>
+                                                <a href="faq.html">FAQ</a>
+                                            </li>
+                                            <li>
+                                                <a href="contact.html">Contact us</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-sm-12 col-12">
+                                <div class="footer-widget footer-newsletter-widget">
+                                    <h4 class="footer-title">Newsletter</h4>
+                                    <p>Subscribe to our weekly Newsletter and receive updates via email.</p>
+                                    <div class="footer-newsletter">
+                                        <form action="#">
+                                            <input type="email" name="email" placeholder="Email*">
+                                            <div class="btn-wrapper">
+                                                <button class="theme-btn-1 btn" type="submit">
+                                                    <i class="fas fa-location-arrow"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <h5 class="mt-30">We Accept</h5>
+                                    <img src="{{('public/frontend/img/icons/payment-4.png')}}" alt="Payment Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ltn__copyright-area ltn__copyright-2 section-bg-7  plr--5">
+                    <div class="container-fluid ltn__border-top-2">
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="ltn__copyright-design clearfix">
+                                    <p>
+                                        All Rights Reserved @ Company <span class="current-year"></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12 align-self-center">
+                                <div class="ltn__copyright-menu text-end">
+                                    <ul>
+                                        <li>
+                                            <a href="#">Terms &Conditions</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Claim</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Privacy &Policy</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- FOOTER AREA END -->
+            <!-- MODAL AREA START (Quick View Modal) -->
+            <div class="ltn__modal-area ltn__quick-view-modal-area">
+                <div class="modal fade" id="quick_view_modal" tabindex="-1">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    <!-- <i class="fas fa-times"></i> -->
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="ltn__quick-view-modal-inner">
+                                    <div class="modal-product-item">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-12">
+                                                <div class="modal-product-img">
+                                                    <img src="{{('public/frontend/img/product/4.png')}}" alt="#">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <div class="modal-product-info">
+                                                    <div class="product-ratting">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="fas fa-star"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="fas fa-star"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="fas fa-star"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="fas fa-star-half-alt"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="far fa-star"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="review-total">
+                                                                <a href="#">( 95 Reviews )</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <h3>
+                                                        <a href="product-details.html">3 Rooms Manhattan</a>
+                                                    </h3>
+                                                    <div class="product-price">
+                                                        <span>$34,900</span>
+                                                        <del>$36,500</del>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="modal-product-brief">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos repellendus repudiandae incidunt quidem pariatur expedita, quo quis modi tempore non.</p>
+                                                    </div>
+                                                    <div class="modal-product-meta ltn__product-details-menu-1 d-none">
+                                                        <ul>
+                                                            <li>
+                                                                <strong>Categories:</strong>
+                                                                <span>
+                                                                    <a href="#">Parts</a>
+                                                                    <a href="#">Car</a>
+                                                                    <a href="#">Seat</a>
+                                                                    <a href="#">Cover</a>
+                                                                </span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="ltn__product-details-menu-2 d-none">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="cart-plus-minus">
+                                                                    <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
+                                                                    <i class="fas fa-shopping-cart"></i>
+                                                                    <span>ADD TO CART</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <!-- <hr> -->
+                                                    <div class="ltn__product-details-menu-3">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" class="" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
+                                                                    <i class="far fa-heart"></i>
+                                                                    <span>Add to Wishlist</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="" title="Compare" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+                                                                    <i class="fas fa-exchange-alt"></i>
+                                                                    <span>Compare</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="ltn__social-media">
+                                                        <ul>
+                                                            <li>Share:</li>
+                                                            <li>
+                                                                <a href="#" title="Facebook">
+                                                                    <i class="fab fa-facebook-f"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" title="Twitter">
+                                                                    <i class="fab fa-twitter"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" title="Linkedin">
+                                                                    <i class="fab fa-linkedin"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" title="Instagram">
+                                                                    <i class="fab fa-instagram"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <label class="float-end mb-0">
+                                                        <a class="text-decoration" href="product-details.html">
+                                                            <small>View Details</small>
+                                                        </a>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MODAL AREA END -->
+            <!-- MODAL AREA START (Add To Cart Modal) -->
+            <div class="ltn__modal-area ltn__add-to-cart-modal-area">
+                <div class="modal fade" id="add_to_cart_modal" tabindex="-1">
+                    <div class="modal-dialog modal-md" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="ltn__quick-view-modal-inner">
+                                    <div class="modal-product-item">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="modal-product-img">
+                                                    <img src="{{('public/frontend/img/product/1.png')}}" alt="#">
+                                                </div>
+                                                <div class="modal-product-info">
+                                                    <h5>
+                                                        <a href="product-details.html">3 Rooms Manhattan</a>
+                                                    </h5>
+                                                    <p class="added-cart">
+                                                        <i class="fa fa-check-circle"></i>
+                                                        Successfully added to your Cart
+                                                    </p>
+                                                    <div class="btn-wrapper">
+                                                        <a href="cart.html" class="theme-btn-1 btn btn-effect-1">View Cart</a>
+                                                        <a href="checkout.html" class="theme-btn-2 btn btn-effect-2">Checkout</a>
+                                                    </div>
+                                                </div>
+                                                <!-- additional-info -->
+                                                <div class="additional-info d-none">
+                                                    <p>
+                                                        We want to give you <b>10% discount</b>
+                                                        for your first order, <br>Use discount code at checkout
+                                                    </p>
+                                                    <div class="payment-method">
+                                                        <img src="{{('public/frontend/img/icons/payment.png')}}" alt="#">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MODAL AREA END -->
+            <!-- MODAL AREA START (Wishlist Modal) -->
+            <div class="ltn__modal-area ltn__add-to-cart-modal-area">
+                <div class="modal fade" id="liton_wishlist_modal" tabindex="-1">
+                    <div class="modal-dialog modal-md" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="ltn__quick-view-modal-inner">
+                                    <div class="modal-product-item">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="modal-product-img">
+                                                    <img src="{{('public/frontend/img/product/7.png')}}" alt="#">
+                                                </div>
+                                                <div class="modal-product-info">
+                                                    <h5>
+                                                        <a href="product-details.html">3 Rooms Manhattan</a>
+                                                    </h5>
+                                                    <p class="added-cart">
+                                                        <i class="fa fa-check-circle"></i>
+                                                        Successfully added to your Wishlist
+                                                    </p>
+                                                    <div class="btn-wrapper">
+                                                        <a href="wishlist.html" class="theme-btn-1 btn btn-effect-1">View Wishlist</a>
+                                                    </div>
+                                                </div>
+                                                <!-- additional-info -->
+                                                <div class="additional-info d-none">
+                                                    <p>
+                                                        We want to give you <b>10% discount</b>
+                                                        for your first order, <br>Use discount code at checkout
+                                                    </p>
+                                                    <div class="payment-method">
+                                                        <img src="{{('public/frontend/img/icons/payment.png')}}" alt="#">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MODAL AREA END -->
         </div>
+        <!-- Body main wrapper end -->
+        <!-- preloader area start -->
+        <div class="preloader d-none" id="preloader">
+            <div class="preloader-inner">
+                <div class="spinner">
+                    <div class="dot1"></div>
+                    <div class="dot2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- preloader area end -->
+        <!-- All JS Plugins -->
+        <script src="{{('public/frontend/js/plugins.js')}}"></script>
+        <!-- Main JS -->
+        <script src="{{('public/frontend/js/main.js')}}"></script>
     </body>
 </html>
