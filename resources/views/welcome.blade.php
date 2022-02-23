@@ -8,15 +8,15 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Place favicon.png in the root directory -->
-        <link rel="shortcut icon" href="{{('public/frontend/img/favicon.png')}}"type="image/x-icon"/>
+        <link rel="shortcut icon" href="{{asset('public/frontend/img/favicon.png')}}"type="image/x-icon"/>
         <!-- Font Icons css -->
-        <link rel="stylesheet" href="{{('public/frontend/css/font-icons.css')}}">
+        <link rel="stylesheet" href="{{asset('public/frontend/css/font-icons.css')}}">
         <!-- plugins css -->
-        <link rel="stylesheet" href="{{('public/frontend/css/plugins.css')}}">
+        <link rel="stylesheet" href="{{asset('public/frontend/css/plugins.css')}}">
         <!-- Main Stylesheet -->
-        <link rel="stylesheet" href="{{('public/frontend/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('public/frontend/css/style.css')}}">
         <!-- Responsive css -->
-        <link rel="stylesheet" href="{{('public/frontend/css/responsive.css')}}">
+        <link rel="stylesheet" href="{{asset('public/frontend/css/responsive.css')}}">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -134,7 +134,7 @@
                                 <div class="site-logo-wrap">
                                     <div class="site-logo">
                                         <a href="index.html">
-                                            <img src="{{('public/frontend/img/logo.png')}}" alt="Logo">
+                                            <img src="{{asset('public/frontend/img/logo.png')}}" alt="Logo">
                                         </a>
                                     </div>
                                     <div class="get-support clearfix d-none">
@@ -160,51 +160,7 @@
                                                     <ul class="sub-menu menu-pages-img-show">
                                                         <li>
                                                             <a href="index.html">Home Style 01</a>
-                                                            <img src="{{('public/frontend/img/home-demos/home-1.jpg')}}" alt="#">
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-2.html">Home Style 02</a>
-                                                            <img src="{{('public/frontend/img/home-demos/home-2.jpg')}}" alt="#">
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-3.html">Home Style 03</a>
-                                                            <img src="{{('public/frontend/img/home-demos/home-3.jpg')}}" alt="#">
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-4.html">Home Style 04</a>
-                                                            <img src="{{('public/frontend/img/home-demos/home-4.jpg')}}" alt="#">
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-5.html">
-                                                                Home Style 05 <span class="menu-item-badge">video</span>
-                                                            </a>
-                                                            <img src="{{('public/frontend/img/home-demos/home-5.jpg')}}" alt="#">
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-6.html">Home Style 06</a>
-                                                            <img src="{{('public/frontend/img/home-demos/home-6.jpg')}}" alt="#">
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-7.html">Home Style 07</a>
-                                                            <img src="{{('public/frontend/img/home-demos/home-7.jpg')}}" alt="#">
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-8.html">Home Style 08</a>
-                                                            <img src="{{('public/frontend/img/home-demos/home-8.jpg')}}" alt="#">
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-9.html">Home Style 09</a>
-                                                            <img src="{{('public/frontend/img/home-demos/home-9.jpg')}}" alt="#">
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-10.html">
-                                                                Home Style 10 <span class="menu-item-badge">Map</span>
-                                                            </a>
-                                                            <img src="{{('public/frontend/img/home-demos/home-10.jpg')}}" alt="#">
-                                                        </li>
-                                                        <li>
-                                                            <a href="index-11.html">Home Style 11</a>
-                                                            <img src="{{('public/frontend/img/home-demos/home-11.jpg')}}" alt="#">
+                                                            <img src="{{asset('public/frontend/img/home-demos/home-1.jpg')}}" alt="#">
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -385,7 +341,7 @@
                                                         </li>
                                                         <li>
                                                             <a href="shop.html">
-                                                                <img src="{{('public/frontend/img/banner/menu-banner-1.jpg')}}" alt="#">
+                                                                <img src="{{asset('public/frontend/img/banner/menu-banner-1.jpg')}}" alt="#">
                                                             </a>
                                                         </li>
                                                     </ul>
@@ -478,7 +434,7 @@
                         <div class="mini-cart-item clearfix">
                             <div class="mini-cart-img">
                                 <a href="#">
-                                    <img src="{{('public/frontend/img/product/1.png')}}" alt="Image">
+                                    <img src="{{asset('public/frontend/img/product/1.png')}}" alt="Image">
                                 </a>
                                 <span class="mini-cart-item-delete">
                                     <i class="icon-cancel"></i>
@@ -494,7 +450,7 @@
                         <div class="mini-cart-item clearfix">
                             <div class="mini-cart-img">
                                 <a href="#">
-                                    <img src="{{('public/frontend/img/product/2.png')}}" alt="Image">
+                                    <img src="{{asset('public/frontend/img/product/2.png')}}" alt="Image">
                                 </a>
                                 <span class="mini-cart-item-delete">
                                     <i class="icon-cancel"></i>
@@ -510,7 +466,7 @@
                         <div class="mini-cart-item clearfix">
                             <div class="mini-cart-img">
                                 <a href="#">
-                                    <img src="{{('public/frontend/img/product/3.png')}}" alt="Image">
+                                    <img src="{{asset('public/frontend/img/product/3.png')}}" alt="Image">
                                 </a>
                                 <span class="mini-cart-item-delete">
                                     <i class="icon-cancel"></i>
@@ -561,7 +517,7 @@
                     <div class="ltn__utilize-menu-head">
                         <div class="site-logo">
                             <a href="index.html">
-                                <img src="{{('public/frontend/img/logo.png')}}" alt="Logo">
+                                <img src="{{asset('public/frontend/img/logo.png')}}" alt="Logo">
                             </a>
                         </div>
                         <button class="ltn__utilize-close">×</button>
@@ -867,7 +823,7 @@
                                             </div>
                                         </div>
                                         <div class="slide-item-img">
-                                            <img src="{{('public/frontend/img/slider/21.png')}}" alt="#">
+                                            <img src="{{asset('public/frontend/img/slider/21.png')}}" alt="#">
                                         </div>
                                     </div>
                                 </div>
@@ -901,7 +857,7 @@
                                             </div>
                                         </div>
                                         <div class="slide-item-img slide-img-left">
-                                            <img src="{{('public/frontend/img/slider/21.png')}}" alt="#">
+                                            <img src="{{asset('public/frontend/img/slider/21.png')}}" alt="#">
                                         </div>
                                     </div>
                                 </div>
@@ -1024,10 +980,10 @@
                     <div class="row">
                         <div class="col-lg-6 align-self-center">
                             <div class="about-us-img-wrap about-img-left">
-                                <img src="{{('public/frontend/img/others/7.png')}}" alt="About Us Image">
+                                <img src="{{asset('public/frontend/img/others/7.png')}}" alt="About Us Image">
                                 <div class="about-us-img-info about-us-img-info-2 about-us-img-info-3">
                                     <div class="ltn__video-img ltn__animation-pulse1">
-                                        <img src="{{('public/frontend/img/others/8.png')}}" alt="video popup bg image">
+                                        <img src="{{asset('public/frontend/img/others/8.png')}}" alt="video popup bg image">
                                         <a class="ltn__video-icon-2 ltn__video-icon-2-border---" href="https://www.youtube.com/embed/X7R-q9rsrtU?autoplay=1&showinfo=0" data-rel="lightcase:myCollection">
                                             <i class="fa fa-play"></i>
                                         </a>
@@ -1189,18 +1145,18 @@
                                 </ul>
                                 <ul class="ltn__list-item-2 ltn__list-item-2-before--- ltn__list-item-2-img mb-50">
                                     <li>
-                                        <a href="{{('public/frontend/img/img-slide/11.jpg')}}" data-rel="lightcase:myCollection">
-                                            <img src="{{('public/frontend/img/img-slide/11.jpg')}}" alt="Image">
+                                        <a href="{{asset('public/frontend/img/img-slide/11.jpg')}}" data-rel="lightcase:myCollection">
+                                            <img src="{{asset('public/frontend/img/img-slide/11.jpg')}}" alt="Image">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{('public/frontend/img/img-slide/12.jpg')}}" data-rel="lightcase:myCollection">
-                                            <img src="{{('public/frontend/img/img-slide/12.jpg')}}" alt="Image">
+                                        <a href="{{asset('public/frontend/img/img-slide/12.jpg')}}" data-rel="lightcase:myCollection">
+                                            <img src="{{asset('public/frontend/img/img-slide/12.jpg')}}" alt="Image">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{('public/frontend/img/img-slide/13.jpg')}}" data-rel="lightcase:myCollection">
-                                            <img src="{{('public/frontend/img/img-slide/13.jpg')}}" alt="Image">
+                                        <a href="{{asset('public/frontend/img/img-slide/13.jpg')}}" data-rel="lightcase:myCollection">
+                                            <img src="{{asset('public/frontend/img/img-slide/13.jpg')}}" alt="Image">
                                         </a>
                                     </li>
                                 </ul>
@@ -1208,7 +1164,7 @@
                         </div>
                         <div class="col-lg-6 align-self-center">
                             <div class="about-us-img-wrap about-img-right">
-                                <img src="{{('public/frontend/img/others/9.png')}}" alt="About Us Image">
+                                <img src="{{asset('public/frontend/img/others/9.png')}}" alt="About Us Image">
                             </div>
                         </div>
                     </div>
@@ -1231,7 +1187,7 @@
                             <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white  box-shadow-1">
                                 <div class="ltn__feature-icon">
                                     <!-- <span><i class="flaticon-house"></i></span> -->
-                                    <img src="{{('public/frontend/img/icons/icon-img/21.png')}}" alt="#">
+                                    <img src="{{asset('public/frontend/img/icons/icon-img/21.png')}}" alt="#">
                                 </div>
                                 <div class="ltn__feature-info">
                                     <h3>
@@ -1248,7 +1204,7 @@
                             <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white  box-shadow-1 active">
                                 <div class="ltn__feature-icon">
                                     <!-- <span><i class="flaticon-house-3"></i></span> -->
-                                    <img src="{{('public/frontend/img/icons/icon-img/22.png')}}" alt="#">
+                                    <img src="{{asset('public/frontend/img/icons/icon-img/22.png')}}" alt="#">
                                 </div>
                                 <div class="ltn__feature-info">
                                     <h3>
@@ -1265,7 +1221,7 @@
                             <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white  box-shadow-1">
                                 <div class="ltn__feature-icon">
                                     <!-- <span><i class="flaticon-deal-1"></i></span> -->
-                                    <img src="{{('public/frontend/img/icons/icon-img/23.png')}}" alt="#">
+                                    <img src="{{asset('public/frontend/img/icons/icon-img/23.png')}}" alt="#">
                                 </div>
                                 <div class="ltn__feature-info">
                                     <h3>
@@ -1299,7 +1255,7 @@
                             <div class="ltn__product-item ltn__product-item-4 text-center---">
                                 <div class="product-img">
                                     <a href="product-details.html">
-                                        <img src="{{('public/frontend/img/product-3/1.jpg')}}" alt="#">
+                                        <img src="{{asset('public/frontend/img/product-3/1.jpg')}}" alt="#">
                                     </a>
                                     <div class="product-badge">
                                         <ul>
@@ -1377,7 +1333,7 @@
                                     <div class="real-estate-agent">
                                         <div class="agent-img">
                                             <a href="team-details.html">
-                                                <img src="{{('public/frontend/img/blog/author.jpg')}}" alt="#">
+                                                <img src="{{asset('public/frontend/img/blog/author.jpg')}}" alt="#">
                                             </a>
                                         </div>
                                         <div class="agent-brief">
@@ -1414,7 +1370,7 @@
                             <div class="ltn__product-item ltn__product-item-4 text-center---">
                                 <div class="product-img">
                                     <a href="product-details.html">
-                                        <img src="{{('public/frontend/img/product-3/2.jpg')}}" alt="#">
+                                        <img src="{{asset('public/frontend/img/product-3/2.jpg')}}" alt="#">
                                     </a>
                                     <div class="product-badge">
                                         <ul>
@@ -1492,7 +1448,7 @@
                                     <div class="real-estate-agent">
                                         <div class="agent-img">
                                             <a href="team-details.html">
-                                                <img src="{{('public/frontend/img/blog/author.jpg')}}" alt="#">
+                                                <img src="{{asset('public/frontend/img/blog/author.jpg')}}" alt="#">
                                             </a>
                                         </div>
                                         <div class="agent-brief">
@@ -1529,7 +1485,7 @@
                             <div class="ltn__product-item ltn__product-item-4 text-center---">
                                 <div class="product-img">
                                     <a href="product-details.html">
-                                        <img src="{{('public/frontend/img/product-3/3.jpg')}}" alt="#">
+                                        <img src="{{asset('public/frontend/img/product-3/3.jpg')}}" alt="#">
                                     </a>
                                     <div class="product-badge">
                                         <ul>
@@ -1607,7 +1563,7 @@
                                     <div class="real-estate-agent">
                                         <div class="agent-img">
                                             <a href="team-details.html">
-                                                <img src="{{('public/frontend/img/blog/author.jpg')}}" alt="#">
+                                                <img src="{{asset('public/frontend/img/blog/author.jpg')}}" alt="#">
                                             </a>
                                         </div>
                                         <div class="agent-brief">
@@ -1644,7 +1600,7 @@
                             <div class="ltn__product-item ltn__product-item-4 text-center---">
                                 <div class="product-img">
                                     <a href="product-details.html">
-                                        <img src="{{('public/frontend/img/product-3/4.jpg')}}" alt="#">
+                                        <img src="{{asset('public/frontend/img/product-3/4.jpg')}}" alt="#">
                                     </a>
                                     <div class="product-badge">
                                         <ul>
@@ -1722,7 +1678,7 @@
                                     <div class="real-estate-agent">
                                         <div class="agent-img">
                                             <a href="team-details.html">
-                                                <img src="{{('public/frontend/img/blog/author.jpg')}}" alt="#">
+                                                <img src="{{asset('public/frontend/img/blog/author.jpg')}}" alt="#">
                                             </a>
                                         </div>
                                         <div class="agent-brief">
@@ -1759,7 +1715,7 @@
                             <div class="ltn__product-item ltn__product-item-4 text-center---">
                                 <div class="product-img">
                                     <a href="product-details.html">
-                                        <img src="{{('public/frontend/img/product-3/5.jpg')}}" alt="#">
+                                        <img src="{{asset('public/frontend/img/product-3/5.jpg')}}" alt="#">
                                     </a>
                                     <div class="product-badge">
                                         <ul>
@@ -1837,7 +1793,7 @@
                                     <div class="real-estate-agent">
                                         <div class="agent-img">
                                             <a href="team-details.html">
-                                                <img src="{{('public/frontend/img/blog/author.jpg')}}" alt="#">
+                                                <img src="{{asset('public/frontend/img/blog/author.jpg')}}" alt="#">
                                             </a>
                                         </div>
                                         <div class="agent-brief">
@@ -1931,7 +1887,7 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="apartments-plan-img">
-                                                    <img src="{{('public/frontend/img/others/10.png')}}" alt="#">
+                                                    <img src="{{asset('public/frontend/img/others/10.png')}}" alt="#">
                                                 </div>
                                             </div>
                                         </div>
@@ -1975,7 +1931,7 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="apartments-plan-img">
-                                                    <img src="{{('public/frontend/img/others/10.png')}}" alt="#">
+                                                    <img src="{{asset('public/frontend/img/others/10.png')}}" alt="#">
                                                 </div>
                                             </div>
                                         </div>
@@ -2019,7 +1975,7 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="apartments-plan-img">
-                                                    <img src="{{('public/frontend/img/others/10.png')}}" alt="#">
+                                                    <img src="{{asset('public/frontend/img/others/10.png')}}" alt="#">
                                                 </div>
                                             </div>
                                         </div>
@@ -2063,7 +2019,7 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="apartments-plan-img">
-                                                    <img src="{{('public/frontend/img/others/10.png')}}" alt="#">
+                                                    <img src="{{asset('public/frontend/img/others/10.png')}}" alt="#">
                                                 </div>
                                             </div>
                                         </div>
@@ -2107,7 +2063,7 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="apartments-plan-img">
-                                                    <img src="{{('public/frontend/img/others/10.png')}}" alt="#">
+                                                    <img src="{{asset('public/frontend/img/others/10.png')}}" alt="#">
                                                 </div>
                                             </div>
                                         </div>
@@ -2121,7 +2077,7 @@
             <!-- APARTMENTS PLAN AREA END -->
             <!-- VIDEO AREA START -->
             <div class="ltn__video-popup-area ltn__video-popup-margin---">
-                <div class="ltn__video-bg-img ltn__video-popup-height-600--- bg-overlay-black-30 bg-image bg-fixed ltn__animation-pulse1" data-bs-bg="{{('public/frontend/img/bg/19.jpg')}}">
+                <div class="ltn__video-bg-img ltn__video-popup-height-600--- bg-overlay-black-30 bg-image bg-fixed ltn__animation-pulse1" data-bs-bg="{{asset('public/frontend/img/bg/19.jpg')}}">
                     <a class="ltn__video-icon-2 ltn__video-icon-2-border---" href="https://www.youtube.com/embed/X7R-q9rsrtU?autoplay=1&showinfo=0" data-rel="lightcase:myCollection">
                         <i class="fa fa-play"></i>
                     </a>
@@ -2129,7 +2085,7 @@
             </div>
             <!-- VIDEO AREA END -->
             <!-- CATEGORY AREA START -->
-            <div class="ltn__category-area section-bg-1-- ltn__primary-bg before-bg-1 bg-image bg-overlay-theme-black-5--0 pt-115 pb-90 d-none" data-bs-bg="{{('public/frontend/img/bg/5.jpg')}}">
+            <div class="ltn__category-area section-bg-1-- ltn__primary-bg before-bg-1 bg-image bg-overlay-theme-black-5--0 pt-115 pb-90 d-none" data-bs-bg="{{asset('public/frontend/img/bg/5.jpg')}}">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -2378,7 +2334,7 @@
             </div>
             <!-- CATEGORY AREA END -->
             <!-- TESTIMONIAL AREA START (testimonial-7) -->
-            <div class="ltn__testimonial-area section-bg-1--- bg-image-top pt-115 pb-70" data-bs-bg="{{('public/frontend/img/bg/20.jpg')}}">
+            <div class="ltn__testimonial-area section-bg-1--- bg-image-top pt-115 pb-70" data-bs-bg="{{asset('public/frontend/img/bg/20.jpg')}}">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -2403,7 +2359,7 @@
                                     </p>
                                     <div class="ltn__testimoni-info-inner">
                                         <div class="ltn__testimoni-img">
-                                            <img src="{{('public/frontend/img/testimonial/1.jpg')}}" alt="#">
+                                            <img src="{{asset('public/frontend/img/testimonial/1.jpg')}}" alt="#">
                                         </div>
                                         <div class="ltn__testimoni-name-designation">
                                             <h5>William Morningstar</h5>
@@ -2427,7 +2383,7 @@
                                     </p>
                                     <div class="ltn__testimoni-info-inner">
                                         <div class="ltn__testimoni-img">
-                                            <img src="{{('public/frontend/img/testimonial/2.jpg')}}" alt="#">
+                                            <img src="{{asset('public/frontend/img/testimonial/2.jpg')}}" alt="#">
                                         </div>
                                         <div class="ltn__testimoni-name-designation">
                                             <h5>William Morningstar</h5>
@@ -2451,7 +2407,7 @@
                                     </p>
                                     <div class="ltn__testimoni-info-inner">
                                         <div class="ltn__testimoni-img">
-                                            <img src="{{('public/frontend/img/testimonial/3.jpg')}}" alt="#">
+                                            <img src="{{asset('public/frontend/img/testimonial/3.jpg')}}" alt="#">
                                         </div>
                                         <div class="ltn__testimoni-name-designation">
                                             <h5>William Morningstar</h5>
@@ -2475,7 +2431,7 @@
                                     </p>
                                     <div class="ltn__testimoni-info-inner">
                                         <div class="ltn__testimoni-img">
-                                            <img src="{{('public/frontend/img/testimonial/4.jpg')}}" alt="#">
+                                            <img src="{{asset('public/frontend/img/testimonial/4.jpg')}}" alt="#">
                                         </div>
                                         <div class="ltn__testimoni-name-designation">
                                             <h5>William Morningstar</h5>
@@ -2496,32 +2452,32 @@
                     <div class="row ltn__brand-logo-active">
                         <div class="col-lg-12">
                             <div class="ltn__brand-logo-item">
-                                <img src="{{('public/frontend/img/brand-logo/1.png')}}" alt="Brand Logo">
+                                <img src="{{asset('public/frontend/img/brand-logo/1.png')}}" alt="Brand Logo">
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="ltn__brand-logo-item">
-                                <img src="{{('public/frontend/img/brand-logo/2.png')}}" alt="Brand Logo">
+                                <img src="{{asset('public/frontend/img/brand-logo/2.png')}}" alt="Brand Logo">
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="ltn__brand-logo-item">
-                                <img src="{{('public/frontend/img/brand-logo/3.png')}}" alt="Brand Logo">
+                                <img src="{{asset('public/frontend/img/brand-logo/3.png')}}" alt="Brand Logo">
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="ltn__brand-logo-item">
-                                <img src="{{('public/frontend/img/brand-logo/4.png')}}" alt="Brand Logo">
+                                <img src="{{asset('public/frontend/img/brand-logo/4.png')}}" alt="Brand Logo">
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="ltn__brand-logo-item">
-                                <img src="{{('public/frontend/img/brand-logo/5.png')}}" alt="Brand Logo">
+                                <img src="{{asset('public/frontend/img/brand-logo/5.png')}}" alt="Brand Logo">
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="ltn__brand-logo-item">
-                                <img src="{{('public/frontend/img/brand-logo/3.png')}}" alt="Brand Logo">
+                                <img src="{{asset('public/frontend/img/brand-logo/3.png')}}" alt="Brand Logo">
                             </div>
                         </div>
                     </div>
@@ -2545,7 +2501,7 @@
                             <div class="ltn__blog-item ltn__blog-item-3">
                                 <div class="ltn__blog-img">
                                     <a href="blog-details.html">
-                                        <img src="{{('public/frontend/img/blog/1.jpg')}}" alt="#">
+                                        <img src="{{asset('public/frontend/img/blog/1.jpg')}}" alt="#">
                                     </a>
                                 </div>
                                 <div class="ltn__blog-brief">
@@ -2589,7 +2545,7 @@
                             <div class="ltn__blog-item ltn__blog-item-3">
                                 <div class="ltn__blog-img">
                                     <a href="blog-details.html">
-                                        <img src="{{('public/frontend/img/blog/2.jpg')}}" alt="#">
+                                        <img src="{{asset('public/frontend/img/blog/2.jpg')}}" alt="#">
                                     </a>
                                 </div>
                                 <div class="ltn__blog-brief">
@@ -2633,7 +2589,7 @@
                             <div class="ltn__blog-item ltn__blog-item-3">
                                 <div class="ltn__blog-img">
                                     <a href="blog-details.html">
-                                        <img src="{{('public/frontend/img/blog/3.jpg')}}" alt="#">
+                                        <img src="{{asset('public/frontend/img/blog/3.jpg')}}" alt="#">
                                     </a>
                                 </div>
                                 <div class="ltn__blog-brief">
@@ -2677,7 +2633,7 @@
                             <div class="ltn__blog-item ltn__blog-item-3">
                                 <div class="ltn__blog-img">
                                     <a href="blog-details.html">
-                                        <img src="{{('public/frontend/img/blog/4.jpg')}}" alt="#">
+                                        <img src="{{asset('public/frontend/img/blog/4.jpg')}}" alt="#">
                                     </a>
                                 </div>
                                 <div class="ltn__blog-brief">
@@ -2721,7 +2677,7 @@
                             <div class="ltn__blog-item ltn__blog-item-3">
                                 <div class="ltn__blog-img">
                                     <a href="blog-details.html">
-                                        <img src="{{('public/frontend/img/blog/5.jpg')}}" alt="#">
+                                        <img src="{{asset('public/frontend/img/blog/5.jpg')}}" alt="#">
                                     </a>
                                 </div>
                                 <div class="ltn__blog-brief">
@@ -2795,7 +2751,7 @@
                                 <div class="footer-widget footer-about-widget">
                                     <div class="footer-logo">
                                         <div class="site-logo">
-                                            <img src="{{('public/frontend/img/logo-2.png')}}" alt="Logo">
+                                            <img src="{{asset('public/frontend/img/logo-2.png')}}" alt="Logo">
                                         </div>
                                     </div>
                                     <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p>
@@ -2953,7 +2909,7 @@
                                         </form>
                                     </div>
                                     <h5 class="mt-30">We Accept</h5>
-                                    <img src="{{('public/frontend/img/icons/payment-4.png')}}" alt="Payment Image">
+                                    <img src="{{asset('public/frontend/img/icons/payment-4.png')}}" alt="Payment Image">
                                 </div>
                             </div>
                         </div>
@@ -3006,7 +2962,7 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-12">
                                                 <div class="modal-product-img">
-                                                    <img src="{{('public/frontend/img/product/4.png')}}" alt="#">
+                                                    <img src="{{asset('public/frontend/img/product/4.png')}}" alt="#">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-12">
@@ -3157,7 +3113,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="modal-product-img">
-                                                    <img src="{{('public/frontend/img/product/1.png')}}" alt="#">
+                                                    <img src="{{asset('public/frontend/img/product/1.png')}}" alt="#">
                                                 </div>
                                                 <div class="modal-product-info">
                                                     <h5>
@@ -3179,7 +3135,7 @@
                                                         for your first order, <br>Use discount code at checkout
                                                     </p>
                                                     <div class="payment-method">
-                                                        <img src="{{('public/frontend/img/icons/payment.png')}}" alt="#">
+                                                        <img src="{{asset('public/frontend/img/icons/payment.png')}}" alt="#">
                                                     </div>
                                                 </div>
                                             </div>
@@ -3208,7 +3164,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="modal-product-img">
-                                                    <img src="{{('public/frontend/img/product/7.png')}}" alt="#">
+                                                    <img src="{{asset('public/frontend/img/product/7.png')}}" alt="#">
                                                 </div>
                                                 <div class="modal-product-info">
                                                     <h5>
@@ -3229,7 +3185,7 @@
                                                         for your first order, <br>Use discount code at checkout
                                                     </p>
                                                     <div class="payment-method">
-                                                        <img src="{{('public/frontend/img/icons/payment.png')}}" alt="#">
+                                                        <img src="{{asset('public/frontend/img/icons/payment.png')}}" alt="#">
                                                     </div>
                                                 </div>
                                             </div>
@@ -3255,8 +3211,8 @@
         </div>
         <!-- preloader area end -->
         <!-- All JS Plugins -->
-        <script src="{{('public/frontend/js/plugins.js')}}"></script>
+        <script src="{{asset('public/frontend/js/plugins.js')}}"></script>
         <!-- Main JS -->
-        <script src="{{('public/frontend/js/main.js')}}"></script>
+        <script src="{{asset('public/frontend/js/main.js')}}"></script>
     </body>
 </html>
