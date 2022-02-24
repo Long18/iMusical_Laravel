@@ -25,3 +25,4 @@ Route::get('/about', [AboutController::class, 'index']);
 //Backend routes
 
 Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/dashboard', [AdminController::class, 'show_dashboard']);
