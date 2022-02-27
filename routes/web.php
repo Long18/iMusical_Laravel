@@ -23,6 +23,8 @@ Route::get('/about', [AboutController::class, 'index']);
 
 
 //Backend routes
-
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/dashboard', [AdminController::class, 'show_dashboard']);
+Route::get('/logout', [AdminController::class, 'logout']);
+
+Route::post('/admin-dashboard', [AdminController::class, 'dashboard']);
