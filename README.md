@@ -5,10 +5,9 @@ Install Git.
 
 Open direct folder of Laravel: 
  - Right click and choose "Git Bash Here"
-    - Run: composer install 
+    - Run: **composer install**
     - Change file .env.example to .env 
-    - Run: php artisan key:generate
-    - Run: php artisan serve
+    - Run: **php artisan key:generate**
 
 Open file .env and change:
 
@@ -19,4 +18,4 @@ Open file .env and change:
     DB_USERNAME=remote
     DB_PASSWORD=remote@123
 
-    to connect to remote database ( MySQL Workbench ) 
+to connect to remote database ( MySQL Workbench ) 
