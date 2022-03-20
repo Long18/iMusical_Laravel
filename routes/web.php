@@ -32,5 +32,6 @@ Route::post('/admin-dashboard', [AdminController::class, 'dashboard']);
 
 //Category
 Route::get('/add-product', [CategoryController::class, 'add_product']);
-
 Route::get('/all-product', [CategoryController::class, 'all_product']);
+
+Route::post('/save-category-product', [CategoryController::class, 'save_category_product']);
