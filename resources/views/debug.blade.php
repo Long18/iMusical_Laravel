@@ -4,14 +4,15 @@
         <?php
             use Illuminate\Support\Facades\Session;
         ?>
+
     </head>
-    <body>
+    <body style="background-color: black; color:gainsboro">
         <?php
-            $brands = Session::get('brands');
+            $brands = Session::get('Product');
 
             if($brands){
                 foreach($brands as $item){
-                    echo "<h1> " . $item->brand_id . "</h1>";
+                    echo "<h1> " . $item->brand_id->name. "</h1>";
                 }
             }
         ?>
