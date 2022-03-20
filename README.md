@@ -14,7 +14,7 @@ Open file .env and change:
     DB_CONNECTION=mysql
     DB_HOST=27.74.219.184
     DB_PORT=3306
-    DB_DATABASE=elaravel
+    DB_DATABASE=imusical
     DB_USERNAME=remote
     DB_PASSWORD=remote@123
 
