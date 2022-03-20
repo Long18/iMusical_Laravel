@@ -1,472 +1,1061 @@
 <!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from vora.dexignlab.com/laravel/demo/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Mar 2022 04:04:13 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
 <head>
-<title>Dashboard</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- bootstrap-css -->
-<link rel="stylesheet" href="{{asset('public/backend/css/bootstrap.min.css')}}" >
-<!-- //bootstrap-css -->
-<!-- Custom CSS -->
-<link href="{{asset('public/backend/css/style.css')}}" rel='stylesheet' type='text/css' />
-<link href="{{asset('public/backend/css/style-responsive.css')}}" rel="stylesheet"/>
-<!-- font CSS -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<!-- font-awesome icons -->
-<link rel="stylesheet" href="{{asset('public/backend/css/font.css')}}" type="text/css"/>
-<link href="{{asset('public/backend/css/font-awesome.css')}}" rel="stylesheet"> 
-<link rel="stylesheet" href="{{asset('public/backend/css/morris.css')}}" type="text/css"/>
-<!-- calendar -->
-<link rel="stylesheet" href="{{asset('public/backend/css/monthly.css')}}">
-<!-- //calendar -->
-<!-- //font-awesome icons -->
-<script src="{{asset('public/backend/js/jquery2.0.3.min.js')}}"></script>
-<script src="{{asset('public/backend/js/raphael-min.js')}}"></script>
-<script src="{{asset('public/backend/js/morris.js')}}"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-token" content="rFtJ8NudN4YmTWbPJ4KufcTFd14V2dNIEXZdWTqS">
+    <title>Admin | Dashboard</title>
+    <meta name="description" content="Some description for the page" />
+
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/backend/images/favicon.png') }}">
+    <link href="{{ asset('public/backend/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}"
+        rel="stylesheet" type="text/css" />
+    <link href="{{ asset('public/backend/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet') }}" type="text/css" />
+    <link href="{{ asset('public/backend/vendor/chartist/css/chartist.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('public/backend/vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('public/backend/css/style.css') }}" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-<section id="container">
-<!--header start-->
-<header class="header fixed-top clearfix">
-<!--logo start-->
-<div class="brand">
-    <a href="{{URL::to('/dashboard')}}" class="logo">
-        ADMIN
-    </a>
-    <div class="sidebar-toggle-box">
-        <div class="fa fa-bars"></div>
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
     </div>
-</div>
-<!--logo end-->
-<div class="nav notify-row" id="top_menu">
-    <!--  notification start -->
-    <ul class="nav top-menu">
-        <!-- settings start -->
-        <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <i class="fa fa-tasks"></i>
-                <span class="badge bg-success">8</span>
-            </a>
-            <ul class="dropdown-menu extended tasks-bar">
-                <li>
-                    <p class="">You have 8 pending tasks</p>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="task-info clearfix">
-                            <div class="desc pull-left">
-                                <h5>Target Sell</h5>
-                                <p>25% , Deadline  12 June’13</p>
-                            </div>
-                                    <span class="notification-pie-chart pull-right" data-percent="45">
-                            <span class="percent"></span>
-                            </span>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="task-info clearfix">
-                            <div class="desc pull-left">
-                                <h5>Product Delivery</h5>
-                                <p>45% , Deadline  12 June’13</p>
-                            </div>
-                                    <span class="notification-pie-chart pull-right" data-percent="78">
-                            <span class="percent"></span>
-                            </span>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="task-info clearfix">
-                            <div class="desc pull-left">
-                                <h5>Payment collection</h5>
-                                <p>87% , Deadline  12 June’13</p>
-                            </div>
-                                    <span class="notification-pie-chart pull-right" data-percent="60">
-                            <span class="percent"></span>
-                            </span>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="task-info clearfix">
-                            <div class="desc pull-left">
-                                <h5>Target Sell</h5>
-                                <p>33% , Deadline  12 June’13</p>
-                            </div>
-                                    <span class="notification-pie-chart pull-right" data-percent="90">
-                            <span class="percent"></span>
-                            </span>
-                        </div>
-                    </a>
-                </li>
 
-                <li class="external">
-                    <a href="#">See All Tasks</a>
-                </li>
-            </ul>
-        </li>
-        <!-- settings end -->
-        <!-- inbox dropdown start-->
-        <li id="header_inbox_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <i class="fa fa-envelope-o"></i>
-                <span class="badge bg-important">4</span>
-            </a>
-            <ul class="dropdown-menu extended inbox">
-                <li>
-                    <p class="red">You have 4 Mails</p>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="photo"><img alt="avatar" src="{{asset('public/backend/images/3.png')}}"></span>
-                                <span class="subject">
-                                <span class="from">Jonathan Smith</span>
-                                <span class="time">Just now</span>
-                                </span>
-                                <span class="message">
-                                    Hello, this is an example msg.
-                                </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="photo"><img alt="avatar" src="{{asset('public/backend/images/1.png')}}"></span>
-                                <span class="subject">
-                                <span class="from">Jane Doe</span>
-                                <span class="time">2 min ago</span>
-                                </span>
-                                <span class="message">
-                                    Nice admin template
-                                </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="photo"><img alt="avatar" src="{{asset('public/backend/images/3.png')}}"></span>
-                                <span class="subject">
-                                <span class="from">Tasi sam</span>
-                                <span class="time">2 days ago</span>
-                                </span>
-                                <span class="message">
-                                    This is an example msg.
-                                </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="photo"><img alt="avatar" src="{{asset('public/backend/images/2.png')}}"></span>
-                                <span class="subject">
-                                <span class="from">Mr. Perfect</span>
-                                <span class="time">2 hour ago</span>
-                                </span>
-                                <span class="message">
-                                    Hi there, its a test
-                                </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">See all messages</a>
-                </li>
-            </ul>
-        </li>
-        <!-- inbox dropdown end -->
-        <!-- notification dropdown start-->
-        <li id="header_notification_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
-                <i class="fa fa-bell-o"></i>
-                <span class="badge bg-warning">3</span>
+    <div id="main-wrapper">
+
+        <div class="nav-header">
+            <a href="index-2.html" class="brand-logo">
+                <img class="logo-abbr" src="{{ asset('public/backend/images/logo.png') }}" alt="">
+                <img class="logo-compact" src="{{ asset('public/backend/images/logo-text.png') }}" alt="">
+                <img class="brand-title" src="{{ asset('public/backend/images/logo-text.png') }}" alt="">
             </a>
-            <ul class="dropdown-menu extended notification">
-                <li>
-                    <p>Notifications</p>
-                </li>
-                <li>
-                    <div class="alert alert-info clearfix">
-                        <span class="alert-icon"><i class="fa fa-bolt"></i></span>
-                        <div class="noti-info">
-                            <a href="#"> Server #1 overloaded.</a>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span
+                        class="line"></span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="chatbox">
+            <div class="chatbox-close"></div>
+            <div class="custom-tab-1">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#notes">Notes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#alerts">Alerts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#chat">Chat</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="chat" role="tabpanel">
+                        <div class="card mb-sm-3 mb-md-0 contacts_card dlab-chat-user-box">
+                            <div class="card-header chat-list-header text-center">
+                                <a href="javascript:void(0)"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1" />
+                                            <rect fill="#000000" opacity="0.3"
+                                                transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) "
+                                                x="4" y="11" width="16" height="2" rx="1" />
+                                        </g>
+                                    </svg></a>
+                                <div>
+                                    <h6 class="mb-1">Chat List</h6>
+                                    <p class="mb-0">Show All</p>
+                                </div>
+                                <a href="javascript:void(0)"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <circle fill="#000000" cx="5" cy="12" r="2" />
+                                            <circle fill="#000000" cx="12" cy="12" r="2" />
+                                            <circle fill="#000000" cx="19" cy="12" r="2" />
+                                        </g>
+                                    </svg></a>
+                            </div>
+                            <div class="card-body contacts_body p-0 dlab-scroll  " id="dlab_W_Contacts_Body">
+                                <ul class="contacts">
+                                    <li class="name-first-letter">A</li>
+                                    <li class="active dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Archie Parker</span>
+                                                <p>Kalid is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Alfie Mason</span>
+                                                <p>Taherah left 7 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/3.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>AharlieKane</span>
+                                                <p>Sami is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/4.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Athan Jacoby</span>
+                                                <p>Nargis left 30 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">B</li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/5.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Bashid Samim</span>
+                                                <p>Rashid left 50 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Breddie Ronan</span>
+                                                <p>Kalid is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Ceorge Carson</span>
+                                                <p>Taherah left 7 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">D</li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/3.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Darry Parker</span>
+                                                <p>Sami is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/4.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Denry Hunter</span>
+                                                <p>Nargis left 30 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">J</li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/5.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Jack Ronan</span>
+                                                <p>Rashid left 50 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Jacob Tucker</span>
+                                                <p>Kalid is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>James Logan</span>
+                                                <p>Taherah left 7 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/3.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Joshua Weston</span>
+                                                <p>Sami is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">O</li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/4.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Oliver Acker</span>
+                                                <p>Nargis left 30 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dlab-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="{{ asset('public/backend/images/avatar/5.jpg') }}"
+                                                    class="rounded-circle user_img') }}" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Oscar Weston</span>
+                                                <p>Rashid left 50 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card chat dlab-chat-history-box d-none">
+                            <div class="card-header chat-list-header text-center">
+                                <a href="javascript:void(0)" class="dlab-chat-history-back">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                            <rect fill="#000000" opacity="0.3"
+                                                transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000) "
+                                                x="14" y="7" width="2" height="10" rx="1" />
+                                            <path
+                                                d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z"
+                                                fill="#000000" fill-rule="nonzero"
+                                                transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997) " />
+                                        </g>
+                                    </svg>
+                                </a>
+                                <div>
+                                    <h6 class="mb-1">Chat with Khelesh</h6>
+                                    <p class="mb-0 text-success">Online</p>
+                                </div>
+                                <div class="dropdown">
+                                    <a href="javascript:void(0)" data-toggle="dropdown"><svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                            viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24" />
+                                                <circle fill="#000000" cx="5" cy="12" r="2" />
+                                                <circle fill="#000000" cx="12" cy="12" r="2" />
+                                                <circle fill="#000000" cx="19" cy="12" r="2" />
+                                            </g>
+                                        </svg></a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li class="dropdown-item"><i class="fa fa-user-circle text-primary mr-2"></i>
+                                            View profile</li>
+                                        <li class="dropdown-item"><i class="fa fa-users text-primary mr-2"></i> Add
+                                            to close friends</li>
+                                        <li class="dropdown-item"><i class="fa fa-plus text-primary mr-2"></i> Add to
+                                            group</li>
+                                        <li class="dropdown-item"><i class="fa fa-ban text-primary mr-2"></i> Block
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body msg_card_body dlab-scroll" id="dlab_W_Contacts_Body3">
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        Hi, how are you samim?
+                                        <span class="msg_time">8:40 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        Hi Khalid i am good tnx how about you?
+                                        <span class="msg_time_send">8:55 AM, Today</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        I am good too, thank you for your chat template
+                                        <span class="msg_time">9:00 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        You are welcome
+                                        <span class="msg_time_send">9:05 AM, Today</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        I am looking for your next templates
+                                        <span class="msg_time">9:07 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        Ok, thank you have a good day
+                                        <span class="msg_time_send">9:10 AM, Today</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        Bye, see you
+                                        <span class="msg_time">9:12 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        Hi, how are you samim?
+                                        <span class="msg_time">8:40 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        Hi Khalid i am good tnx how about you?
+                                        <span class="msg_time_send">8:55 AM, Today</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        I am good too, thank you for your chat template
+                                        <span class="msg_time">9:00 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        You are welcome
+                                        <span class="msg_time_send">9:05 AM, Today</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        I am looking for your next templates
+                                        <span class="msg_time">9:07 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        Ok, thank you have a good day
+                                        <span class="msg_time_send">9:10 AM, Today</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg') }}" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        Bye, see you
+                                        <span class="msg_time">9:12 AM, Today</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer type_msg">
+                                <div class="input-group">
+                                    <textarea class="form-control" placeholder="Type your message..."></textarea>
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-primary"><i
+                                                class="fa fa-location-arrow"></i></button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </li>
-                <li>
-                    <div class="alert alert-danger clearfix">
-                        <span class="alert-icon"><i class="fa fa-bolt"></i></span>
-                        <div class="noti-info">
-                            <a href="#"> Server #2 overloaded.</a>
+                    <div class="tab-pane fade" id="alerts" role="tabpanel">
+                        <div class="card mb-sm-3 mb-md-0 contacts_card">
+                            <div class="card-header chat-list-header text-center">
+                                <a href="javascript:void(0)"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <circle fill="#000000" cx="5" cy="12" r="2" />
+                                            <circle fill="#000000" cx="12" cy="12" r="2" />
+                                            <circle fill="#000000" cx="19" cy="12" r="2" />
+                                        </g>
+                                    </svg></a>
+                                <div>
+                                    <h6 class="mb-1">Notications</h6>
+                                    <p class="mb-0">Show All</p>
+                                </div>
+                                <a href="javascript:void(0)"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <path
+                                                d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                                                fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                            <path
+                                                d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                                                fill="#000000" fill-rule="nonzero" />
+                                        </g>
+                                    </svg></a>
+                            </div>
+                            <div class="card-body contacts_body p-0 dlab-scroll" id="dlab_W_Contacts_Body1">
+                                <ul class="contacts">
+                                    <li class="name-first-letter">SEVER STATUS</li>
+                                    <li class="active">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont primary">KK</div>
+                                            <div class="user_info">
+                                                <span>David Nester Birthday</span>
+                                                <p class="text-primary">Today</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">SOCIAL</li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont success">RU<i class="icon fa-birthday-cake"></i>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Perfection Simplified</span>
+                                                <p>Jame Smith commented on your status</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">SEVER STATUS</li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont primary">AU<i class="icon fa fa-user-plus"></i></div>
+                                            <div class="user_info">
+                                                <span>AharlieKane</span>
+                                                <p>Sami is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont info">MO<i class="icon fa fa-user-plus"></i></div>
+                                            <div class="user_info">
+                                                <span>Athan Jacoby</span>
+                                                <p>Nargis left 30 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer"></div>
                         </div>
                     </div>
-                </li>
-                <li>
-                    <div class="alert alert-success clearfix">
-                        <span class="alert-icon"><i class="fa fa-bolt"></i></span>
-                        <div class="noti-info">
-                            <a href="#"> Server #3 overloaded.</a>
+                    <div class="tab-pane fade" id="notes">
+                        <div class="card mb-sm-3 mb-md-0 note_card">
+                            <div class="card-header chat-list-header text-center">
+                                <a href="javascript:void(0)"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1" />
+                                            <rect fill="#000000" opacity="0.3"
+                                                transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) "
+                                                x="4" y="11" width="16" height="2" rx="1" />
+                                        </g>
+                                    </svg></a>
+                                <div>
+                                    <h6 class="mb-1">Notes</h6>
+                                    <p class="mb-0">Add New Nots</p>
+                                </div>
+                                <a href="javascript:void(0)"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <path
+                                                d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                                                fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                            <path
+                                                d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                                                fill="#000000" fill-rule="nonzero" />
+                                        </g>
+                                    </svg></a>
+                            </div>
+                            <div class="card-body contacts_body p-0 dlab-scroll" id="dlab_W_Contacts_Body2">
+                                <ul class="contacts">
+                                    <li class="active">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="user_info">
+                                                <span>New order placed..</span>
+                                                <p>10 Aug 2020</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="javascript:void(0)"
+                                                    class="btn btn-primary btn-xs sharp mr-1"><i
+                                                        class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0)" class="btn btn-danger btn-xs sharp"><i
+                                                        class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="user_info">
+                                                <span>Youtube, a video-sharing website..</span>
+                                                <p>10 Aug 2020</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="javascript:void(0)"
+                                                    class="btn btn-primary btn-xs sharp mr-1"><i
+                                                        class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0)" class="btn btn-danger btn-xs sharp"><i
+                                                        class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="user_info">
+                                                <span>john just buy your product..</span>
+                                                <p>10 Aug 2020</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="javascript:void(0)"
+                                                    class="btn btn-primary btn-xs sharp mr-1"><i
+                                                        class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0)" class="btn btn-danger btn-xs sharp"><i
+                                                        class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="user_info">
+                                                <span>Athan Jacoby</span>
+                                                <p>10 Aug 2020</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="javascript:void(0)"
+                                                    class="btn btn-primary btn-xs sharp mr-1"><i
+                                                        class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0)" class="btn btn-danger btn-xs sharp"><i
+                                                        class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </li>
+                </div>
+            </div>
+        </div>
 
-            </ul>
-        </li>
-        <!-- notification dropdown end -->
-    </ul>
-    <!--  notification end -->
-</div>
-<div class="top-nav clearfix">
-    <!--search & user info start-->
-    <ul class="nav pull-right top-menu">
-        <li>
-            <input type="text" class="form-control search" placeholder=" Search">
-        </li>
-        <!-- user login dropdown start-->
-        <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="{{asset('public/backend/images/2.png')}}">
-                <span class="username">
-					
-					<?php
-					$name = Session::get('admin_name');
-					if ($name) {
-						echo $name;
-					}
-					?>
 
-				</span>
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="{{URL::to('/logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
-            </ul>
-        </li>
-        <!-- user login dropdown end -->
-       
-    </ul>
-    <!--search & user info end-->
-</div>
-</header>
-<!--header end-->
-<!--sidebar start-->
-<aside>
-    <div id="sidebar" class="nav-collapse">
-        <!-- sidebar menu start-->
-        <div class="leftside-navigation">
-            <ul class="sidebar-menu" id="nav-accordion">
-                <li>
-                    <a class="active" href="{{URL::to('/dashboard')}}">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-book"></i>
-                        <span>UI Elements</span>
-                    </a>
-                    <ul class="sub">
-						<li><a href="typography.html">Typography</a></li>
-						<li><a href="glyphicon.html">glyphicon</a></li>
-                        <li><a href="grids.html">Grids</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="fontawesome.html">
-                        <i class="fa fa-bullhorn"></i>
-                        <span>Font awesome </span>
-                    </a>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-th"></i>
-                        <span>Data Tables</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="basic_table.html">Basic Table</a></li>
-                        <li><a href="responsive_table.html">Responsive Table</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-tasks"></i>
-                        <span>Form Components</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="form_component.html">Form Elements</a></li>
-                        <li><a href="form_validation.html">Form Validation</a></li>
-						<li><a href="dropzone.html">Dropzone</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-envelope"></i>
-                        <span>Mail </span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="mail.html">Inbox</a></li>
-                        <li><a href="mail_compose.html">Compose Mail</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class=" fa fa-bar-chart-o"></i>
-                        <span>Charts</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="chartjs.html">Chart js</a></li>
-                        <li><a href="flot_chart.html">Flot Charts</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class=" fa fa-bar-chart-o"></i>
-                        <span>Maps</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="google_map.html">Google Map</a></li>
-                        <li><a href="vector_map.html">Vector Map</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-glass"></i>
-                        <span>Extra</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="gallery.html">Gallery</a></li>
-						<li><a href="404.html">404 Error</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="login.html">
-                        <i class="fa fa-user"></i>
-                        <span>Login Page</span>
-                    </a>
-                </li>
-            </ul>            </div>
-        <!-- sidebar menu end-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                                Dashboard </div>
+                        </div>
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item">
+                                <div class="input-group search-area d-lg-inline-flex d-none">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><a href="javascript:void(0)"><i
+                                                    class="flaticon-381-search-2"></i></a></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Search here...">
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell bell-link" href="javascript:void(0)">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.23779 10.2492L4.66679 11.7064V8.30554L2.23779 10.2492Z"
+                                            fill="#67636D" />
+                                        <path
+                                            d="M1.1665 12.327V23.3334C1.16852 23.8531 1.28817 24.3656 1.5165 24.8325L9.20134 17.15L1.1665 12.327Z"
+                                            fill="#67636D" />
+                                        <path
+                                            d="M26.4832 24.8325C26.7115 24.3656 26.8311 23.8531 26.8332 23.3334V12.327L18.7983 17.15L26.4832 24.8325Z"
+                                            fill="#67636D" />
+                                        <path d="M23.3335 8.30554V11.7064L25.7625 10.2492L23.3335 8.30554Z"
+                                            fill="#67636D" />
+                                        <path
+                                            d="M21.0492 13.0772C21.024 12.998 21.0076 12.9162 21.0002 12.8334V7.00004C21.0002 6.69062 20.8773 6.39388 20.6585 6.17508C20.4397 5.95629 20.1429 5.83337 19.8335 5.83337H8.16684C7.85742 5.83337 7.56067 5.95629 7.34188 6.17508C7.12309 6.39388 7.00017 6.69062 7.00017 7.00004V12.8334C6.99274 12.9162 6.97631 12.998 6.95117 13.0772L14.0002 17.3064L21.0492 13.0772Z"
+                                            fill="#67636D" />
+                                        <path
+                                            d="M17.3262 3.50003L14.7292 1.4222C14.5222 1.25653 14.2651 1.16626 14 1.16626C13.7349 1.16626 13.4777 1.25653 13.2708 1.4222L10.6738 3.50003H17.3262Z"
+                                            fill="#67636D" />
+                                        <path
+                                            d="M16.7358 18.3855L14.6008 19.6688C14.4194 19.7778 14.2117 19.8354 14 19.8354C13.7883 19.8354 13.5806 19.7778 13.3991 19.6688L11.2641 18.3855L3.16748 26.4833C3.63438 26.7117 4.14691 26.8313 4.66665 26.8333H23.3333C23.853 26.8313 24.3656 26.7117 24.8325 26.4833L16.7358 18.3855Z"
+                                            fill="#67636D" />
+                                    </svg>
+                                    <span class="badge light text-white bg-primary rounded-circle">6</span>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link  ai-icon" href="javascript:void(0)" role="button"
+                                    data-toggle="dropdown">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M23.3333 19.8333H23.1187C23.2568 19.4597 23.3295 19.065 23.3333 18.6666V12.8333C23.3294 10.7663 22.6402 8.75902 21.3735 7.12565C20.1068 5.49228 18.3343 4.32508 16.3333 3.80679V3.49996C16.3333 2.88112 16.0875 2.28763 15.6499 1.85004C15.2123 1.41246 14.6188 1.16663 14 1.16663C13.3812 1.16663 12.7877 1.41246 12.3501 1.85004C11.9125 2.28763 11.6667 2.88112 11.6667 3.49996V3.80679C9.66574 4.32508 7.89317 5.49228 6.6265 7.12565C5.35983 8.75902 4.67058 10.7663 4.66667 12.8333V18.6666C4.67053 19.065 4.74316 19.4597 4.88133 19.8333H4.66667C4.35725 19.8333 4.0605 19.9562 3.84171 20.175C3.62292 20.3938 3.5 20.6905 3.5 21C3.5 21.3094 3.62292 21.6061 3.84171 21.8249C4.0605 22.0437 4.35725 22.1666 4.66667 22.1666H23.3333C23.6428 22.1666 23.9395 22.0437 24.1583 21.8249C24.3771 21.6061 24.5 21.3094 24.5 21C24.5 20.6905 24.3771 20.3938 24.1583 20.175C23.9395 19.9562 23.6428 19.8333 23.3333 19.8333Z"
+                                            fill="#67636D" />
+                                        <path
+                                            d="M9.98193 24.5C10.3863 25.2088 10.971 25.7981 11.6767 26.2079C12.3823 26.6178 13.1839 26.8337 13.9999 26.8337C14.816 26.8337 15.6175 26.6178 16.3232 26.2079C17.0289 25.7981 17.6136 25.2088 18.0179 24.5H9.98193Z"
+                                            fill="#67636D" />
+                                    </svg>
+                                    <span class="badge light text-white bg-primary rounded-circle">4</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div id="dlab_W_Notification1" class="widget-media dlab-scroll p-3 height380">
+                                        <ul class="timeline">
+                                            <li>
+                                                <div class="timeline-panel">
+                                                    <div class="media mr-2">
+                                                        <img alt="image" width="50"
+                                                            src="{{ asset('public/backend/images/avatar/1.jpg') }}">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h6 class="mb-1">Dr sultads Send you Photo</h6>
+                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="timeline-panel">
+                                                    <div class="media mr-2 media-info">
+                                                        KG
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h6 class="mb-1">Resport created successfully</h6>
+                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="timeline-panel">
+                                                    <div class="media mr-2 media-success">
+                                                        <i class="fa fa-home"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h6 class="mb-1">Reminder : Treatment Time!</h6>
+                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="timeline-panel">
+                                                    <div class="media mr-2">
+                                                        <img alt="image" width="50"
+                                                            src="{{ asset('public/backend/images/avatar/1.jpg') }}">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h6 class="mb-1">Dr sultads Send you Photo</h6>
+                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="timeline-panel">
+                                                    <div class="media mr-2 media-danger">
+                                                        KG
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h6 class="mb-1">Resport created successfully</h6>
+                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="timeline-panel">
+                                                    <div class="media mr-2 media-primary">
+                                                        <i class="fa fa-home"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h6 class="mb-1">Reminder : Treatment Time!</h6>
+                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a class="all-notification" href="javascript:void(0)">See all notifications <i
+                                            class="ti-arrow-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="javascript:void(0)" role="button"
+                                    data-toggle="dropdown">
+                                    <img src="{{ asset('public/backend/images/profile/17.jpg') }}" width="20"
+                                        alt="" />
+                                    <div class="header-info">
+                                        <span class="text-black">
+
+                                            <?php
+                                            $name = Session::get('admin_name');
+                                            if ($name) {
+                                                echo $name;
+                                            }
+                                            ?>
+
+                                        </span>
+                                        <p class="fs-12 mb-0">Super Admin</p>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="app-profile.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary"
+                                            width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        <span class="ml-2">Profile </span>
+                                    </a>
+                                    <a href="email-inbox.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success"
+                                            width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                            </path>
+                                            <polyline points="22,6 12,13 2,6"></polyline>
+                                        </svg>
+                                        <span class="ml-2">Inbox </span>
+                                    </a>
+                                    <a href="page-login.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
+                                            width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                            <polyline points="16 17 21 12 16 7"></polyline>
+                                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                                        </svg>
+                                        <span class="ml-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+
+
+        <div class="dlabnav">
+            <div class="dlabnav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-networking"></i>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="index-2.html">Dashboard</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="kanban.html">Kanban</a></li>
+                            <li><a href="calendar.html">Calendar</a></li>
+                            <li><a href="messages.html">Messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-television"></i>
+                            <span class="nav-text">Apps</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="app-profile.html">Profile</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="email-compose.html">Compose</a></li>
+                                    <li><a href="email-inbox.html">Inbox</a></li>
+                                    <li><a href="email-read.html">Read</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="app-calender.html">Calendar</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="ecom-product-grid.html">Product Grid</a></li>
+                                    <li><a href="ecom-product-list.html">Product List</a></li>
+                                    <li><a href="ecom-product-detail.html">Product Details</a></li>
+                                    <li><a href="ecom-product-order.html">Order</a></li>
+                                    <li><a href="ecom-checkout.html">Checkout</a></li>
+                                    <li><a href="ecom-invoice.html">Invoice</a></li>
+                                    <li><a href="ecom-customers.html">Customers</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-controls-3"></i>
+                            <span class="nav-text">Charts</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="chart-flot.html">Flot</a></li>
+                            <li><a href="chart-morris.html">Morris</a></li>
+                            <li><a href="chart-chartjs.html">Chartjs</a></li>
+                            <li><a href="chart-chartist.html">Chartist</a></li>
+                            <li><a href="chart-sparkline.html">Sparkline</a></li>
+                            <li><a href="chart-peity.html">Peity</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-internet"></i>
+                            <span class="nav-text">Bootstrap</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="ui-accordion.html">Accordion</a></li>
+                            <li><a href="ui-alert.html">Alert</a></li>
+                            <li><a href="ui-badge.html">Badge</a></li>
+                            <li><a href="ui-button.html">Button</a></li>
+                            <li><a href="ui-modal.html">Modal</a></li>
+                            <li><a href="ui-button-group.html">Button Group</a></li>
+                            <li><a href="ui-list-group.html">List Group</a></li>
+                            <li><a href="ui-media-object.html">Media Object</a></li>
+                            <li><a href="ui-card.html">Cards</a></li>
+                            <li><a href="ui-carousel.html">Carousel</a></li>
+                            <li><a href="ui-dropdown.html">Dropdown</a></li>
+                            <li><a href="ui-popover.html">Popover</a></li>
+                            <li><a href="ui-progressbar.html">Progressbar</a></li>
+                            <li><a href="ui-tab.html">Tab</a></li>
+                            <li><a href="ui-typography.html">Typography</a></li>
+                            <li><a href="ui-pagination.html">Pagination</a></li>
+                            <li><a href="ui-grid.html">Grid</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-heart"></i>
+                            <span class="nav-text">Plugins</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="uc-select2.html">Select 2</a></li>
+                            <li><a href="uc-nestable.html">Nestedable</a></li>
+                            <li><a href="uc-noui-slider.html">Noui Slider</a></li>
+                            <li><a href="uc-sweetalert.html">Sweet Alert</a></li>
+                            <li><a href="uc-toastr.html">Toastr</a></li>
+                            <li><a href="map-jqvmap.html">Jqv Map</a></li>
+                            <li><a href="uc-lightgallery.html">Light Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
+                            <i class="flaticon-381-settings-2"></i>
+                            <span class="nav-text">Widget</span>
+                        </a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-notepad"></i>
+                            <span class="nav-text">Forms</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="form-element.html">Form Elements</a></li>
+                            <li><a href="form-wizard.html">Wizard</a></li>
+                            <li><a href="form-editor-summernote.html">Summernote</a></li>
+                            <li><a href="form-pickers.html">Pickers</a></li>
+                            <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-network"></i>
+                            <span class="nav-text">Table</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
+                            <li><a href="table-datatable-basic.html">Datatable</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-layer-1"></i>
+                            <span class="nav-text">Pages</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="page-register.html">Register</a></li>
+                            <li><a href="page-login.html">Login</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="page-error-400.html">Error 400</a></li>
+                                    <li><a href="page-error-403.html">Error 403</a></li>
+                                    <li><a href="page-error-404.html">Error 404</a></li>
+                                    <li><a href="page-error-500.html">Error 500</a></li>
+                                    <li><a href="page-error-503.html">Error 503</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="page-lock-screen.html">Lock Screen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a class="add-menu-sidebar d-block" href="javascript:void(0)" data-toggle="modal"
+                    data-target="#addOrderModalside">+ New Project</a>
+                <div class="copyright">
+                    <p><strong>Vora Saas Admin Dashboard</strong> © 2020 All Rights Reserved</p>
+                    <p>Made with <span class="heart"></span> by DexignLab</p>
+                </div>
+            </div>
+        </div>
+
+        @yield('admin_content')
+
+
+        {{-- footer --}}
+
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="https://www.facebook.com/William.2418/"
+                        target="_blank">William</a>
+                    2022</p>
+            </div>
+        </div>
+
+
+
+
     </div>
-</aside>
-<!--sidebar end-->
-<!--main content start-->
-<section id="main-content">
-	<section class="wrapper">
 
-		@yield('admin_content')
 
-</section>
- <!-- footer -->
-		  <div class="footer">
-			<div class="wthree-copyright">
-			  <p>© 2022 Visitors. All rights reserved | Design by <a href="https://www.facebook.com/William.2418/">William</a></p>
-			</div>
-		  </div>
-  <!-- / footer -->
-</section>
-<!--main content end-->
-</section>
-<script src="{{asset('public/backend/js/bootstrap.js')}}"></script>
-<script src="{{asset('public/backend/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-<script src="{{asset('public/backend/js/scripts.js')}}"></script>
-<script src="{{asset('public/backend/js/jquery.slimscroll.js')}}"></script>
-<script src="{{asset('public/backend/js/jquery.nicescroll.js')}}"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="{{asset('public/backend/js/flot-chart/excanvas.min.js')}}"></script><![endif]-->
-<script src="{{asset('public/backend/js/jquery.scrollTo.js')}}"></script>
-<!-- morris JavaScript -->	
-<script>
-	$(document).ready(function() {
-		//BOX BUTTON SHOW AND CLOSE
-	   jQuery('.small-graph-box').hover(function() {
-		  jQuery(this).find('.box-button').fadeIn('fast');
-	   }, function() {
-		  jQuery(this).find('.box-button').fadeOut('fast');
-	   });
-	   jQuery('.small-graph-box .box-close').click(function() {
-		  jQuery(this).closest('.small-graph-box').fadeOut(200);
-		  return false;
-	   });
-	   
-	    //CHARTS
-	    function gd(year, day, month) {
-			return new Date(year, month - 1, day).getTime();
-		}
-		
-		graphArea2 = Morris.Area({
-			element: 'hero-area',
-			padding: 10,
-        behaveLikeLine: true,
-        gridEnabled: false,
-        gridLineColor: '#dddddd',
-        axes: true,
-        resize: true,
-        smooth:true,
-        pointSize: 0,
-        lineWidth: 0,
-        fillOpacity:0.85,
-			data: [
-				{period: '2015 Q1', iphone: 2668, ipad: null, itouch: 2649},
-				{period: '2015 Q2', iphone: 15780, ipad: 13799, itouch: 12051},
-				{period: '2015 Q3', iphone: 12920, ipad: 10975, itouch: 9910},
-				{period: '2015 Q4', iphone: 8770, ipad: 6600, itouch: 6695},
-				{period: '2016 Q1', iphone: 10820, ipad: 10924, itouch: 12300},
-				{period: '2016 Q2', iphone: 9680, ipad: 9010, itouch: 7891},
-				{period: '2016 Q3', iphone: 4830, ipad: 3805, itouch: 1598},
-				{period: '2016 Q4', iphone: 15083, ipad: 8977, itouch: 5185},
-				{period: '2017 Q1', iphone: 10697, ipad: 4470, itouch: 2038},
-			
-			],
-			lineColors:['#eb6f6f','#926383','#eb6f6f'],
-			xkey: 'period',
-            redraw: true,
-            ykeys: ['iphone', 'ipad', 'itouch'],
-            labels: ['All Visitors', 'Returning Visitors', 'Unique Visitors'],
-			pointSize: 2,
-			hideHover: 'auto',
-			resize: true
-		});
-		
-	   
-	});
-	</script>
-<!-- calendar -->
-	<script type="text/javascript" src="{{asset('public/backend/js/monthly.js')}}"></script>
-	<script type="text/javascript">
-		$(window).load( function() {
+    <script src="{{ asset('public/backend/vendor/global/global.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('public/backend/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"
+        type="text/javascript"></script>
+    <script src="{{ asset('public/backend/vendor/chart.js/Chart.bundle.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('public/backend/vendor/peity/jquery.peity.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('public/backend/vendor/apexchart/apexchart.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('public/backend/js/dashboard/dashboard-1.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('public/backend/js/custom.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('public/backend/js/dlabnav-init.js') }}" type="text/javascript"></script>
 
-			$('#mycalendar').monthly({
-				mode: 'event',
-				
-			});
-
-			$('#mycalendar2').monthly({
-				mode: 'picker',
-				target: '#mytarget',
-				setWidth: '250px',
-				startHidden: true,
-				showTrigger: '#mytarget',
-				stylePast: true,
-				disablePast: true
-			});
-
-		switch(window.location.protocol) {
-		case 'http:':
-		case 'https:':
-		// running on a server, should be good.
-		break;
-		case 'file:':
-		alert('Just a heads-up, events will not work when run locally.');
-		}
-
-		});
-	</script>
-	<!-- //calendar -->
 </body>
+
+<!-- Mirrored from vora.dexignlab.com/laravel/demo/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Mar 2022 04:04:47 GMT -->
+
 </html>
