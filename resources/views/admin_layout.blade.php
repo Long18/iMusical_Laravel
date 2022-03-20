@@ -604,7 +604,7 @@
                         target="_blank">William</a>
                     2022</p>
             </div>
-        </div>  
+        </div>
 
 
 
@@ -622,9 +622,11 @@
     <script src="{{ asset('public/backend/js/custom.js') }}" type="text/javascript"></script>
     <script src="{{ asset('public/backend/js/dlabnav-init.js') }}" type="text/javascript"></script>
 
-    <script src="{{ asset('public/backend/vendor/datatables/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('public/backend/vendor/datatables/js/jquery.dataTables.min.js') }}" type="text/javascript">
+    </script>
     <script src="{{ asset('public/backend/js/plugins-init/datatables.init.js') }}" type="text/javascript"></script>
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script data-cfasync="false"
+        src={{ asset('../../public/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') }}"></script>
 
 </body>
 
