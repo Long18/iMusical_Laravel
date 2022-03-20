@@ -48,7 +48,7 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '27.74.219.184'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'elaravel'),
+            'database' => env('DB_DATABASE', 'imusical'),
             'username' => env('DB_USERNAME', 'remote'),
             'password' => env('DB_PASSWORD', 'remote@123'),
             'unix_socket' => env('DB_SOCKET', ''),

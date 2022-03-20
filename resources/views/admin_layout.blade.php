@@ -38,7 +38,7 @@
     <div id="main-wrapper">
 
         <div class="nav-header">
-            <a href="index-2.html" class="brand-logo">
+            <a href="{{ URL::to('/dashboard') }}" class="brand-logo">
                 <img class="logo-abbr" src="{{ asset('public/backend/images/logo.png') }}" alt="">
                 <img class="logo-compact" src="{{ asset('public/backend/images/logo-text.png') }}" alt="">
                 <img class="brand-title" src="{{ asset('public/backend/images/logo-text.png') }}" alt="">
@@ -112,192 +112,6 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon offline"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>Alfie Mason</span>
-                                                <p>Taherah left 7 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/3.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>AharlieKane</span>
-                                                <p>Sami is online</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/4.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon offline"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>Athan Jacoby</span>
-                                                <p>Nargis left 30 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="name-first-letter">B</li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/5.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon offline"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>Bashid Samim</span>
-                                                <p>Rashid left 50 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>Breddie Ronan</span>
-                                                <p>Kalid is online</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon offline"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>Ceorge Carson</span>
-                                                <p>Taherah left 7 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="name-first-letter">D</li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/3.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>Darry Parker</span>
-                                                <p>Sami is online</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/4.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon offline"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>Denry Hunter</span>
-                                                <p>Nargis left 30 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="name-first-letter">J</li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/5.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon offline"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>Jack Ronan</span>
-                                                <p>Rashid left 50 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>Jacob Tucker</span>
-                                                <p>Kalid is online</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon offline"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>James Logan</span>
-                                                <p>Taherah left 7 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/3.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>Joshua Weston</span>
-                                                <p>Sami is online</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="name-first-letter">O</li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/4.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon offline"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>Oliver Acker</span>
-                                                <p>Nargis left 30 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="dlab-chat-user">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="img_cont">
-                                                <img src="{{ asset('public/backend/images/avatar/5.jpg') }}"
-                                                    class="rounded-circle user_img') }}" alt="" />
-                                                <span class="online_icon offline"></span>
-                                            </div>
-                                            <div class="user_info">
-                                                <span>Oscar Weston</span>
-                                                <p>Rashid left 50 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -357,136 +171,7 @@
                                         <span class="msg_time">8:40 AM, Today</span>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-end mb-4">
-                                    <div class="msg_cotainer_send">
-                                        Hi Khalid i am good tnx how about you?
-                                        <span class="msg_time_send">8:55 AM, Today</span>
-                                    </div>
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-start mb-4">
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                    <div class="msg_cotainer">
-                                        I am good too, thank you for your chat template
-                                        <span class="msg_time">9:00 AM, Today</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-end mb-4">
-                                    <div class="msg_cotainer_send">
-                                        You are welcome
-                                        <span class="msg_time_send">9:05 AM, Today</span>
-                                    </div>
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-start mb-4">
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                    <div class="msg_cotainer">
-                                        I am looking for your next templates
-                                        <span class="msg_time">9:07 AM, Today</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-end mb-4">
-                                    <div class="msg_cotainer_send">
-                                        Ok, thank you have a good day
-                                        <span class="msg_time_send">9:10 AM, Today</span>
-                                    </div>
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-start mb-4">
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                    <div class="msg_cotainer">
-                                        Bye, see you
-                                        <span class="msg_time">9:12 AM, Today</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-start mb-4">
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                    <div class="msg_cotainer">
-                                        Hi, how are you samim?
-                                        <span class="msg_time">8:40 AM, Today</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-end mb-4">
-                                    <div class="msg_cotainer_send">
-                                        Hi Khalid i am good tnx how about you?
-                                        <span class="msg_time_send">8:55 AM, Today</span>
-                                    </div>
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-start mb-4">
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                    <div class="msg_cotainer">
-                                        I am good too, thank you for your chat template
-                                        <span class="msg_time">9:00 AM, Today</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-end mb-4">
-                                    <div class="msg_cotainer_send">
-                                        You are welcome
-                                        <span class="msg_time_send">9:05 AM, Today</span>
-                                    </div>
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-start mb-4">
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                    <div class="msg_cotainer">
-                                        I am looking for your next templates
-                                        <span class="msg_time">9:07 AM, Today</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-end mb-4">
-                                    <div class="msg_cotainer_send">
-                                        Ok, thank you have a good day
-                                        <span class="msg_time_send">9:10 AM, Today</span>
-                                    </div>
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/2.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-start mb-4">
-                                    <div class="img_cont_msg">
-                                        <img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
-                                            class="rounded-circle user_img_msg') }}" alt="" />
-                                    </div>
-                                    <div class="msg_cotainer">
-                                        Bye, see you
-                                        <span class="msg_time">9:12 AM, Today</span>
-                                    </div>
-                                </div>
+                                
                             </div>
                             <div class="card-footer type_msg">
                                 <div class="input-group">
@@ -855,7 +540,7 @@
                                         </svg>
                                         <span class="ml-2">Inbox </span>
                                     </a>
-                                    <a href="page-login.html" class="dropdown-item ai-icon">
+                                    <a href="{{ URL::to('/admin') }}" class="dropdown-item ai-icon">
                                         <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
                                             width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -881,145 +566,23 @@
                 <ul class="metismenu" id="menu">
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-381-networking"></i>
-                            <span class="nav-text">Dashboard</span>
+                            <span class="nav-text">Category</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="index-2.html">Dashboard</a></li>
-                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="{{ URL::to('/all-product') }}">All Product</a></li>
+                            <li><a href="{{ URL::to('/add-product') }}">Add Product</a></li>
                             <li><a href="contacts.html">Contacts</a></li>
                             <li><a href="kanban.html">Kanban</a></li>
                             <li><a href="calendar.html">Calendar</a></li>
                             <li><a href="messages.html">Messages</a></li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-381-television"></i>
-                            <span class="nav-text">Apps</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="app-profile.html">Profile</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="email-compose.html">Compose</a></li>
-                                    <li><a href="email-inbox.html">Inbox</a></li>
-                                    <li><a href="email-read.html">Read</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="app-calender.html">Calendar</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="ecom-product-grid.html">Product Grid</a></li>
-                                    <li><a href="ecom-product-list.html">Product List</a></li>
-                                    <li><a href="ecom-product-detail.html">Product Details</a></li>
-                                    <li><a href="ecom-product-order.html">Order</a></li>
-                                    <li><a href="ecom-checkout.html">Checkout</a></li>
-                                    <li><a href="ecom-invoice.html">Invoice</a></li>
-                                    <li><a href="ecom-customers.html">Customers</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-381-controls-3"></i>
-                            <span class="nav-text">Charts</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="chart-flot.html">Flot</a></li>
-                            <li><a href="chart-morris.html">Morris</a></li>
-                            <li><a href="chart-chartjs.html">Chartjs</a></li>
-                            <li><a href="chart-chartist.html">Chartist</a></li>
-                            <li><a href="chart-sparkline.html">Sparkline</a></li>
-                            <li><a href="chart-peity.html">Peity</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-381-internet"></i>
-                            <span class="nav-text">Bootstrap</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="ui-accordion.html">Accordion</a></li>
-                            <li><a href="ui-alert.html">Alert</a></li>
-                            <li><a href="ui-badge.html">Badge</a></li>
-                            <li><a href="ui-button.html">Button</a></li>
-                            <li><a href="ui-modal.html">Modal</a></li>
-                            <li><a href="ui-button-group.html">Button Group</a></li>
-                            <li><a href="ui-list-group.html">List Group</a></li>
-                            <li><a href="ui-media-object.html">Media Object</a></li>
-                            <li><a href="ui-card.html">Cards</a></li>
-                            <li><a href="ui-carousel.html">Carousel</a></li>
-                            <li><a href="ui-dropdown.html">Dropdown</a></li>
-                            <li><a href="ui-popover.html">Popover</a></li>
-                            <li><a href="ui-progressbar.html">Progressbar</a></li>
-                            <li><a href="ui-tab.html">Tab</a></li>
-                            <li><a href="ui-typography.html">Typography</a></li>
-                            <li><a href="ui-pagination.html">Pagination</a></li>
-                            <li><a href="ui-grid.html">Grid</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-381-heart"></i>
-                            <span class="nav-text">Plugins</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="uc-select2.html">Select 2</a></li>
-                            <li><a href="uc-nestable.html">Nestedable</a></li>
-                            <li><a href="uc-noui-slider.html">Noui Slider</a></li>
-                            <li><a href="uc-sweetalert.html">Sweet Alert</a></li>
-                            <li><a href="uc-toastr.html">Toastr</a></li>
-                            <li><a href="map-jqvmap.html">Jqv Map</a></li>
-                            <li><a href="uc-lightgallery.html">Light Gallery</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
-                            <i class="flaticon-381-settings-2"></i>
-                            <span class="nav-text">Widget</span>
-                        </a>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-381-notepad"></i>
-                            <span class="nav-text">Forms</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="form-element.html">Form Elements</a></li>
-                            <li><a href="form-wizard.html">Wizard</a></li>
-                            <li><a href="form-editor-summernote.html">Summernote</a></li>
-                            <li><a href="form-pickers.html">Pickers</a></li>
-                            <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-381-network"></i>
-                            <span class="nav-text">Table</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
-                            <li><a href="table-datatable-basic.html">Datatable</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-381-layer-1"></i>
-                            <span class="nav-text">Pages</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="page-register.html">Register</a></li>
-                            <li><a href="page-login.html">Login</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="page-error-400.html">Error 400</a></li>
-                                    <li><a href="page-error-403.html">Error 403</a></li>
-                                    <li><a href="page-error-404.html">Error 404</a></li>
-                                    <li><a href="page-error-500.html">Error 500</a></li>
-                                    <li><a href="page-error-503.html">Error 503</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="page-lock-screen.html">Lock Screen</a></li>
-                        </ul>
-                    </li>
+                    
                 </ul>
                 <a class="add-menu-sidebar d-block" href="javascript:void(0)" data-toggle="modal"
                     data-target="#addOrderModalside">+ New Project</a>
                 <div class="copyright">
-                    <p><strong>Vora Saas Admin Dashboard</strong> © 2020 All Rights Reserved</p>
+                    <p><strong>Admin Dashboard</strong> © 2022 All Rights Reserved</p>
                     <p>Made with <span class="heart"></span> by DexignLab</p>
                 </div>
             </div>

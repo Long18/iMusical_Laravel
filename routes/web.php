@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,8 @@ Route::get('/dashboard', [AdminController::class, 'show_dashboard']);
 Route::get('/logout', [AdminController::class, 'logout']);
 
 Route::post('/admin-dashboard', [AdminController::class, 'dashboard']);
+
+//Category
+Route::get('/add-product', [CategoryController::class, 'add_product']);
+
+Route::get('/all-product', [CategoryController::class, 'all_product']);
