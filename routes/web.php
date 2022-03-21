@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DebugController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,8 @@ Route::post('/admin-dashboard', [AdminController::class, 'dashboard']);
 //Category
 Route::get('/add-product', [CategoryController::class, 'add_product']);
 Route::get('/all-product', [CategoryController::class, 'all_product']);
-
 Route::post('/save-category-product', [CategoryController::class, 'save_category_product']);
+
+//debug
+Route::get('/debug',[DebugController::class,'debug']);
+
