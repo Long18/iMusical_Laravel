@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Add Product</h4>
+                            <h4 class="card-title">Add type</h4>
                         </div>
                         <div class="card-body">
                             <?php
@@ -22,17 +22,17 @@
                                     }
                                     ?>
                             <div class="form-validation">
-                                <form class="form-valide" action="{{URL::to('/save-product')}}" method="post">
+                                <form class="form-valide" action="{{URL::to('/save-type')}}" method="post">
                                     {{ csrf_field() }}
                                     <div class="row">
                                         <div class="col-xl-6">
                                             <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="val-name-product">Name Product
+                                                <label class="col-lg-4 col-form-label" for="val-name-type">Name type
                                                     <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-name-product"
-                                                        name="val_name_product" placeholder="Enter a name product..">
+                                                    <input type="text" class="form-control" id="val-name-type"
+                                                        name="val_name_type" placeholder="Enter a name type..">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -141,15 +141,12 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="val-range">Status
+                                                <label class="col-lg-4 col-form-label" for="val-range">Range [1, 5]
                                                     <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <select class="form-control default-select" id="val-status"
-                                                        name="val-status">
-                                                        <option value="1">Available</option>
-                                                        <option value="0">Sould Out</option>
-                                                    </select>
+                                                    <input type="text" class="form-control" id="val-range"
+                                                        name="val-range" placeholder="4">
                                                 </div>
                                             </div>
                                             <div class="form-group row">

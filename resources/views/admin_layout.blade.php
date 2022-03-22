@@ -16,10 +16,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/backend/images/favicon.png') }}">
     <link href="{{ asset('public/backend/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}"
         rel="stylesheet" type="text/css" />
-    <link href="{{ asset('public/backend/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet') }}" type="text/css" />
+    <link href="{{ asset('public/backend/vendor/jqvmap/css/jqvmap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('public/backend/vendor/chartist/css/chartist.min.css') }}" rel="stylesheet"
         type="text/css" />
     <link href="{{ asset('public/backend/vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet"
+        type="text/css" />
+
+    <link href="{{ asset('public/backend/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}"
+        rel="stylesheet" type="text/css" />
+    <link href="{{ asset('public/backend/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet"
         type="text/css" />
     <link href="{{ asset('public/backend/css/style.css') }}" rel="stylesheet" type="text/css" />
 </head>
@@ -171,7 +176,7 @@
                                         <span class="msg_time">8:40 AM, Today</span>
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div class="card-footer type_msg">
                                 <div class="input-group">
@@ -566,24 +571,41 @@
                 <ul class="metismenu" id="menu">
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-381-networking"></i>
-                            <span class="nav-text">Category</span>
+                            <span class="nav-text">Dashboard</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ URL::to('/all-product') }}">All Product</a></li>
-                            <li><a href="{{ URL::to('/add-product') }}">Add Product</a></li>
-                            <li><a href="contacts.html">Contacts</a></li>
-                            <li><a href="kanban.html">Kanban</a></li>
+                            <li><a href="{{ URL::to('/dashboard') }}">Dashboard</a></li>
                             <li><a href="calendar.html">Calendar</a></li>
                             <li><a href="messages.html">Messages</a></li>
                         </ul>
                     </li>
-                    
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="flaticon-381-network"></i>
+                        <span class="nav-text">Product</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{ URL::to('/all-products') }}">All Products</a></li>
+                        <li><a href="{{ URL::to('/add-product') }}">Add Product</a></li>
+                    </ul>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="flaticon-381-layer-1"></i>
+                        <span class="nav-text">Types</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{ URL::to('/all-types') }}">All Types</a></li>
+                        <li><a href="{{ URL::to('/add-type') }}">Add Types</a></li>
+                    </ul>
+
+                </li>
+                
+            </li>
+
                 </ul>
                 <a class="add-menu-sidebar d-block" href="javascript:void(0)" data-toggle="modal"
                     data-target="#addOrderModalside">+ New Project</a>
                 <div class="copyright">
                     <p><strong>Admin Dashboard</strong> © 2022 All Rights Reserved</p>
-                    <p>Made with <span class="heart"></span> by DexignLab</p>
+                    <p>Made with <span class="heart"></span> by Isekai Team</p>
                 </div>
             </div>
         </div>
@@ -596,7 +618,7 @@
         <div class="footer">
             <div class="copyright">
                 <p>Copyright © Designed &amp; Developed by <a href="https://www.facebook.com/William.2418/"
-                        target="_blank">William</a>
+                        target="_blank">Isekai Team</a>
                     2022</p>
             </div>
         </div>
@@ -616,6 +638,12 @@
     <script src="{{ asset('public/backend/js/dashboard/dashboard-1.js') }}" type="text/javascript"></script>
     <script src="{{ asset('public/backend/js/custom.js') }}" type="text/javascript"></script>
     <script src="{{ asset('public/backend/js/dlabnav-init.js') }}" type="text/javascript"></script>
+
+    <script src="{{ asset('public/backend/vendor/datatables/js/jquery.dataTables.min.js') }}" type="text/javascript">
+    </script>
+    <script src="{{ asset('public/backend/js/plugins-init/datatables.init.js') }}" type="text/javascript"></script>
+    <script data-cfasync="false"
+        src={{ asset('../../public/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') }}"></script>
 
 </body>
 
