@@ -571,17 +571,34 @@
                 <ul class="metismenu" id="menu">
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-381-networking"></i>
-                            <span class="nav-text">Category</span>
+                            <span class="nav-text">Dashboard</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ URL::to('/all-product') }}">All Product</a></li>
-                            <li><a href="{{ URL::to('/add-product') }}">Add Product</a></li>
-                            <li><a href="contacts.html">Contacts</a></li>
-                            <li><a href="kanban.html">Kanban</a></li>
+                            <li><a href="{{ URL::to('/dashboard') }}">Dashboard</a></li>
                             <li><a href="calendar.html">Calendar</a></li>
                             <li><a href="messages.html">Messages</a></li>
                         </ul>
                     </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="flaticon-381-network"></i>
+                        <span class="nav-text">Product</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{ URL::to('/all-products') }}">All Products</a></li>
+                        <li><a href="{{ URL::to('/add-product') }}">Add Product</a></li>
+                    </ul>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="flaticon-381-layer-1"></i>
+                        <span class="nav-text">Types</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{ URL::to('/all-types') }}">All Types</a></li>
+                        <li><a href="{{ URL::to('/add-type') }}">Add Types</a></li>
+                    </ul>
+
+                </li>
+                
+            </li>
 
                 </ul>
                 <a class="add-menu-sidebar d-block" href="javascript:void(0)" data-toggle="modal"

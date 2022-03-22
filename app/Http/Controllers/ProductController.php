@@ -11,10 +11,10 @@ session_start();
 
 class ProductController extends Controller
 {
-    public function all_product()
+    public function all_products()
     {
         $all_products = DB::table('products')->get();
-        $manager_products = view('admin.all_product')->with('all_products', $all_products);
+        $manager_products = view('admin.all_products')->with('all_products', $all_products);
         return view('admin_layout')->with('admin.all_products', $manager_products);
     }
 
@@ -66,8 +66,7 @@ class ProductController extends Controller
 
     public function delete_product($product_id)
     {
-        return Redirect::to('all-product');
-        
+        DB::table('products')->where('product_id', $product_id)->delete();
         Session::put('messenge', 'Your product was deleted!!');
         return Redirect::to('all-product');
     }

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TypesController;
 use App\Http\Controllers\DebugController;
 
 /*
@@ -31,15 +32,25 @@ Route::get('/logout', [AdminController::class, 'logout']);
 
 Route::post('/admin-dashboard', [AdminController::class, 'dashboard']);
 
-//Category
+//Product
+Route::get('/all-products', [ProductController::class, 'all_products']);
 Route::get('/add-product', [ProductController::class, 'add_product']);
-Route::get('/all-product', [ProductController::class, 'all_product']);
 Route::get('/edit-product/{product_id}', [ProductController::class, 'edit_product']);
 Route::get('/delete-product/{product_id}', [ProductController::class, 'delete_product']);
 
 
 Route::post('/save-product', [ProductController::class, 'save_product']);
 Route::post('/update-product/{product_id}', [ProductController::class, 'update_product']);
+
+//Types
+Route::get('/all-types', [TypesController::class, 'all_types']);
+Route::get('/add-type', [TypesController::class, 'add_type']);
+Route::get('/edit-type/{type_id}', [TypesController::class, 'edit_type']);
+Route::get('/delete-type/{type_id}', [TypesController::class, 'delete_type']);
+
+
+Route::post('/save-type', [TypesController::class, 'save_type']);
+Route::post('/update-type/{type_id}', [TypesController::class, 'update_type']);
 
 //debug
 Route::get('/debug',[DebugController::class,'debug']);
