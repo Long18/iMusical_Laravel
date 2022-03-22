@@ -145,12 +145,15 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-range">Range [1, 5]
+                                                    <label class="col-lg-4 col-form-label" for="val-range">Status
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-range"
-                                                            name="val-range" placeholder="4">
+                                                        <select class="form-control default-select" id="val-status"
+                                                            name="val-status">
+                                                            <option value="1">Available</option>
+                                                            <option value="0">Sould Out</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">

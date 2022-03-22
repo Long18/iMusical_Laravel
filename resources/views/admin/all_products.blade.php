@@ -8,16 +8,16 @@
                         <h4 class="card-title">Product</h4>
                     </div>
                     <?php
-                                    
-                                    use Illuminate\Support\Facades\Session;
-                                    
-                                    $message = Session::get('message');
-                                    if ($message) {
-                                        echo '<span class="text-alert">' . $message . '</span>';
-                                        Session::put('message', null);
-                                        // If message not empty -> make empty
-                                    }
-                                    ?>
+                    
+                    use Illuminate\Support\Facades\Session;
+                    
+                    $message = Session::get('message');
+                    if ($message) {
+                        echo '<span class="text-alert">' . $message . '</span>';
+                        Session::put('message', null);
+                        // If message not empty -> make empty
+                    }
+                    ?>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="example3" class="display min-w850">
@@ -28,7 +28,7 @@
                                         <th>Price</th>
                                         <th>Sale</th>
                                         <th>Detail</th>
-                                        <th>Mobile</th>
+                                        <th>Status</th>
                                         <th>Email</th>
                                         <th>Create Date</th>
                                         <th>Action</th>
@@ -45,7 +45,25 @@
                                             <td>{{ $product->price }}</td>
                                             <td>{{ $product->price }}</td>
                                             <td>{{ $product->detail }}</td>
-                                            <td><a href="javascript:void(0);"><strong>123 456 7890</strong></a></td>
+
+                                            <?php
+                                                if ($product->status == 1){
+                                                    echo"
+                                                <td>
+                                                    <span class='badge light badge-success .badge-sm'>
+                                                        Available
+                                                    </span>
+                                                </td>";
+                                            }
+                                            else{
+                                                echo"
+                                                <td>
+                                                    <span class='badge light badge-danger .badge-sm'>
+                                                        Sould Out
+                                                    </span>
+                                                </td>";
+                                            }
+                                                    ?>
                                             <td><a href="javascript:void(0);"><strong><span class="__cf_email__"
                                                             data-cfemail="0960676f66496c71686479656c276a6664">[email&#160;protected]</span></strong></a>
                                             </td>

@@ -32,7 +32,7 @@ class ProductController extends Controller
         // $data['name'] = $request->val_name_product;
         // $data['name'] = $request->val_name_product;
         // $data['name'] = $request->val_name_product;
-        // $data['name'] = $request->val_name_product;
+        $data['status'] = $request->val_status;
 
 
         DB::table('products')->insert($data);
@@ -57,17 +57,17 @@ class ProductController extends Controller
         // $data['name'] = $request->val_name_product;
         // $data['name'] = $request->val_name_product;
         // $data['name'] = $request->val_name_product;
-        // $data['name'] = $request->val_name_product;
+        $data['status'] = $request->val_status;
 
         DB::table('products')->where('product_id', $product_id)->update($data);
         Session::put('messenge', 'Your product was updated!!');
-        return Redirect::to('all-product');
+        return Redirect::to('all-products');
     }
 
     public function delete_product($product_id)
     {
         DB::table('products')->where('product_id', $product_id)->delete();
         Session::put('messenge', 'Your product was deleted!!');
-        return Redirect::to('all-product');
+        return Redirect::to('all-products');
     }
 }
