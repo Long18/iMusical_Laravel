@@ -5,14 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Slider extends Model{
-    //
+class UserRole extends Model
+{
     use HasFactory;
-    protected $table = 'sliders';
+
+    use HasFactory;
+    protected $table = 'roles';
     public $timestamps = true;
 
-    public function getCreatePerson(){
-        return User::where('user_id',$this->create_by)
+    public function getRole(){
+        return Role::where('status',1)
+        ->where('role_id',$this->role_id)
         ->first();
     }
 }

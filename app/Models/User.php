@@ -13,4 +13,10 @@ class User extends Authenticatable
     use HasFactory;
     protected $table = 'users';
     public $timestamps = true;
+
+    public function getRoles(){
+        return UserRole::where('status',1)
+        ->where('user_id',$this->user_id)
+        ->get();
+    }
 }
