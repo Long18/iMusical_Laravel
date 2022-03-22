@@ -22,7 +22,7 @@
                                     }
                                     ?>
                             <div class="form-validation">
-                                <form class="form-valide" action="{{URL::to('/save-category-product')}}" method="post">
+                                <form class="form-valide" action="{{URL::to('/save-product')}}" method="post">
                                     {{ csrf_field() }}
                                     <div class="row">
                                         <div class="col-xl-6">

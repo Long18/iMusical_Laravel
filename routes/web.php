@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DebugController;
 
 /*
@@ -32,9 +32,14 @@ Route::get('/logout', [AdminController::class, 'logout']);
 Route::post('/admin-dashboard', [AdminController::class, 'dashboard']);
 
 //Category
-Route::get('/add-product', [CategoryController::class, 'add_product']);
-Route::get('/all-product', [CategoryController::class, 'all_product']);
-Route::post('/save-category-product', [CategoryController::class, 'save_category_product']);
+Route::get('/add-product', [ProductController::class, 'add_product']);
+Route::get('/all-product', [ProductController::class, 'all_product']);
+Route::get('/edit-product/{product_id}', [ProductController::class, 'edit_product']);
+Route::get('/delete-product/{product_id}', [ProductController::class, 'delete_product']);
+
+
+Route::post('/save-product', [ProductController::class, 'save_product']);
+Route::post('/update-product/{product_id}', [ProductController::class, 'update_product']);
 
 //debug
 Route::get('/debug',[DebugController::class,'debug']);
