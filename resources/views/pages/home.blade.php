@@ -1,6 +1,11 @@
 @extends('welcome')
 @section('content')
-        
+            <?php
+
+use Illuminate\Support\Facades\Session;
+
+            ?>
+
             <!-- title page -->
             <section class="flat-title-page style2">
                 <img class="bgr-gradient gradient1" src="{{ asset('public/frontend/images/backgroup-secsion/bg-gradient1.png') }}" alt="">
@@ -116,229 +121,73 @@
                         <div class="col-md-12">
                             <div class="heading-live-auctions">
                                 <h2 class="tf-title pb-18">
-                                    Live Auctions</h2>
+                                    New Product</h2>
                                 <a href="explore-3.html" class="exp style2">EXPLORE MORE</a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="swiper-container show-shadow carousel pad-t-17 auctions">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-card-product">
-                                                <div class="card-media">
-                                                    <a href="item-details.html"><img
-                                                            src="{{ asset('public/frontend/images/box-item/card-item8.jpg') }}" alt="Image"></a>
-                                                    <button class="wishlist-button heart"><span
-                                                            class="number-like"> 100</span></button>
-                                                    <div class="featured-countdown">
-                                                        <span class="slogan"></span>
-                                                        <span class="js-countdown" data-timer="516400"
-                                                            data-labels=" :  ,  : , : , "></span>
-                                                    </div>
-                                                    <div class="button-place-bid">
-                                                        <a href="#" data-toggle="modal" data-target="#popup_bid"
-                                                            class="sc-button style-place-bid style bag fl-button pri-3"><span>Place
-                                                                Bid</span></a>
-                                                    </div>
-                                                </div>
-                                                <div class="card-title">
-                                                    <h5><a href="item-details.html">"Hamlet Contemplates Contemplates
-                                                            "</a></h5>
-                                                    <div class="tags">bsc</div>
-                                                </div>
-                                                <div class="meta-info">
-                                                    <div class="author">
-                                                        <div class="avatar">
-                                                            <img src="{{ asset('public/frontend/images/avatar/avt-11.jpg') }}" alt="Image">
+                                    <?php
+                                        $products = Session::get('products');
+                                        
+
+                                        foreach($products as $product){
+                                            $brand = $product->getBrand();
+                                            $price;
+                                            if(empty($product->price)){
+                                                $price = "<a href='' style='color: LightCoral;'>Please Contact</a>";
+                                            }else{
+                                                $price = $product->price ;
+                                                $price = number_format($price, 0, '', ','). " VND";
+
+                                            }
+
+                                            echo '<div class="swiper-slide">
+                                            <div class="slider-item">
+                                                <div class="sc-card-product">
+                                                    <div class="card-media">
+                                                        <a href="item-details.html"><img
+                                                                src="public/frontend/images/box-item/card-item8.jpg" alt="Image"></a>
+                                                        <button class="wishlist-button heart"><span
+                                                                class="number-like"> 100</span></button>
+                                                        <div class="featured-countdown">
+                                                            <span class="slogan"></span>
+                                                            <span class="js-countdown" data-timer="516400"
+                                                                data-labels=" :  ,  : , : , "></span>
                                                         </div>
-                                                        <div class="info">
-                                                            <span>Creator</span>
-                                                            <h6> <a href="author02.html">SalvadorDali
-                                                                </a> </h6>
+                                                        <div class="button-place-bid">
+                                                            <a href="#" data-toggle="modal" data-target="#popup_bid"
+                                                                class="sc-button style-place-bid style bag fl-button pri-3"><span>Place
+                                                                    Bid</span></a>
                                                         </div>
                                                     </div>
-                                                    <div class="price">
-                                                        <span>Current Bid</span>
-                                                        <h5> 4.89 ETH</h5>
+                                                    <div class="card-title">
+                                                        <h3><a href="item-details.html">'. $product->name .'</a></h3>
+                                                        <!-- <div class="tags">bsc</div> -->
+                                                    </div>
+                                                    <div class="meta-info">
+                                                        <div class="author">
+                                                            <div class="avatar">
+                                                                <img src="public/frontend/images/avatar/avt-11.jpg" alt="Image">
+                                                            </div>
+                                                            <div class="info">
+                                                                <span>Brand</span>
+                                                                <h5> <a href="author02.html">'. $brand->name .'
+                                                                    </a> </h5>
+                                                            </div>
+                                                        </div>
+                                                        <div class="price">
+                                                            <span>Current Price</span>
+                                                            <h5> '. $price .' </h5>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-card-product">
-                                                <div class="card-media active">
-                                                    <a href="item-details.html"><img
-                                                            src="{{ asset('public/frontend/images/box-item/image-box-10.jpg') }}"
-                                                            alt="Image"></a>
-                                                    <button class="wishlist-button heart"><span
-                                                            class="number-like"> 220</span></button>
-                                                    <div class="featured-countdown">
-                                                        <span class="slogan"></span>
-                                                        <span class="js-countdown" data-timer="81640"
-                                                            data-labels=" :  ,  : , : , "></span>
-                                                    </div>
-                                                    <div class="button-place-bid">
-                                                        <a href="#" data-toggle="modal" data-target="#popup_bid"
-                                                            class="sc-button style-place-bid style bag fl-button pri-3"><span>Place
-                                                                Bid</span></a>
-                                                    </div>
-                                                </div>
-                                                <div class="card-title">
-                                                    <h5 class="style2"><a href="item-details.html">"Triumphant
-                                                            Awakening Contemplates "</a></h5>
-                                                    <div class="tags">bsc</div>
-                                                </div>
-                                                <div class="meta-info">
-                                                    <div class="author">
-                                                        <div class="avatar">
-                                                            <img src="{{ asset('public/frontend/images/avatar/avt-12.jpg') }}" alt="Image">
-                                                        </div>
-                                                        <div class="info">
-                                                            <span>Creator</span>
-                                                            <h6> <a href="author02.html">Trista Francis</a> </h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span>Current Bid</span>
-                                                        <h5> 4.89 ETH</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-card-product">
-                                                <div class="card-media">
-                                                    <a href="item-details.html"><img
-                                                            src="{{ asset('public/frontend/images/box-item/image-box-11.jpg') }}"
-                                                            alt="Image"></a>
-                                                    <button class="wishlist-button heart"><span
-                                                            class="number-like"> 90</span></button>
-                                                    <div class="featured-countdown">
-                                                        <span class="slogan"></span>
-                                                        <span class="js-countdown" data-timer="316400"
-                                                            data-labels=" :  ,  : , : , "></span>
-                                                    </div>
-                                                    <div class="button-place-bid">
-                                                        <a href="#" data-toggle="modal" data-target="#popup_bid"
-                                                            class="sc-button style-place-bid style bag fl-button pri-3"><span>Place
-                                                                Bid</span></a>
-                                                    </div>
-                                                </div>
-                                                <div class="card-title">
-                                                    <h5 class="style2"><a href="item-details.html">"Living Vase
-                                                            01 by Lanza Contemplates "</a></h5>
-                                                    <div class="tags">bsc</div>
-                                                </div>
-                                                <div class="meta-info">
-                                                    <div class="author">
-                                                        <div class="avatar">
-                                                            <img src="{{ asset('public/frontend/images/avatar/avt-13.jpg') }}" alt="Image">
-                                                        </div>
-                                                        <div class="info">
-                                                            <span>Creator</span>
-                                                            <h6> <a href="author02.html">Freddie Carpenter</a> </h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span>Current Bid</span>
-                                                        <h5> 4.89 ETH</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-card-product">
-                                                <div class="card-media">
-                                                    <a href="item-details.html"><img
-                                                            src="{{ asset('public/frontend/images/box-item/image-box-21.jpg') }}"
-                                                            alt="Image"></a>
-                                                    <button class="wishlist-button heart"><span
-                                                            class="number-like"> 145</span></button>
-                                                    <div class="featured-countdown">
-                                                        <span class="slogan"></span>
-                                                        <span class="js-countdown" data-timer="716400"
-                                                            data-labels=" :  ,  : , : , "></span>
-                                                    </div>
-                                                    <div class="button-place-bid">
-                                                        <a href="#" data-toggle="modal" data-target="#popup_bid"
-                                                            class="sc-button style-place-bid style bag fl-button pri-3"><span>Place
-                                                                Bid</span></a>
-                                                    </div>
-                                                </div>
-                                                <div class="card-title">
-                                                    <h5 class="style2"><a href="item-details.html">"Flame
-                                                            Dress' by Balmain Contemplates "</a></h5>
-                                                    <div class="tags">bsc</div>
-                                                </div>
-                                                <div class="meta-info">
-                                                    <div class="author">
-                                                        <div class="avatar">
-                                                            <img src="{{ asset('public/frontend/images/avatar/avt-14.jpg') }}" alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <span>Creator</span>
-                                                            <h6> <a href="author02.html">Tyler Covington</a> </h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span>Current Bid</span>
-                                                        <h5> 4.89 ETH</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-card-product">
-                                                <div class="card-media">
-                                                    <a href="item-details.html"><img
-                                                            src="{{ asset('public/frontend/images/box-item/card-item8.jpg') }}" alt="Image"></a>
-                                                    <button class="wishlist-button heart"><span
-                                                            class="number-like"> 100</span></button>
-                                                    <div class="featured-countdown">
-                                                        <span class="slogan"></span>
-                                                        <span class="js-countdown" data-timer="516400"
-                                                            data-labels=" :  ,  : , : , "></span>
-                                                    </div>
-                                                    <div class="button-place-bid">
-                                                        <a href="#" data-toggle="modal" data-target="#popup_bid"
-                                                            class="sc-button style-place-bid style bag fl-button pri-3"><span>Place
-                                                                Bid</span></a>
-                                                    </div>
-                                                </div>
-                                                <div class="card-title">
-                                                    <h5><a href="item-details.html">"Hamlet Contemplates Contemplates
-                                                            "</a></h5>
-                                                    <div class="tags">bsc</div>
-                                                </div>
-                                                <div class="meta-info">
-                                                    <div class="author">
-                                                        <div class="avatar">
-                                                            <img src="{{ asset('public/frontend/images/avatar/avt-11.jpg') }}" alt="Image">
-                                                        </div>
-                                                        <div class="info">
-                                                            <span>Creator</span>
-                                                            <h6> <a href="author02.html">SalvadorDali
-                                                                </a> </h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span>Current Bid</span>
-                                                        <h5> 4.89 ETH</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
+                                        </div>';
+                                        }
+                                    ?>
+                                    <!-- <div class="swiper-slide">
                                         <div class="slider-item">
                                             <div class="sc-card-product">
                                                 <div class="card-media active">
@@ -379,51 +228,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-card-product">
-                                                <div class="card-media">
-                                                    <a href="item-details.html"><img
-                                                            src="{{ asset('public/frontend/images/box-item/image-box-11.jpg') }}"
-                                                            alt="Image"></a>
-                                                    <button class="wishlist-button heart"><span
-                                                            class="number-like"> 90</span></button>
-                                                    <div class="featured-countdown">
-                                                        <span class="slogan"></span>
-                                                        <span class="js-countdown" data-timer="316400"
-                                                            data-labels=" :  ,  : , : , "></span>
-                                                    </div>
-                                                    <div class="button-place-bid">
-                                                        <a href="#" data-toggle="modal" data-target="#popup_bid"
-                                                            class="sc-button style-place-bid style bag fl-button pri-3"><span>Place
-                                                                Bid</span></a>
-                                                    </div>
-                                                </div>
-                                                <div class="card-title">
-                                                    <h5 class="style2"><a href="item-details.html">"Living Vase
-                                                            01 by Lanza Contemplates "</a></h5>
-                                                    <div class="tags">bsc</div>
-                                                </div>
-                                                <div class="meta-info">
-                                                    <div class="author">
-                                                        <div class="avatar">
-                                                            <img src="{{ asset('public/frontend/images/avatar/avt-13.jpg') }}" alt="Image">
-                                                        </div>
-                                                        <div class="info">
-                                                            <span>Creator</span>
-                                                            <h6> <a href="author02.html">Freddie Carpenter</a> </h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span>Current Bid</span>
-                                                        <h5> 4.89 ETH</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
+                                        </div>
+                                    </div> -->
+                                    
 
                                 </div>
                                 <div class="swiper-pagination mg-t-6"></div>

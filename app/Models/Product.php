@@ -10,4 +10,12 @@ class Product extends Model{
     use HasFactory;
     protected $table = 'products';
     public $timestamps = true;
+
+    public function getBrand(){
+        return Brand::where('brand_id',$this->brand_id)->first();
+    }
+
+    public function getCategory(){
+        return Type::where('type_id',$this->category_id)->first();
+    }
 }
