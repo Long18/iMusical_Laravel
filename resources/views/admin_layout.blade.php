@@ -605,7 +605,7 @@
                     data-target="#addOrderModalside">+ New Project</a>
                 <div class="copyright">
                     <p><strong>Admin Dashboard</strong> © 2022 All Rights Reserved</p>
-                    <p>Made with <span class="heart"></span> by William</p>
+                    <p>Made with <span class="heart"></span> by Isekai Team</p>
                 </div>
             </div>
         </div>
