@@ -2,22 +2,43 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\Slider;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use phpDocumentor\Reflection\Types\Null_;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $products = Product::where('status','1')
-        ->orderBy('create_at','asc')
-        ->take(5)
-        ->get();
+        //get slider for home page 
         $sliders = Slider::where('status','1')->get();
 
-        Session::put('products',$products);
+        //get top 10 newest product
+        $newProducts = Product::where('status','1')
+        ->orderBy('create_at','asc')
+        ->take(10)
+        ->get();
+
+        //get top 10 Top seller product
+        // return obj(product_id, total)
+        $topSellers = OrderDetail::groupBy('product_id')
+        ->selectRaw('product_id, sum(order_detail_quantity) as total')
+        ->orderBy('total','desc')
+        ->get();
+        
+        //get categories
+        $categories = Type::where('status',1)
+        ->whereNULL('parent_id')
+        ->get();
+        
+        
+        Session::put('newProducts',$newProducts);
+        Session::put('topSellers',$topSellers);
+        Session::put('categories',$categories);
         return view('pages.home');
     }
 }
