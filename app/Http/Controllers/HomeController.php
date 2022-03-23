@@ -22,6 +22,7 @@ class HomeController extends Controller
         ->orderBy('create_at','asc')
         ->take(10)
         ->get();
+        
 
         //get top 10 Top seller product
         // return obj(product_id, total)
@@ -35,10 +36,17 @@ class HomeController extends Controller
         ->whereNULL('parent_id')
         ->get();
         
+        // get product
+        $products = Product::where('status','1')
+        ->orderBy('create_at','asc')
+        ->take(10)
+        ->get();
         
         Session::put('newProducts',$newProducts);
         Session::put('topSellers',$topSellers);
         Session::put('categories',$categories);
+        Session::put('newProducts',$newProducts);
         return view('pages.home');
     }
+
 }
