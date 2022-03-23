@@ -3,8 +3,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\TypesController;
+use App\Http\Controllers\Admin\ProductAdminController;
+use App\Http\Controllers\Admin\TypesAdminController;
+use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\AboutController;
 
 
@@ -22,30 +23,30 @@ use App\Http\Controllers\Client\AboutController;
 /////////// admin routes
 // home
 Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/dashboard', [AdminController::class, 'show_dashboard']);
-Route::get('/logout', [AdminController::class, 'logout']);
+Route::get('/admin/dashboard', [AdminController::class, 'show_dashboard']);
+Route::get('/admin/logout', [AdminController::class, 'logout']);
 
-Route::post('/admin-dashboard', [AdminController::class, 'dashboard']);
+Route::post('/admin/admin-dashboard', [AdminController::class, 'dashboard']);
 
 //Product
-Route::get('/all-products', [ProductController::class, 'all_products']);
-Route::get('/add-product', [ProductController::class, 'add_product']);
-Route::get('/edit-product/{product_id}', [ProductController::class, 'edit_product']);
-Route::get('/delete-product/{product_id}', [ProductController::class, 'delete_product']);
+Route::get('/admin/all-products', [ProductAdminController::class, 'all_products']);
+Route::get('/admin/add-product', [ProductAdminController::class, 'add_product']);
+Route::get('/admin/edit-product/{product_id}', [ProductAdminController::class, 'edit_product']);
+Route::get('/admin/delete-product/{product_id}', [ProductAdminController::class, 'delete_product']);
 
 
-Route::post('/save-product', [ProductController::class, 'save_product']);
-Route::post('/update-product/{product_id}', [ProductController::class, 'update_product']);
+Route::post('/admin/save-product', [ProductAdminController::class, 'save_product']);
+Route::post('/admin/update-product/{product_id}', [ProductAdminController::class, 'update_product']);
 
 //Types
-Route::get('/all-types', [TypesController::class, 'all_types']);
-Route::get('/add-type', [TypesController::class, 'add_type']);
-Route::get('/edit-type/{type_id}', [TypesController::class, 'edit_type']);
-Route::get('/delete-type/{type_id}', [TypesController::class, 'delete_type']);
+Route::get('/admin/all-types', [TypesAdminController::class, 'all_types']);
+Route::get('/admin/add-type', [TypesAdminController::class, 'add_type']);
+Route::get('/admin/edit-type/{type_id}', [TypesAdminController::class, 'edit_type']);
+Route::get('/admin/delete-type/{type_id}', [TypesAdminController::class, 'delete_type']);
 
 
-Route::post('/save-type', [TypesController::class, 'save_type']);
-Route::post('/update-type/{type_id}', [TypesController::class, 'update_type']);
+Route::post('/admin/save-type', [TypesAdminController::class, 'save_type']);
+Route::post('/admin/update-type/{type_id}', [TypesAdminController::class, 'update_type']);
 
 //----------------------------------------------------------------------------------------------------------------------
 /////////// client routes

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -10,17 +11,21 @@ use Illuminate\Support\Facades\Session;
 
 session_start();
 
-class ProductController extends Controller
+class ProductAdminController extends Controller
 {
     public function all_products()
     {
-        $all_products = DB::table('products')->get();
+        //get product from data base
+        $all_products = Product::where('status',1)->get();
+
+        // return view
         $manager_products = view('admin.sub.all_products')->with('all_products', $all_products);
         return view('admin.main.admin_layout')->with('admin.sub.all_products', $manager_products);
     }
 
     public function add_product()
     {
+         //return view
         return view('admin.sub.add_product');
     }
 
@@ -28,6 +33,7 @@ class ProductController extends Controller
     {
         $data = array();
 
+        // get data from request
         $data['name'] = $request->val_name_product;
         // $data['name'] = $request->val_name_product;
         // $data['name'] = $request->val_name_product;
@@ -35,11 +41,14 @@ class ProductController extends Controller
         // $data['name'] = $request->val_name_product;
         $data['status'] = $request->val_status;
 
+        // update to database
+        Product::insert($data);
 
-        DB::table('products')->insert($data);
-
+        // send to view
         Session::put('messenge', 'Your product was added!!');
-        return Redirect::to('add-product');
+
+        //return view
+        return Redirect::to('admin/add-product');
     }
 
     public function edit_product($product_id)
@@ -62,13 +71,13 @@ class ProductController extends Controller
 
         DB::table('products')->where('product_id', $product_id)->update($data);
         Session::put('messenge', 'Your product was updated!!');
-        return Redirect::to('all-products');
+        return Redirect::to('admin/all-products');
     }
 
     public function delete_product($product_id)
     {
         DB::table('products')->where('product_id', $product_id)->delete();
         Session::put('messenge', 'Your product was deleted!!');
-        return Redirect::to('all-products');
+        return Redirect::to('admin/all-products');
     }
 }

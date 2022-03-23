@@ -41,7 +41,7 @@
                                         // If message not empty -> make empty
                                     }
                                     ?>
-                                    <form action="{{ URL::to('/admin-dashboard') }}" method="post">
+                                    <form action="{{ URL::to('/admin/admin-dashboard') }}" method="post">
                                         {{-- Token random --}}
                                         {{ csrf_field() }}
                                         <div class="form-group">
@@ -63,7 +63,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <a class="text-white"
-                                                    href="{{ URL::to('/forgot-password') }}">Forgot
+                                                    href="{{ URL::to('/admin/forgot-password') }}">Forgot
                                                     Password?</a>
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@
                                     </form>
                                     <div class="new-account mt-3">
                                         <p class="text-white">Don't have an account? <a class="text-white"
-                                                href="{{ URL::to('/register') }}">Sign up</a></p>
+                                                href="{{ URL::to('/admin/register') }}">Sign up</a></p>
                                     </div>
                                 </div>
                             </div>

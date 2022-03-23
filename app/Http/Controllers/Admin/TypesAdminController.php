@@ -9,18 +9,18 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
 session_start();
-class TypesController extends Controller
+class TypesAdminController extends Controller
 {
     public function all_types()
     {
         $all_types = DB::table('types')->get();
-        $manager_types = view('admin.all_types')->with('all_types', $all_types);
-        return view('admin_layout')->with('admin.all_types', $manager_types);
+        $manager_types = view('admin.sub.all_types')->with('all_types', $all_types);
+        return view('admin.main.admin_layout')->with('admin.sub.all_types', $manager_types);
     }
 
     public function add_type()
     {
-        return view('admin.add_type');
+        return view('admin.sub.add_type');
     }
 
     public function save_type(Request $request)
@@ -38,7 +38,7 @@ class TypesController extends Controller
         DB::table('types')->insert($data);
 
         Session::put('messenge', 'Your type was added!!');
-        return Redirect::to('add-type');
+        return Redirect::to('admin/add-type');
     }
 
     public function edit_type($type_id)
@@ -61,13 +61,13 @@ class TypesController extends Controller
 
         DB::table('types')->where('type_id', $type_id)->update($data);
         Session::put('messenge', 'Your type was updated!!');
-        return Redirect::to('all-types');
+        return Redirect::to('admin/all-types');
     }
 
     public function delete_type($type_id)
     {
         DB::table('types')->where('type_id', $type_id)->delete();
         Session::put('messenge', 'Your type was deleted!!');
-        return Redirect::to('all-types');
+        return Redirect::to('admin/all-types');
     }
 }

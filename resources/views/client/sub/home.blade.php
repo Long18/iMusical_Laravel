@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('client.main.welcome')
 @section('content')
 <?php
 

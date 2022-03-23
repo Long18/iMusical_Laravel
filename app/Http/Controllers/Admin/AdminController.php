@@ -43,7 +43,7 @@ class AdminController extends Controller
         if($result){
             Session::put('user_name',$user->user_name);
             Session::put('user_id',$user->user_id);
-            return Redirect::to('/dashboard');
+            return Redirect::to('/admin/dashboard');
         }else{
             Session::put('message',"Wrong!! You don't have permission to access this page");
             Session::put('user_email',$user_email);

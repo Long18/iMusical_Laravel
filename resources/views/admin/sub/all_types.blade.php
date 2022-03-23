@@ -39,8 +39,8 @@
                                                     src="{{ asset('public/backend/images/profile/small/pic1.jpg') }}"
                                                     alt="">
                                             </td>
-                                            <td>{{ $type->name }}</td>
-                                            <td>{{ $type->meta_desc }}</td>
+                                            <td>{{ $type->type_name }}</td>
+                                            <td>{{ $type->type_meta_desc }}</td>
                                             <td><a href="javascript:void(0);"><strong>123 456 7890</strong></a></td>
                                             <td><a href="javascript:void(0);"><strong><span class="__cf_email__"
                                                             data-cfemail="0960676f66496c71686479656c276a6664">[email&#160;protected]</span></strong></a>

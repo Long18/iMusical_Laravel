@@ -27,6 +27,11 @@
     <link href="{{ asset('public/backend/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet"
         type="text/css" />
     <link href="{{ asset('public/backend/css/style.css') }}" rel="stylesheet" type="text/css" />
+    <?php
+
+use Illuminate\Support\Facades\Session;
+
+    ?>
 </head>
 
 <body>
@@ -574,7 +579,7 @@
                             <span class="nav-text">Dashboard</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ URL::to('/dashboard') }}">Dashboard</a></li>
+                            <li><a href="{{ URL::to('/admin/dashboard') }}">Dashboard</a></li>
                             <li><a href="calendar.html">Calendar</a></li>
                             <li><a href="messages.html">Messages</a></li>
                         </ul>
@@ -584,16 +589,16 @@
                         <span class="nav-text">Product</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="{{ URL::to('/all-products') }}">All Products</a></li>
-                        <li><a href="{{ URL::to('/add-product') }}">Add Product</a></li>
+                        <li><a href="{{ URL::to('/admin/all-products') }}">All Products</a></li>
+                        <li><a href="{{ URL::to('/admin/add-product') }}">Add Product</a></li>
                     </ul>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="flaticon-381-layer-1"></i>
                         <span class="nav-text">Types</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="{{ URL::to('/all-types') }}">All Types</a></li>
-                        <li><a href="{{ URL::to('/add-type') }}">Add Types</a></li>
+                        <li><a href="{{ URL::to('/admin/all-types') }}">All Types</a></li>
+                        <li><a href="{{ URL::to('/admin/add-type') }}">Add Types</a></li>
                     </ul>
 
                 </li>
