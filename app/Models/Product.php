@@ -18,4 +18,12 @@ class Product extends Model{
     public function getCategory(){
         return Type::where('type_id',$this->category_id)->first();
     }
+
+    public static function formatPriceToVND($price){
+        if(empty($price)){
+            return "<a href='' style='color: LightCoral;'>Please Contact</a>";
+        }else{
+            return number_format($price, 0, '', ','). " VND";
+        }
+    }
 }

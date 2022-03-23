@@ -2,7 +2,8 @@
 @section('content')
             <?php
 
-use Illuminate\Support\Facades\Session;
+            use Illuminate\Support\Facades\Session;
+            use App\Models\Product;
 
             ?>
 
@@ -134,15 +135,6 @@ use Illuminate\Support\Facades\Session;
 
                                         foreach($products as $product){
                                             $brand = $product->getBrand();
-                                            $price;
-                                            if(empty($product->price)){
-                                                $price = "<a href='' style='color: LightCoral;'>Please Contact</a>";
-                                            }else{
-                                                $price = $product->price ;
-                                                $price = number_format($price, 0, '', ','). " VND";
-
-                                            }
-
                                             echo '<div class="swiper-slide">
                                             <div class="slider-item">
                                                 <div class="sc-card-product">
@@ -163,7 +155,7 @@ use Illuminate\Support\Facades\Session;
                                                         </div>
                                                     </div>
                                                     <div class="card-title">
-                                                        <h3><a href="item-details.html">'. $product->name .'</a></h3>
+                                                        <h3><a href="item-details.html">'. $product->product_name .'</a></h3>
                                                         <!-- <div class="tags">bsc</div> -->
                                                     </div>
                                                     <div class="meta-info">
@@ -173,13 +165,13 @@ use Illuminate\Support\Facades\Session;
                                                             </div>
                                                             <div class="info">
                                                                 <span>Brand</span>
-                                                                <h5> <a href="author02.html">'. $brand->name .'
+                                                                <h5> <a href="author02.html">'. $brand->brand_name .'
                                                                     </a> </h5>
                                                             </div>
                                                         </div>
                                                         <div class="price">
                                                             <span>Current Price</span>
-                                                            <h5> '. $price .' </h5>
+                                                            <h5> '. Product::formatPriceToVND($product->product_price) .' </h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -254,157 +246,30 @@ use Illuminate\Support\Facades\Session;
                         <div class="col-md-12">
                             <div class="swiper-container seller style2 seller-slider2 button-arow-style">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-author-box style-2">
-                                                <div class="author-avatar">
-                                                    <img src="{{ asset('public/frontend/images/avatar/avt-1.jpg') }}" alt=""
-                                                        class="avatar">
-                                                    <div class="badge"></div>
+                                    <?php
+                                        $topSellers = Session::get('topSellers');
+                                        
+                                        foreach($topSellers as $topSeller){
+                                            $product = $topSeller->getProduct();
+
+                                            echo '<div class="swiper-slide">
+                                            <div class="slider-item">
+                                                <div class="sc-author-box style-2">
+                                                    <div class="author-avatar">
+                                                        <img src="public/frontend/images/avatar/avt-1.jpg" alt=""
+                                                            class="avatar">
+                                                        <div class="badge"></div>
+                                                    </div>
+                                                    <div class="author-infor">
+                                                        <h5><a href="author02.html">'.$product->product_name.'</a></h5>
+                                                        <span class="price">'.Product::formatPriceToVND($product->price).'</span>
+                                                    </div>
                                                 </div>
-                                                <div class="author-infor">
-                                                    <h5><a href="author02.html">Crispin Berry</a></h5>
-                                                    <span class="price">214.2 ETH</span>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-author-box style-2">
-                                                <div class="author-avatar">
-                                                    <img src="{{ asset('public/frontend/images/avatar/avt-2.jpg') }}" alt=""
-                                                        class="avatar">
-                                                    <div class="badge"></div>
-                                                </div>
-                                                <div class="author-infor">
-                                                    <h5><a href="author02.html">Samson Frost</a></h5>
-                                                    <span class="price">205.43 ETH</span>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-author-box style-2">
-                                                <div class="author-avatar">
-                                                    <img src="{{ asset('public/frontend/images/avatar/avt-4.jpg') }}" alt=""
-                                                        class="avatar">
-                                                    <div class="badge"></div>
-                                                </div>
-                                                <div class="author-infor mg-style2">
-                                                    <h5><a href="author02.html">Tommy Alvarez</a></h5>
-                                                    <span class="price">170.3 ETH</span>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-author-box style-2">
-                                                <div class="author-avatar">
-                                                    <img src="{{ asset('public/frontend/images/avatar/avt-5.jpg') }}" alt=""
-                                                        class="avatar">
-                                                    <div class="badge"></div>
-                                                </div>
-                                                <div class="author-infor">
-                                                    <h5><a href="author02.html">Windsor Lane</a></h5>
-                                                    <span class="price">120.7 ETH</span>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-author-box style-2">
-                                                <div class="author-avatar">
-                                                    <img src="{{ asset('public/frontend/images/avatar/avt-3.jpg') }}" alt=""
-                                                        class="avatar">
-                                                    <div class="badge"></div>
-                                                </div>
-                                                <div class="author-infor">
-                                                    <h5><a href="author02.html">Andy Hurlbutt</a></h5>
-                                                    <span class="price">82.79 ETH</span>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-author-box style-2">
-                                                <div class="author-avatar">
-                                                    <img src="{{ asset('public/frontend/images/avatar/avt-8.jpg') }}" alt=""
-                                                        class="avatar">
-                                                    <div class="badge"></div>
-                                                </div>
-                                                <div class="author-infor">
-                                                    <h5><a href="author02.html">Blake Banks</a></h5>
-                                                    <span class="price">68.2 ETH</span>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-author-box style-2">
-                                                <div class="author-avatar">
-                                                    <img src="{{ asset('public/frontend/images/avatar/avt-6.jpg') }}" alt=""
-                                                        class="avatar">
-                                                    <div class="badge"></div>
-                                                </div>
-                                                <div class="author-infor">
-                                                    <h5><a href="author02.html">Monica Lucas</a></h5>
-                                                    <span class="price">52.8 ETH</span>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-author-box style-2">
-                                                <div class="author-avatar">
-                                                    <img src="{{ asset('public/frontend/images/avatar/avt-9.jpg') }}" alt=""
-                                                        class="avatar">
-                                                    <div class="badge"></div>
-                                                </div>
-                                                <div class="author-infor">
-                                                    <h5><a href="author02.html">Matt Ramos</a></h5>
-                                                    <span class="price">38.4 ETH</span>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-author-box style-2">
-                                                <div class="author-avatar">
-                                                    <img src="{{ asset('public/frontend/images/avatar/avt-7.jpg') }}" alt=""
-                                                        class="avatar">
-                                                    <div class="badge"></div>
-                                                </div>
-                                                <div class="author-infor">
-                                                    <h5><a href="author02.html">Harper Wilcher</a></h5>
-                                                    <span class="price">29.2 ETH</span>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-author-box style-2">
-                                                <div class="author-avatar">
-                                                    <img src="{{ asset('public/frontend/images/avatar/avt-1.jpg') }}" alt=""
-                                                        class="avatar">
-                                                    <div class="badge"></div>
-                                                </div>
-                                                <div class="author-infor">
-                                                    <h5><a href="author02.html">Crispin Berry</a></h5>
-                                                    <span class="price">214.2 ETH</span>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
+                                            </div><!-- item-->
+                                        </div>';
+                                        }
+                                    ?>
+                                    <!-- <div class="swiper-slide">
                                         <div class="slider-item">
                                             <div class="sc-author-box style-2">
                                                 <div class="author-avatar">
@@ -417,26 +282,93 @@ use Illuminate\Support\Facades\Session;
                                                     <span class="price">205.43 ETH</span>
                                                 </div>
                                             </div>
-                                        </div><!-- item-->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="slider-item">
-                                            <div class="sc-author-box style-2">
-                                                <div class="author-avatar">
-                                                    <img src="{{ asset('public/frontend/images/avatar/avt-4.jpg') }}" alt=""
-                                                        class="avatar">
-                                                    <div class="badge"></div>
-                                                </div>
-                                                <div class="author-infor">
-                                                    <h5><a href="author02.html">Tommy Alvarez</a></h5>
-                                                    <span class="price">170.3 ETH</span>
-                                                </div>
-                                            </div>
-                                        </div><!-- item-->
-                                    </div>
+                                        </div>
+                                    </div> -->
+                                    
                                 </div>
                                 <div class="swiper-button-next btn-slide-next active"></div>
                                 <div class="swiper-button-prev btn-slide-prev "></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tf-section live-auctions style4 no-pt-mb mobie-style">
+                <div class="themesflat-container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-live-auctions">
+                                <h2 class="tf-title pb-17 text-left">
+                                    Category</h2>
+                                <a href="explore-3.html" class="exp style2">EXPLORE MORE</a>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="collection">
+                                <div class="swiper-container show-shadow carousel4 pad-t-20 button-arow-style">
+                                    <div class="swiper-wrapper">
+                                        
+                                        <?php
+                                        $categories = Session::get('categories');
+                                        
+                                        foreach($categories as $category){
+                                            
+
+                                            echo'<div class="swiper-slide">
+                                        <div class="slider-item">
+                                            <div class="sc-card-collection style-2 home2">
+                                                <div class="card-bottom">
+                                                    <div class="author">
+                                                        <div class="sc-author-box style-2">
+                                                            <div class="author-avatar">
+                                                                <img src="public/frontend/images/avatar/avt-1.jpg" alt=""
+                                                                    class="avatar">
+                                                                <div class="badge"><i
+                                                                        class="ripple"></i></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content">
+                                                            <h3><a href="author01.html">'.$category->type_name.'</a>
+                                                            </h3>
+                                                            <!-- <div class="infor">
+                                                                <span>Created by</span>
+                                                                <span class="name"><a
+                                                                        href="author02.html">Ralph
+                                                                        Garraway</a></span>
+                                                            </div> -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- <button class="wishlist-button public heart"><span
+                                                            class="number-like"> 100</span></button> -->
+                                                </div>
+                                                <a href="author02.html">
+                                                    <div class="media-images-collection">
+                                                        <div class="box-left">
+                                                            <img src="public/frontend/images/box-item/collection-item-2.jpg"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="box-right">
+                                                            <div class="top-img">
+                                                                <img src="public/frontend/images/box-item/collection-item-top-1.jpg"
+                                                                    alt="">
+                                                                <img src="public/frontend/images/box-item/collection-item-top-2.jpg"
+                                                                    alt="">
+                                                            </div>
+                                                            <div class="bottom-img">
+                                                                <img src="public/frontend/images/box-item/collection-item-bottom-4.jpg"
+                                                                    alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div><!-- item-->
+                                    </div>';
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -488,26 +420,24 @@ use Illuminate\Support\Facades\Session;
                                                     <i class="fal fa-check"></i>
                                                 </div>
                                             </a>
-                                            <a class="dropdown-item" href="#">
+                                            <?php 
+                                                $categories = Session::get('categories');
+                                                foreach($categories as $category){
+                                                    echo '<a class="dropdown-item" href="#">
+                                                    <div class="sort-filter">
+                                                        <span><img src="public/frontend/images/icon/rainbow.png" alt="" /> '.$category->type_name.'</span>
+                                                        <i class="fal fa-check"></i>
+                                                    </div>
+                                                </a>';
+                                                }
+                                            ?>
+                                            <!-- <a class="dropdown-item" href="#">
                                                 <div class='sort-filter'>
-                                                    <span><img src="{{ asset('public/frontend/images/icon/rainbow.png') }}" alt="" /> Art</span>
+                                                    <span><img src="public/frontend/images/icon/rainbow.png" alt="" /> Art</span>
                                                     <i class="fal fa-check"></i>
                                                 </div>
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                <div class='sort-filter'>
-                                                    <span><img src="{{ asset('public/frontend/images/icon/photo.png') }}" alt="" />
-                                                        Photography</span>
-                                                    <i class="fal fa-check"></i>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                <div class='sort-filter'>
-                                                    <span><img src="{{ asset('public/frontend/images/icon/itunes.png') }}" alt="" />
-                                                        Music</span>
-                                                    <i class="fal fa-check"></i>
-                                                </div>
-                                            </a>
+                                            </a> -->
+                                            
                                         </div>
                                     </div>
                                     <div class="dropdown">
@@ -584,7 +514,7 @@ use Illuminate\Support\Facades\Session;
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="dropdown">
+                                    <!-- <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
                                             id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
@@ -622,7 +552,7 @@ use Illuminate\Support\Facades\Session;
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="soft-right">
                                     <div class="dropdown">
@@ -1252,277 +1182,9 @@ use Illuminate\Support\Facades\Session;
                 </div>
             </section>
 
-            <section class="tf-section live-auctions style4 no-pt-mb mobie-style">
-                <div class="themesflat-container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="heading-live-auctions">
-                                <h2 class="tf-title pb-17 text-left">
-                                    Popular Collection</h2>
-                                <a href="explore-3.html" class="exp style2">EXPLORE MORE</a>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="collection">
-                                <div class="swiper-container show-shadow carousel4 pad-t-20 button-arow-style">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="slider-item">
-                                                <div class="sc-card-collection style-2 home2">
-                                                    <div class="card-bottom">
-                                                        <div class="author">
-                                                            <div class="sc-author-box style-2">
-                                                                <div class="author-avatar">
-                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-1.jpg') }}" alt=""
-                                                                        class="avatar">
-                                                                    <div class="badge"><i
-                                                                            class="ripple"></i></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="content">
-                                                                <h4><a href="author01.html">Creative Art Collection</a>
-                                                                </h4>
-                                                                <div class="infor">
-                                                                    <span>Created by</span>
-                                                                    <span class="name"><a
-                                                                            href="author02.html">Ralph
-                                                                            Garraway</a></span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <button class="wishlist-button public heart"><span
-                                                                class="number-like"> 100</span></button>
-                                                    </div>
-                                                    <a href="author02.html">
-                                                        <div class="media-images-collection">
-                                                            <div class="box-left">
-                                                                <img src="{{ asset('public/frontend/images/box-item/collection-item-2.jpg') }}"
-                                                                    alt="">
-                                                            </div>
-                                                            <div class="box-right">
-                                                                <div class="top-img">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/collection-item-top-1.jpg') }}"
-                                                                        alt="">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/collection-item-top-2.jpg') }}"
-                                                                        alt="">
-                                                                </div>
-                                                                <div class="bottom-img">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/collection-item-bottom-4.jpg') }}"
-                                                                        alt="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div><!-- item-->
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slider-item">
-                                                <div class="sc-card-collection style-2 home2">
-                                                    <div class="card-bottom">
-                                                        <div class="author">
-                                                            <div class="sc-author-box style-2">
-                                                                <div class="author-avatar">
-                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-8.jpg') }}" alt=""
-                                                                        class="avatar">
-                                                                    <div class="badge"><i
-                                                                            class="ripple"></i></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="content">
-                                                                <h4><a href="author01.html">Colorful Abstract</a></h4>
-                                                                <div class="infor">
-                                                                    <span>Created by</span>
-                                                                    <span class="name"><a
-                                                                            href="author02.html">Mason
-                                                                            Woodward</a></span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <button class="wishlist-button public heart"><span
-                                                                class="number-like"> 100</span></button>
-                                                    </div>
-                                                    <a href="author01.html">
-                                                        <div class="media-images-collection">
-                                                            <div class="box-left">
-                                                                <img src="{{ asset('public/frontend/images/box-item/img-collection23.jpg') }}"
-                                                                    alt="">
-                                                            </div>
-                                                            <div class="box-right">
-                                                                <div class="top-img">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/img-collection24.jpg') }}"
-                                                                        alt="">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/img-collection10.jpg') }}"
-                                                                        alt="">
-                                                                </div>
-                                                                <div class="bottom-img">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/img-collection11.jpg') }}"
-                                                                        alt="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div><!-- item-->
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slider-item">
-                                                <div class="sc-card-collection style-2 home2">
-                                                    <div class="card-bottom">
-                                                        <div class="author">
-                                                            <div class="sc-author-box style-2">
-                                                                <div class="author-avatar">
-                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-7.jpg') }}" alt=""
-                                                                        class="avatar">
-                                                                    <div class="badge"><i
-                                                                            class="ripple"></i></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="content">
-                                                                <h4><a href="author01.html">Modern Art Collection</a>
-                                                                </h4>
-                                                                <div class="infor">
-                                                                    <span>Created by</span>
-                                                                    <span class="name"><a
-                                                                            href="author02.html">Freddie
-                                                                            Carpenter</a></span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <button class="wishlist-button public heart"><span
-                                                                class="number-like"> 100</span></button>
-                                                    </div>
-                                                    <a href="author01.html">
-                                                        <div class="media-images-collection">
-                                                            <div class="box-left">
-                                                                <img src="{{ asset('public/frontend/images/box-item/img-collection12.jpg') }}"
-                                                                    alt="">
-                                                            </div>
-                                                            <div class="box-right">
-                                                                <div class="top-img">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/img-collection18.jpg') }}"
-                                                                        alt="">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/img-collection25.jpg') }}"
-                                                                        alt="">
-                                                                </div>
-                                                                <div class="bottom-img">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/img-collection17.jpg') }}"
-                                                                        alt="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div><!-- item-->
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slider-item">
-                                                <div class="sc-card-collection style-2 home2">
-                                                    <div class="card-bottom">
-                                                        <div class="author">
-                                                            <div class="sc-author-box style-2">
-                                                                <div class="author-avatar">
-                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-1.jpg') }}" alt=""
-                                                                        class="avatar">
-                                                                    <div class="badge"><i
-                                                                            class="ripple"></i></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="content">
-                                                                <h4><a href="author01.html">Creative Art Collection</a>
-                                                                </h4>
-                                                                <div class="infor">
-                                                                    <span>Created by</span>
-                                                                    <span class="name"><a
-                                                                            href="author02.html">Ralph
-                                                                            Garraway</a></span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <button class="wishlist-button public heart"><span
-                                                                class="number-like"> 100</span></button>
-                                                    </div>
-                                                    <a href="author02.html">
-                                                        <div class="media-images-collection">
-                                                            <div class="box-left">
-                                                                <img src="{{ asset('public/frontend/images/box-item/collection-item-2.jpg') }}"
-                                                                    alt="">
-                                                            </div>
-                                                            <div class="box-right">
-                                                                <div class="top-img">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/collection-item-top-1.jpg') }}"
-                                                                        alt="">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/collection-item-top-2.jpg') }}"
-                                                                        alt="">
-                                                                </div>
-                                                                <div class="bottom-img">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/collection-item-bottom-4.jpg') }}"
-                                                                        alt="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div><!-- item-->
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slider-item">
-                                                <div class="sc-card-collection style-2 home2">
-                                                    <div class="card-bottom">
-                                                        <div class="author">
-                                                            <div class="sc-author-box style-2">
-                                                                <div class="author-avatar">
-                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-8.jpg') }}" alt=""
-                                                                        class="avatar">
-                                                                    <div class="badge"><i
-                                                                            class="ripple"></i></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="content">
-                                                                <h4><a href="author01.html">Colorful Abstract</a></h4>
-                                                                <div class="infor">
-                                                                    <span>Created by</span>
-                                                                    <span class="name"><a
-                                                                            href="author02.html">Mason
-                                                                            Woodward</a></span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <button class="wishlist-button public heart"><span
-                                                                class="number-like"> 100</span></button>
-                                                    </div>
-                                                    <a href="author01.html">
-                                                        <div class="media-images-collection">
-                                                            <div class="box-left">
-                                                                <img src="{{ asset('public/frontend/images/box-item/img-collection23.jpg') }}"
-                                                                    alt="">
-                                                            </div>
-                                                            <div class="box-right">
-                                                                <div class="top-img">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/img-collection24.jpg') }}"
-                                                                        alt="">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/img-collection10.jpg') }}"
-                                                                        alt="">
-                                                                </div>
-                                                                <div class="bottom-img">
-                                                                    <img src="{{ asset('public/frontend/images/box-item/img-collection11.jpg') }}"
-                                                                        alt="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div><!-- item-->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            
 
-            <section class="tf-box-icon live-auctions style1 tf-section no-pt-mb">
+            <!-- <section class="tf-box-icon live-auctions style1 tf-section no-pt-mb">
                 <div class="themesflat-container">
                     <div class="row">
                         <div class="col-md-12">
@@ -1616,7 +1278,7 @@ use Illuminate\Support\Facades\Session;
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
 
 @endsection
