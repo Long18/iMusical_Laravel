@@ -39,13 +39,13 @@ class HomeController extends Controller
         // get product
         $products = Product::where('status','1')
         ->orderBy('create_at','asc')
-        ->take(50)
+        ->take(10)
         ->get();
         
         Session::put('newProducts',$newProducts);
         Session::put('topSellers',$topSellers);
         Session::put('categories',$categories);
-        Session::put('products',$products);
+        Session::put('newProducts',$newProducts);
         return view('pages.home');
     }
 
