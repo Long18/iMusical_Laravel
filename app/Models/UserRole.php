@@ -10,7 +10,7 @@ class UserRole extends Model
     use HasFactory;
 
     use HasFactory;
-    protected $table = 'roles';
+    protected $table = 'user_roles';
     public $timestamps = true;
 
     public function getRole(){

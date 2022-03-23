@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -14,13 +15,13 @@ class ProductController extends Controller
     public function all_products()
     {
         $all_products = DB::table('products')->get();
-        $manager_products = view('admin.all_products')->with('all_products', $all_products);
-        return view('admin_layout')->with('admin.all_products', $manager_products);
+        $manager_products = view('admin.sub.all_products')->with('all_products', $all_products);
+        return view('admin.main.admin_layout')->with('admin.sub.all_products', $manager_products);
     }
 
     public function add_product()
     {
-        return view('admin.add_product');
+        return view('admin.sub.add_product');
     }
 
     public function save_product(Request $request)
@@ -46,7 +47,7 @@ class ProductController extends Controller
         $all_products = DB::table('products')->where('product_id', $product_id)->get();
         $manager_products = view('admin.edit_product')->with('edit_product', $all_products);
         Session::put('messenge', 'Your product was edited!!');
-        return view('admin_layout')->with('admin.edit_product', $manager_products);
+        return view('admin.main.admin_layout')->with('admin.sub.edit_product', $manager_products);
     }
 
     public function update_product(Request $request, $product_id)

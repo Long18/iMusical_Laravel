@@ -46,11 +46,11 @@
                                         {{ csrf_field() }}
                                         <div class="form-group">
                                             <label class="mb-1 text-white"><strong>Email</strong></label>
-                                            <input type="email" name="admin_email" class="form-control" value="Your Account" required="">
+                                            <input type="email" name="admin_email" class="form-control" value="<?php echo Session::get('user_email') ?>" required="" placeholder="Your Account">
                                         </div>
                                         <div class="form-group">
                                             <label class="mb-1 text-white"><strong>Password</strong></label>
-                                            <input type="password" name="admin_password" class="form-control" value="Password" required="">
+                                            <input type="password" name="admin_password" class="form-control" value="" required="" placeholder="Password">
                                         </div>
                                         <div class="form-row d-flex justify-content-between mt-4 mb-2">
                                             <div class="form-group">

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Client;
 
+use App\Http\Controllers\Controller;
 use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\Slider;
@@ -46,7 +47,7 @@ class HomeController extends Controller
         Session::put('topSellers',$topSellers);
         Session::put('categories',$categories);
         Session::put('newProducts',$newProducts);
-        return view('pages.home');
+        return view('client.sub.home');
     }
 
 }

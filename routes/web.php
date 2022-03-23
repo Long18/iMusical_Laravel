@@ -1,12 +1,12 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\TypesController;
-use App\Http\Controllers\DebugController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\TypesController;
+use App\Http\Controllers\Client\AboutController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +18,9 @@ use App\Http\Controllers\DebugController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-//Frontend routes
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/home', [HomeController::class, 'index']);
-Route::get('/about', [AboutController::class, 'index']);
-
-
-//Backend routes
+//----------------------------------------------------------------------------------------------------------------------
+/////////// admin routes
+// home
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/dashboard', [AdminController::class, 'show_dashboard']);
 Route::get('/logout', [AdminController::class, 'logout']);
@@ -52,6 +47,15 @@ Route::get('/delete-type/{type_id}', [TypesController::class, 'delete_type']);
 Route::post('/save-type', [TypesController::class, 'save_type']);
 Route::post('/update-type/{type_id}', [TypesController::class, 'update_type']);
 
+//----------------------------------------------------------------------------------------------------------------------
+/////////// client routes
+
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index']);
+
+
+//----------------------------------------------------------------------------------------------------------------------
 //debug
 Route::get('/debug',[DebugController::class,'debug']);
 
