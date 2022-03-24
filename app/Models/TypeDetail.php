@@ -9,7 +9,7 @@ class TypeDetail extends Model{
     //
     use HasFactory;
     protected $table = 'types_detail';
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function getProduct(){
         return Product::where('status',1)

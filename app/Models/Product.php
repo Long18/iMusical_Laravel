@@ -9,7 +9,7 @@ class Product extends Model{
     //
     use HasFactory;
     protected $table = 'products';
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function getBrand(){
         return Brand::where('brand_id',$this->brand_id)->first();

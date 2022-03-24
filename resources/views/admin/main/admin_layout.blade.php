@@ -48,7 +48,7 @@ use Illuminate\Support\Facades\Session;
     <div id="main-wrapper">
 
         <div class="nav-header">
-            <a href="{{ URL::to('/dashboard') }}" class="brand-logo">
+            <a href="{{ URL::to('/admin/dashboard') }}" class="brand-logo">
                 <img class="logo-abbr" src="{{ asset('public/backend/images/logo.png') }}" alt="">
                 <img class="logo-compact" src="{{ asset('public/backend/images/logo-text.png') }}" alt="">
                 <img class="brand-title" src="{{ asset('public/backend/images/logo-text.png') }}" alt="">
@@ -598,7 +598,15 @@ use Illuminate\Support\Facades\Session;
                     </a>
                     <ul aria-expanded="false">
                         <li><a href="{{ URL::to('/admin/all-types') }}">All Types</a></li>
-                        <li><a href="{{ URL::to('/admin/add-type') }}">Add Types</a></li>
+                        <li><a href="{{ URL::to('/admin/add-type') }}">Add Type</a></li>
+                    </ul>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="flaticon-381-price-tag"></i>
+                        <span class="nav-text">Brands</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{ URL::to('/admin/all-types') }}">All Brands</a></li>
+                        <li><a href="{{ URL::to('/admin/add-type') }}">Add Brand</a></li>
                     </ul>
 
                 </li>

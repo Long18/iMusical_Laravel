@@ -11,5 +11,5 @@ class Role extends Model
     
     use HasFactory;
     protected $table = 'roles';
-    public $timestamps = true;
+    public $timestamps = false;
 }

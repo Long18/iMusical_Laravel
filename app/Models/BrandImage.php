@@ -11,6 +11,6 @@ class BrandImage extends Model
 
     use HasFactory;
     protected $table = 'brand_images';
-    public $timestamps = true;
+    public $timestamps = false;
     
 }
