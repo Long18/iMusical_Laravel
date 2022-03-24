@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductAdminController;
 use App\Http\Controllers\Admin\TypesAdminController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\AboutController;
+use App\Http\Controllers\Client\ItemDetailController;
 
 
 /*
@@ -19,6 +20,8 @@ use App\Http\Controllers\Client\AboutController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 //----------------------------------------------------------------------------------------------------------------------
 /////////// admin routes
 // home
@@ -54,6 +57,8 @@ Route::post('/admin/update-type/{type_id}', [TypesAdminController::class, 'updat
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
+
+Route::get('/item-detail/{type_id}', [ItemDetailController::class, 'index']);
 
 
 //----------------------------------------------------------------------------------------------------------------------
