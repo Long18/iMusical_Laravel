@@ -58,7 +58,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 
-Route::get('/item-detail/{type_id}', [ItemDetailController::class, 'index']);
+Route::get('/item-detail/{product_id}', [ItemDetailController::class, 'get_item_detail']);
 
 
 //----------------------------------------------------------------------------------------------------------------------

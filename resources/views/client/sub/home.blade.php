@@ -161,7 +161,7 @@
                                                         </div>
                                                         <div class="card-title">';
 ?>
-                            <h3><a href="{{ URL::to('/item-detail/' . $product->product_id) }}">
+                            <h3><a href="{{ URL::to('/item-detail/' . $product->product_id) }}" method="post">
                                     <?php
                                                             echo ''. $product->product_name . '</a></h3>
                                                             <!-- <div class="tags">bsc</div> -->
@@ -189,50 +189,6 @@
                         }
 
                         ?>
-                                    <!-- <div class="swiper-slide">
-                                                <div class="slider-item">
-                                                    <div class="sc-card-product">
-                                                        <div class="card-media active">
-                                                            <a href="item-details.html"><img
-                                                                    src="{{ asset('public/frontend/images/box-item/image-box-10.jpg') }}"
-                                                                    alt="Image"></a>
-                                                            <button class="wishlist-button heart"><span
-                                                                    class="number-like"> 220</span></button>
-                                                            <div class="featured-countdown">
-                                                                <span class="slogan"></span>
-                                                                <span class="js-countdown" data-timer="81640"
-                                                                    data-labels=" :  ,  : , : , "></span>
-                                                            </div>
-                                                            <div class="button-place-bid">
-                                                                <a href="#" data-toggle="modal" data-target="#popup_bid"
-                                                                    class="sc-button style-place-bid style bag fl-button pri-3"><span>Place
-                                                                        Bid</span></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-title">
-                                                            <h5 class="style2"><a href="item-details.html">"Triumphant
-                                                                    Awakening Contemplates "</a></h5>
-                                                            <div class="tags">bsc</div>
-                                                        </div>
-                                                        <div class="meta-info">
-                                                            <div class="author">
-                                                                <div class="avatar">
-                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-12.jpg') }}" alt="Image">
-                                                                </div>
-                                                                <div class="info">
-                                                                    <span>Creator</span>
-                                                                    <h6> <a href="author02.html">Trista Francis</a> </h6>
-                                                                </div>
-                                                            </div>
-                                                            <div class="price">
-                                                                <span>Current Bid</span>
-                                                                <h5> 4.89 ETH</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-
 
                         </div>
                         <div class="swiper-pagination mg-t-6"></div>

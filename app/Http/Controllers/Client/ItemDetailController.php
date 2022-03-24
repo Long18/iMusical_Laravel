@@ -13,15 +13,12 @@ session_start();
 
 class ItemDetailController extends Controller
 {
-    public function index()
+    public function get_item_detail($product_id)
     {
         //get product from data base
-        $all_products = Product::where('status','1')
-        ->orderBy('create_at','asc')
-        ->take(10)
-        ->get();
+        $item= Product::where('product_id',$product_id)->get();
 
-        $manager_products = view('client.sub.item_detail')->with('item_detail', $all_products);
+        $manager_products = view('client.sub.item_detail')->with('item_detail', $item);
         return view('client.sub.home')->with('client.sub.item_detail', $manager_products);
     }
 }

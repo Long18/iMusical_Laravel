@@ -45,7 +45,7 @@
                                 <div class="wrap-box flex">
                                     <div id="site-logo" class="clearfix">
                                         <div id="site-logo-inner">
-                                            <a href="index-2.html" rel="home" class="main-logo">
+                                            <a href="{{ URL::to('/')}}" rel="home" class="main-logo">
                                                 <img id="logo_header" src="{{ asset('public/frontend/images/logo/logo_dark.png') }}"
                                                     alt="nft-gaming" width="133" height="56"
                                                     data-retina="{{ asset('public/frontend/images/logo/logo.png') }}" data-width="133"
@@ -59,7 +59,7 @@
                                             <li class="menu-item current-menu-item menu-item-has-children">
                                                 <a href="#">Home</a>
                                                 <ul class="sub-menu">
-                                                    <li class="menu-item current-item"><a href="index-2.html">Home 1</a>
+                                                    <li class="menu-item current-item"><a href="{{ URL::to('/')}}">Home 1</a>
                                                     </li>
                                                     <li class="menu-item"><a href="home2.html">Home 2</a></li>
                                                     <li class="menu-item"><a href="home3.html">Home 3</a></li>
@@ -487,7 +487,7 @@
                 </div>
             </header>
             <!-- Header -->
-            
+
             @yield('content')
 
             <!-- Footer -->

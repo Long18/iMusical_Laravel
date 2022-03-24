@@ -11,9 +11,9 @@
                         </div>
                         <div class="card-body">
                             <?php
-                            
+
                             use Illuminate\Support\Facades\Session;
-                            
+
                             $message = Session::get('message');
                             if ($message) {
                                 echo '<span class="text-alert">' . $message . '</span>';
@@ -34,7 +34,7 @@
                                                     </label>
                                                     <div class="col-lg-6">
                                                         <input type="text" class="form-control" id="val-name-type"
-                                                            name="val_name_type" placeholder="Enter a name type.." value="{{$edit_value->name}}">
+                                                            name="val_name_type" placeholder="Enter a name type.." value="{{$edit_value->type_name}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">

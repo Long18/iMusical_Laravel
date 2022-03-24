@@ -44,9 +44,9 @@ class TypesAdminController extends Controller
     public function edit_type($type_id)
     {
         $all_types = DB::table('types')->where('type_id', $type_id)->get();
-        $manager_types = view('admin.edit_type')->with('edit_type', $all_types);
+        $manager_types = view('admin.sub.edit_type')->with('edit_type', $all_types);
         Session::put('messenge', 'Your type was edited!!');
-        return view('admin_layout')->with('admin.edit_type', $manager_types);
+        return view('admin.main.admin_layout')->with('admin.sub.edit_type', $manager_types);
     }
 
     public function update_type(Request $request, $type_id)

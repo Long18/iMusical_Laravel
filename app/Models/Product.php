@@ -15,6 +15,10 @@ class Product extends Model{
         return Brand::where('brand_id',$this->brand_id)->first();
     }
 
+    public function getNameProduct(){
+        return Product::where('product_name',$this->product_name)->first();
+    }
+
     public function getCategory(){
         return Type::where('type_id',$this->category_id)->first();
     }
@@ -25,7 +29,7 @@ class Product extends Model{
             'price'=> "",
             'priceSale'=> "Current Price"
         );
-        
+
         if(empty($product->product_price)){
             // if product doesn't have price
             $priceNPriceSale->price = "<a href='' style='color: LightCoral;'>Please Contact</a>";
@@ -34,7 +38,7 @@ class Product extends Model{
             if($product->product_price_sale){
                 $salePercent = floor(((float)$product->product_price_sale/(float)$product->product_price - 1)*100);
 
-                $priceNPriceSale->priceSale = "<del>". number_format($product->product_price, 0, '', ',') . "</del> " . "  <b style='color: red;'> ".$salePercent. "% </b>";
+                $priceNPriceSale->priceSale = "<del>". number_format($product->product_price, 0, '', ',') . "</del> " . '  <b style="color: red"> '.$salePercent. "% </b>";
                 $priceNPriceSale->price = (number_format($product->product_price_sale, 0, '', ',') . " VND");
 
             }else{
