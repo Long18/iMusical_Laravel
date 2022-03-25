@@ -11,6 +11,8 @@ class Order extends Model{
     protected $table = 'orders';
     public $timestamps = false;
 
+    protected $primaryKey = 'order_id';
+
     public function getOrderDetails(){
         return OrderDetail::where('order_id',$this->order_id)
         ->get();

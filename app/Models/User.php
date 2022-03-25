@@ -14,6 +14,8 @@ class User extends Authenticatable
     protected $table = 'users';
     public $timestamps = false;
 
+    protected $primaryKey = 'user_id';
+
     public function getRoles(){
         return UserRole::where('status',1)
         ->where('user_id',$this->user_id)

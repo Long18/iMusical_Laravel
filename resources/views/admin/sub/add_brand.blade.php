@@ -22,19 +22,19 @@
                         }
                         ?>
                         <div class="form-validation">
-                            <form class="form-valide" action="{{URL::to('/admin/save-type')}}" method="post">
+                            <form class="form-valide" action="{{URL::to('/admin/save-brand')}}" method="post">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_name_type"><b>Name</b>
+                                            <label class="col-lg-4 col-form-label" for="val_name_brand"><b>Name</b>
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_name_type" name="val_name_type" placeholder="Enter a name type.." >
+                                                <input type="text" class="form-control" id="val_name_brand" name="val_name_brand" placeholder="Enter a name type.." >
                                             </div>
                                         </div>
-                                        <div class="form-group row">
+                                        <!-- <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val_slug_type"><b>Slug</b>
                                             </label>
                                             <div class="col-lg-6">
@@ -66,10 +66,10 @@
                                                     ?>
                                                 </select>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="col-xl-6">
-                                        <div class="form-group row">
+                                        <!-- <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val_meta_key"><b>Meta Keywords</b>
                                             </label>
                                             <div class="col-lg-6">
@@ -82,12 +82,12 @@
                                             <div class="col-lg-6">
                                                 <textarea class="form-control" id="val_meta_desc" name="val_meta_desc" placeholder="Make type description.." style="min-height: 10rem;"></textarea>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_status_type"><b>Status</b>
+                                            <label class="col-lg-4 col-form-label" for="val_status_brand"><b>Status</b>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="checkbox" class="css-control-input mr-2" id="val_status_type" name="val_status_type" >
+                                                <input type="checkbox" class="css-control-input mr-2" id="val_status_brand" name="val_status_brand" >
                                                 <span class="css-control-indicator"></span> Avaiable</label>
                                             </div>
                                         </div>

@@ -13,6 +13,8 @@ class OrderDetail extends Model
     protected $table = 'order_details';
     public $timestamps = false;
 
+    protected $primaryKey = 'orders_detail_id';
+
     public function getProduct(){
         return Product::where('status',1)
         ->where('product_id', $this->product_id)

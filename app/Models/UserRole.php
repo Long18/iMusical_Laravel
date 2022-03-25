@@ -13,9 +13,15 @@ class UserRole extends Model
     protected $table = 'user_roles';
     public $timestamps = false;
 
+
     public function getRole(){
         return Role::where('status',1)
         ->where('role_id',$this->role_id)
+        ->first();
+    }
+
+    public function getAllRole(){
+        return Role::where('role_id',$this->role_id)
         ->first();
     }
 }

@@ -14,7 +14,10 @@ session_start();
 class AdminController extends Controller
 {
     public function index()
-    {
+    {   
+        if(!isset($_SESSION['user_id'])){
+            return Redirect::to('/admin/dashboard');
+        }
         return view('admin.main.admin_login');
     }
     public function show_dashboard()
@@ -42,6 +45,7 @@ class AdminController extends Controller
 
         if($result){
             Session::put('user_name',$user->user_name);
+            Session::put('user_email',$user_email);
             Session::put('user_id',$user->user_id);
             return Redirect::to('/admin/dashboard');
         }else{

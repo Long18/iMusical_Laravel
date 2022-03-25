@@ -11,6 +11,8 @@ class Type extends Model{
     protected $table = 'types';
     public $timestamps = false;
 
+    protected $primaryKey = 'type_id';
+
     public function getParent(){
         return Type::where('status',1)
         ->where('type_id',$this->parent_id)
