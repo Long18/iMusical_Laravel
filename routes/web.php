@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\BrandsAdminController;
 use App\Http\Controllers\Admin\UsersAdminController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\AboutController;
+use App\Http\Controllers\Client\ItemDetailController;
 
 
 /*
@@ -21,6 +22,8 @@ use App\Http\Controllers\Client\AboutController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 //----------------------------------------------------------------------------------------------------------------------
 /////////// admin routes
 // home
@@ -78,6 +81,8 @@ Route::post('/admin/save-user-role/{user_id}', [UsersAdminController::class, 'sa
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
+
+Route::get('/item-detail/{product_id}', [ItemDetailController::class, 'get_item_detail']);
 
 
 //----------------------------------------------------------------------------------------------------------------------

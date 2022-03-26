@@ -15,7 +15,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        //get slider for home page 
+        //get slider for home page
         $sliders = Slider::where('status','1')->get();
 
         //get top 10 newest product
@@ -23,7 +23,7 @@ class HomeController extends Controller
         ->orderBy('create_at','asc')
         ->take(10)
         ->get();
-        
+
 
         //get top 10 Top seller product
         // return obj(product_id, total)
@@ -31,18 +31,18 @@ class HomeController extends Controller
         ->selectRaw('product_id, sum(order_detail_quantity) as total')
         ->orderBy('total','desc')
         ->get();
-        
+
         //get categories
         $categories = Type::where('status',1)
         ->whereNULL('parent_id')
         ->get();
-        
+
         // get product
         $products = Product::where('status','1')
         ->orderBy('create_at','asc')
         ->take(10)
         ->get();
-        
+
         Session::put('newProducts',$newProducts);
         Session::put('topSellers',$topSellers);
         Session::put('categories',$categories);

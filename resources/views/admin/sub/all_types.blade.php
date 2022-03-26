@@ -1,5 +1,6 @@
 @extends('admin.main.admin_layout')
 @section('admin_content')
+
 <div class="content-body">
     <div class="container-fluid">
         <div class="col-12">
@@ -39,6 +40,7 @@
                                         $parent = $type->getParent();
                                         
                                 ?>
+
                                         <tr>
                                             <td><img class="rounded-circle" width="35" src="{{ asset('public/backend/images/profile/small/pic1.jpg') }}" alt="">
                                             </td>
@@ -49,8 +51,10 @@
                                             <td>{{ $type->create_at }}</td>
                                             <td>
                                                 <div class="d-flex">
+
                                                     <a href="{{ URL::to('admin/edit-type/' . $type->type_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                                                     <a onclick="return confirm('Are you sure to delete?')" href="{{ URL::to('admin/delete-type/' . $type->type_id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+
                                                 </div>
                                             </td>
                                         </tr>

@@ -8,9 +8,9 @@
                         <h4 class="card-title">Product</h4>
                     </div>
                     <?php
-                    
+
                     use Illuminate\Support\Facades\Session;
-                    
+
                     $message = Session::get('message');
                     if ($message) {
                         echo '<span class="text-alert">' . $message . '</span>';
@@ -41,10 +41,10 @@
                                                     src="{{ asset('public/backend/images/profile/small/pic1.jpg') }}"
                                                     alt="">
                                             </td>
-                                            <td>{{ $product->name }}</td>
-                                            <td>{{ $product->price }}</td>
-                                            <td>{{ $product->price }}</td>
-                                            <td>{{ $product->detail }}</td>
+                                            <td>{{ $product->product_name }}</td>
+                                            <td>{{ $product->product_price }}</td>
+                                            <td>{{ $product->product_price_sale }}</td>
+                                            <td>{{ $product->product_detail }}</td>
 
                                             <?php
                                                 if ($product->status == 1){
