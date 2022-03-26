@@ -34,7 +34,7 @@
                                                     </label>
                                                     <div class="col-lg-6">
                                                         <input type="text" class="form-control" id="val-name-product"
-                                                            name="val_name_product" placeholder="Enter a name product.." value="{{$edit_value->name}}">
+                                                            name="val_name_product" placeholder="Enter a name product.." value="{{$edit_value->product_name}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">

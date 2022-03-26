@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ProductAdminController;
 use App\Http\Controllers\Admin\TypesAdminController;
+use App\Http\Controllers\Admin\BrandsAdminController;
+use App\Http\Controllers\Admin\UsersAdminController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\AboutController;
 use App\Http\Controllers\Client\ItemDetailController;
@@ -48,9 +50,31 @@ Route::get('/admin/edit-type/{type_id}', [TypesAdminController::class, 'edit_typ
 Route::get('/admin/delete-type/{type_id}', [TypesAdminController::class, 'delete_type']);
 
 
-Route::post('/admin/save-type', [TypesAdminController::class, 'save_type']);
-Route::post('/admin/update-type/{type_id}', [TypesAdminController::class, 'update_type']);
+Route::post('/admin/save-type', [TypesAdminController::class, 'save_brand']);
+Route::post('/admin/update-type/{type_id}', [TypesAdminController::class, 'update_brand']);
 
+// brands
+Route::get('/admin/all-brands', [BrandsAdminController::class, 'all_brands']);
+Route::get('/admin/add-brand', [BrandsAdminController::class, 'add_brand']);
+Route::get('/admin/edit-brand/{brand_id}', [BrandsAdminController::class, 'edit_brand']);
+Route::get('/admin/delete-brand/{brand_id}', [BrandsAdminController::class, 'delete_brand']);
+
+
+Route::post('/admin/save-brand', [BrandsAdminController::class, 'save_brand']);
+Route::post('/admin/update-brand/{brand_id}', [BrandsAdminController::class, 'update_brand']);
+
+// user manager
+Route::get('/admin/all-users', [UsersAdminController::class, 'all_users']);
+Route::get('/admin/edit-user/{user_id}', [UsersAdminController::class, 'edit_user']);
+
+Route::get('/admin/add-user-role/{user_id}', [UsersAdminController::class, 'add_user_role']);
+Route::get('/admin/edit-user-role/{user_role_id}/{user_id}', [UsersAdminController::class, 'edit_user_role']);
+Route::get('/admin/delete-user-role/{user_role_id}/{user_id}', [UsersAdminController::class, 'delete_user_role']);
+
+Route::post('/admin/update-user/{user_id}', [UsersAdminController::class, 'update_user']);
+
+Route::post('/admin/update-user-role/{user_role_id}/{user_id}', [UsersAdminController::class, 'update_user_role']);
+Route::post('/admin/save-user-role/{user_id}', [UsersAdminController::class, 'save_user_role']);
 //----------------------------------------------------------------------------------------------------------------------
 /////////// client routes
 

@@ -9,7 +9,9 @@ class Cart extends Model
 {
     use HasFactory;
     protected $table = 'cart';
-    public $timestamps = true;
+    public $timestamps = false;
+
+    protected $primaryKey = 'cart_id';
 
     public function getProduct(){
         return Product::where('status',1)

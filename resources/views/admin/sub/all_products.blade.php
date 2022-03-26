@@ -70,11 +70,11 @@
                                             <td>{{ $product->create_at }}</td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <a href="{{ URL::to('/edit-product/' . $product->product_id) }}"
+                                                    <a href="{{ URL::to('admin/edit-product/' . $product->product_id) }}"
                                                         class="btn btn-primary shadow btn-xs sharp mr-1"><i
                                                             class="fa fa-pencil"></i></a>
                                                     <a onclick="return confirm('Are you sure to delete?')"
-                                                        href="{{ URL::to('/delete-product/' . $product->product_id) }}"
+                                                        href="{{ URL::to('admin/delete-product/' . $product->product_id) }}"
                                                         class="btn btn-danger shadow btn-xs sharp"><i
                                                             class="fa fa-trash"></i></a>
                                                 </div>

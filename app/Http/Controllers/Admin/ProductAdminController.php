@@ -54,7 +54,7 @@ class ProductAdminController extends Controller
     public function edit_product($product_id)
     {
         $all_products = DB::table('products')->where('product_id', $product_id)->get();
-        $manager_products = view('admin.edit_product')->with('edit_product', $all_products);
+        $manager_products = view('admin.sub.edit_product')->with('edit_product', $all_products);
         Session::put('messenge', 'Your product was edited!!');
         return view('admin.main.admin_layout')->with('admin.sub.edit_product', $manager_products);
     }

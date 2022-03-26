@@ -11,11 +11,14 @@ class UserRole extends Model
 
     use HasFactory;
     protected $table = 'user_roles';
-    public $timestamps = true;
+    public $timestamps = false;
+
+    protected $fillable = ['user_id','role_id']; 
 
     public function getRole(){
         return Role::where('status',1)
         ->where('role_id',$this->role_id)
         ->first();
     }
+
 }
