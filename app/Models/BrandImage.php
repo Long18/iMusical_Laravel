@@ -11,6 +11,7 @@ class BrandImage extends Model
 
     use HasFactory;
     protected $table = 'brand_images';
+    protected $primaryKey = 'brand_image_id';
     public $timestamps = false;
     
 }

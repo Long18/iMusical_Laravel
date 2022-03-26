@@ -11,6 +11,8 @@ class Product extends Model{
     protected $table = 'products';
     public $timestamps = false;
 
+    protected $primaryKey = 'product_id';
+
     public function getBrand(){
         return Brand::where('brand_id',$this->brand_id)->first();
     }

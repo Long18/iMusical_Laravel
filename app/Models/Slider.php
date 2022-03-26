@@ -11,6 +11,8 @@ class Slider extends Model{
     protected $table = 'sliders';
     public $timestamps = false;
 
+    protected $primaryKey = 'slider_id';
+
     public function getCreatePerson(){
         return User::where('user_id',$this->create_by)
         ->first();
