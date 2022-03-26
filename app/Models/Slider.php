@@ -9,7 +9,7 @@ class Slider extends Model{
     //
     use HasFactory;
     protected $table = 'sliders';
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function getCreatePerson(){
         return User::where('user_id',$this->create_by)

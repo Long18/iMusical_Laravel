@@ -11,7 +11,7 @@ class UserRole extends Model
 
     use HasFactory;
     protected $table = 'user_roles';
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function getRole(){
         return Role::where('status',1)

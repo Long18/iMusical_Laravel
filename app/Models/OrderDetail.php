@@ -11,7 +11,7 @@ class OrderDetail extends Model
 
     use HasFactory;
     protected $table = 'order_details';
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function getProduct(){
         return Product::where('status',1)

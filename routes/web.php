@@ -51,6 +51,17 @@ Route::get('/admin/delete-type/{type_id}', [TypesAdminController::class, 'delete
 Route::post('/admin/save-type', [TypesAdminController::class, 'save_type']);
 Route::post('/admin/update-type/{type_id}', [TypesAdminController::class, 'update_type']);
 
+// brands
+Route::get('/admin/all-brans', [TypesAdminController::class, 'all_types']);
+Route::get('/admin/add-brand', [TypesAdminController::class, 'add_type']);
+Route::get('/admin/edit-brand/{type_id}', [TypesAdminController::class, 'edit_type']);
+Route::get('/admin/delete-brand/{type_id}', [TypesAdminController::class, 'delete_type']);
+
+
+Route::post('/admin/save-type', [TypesAdminController::class, 'save_type']);
+Route::post('/admin/update-type/{type_id}', [TypesAdminController::class, 'update_type']);
+
+
 //----------------------------------------------------------------------------------------------------------------------
 /////////// client routes
 

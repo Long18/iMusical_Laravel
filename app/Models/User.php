@@ -12,7 +12,7 @@ class User extends Authenticatable
 {
     use HasFactory;
     protected $table = 'users';
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function getRoles(){
         return UserRole::where('status',1)

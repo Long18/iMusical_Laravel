@@ -9,7 +9,7 @@ class Brand extends Model{
     //
     use HasFactory;
     protected $table = 'brands';
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function getImages(){
         return BrandImage::where('brand_id',$this->brand_id)

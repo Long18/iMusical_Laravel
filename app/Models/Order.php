@@ -9,7 +9,7 @@ class Order extends Model{
     //
     use HasFactory;
     protected $table = 'orders';
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function getOrderDetails(){
         return OrderDetail::where('order_id',$this->order_id)
