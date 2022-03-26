@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="csrf-token" content="rFtJ8NudN4YmTWbPJ4KufcTFd14V2dNIEXZdWTqS">
-    <title>Admin | Dashboard</title>
+    <title>Admin</title>
     <meta name="description" content="Some description for the page" />
 
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/backend/images/favicon.png') }}">
@@ -329,15 +329,15 @@
                                 Dashboard </div>
                         </div>
                         <ul class="navbar-nav header-right">
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <div class="input-group search-area d-lg-inline-flex d-none">
                                     <div class="input-group-append">
                                         <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
                                     </div>
                                     <input type="text" class="form-control" placeholder="Search here...">
                                 </div>
-                            </li>
-                            <li class="nav-item dropdown notification_dropdown">
+                            </li> -->
+                            <!-- <li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link bell bell-link" href="javascript:void(0)">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M2.23779 10.2492L4.66679 11.7064V8.30554L2.23779 10.2492Z" fill="#67636D" />
@@ -350,8 +350,8 @@
                                     </svg>
                                     <span class="badge light text-white bg-primary rounded-circle">6</span>
                                 </a>
-                            </li>
-                            <li class="nav-item dropdown notification_dropdown">
+                            </li> -->
+                            <!-- <li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link  ai-icon" href="javascript:void(0)" role="button" data-toggle="dropdown">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M23.3333 19.8333H23.1187C23.2568 19.4597 23.3295 19.065 23.3333 18.6666V12.8333C23.3294 10.7663 22.6402 8.75902 21.3735 7.12565C20.1068 5.49228 18.3343 4.32508 16.3333 3.80679V3.49996C16.3333 2.88112 16.0875 2.28763 15.6499 1.85004C15.2123 1.41246 14.6188 1.16663 14 1.16663C13.3812 1.16663 12.7877 1.41246 12.3501 1.85004C11.9125 2.28763 11.6667 2.88112 11.6667 3.49996V3.80679C9.66574 4.32508 7.89317 5.49228 6.6265 7.12565C5.35983 8.75902 4.67058 10.7663 4.66667 12.8333V18.6666C4.67053 19.065 4.74316 19.4597 4.88133 19.8333H4.66667C4.35725 19.8333 4.0605 19.9562 3.84171 20.175C3.62292 20.3938 3.5 20.6905 3.5 21C3.5 21.3094 3.62292 21.6061 3.84171 21.8249C4.0605 22.0437 4.35725 22.1666 4.66667 22.1666H23.3333C23.6428 22.1666 23.9395 22.0437 24.1583 21.8249C24.3771 21.6061 24.5 21.3094 24.5 21C24.5 20.6905 24.3771 20.3938 24.1583 20.175C23.9395 19.9562 23.6428 19.8333 23.3333 19.8333Z" fill="#67636D" />
@@ -432,7 +432,7 @@
                                     </div>
                                     <a class="all-notification" href="javascript:void(0)">See all notifications <i class="ti-arrow-right"></i></a>
                                 </div>
-                            </li>
+                            </li> -->
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="javascript:void(0)" role="button" data-toggle="dropdown">
                                     <img src="{{ asset('public/backend/images/profile/17.jpg') }}" width="20" alt="" />
@@ -490,17 +490,17 @@
                 <ul class="metismenu" id="menu">
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-381-networking"></i>
-                            <span class="nav-text">Dashboard</span>
+                            <span class="nav-text">Menu</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ URL::to('/admin/dashboard') }}">Dashboard</a></li>
-                            <li><a href="calendar.html">Calendar</a></li>
-                            <li><a href="messages.html">Messages</a></li>
+                            <!-- <li><a href="calendar.html">Calendar</a></li>
+                            <li><a href="messages.html">Messages</a></li> -->
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-381-network"></i>
-                            <span class="nav-text">Product</span>
+                            <span class="nav-text">Products</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ URL::to('/admin/all-products') }}">All Products</a></li>
@@ -526,14 +526,24 @@
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-381-network"></i>
+                            <i class="flaticon-381-user-4"></i>
                             <span class="nav-text">Users Manager</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ URL::to('/admin/all-users') }}">All User</a></li>
                         </ul>
                     </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-menu"></i>
+                            <span class="nav-text">Sliders</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ URL::to('/admin/all-products') }}">All Slider</a></li>
+                            <li><a href="{{ URL::to('/admin/add-product') }}">Add Slider</a></li>
+                        </ul>
+                    </li>
                 </ul>
+
                 <a class="add-menu-sidebar d-block" href="javascript:void(0)" data-toggle="modal" data-target="#addOrderModalside">+ New Project</a>
                 <div class="copyright">
                     <p><strong>Admin Dashboard</strong> © 2022 All Rights Reserved</p>

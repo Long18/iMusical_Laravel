@@ -94,7 +94,7 @@ class BrandsAdminController extends Controller
         $data['status'] = $request->val_status_brand ? 1 : 0;
 
         //update data into database
-        $updated = Brand::where('brand_id', $brand_id)->update($data);
+        $updated = Brand::where('brand_id', $brand_id)->updateOrCreate($data);
 
         //put data into view
         if ($updated) {

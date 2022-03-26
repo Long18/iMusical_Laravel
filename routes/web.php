@@ -63,10 +63,15 @@ Route::post('/admin/update-brand/{brand_id}', [BrandsAdminController::class, 'up
 // user manager
 Route::get('/admin/all-users', [UsersAdminController::class, 'all_users']);
 Route::get('/admin/edit-user/{user_id}', [UsersAdminController::class, 'edit_user']);
+
+Route::get('/admin/add-user-role/{user_id}', [UsersAdminController::class, 'add_user_role']);
 Route::get('/admin/edit-user-role/{user_role_id}/{user_id}', [UsersAdminController::class, 'edit_user_role']);
+Route::get('/admin/delete-user-role/{user_role_id}/{user_id}', [UsersAdminController::class, 'delete_user_role']);
 
 Route::post('/admin/update-user/{user_id}', [UsersAdminController::class, 'update_user']);
+
 Route::post('/admin/update-user-role/{user_role_id}/{user_id}', [UsersAdminController::class, 'update_user_role']);
+Route::post('/admin/save-user-role/{user_id}', [UsersAdminController::class, 'save_user_role']);
 //----------------------------------------------------------------------------------------------------------------------
 /////////// client routes
 

@@ -6,8 +6,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Update user</h4>
+                    <div class="card-header ">
+                        <h4 class="card-title">Update user </h4>
                     </div>
                     <div class="card-body">
                         <?php
@@ -94,7 +94,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">User Roles</h4>
+                        <h4 class="card-title">User Roles | <a href="{{ URL::to('/admin/add-user-role/'.$edit_user->user_id) }}" class="bg-success text-light " style="padding: 0.2rem 0.8rem; border-radius: 0.4rem;">Add Role</a></h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -141,7 +141,7 @@
                                                 <td>
                                                     <div class="d-flex form-group">
                                                         <a id="button-edit" href="{{ URL::to('admin/edit-user-role/' . $user_role->role_id .'/'. $edit_user->user_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                        <a onclick="return confirm('Are you sure to delete?')" href="" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
+                                                        <a onclick="return confirm('Are you sure to delete?')" href="{{ URL::to('admin/delete-user-role/' . $user_role->role_id .'/'. $edit_user->user_id) }}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
                                                     </div>
                                                 </td>
 

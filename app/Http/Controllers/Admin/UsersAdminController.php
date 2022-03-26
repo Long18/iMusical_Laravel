@@ -33,6 +33,16 @@ class UsersAdminController extends Controller
     //     ->with('parents', $parents);
     // }
 
+    public function add_user_role($user_id)
+    {
+        $roles = Role::where("status", 1)->get();
+
+        //return view
+        return view('admin.sub.add_user_role')
+            ->with("user_id", $user_id)
+            ->with('roles', $roles);
+    }
+
     // public function save_user(Request $request)
     // {
     //     //get data from view
@@ -74,8 +84,8 @@ class UsersAdminController extends Controller
         if ($edit_user->count() > 0) {
             //get view
             $manager_users = view('admin.sub.edit_user')
-            ->with('edit_user', $edit_user)
-            ->with('user_roles', $edit_user->getRoles());
+                ->with('edit_user', $edit_user)
+                ->with('user_roles', $edit_user->getAllRoles());
 
             //put data into view
             Session::put('messenge', 'Your user was edited!!');
@@ -90,20 +100,20 @@ class UsersAdminController extends Controller
 
         //return view
         return view('admin.main.admin_layout')
-        ->with('admin.sub.edit_user', $manager_users);
+            ->with('admin.sub.edit_user', $manager_users);
     }
 
-    public function edit_user_role($role_id,$user_id)
+    public function edit_user_role($role_id, $user_id)
     {
         //get data from database
         $edit_user_role = UserRole::where('user_id', $user_id)
-        ->where('role_id', $role_id)
-        ->first();
+            ->where('role_id', $role_id)
+            ->first();
 
         if ($edit_user_role) {
             //get view
             $manager_users = view('admin.sub.edit_user_role')
-            ->with('user_role', $edit_user_role);
+                ->with('user_role', $edit_user_role);
 
             //put data into view
             Session::put('messenge', 'Role was edited!!');
@@ -118,7 +128,7 @@ class UsersAdminController extends Controller
 
         //return view
         return view('admin.main.admin_layout')
-        ->with('admin.sub.edit_user_role', $manager_users);
+            ->with('admin.sub.edit_user_role', $manager_users);
     }
 
     public function update_user(Request $request, $user_id)
@@ -128,7 +138,7 @@ class UsersAdminController extends Controller
         $data['user_name'] = $request->val_name_user;
         $data['status'] = $request->val_status_user ? 1 : 0;
 
-        if(Session::get('user_email') != $request->val_email_user){
+        if (Session::get('user_email') != $request->val_email_user) {
             $data['user_email'] = $request->val_email_user;
             $data['email_verified_at'] = null;
         }
@@ -151,14 +161,15 @@ class UsersAdminController extends Controller
     {
         //get data from view
         $data = array();
+        $data['user_id'] = $user_id;
         $data['role_id'] = $request->val_user_role;
         $data['end_at'] = $request->val_end_at;
         $data['status'] = $request->val_status_user_role ? 1 : 0;
 
         //update data into database
         $updated = UserRole::where('user_id', $user_id)
-        ->where('role_id', $role_id)
-        ->update($data);
+            ->where('role_id', $role_id)
+            ->update($data);
 
         //put data into view
         if ($updated) {
@@ -168,7 +179,29 @@ class UsersAdminController extends Controller
         }
 
         //return view
-        return redirect()->back();
+        return Redirect::to('admin/edit-user/' . $user_id);
+    }
+
+    public function save_user_role(Request $request, $user_id)
+    {
+        //get data from view
+        $data = array();
+        $data['user_id'] = $user_id;
+        $data['role_id'] = $request->val_user_role;
+        $data['end_at'] = $request->val_end_at;
+        $data['status'] = $request->val_status_user_role ? 1 : 0;
+
+        //update data into database
+        $updated = UserRole::updateOrCreate($data);
+        //put data into view
+        if ($updated) {
+            Session::put('messenge', 'That User Role was Added!!');
+        } else {
+            Session::put('messenge', 'That User Role was not Added!!');
+        }
+
+        //return view
+        return Redirect::to('admin/edit-user/' . $user_id);
     }
 
     public function delete_user($user_id)
@@ -185,5 +218,23 @@ class UsersAdminController extends Controller
 
         //return view
         return Redirect::to('admin/all-users');
+    }
+
+    public function delete_user_role($role_id, $user_id)
+    {
+        //delete data from database
+        $deleted = UserRole::where('user_id', $user_id)
+        ->where('role_id', $role_id)
+        ->delete();
+
+        //put data into view
+        if ($deleted) {
+            Session::put('messenge', 'Your user role was deleted!!');
+        } else {
+            Session::put('messenge', 'Your user role was not deleted!!');
+        }
+
+        //return view
+        return Redirect::to('admin/edit-user/' . $user_id);
     }
 }

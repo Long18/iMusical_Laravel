@@ -7,19 +7,14 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <h4 class="card-title">Edit User Role</h4>
-                            </div>
-                        </div>
-                        <h4 class="card-title">Update brand</h4>
+                        <h4 class="card-title">Add User Role</h4>
                     </div>
                     <div class="card-body">
                         <?php
 
-use App\Models\Role;
-use App\Models\UserRole;
-use Illuminate\Support\Facades\Session;
+                        use App\Models\Role;
+                        use App\Models\UserRole;
+                        use Illuminate\Support\Facades\Session;
 
                         $message = Session::get('message');
                         if ($message) {
@@ -29,7 +24,7 @@ use Illuminate\Support\Facades\Session;
                         }
                         ?>
                         <div class="form-validation">
-                            <form class="form-valide" action="{{ URL::to('/admin/update-user-role/'.$user_role->role_id.'/'.$user_role->user_id) }}" method="post">
+                            <form class="form-valide" action="{{ URL::to('/admin/save-user-role/'.$user_id) }}" method="post">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-xl-6">
@@ -40,13 +35,11 @@ use Illuminate\Support\Facades\Session;
                                             <div class="col-lg-6">
                                                 <select class="form-control default-select" id="val_user_role" name="val_user_role">
                                                     <?php
-                                                    $roles = Role::where('status',1)->get();
+                                                    $roles = Role::where('status', 1)->get();
                                                     if ($roles) {
                                                         foreach ($roles as $role) {
                                                     ?>
-                                                    <option value="{{$role->role_id}}" <?php if ($role->role_id == $user_role->role_id) {
-                                                        echo 'selected';
-                                                    } ?>>{{$role->role_name}}</option>
+                                                            <option value="{{$role->role_id}}">{{$role->role_name}}</option>
                                                     <?php
                                                         }
                                                     }
@@ -61,7 +54,7 @@ use Illuminate\Support\Facades\Session;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="datetime-local" class="form-control" id="val_end_at" name="val_end_at" placeholder="" value="{{$user_role->end_at}}">
+                                                <input type="datetime-local" class="form-control" id="val_end_at" name="val_end_at" placeholder="" value="">
                                             </div>
                                         </div>
                                     </div>
@@ -70,7 +63,7 @@ use Illuminate\Support\Facades\Session;
                                             <label class="col-lg-4 col-form-label" for="val_status_user_role"><b>Status</b>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="checkbox" class="css-control-input mr-2" id="val_status_user_role" name="val_status_user_role" value="" <?php echo ($user_role->status == 1 ? "checked" : "")  ?>>
+                                                <input type="checkbox" class="css-control-input mr-2" id="val_status_user_role" name="val_status_user_role" value="">
                                                 <span class="css-control-indicator"></span> Avaiable</label>
                                             </div>
                                         </div>

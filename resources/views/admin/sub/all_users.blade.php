@@ -37,7 +37,13 @@
                                 if ($all_users) {
                                     foreach ($all_users as $item => $user) {
                                         // $parent = $user->getParent();
-                                        
+                                        if ($user->status == 1) {
+                                            $status = 'badge-success';
+                                            $statusContent = 'Avaiable';
+                                        } else {
+                                            $status = 'badge-danger';
+                                            $statusContent = 'Unavaiable';
+                                        }
                                 ?>
                                         <tr>
                                             <td><img class="rounded-circle" width="35" src="{{ asset('public/backend/images/profile/small/pic1.jpg') }}" alt="">
@@ -45,7 +51,7 @@
                                             <td>{{ $user->user_id}}</td>
                                             <td>{{ $user->user_name }}</td>
                                             <td>{{ $user->user_email }}</td>
-                                            <td><a href="javascript:void(0);"><strong>{{ $user->status }}</strong></a></td>
+                                            <td><span class='badge light {{ $status }} badge-sm'>{{ $statusContent }}</span></td>
                                             <td>{{ $user->created_at }}</td>
                                             <td>
                                                 <div class="d-flex">
