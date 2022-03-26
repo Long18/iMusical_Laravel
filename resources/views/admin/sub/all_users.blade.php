@@ -24,33 +24,39 @@
                             <thead>
                                 <tr>
                                     <th></th>
+                                    <th>ID</th>
                                     <th>Name</th>
-                                    <th>Detail</th>
-                                    <th>Key</th>
-                                    <th>Parent</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
                                     <th>Create Date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                if ($all_types) {
-                                    foreach ($all_types as $item => $type) {
-                                        $parent = $type->getParent();
-                                        
+                                if ($all_users) {
+                                    foreach ($all_users as $item => $user) {
+                                        // $parent = $user->getParent();
+                                        if ($user->status == 1) {
+                                            $status = 'badge-success';
+                                            $statusContent = 'Avaiable';
+                                        } else {
+                                            $status = 'badge-danger';
+                                            $statusContent = 'Unavaiable';
+                                        }
                                 ?>
                                         <tr>
                                             <td><img class="rounded-circle" width="35" src="{{ asset('public/backend/images/profile/small/pic1.jpg') }}" alt="">
                                             </td>
-                                            <td>{{ $type->type_name }}</td>
-                                            <td>{{ $type->type_meta_desc }}</td>
-                                            <td><a href="javascript:void(0);"><strong>{{ $type->type_meta_key }}</strong></a></td>
-                                            <td><a href="javascript:void(0);"><strong><?php echo $parent? $parent->type_name:"NULL" ?></strong></td>
-                                            <td>{{ $type->create_at }}</td>
+                                            <td>{{ $user->user_id}}</td>
+                                            <td>{{ $user->user_name }}</td>
+                                            <td>{{ $user->user_email }}</td>
+                                            <td><span class='badge light {{ $status }} badge-sm'>{{ $statusContent }}</span></td>
+                                            <td>{{ $user->created_at }}</td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <a href="{{ URL::to('admin/edit-type/' . $type->type_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                    <a onclick="return confirm('Are you sure to delete?')" href="{{ URL::to('admin/delete-type/' . $type->type_id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    <a href="{{ URL::to('admin/edit-user/' . $user->user_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a onclick="return confirm('Are you sure to delete?')" href="{{ URL::to('admin/delete-user/' . $user->user_id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

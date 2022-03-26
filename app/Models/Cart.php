@@ -11,6 +11,8 @@ class Cart extends Model
     protected $table = 'cart';
     public $timestamps = false;
 
+    protected $primaryKey = 'cart_id';
+
     public function getProduct(){
         return Product::where('status',1)
         ->where('product_id', $this->product_id)

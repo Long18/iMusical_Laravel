@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Type;
+use App\Models\Brand;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
@@ -15,7 +14,7 @@ class BrandsAdminController extends Controller
     public function all_brands()
     {
         //get data from database
-        $all_brands = Type::get();
+        $all_brands = Brand::get();
 
         $manager_brands = view('admin.sub.all_brands')->with('all_brands', $all_brands);
 
@@ -25,7 +24,7 @@ class BrandsAdminController extends Controller
 
     public function add_brand()
     {
-        $parents = Type::where("status",1)->get();
+        $parents = Brand::where("status",1)->get();
 
         //return view
         return view('admin.sub.add_brand')
@@ -37,23 +36,17 @@ class BrandsAdminController extends Controller
         //get data from view
         $data = array();
         $data['brand_name'] = $request->val_name_brand;
-        $data['brand_slug'] = $request->val_slug_brand;
-        $data['brand_image_url'] = $request->val_image_url;
-        $data['parent_id'] = $request->val_parent_brand;
-        $data['brand_meta_key'] = $request->val_meta_key;
-        $data['brand_meta_desc'] = $request->val_meta_desc;
-        
         $data['status'] = $request->val_status_brand ? 1 : 0;
 
-        $user_id = Session::get('user_id');
-        if($user_id){
-            $data['create_by'] = $user_id;
-        }else{
-            return Redirect::to('/admin/logout');
-        }
+        // $user_id = Session::get('user_id');
+        // if($user_id){
+        //     $data['create_by'] = $user_id;
+        // }else{
+        //     return Redirect::to('/admin/logout');
+        // }
 
         // insert data in to database
-        $inserted = Type::insert($data);
+        $inserted = Brand::insert($data);
 
         // jput data into veiew
         if ($inserted) {
@@ -70,18 +63,13 @@ class BrandsAdminController extends Controller
     public function edit_brand($brand_id)
     {
         //get data from database
-        $edit_brand = Type::where('brand_id', $brand_id)
+        $edit_brand = Brand::where('brand_id', $brand_id)
             ->first();
-        $parents = Type::where('brand_id', '!=', $brand_id)
-            ->get();
-        $creator = $edit_brand->getCreator();
 
         if ($edit_brand->count() > 0) {
             //get view
             $manager_brands = view('admin.sub.edit_brand')
-            ->with('edit_brand', $edit_brand)
-            ->with('parents', $parents)
-            ->with('creator', $creator);
+            ->with('edit_brand', $edit_brand);
 
             //put data into view
             Session::put('messenge', 'Your brand was edited!!');
@@ -103,15 +91,10 @@ class BrandsAdminController extends Controller
         //get data from view
         $data = array();
         $data['brand_name'] = $request->val_name_brand;
-        $data['brand_slug'] = $request->val_slug_brand;
-        $data['brand_image_url'] = $request->val_image_url;
-        $data['parent_id'] = $request->val_parent_brand;
-        $data['brand_meta_key'] = $request->val_meta_key;
-        $data['brand_meta_desc'] = $request->val_meta_desc;
         $data['status'] = $request->val_status_brand ? 1 : 0;
 
         //update data into database
-        $updated = Type::where('brand_id', $brand_id)->update($data);
+        $updated = Brand::where('brand_id', $brand_id)->updateOrCreate($data);
 
         //put data into view
         if ($updated) {
@@ -127,7 +110,7 @@ class BrandsAdminController extends Controller
     public function delete_brand($brand_id)
     {
         //delete data from database
-        $deleted = Type::where('brand_id', $brand_id)->delete();
+        $deleted = Brand::where('brand_id', $brand_id)->delete();
 
         //put data into view
         if ($deleted) {
