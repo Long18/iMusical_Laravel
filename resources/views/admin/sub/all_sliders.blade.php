@@ -1,16 +1,15 @@
 @extends('admin.main.admin_layout')
 @section('admin_content')
-
 <div class="content-body">
     <div class="container-fluid">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Product</h4>
+                    <h4 class="card-title">Types</h4>
                 </div>
                 <?php
-use App\Models\Product;
-use Illuminate\Support\Facades\Session;
+
+                use Illuminate\Support\Facades\Session;
 
                 $message = Session::get('message');
                 if ($message) {
@@ -25,30 +24,25 @@ use Illuminate\Support\Facades\Session;
                             <thead>
                                 <tr>
                                     <th></th>
+                                    <th>ID</th>
                                     <th>Name</th>
-                                    <th>Brand</th>
-                                    <th>Price</th>
-                                    <th>Sale Price</th>
-                                    <th>Amount</th>
-                                    <th>Create Date</th>
+                                    <th>URL</th>
+                                    <th>posittion</th>
+                                    <th>Image URL</th>
+                                    <th>Created at</th>
+                                    <th>Created by</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                if ($all_products) {
-                                    foreach ($all_products as $item => $product) {
-                                        $brand = $product->getBrand();
-                                        if($product->status == 1){
-                                            if($product->product_amount < 1){
-                                                $status = 'badge-warning';
-                                                $statusContent = 'Out of stock';
-                                            }else{
-                                                $status = 'badge-success';
-                                                $statusContent = 'Avaiable';
-                                            }
-                                        }else{
+                                if ($all_sliders) {
+                                    foreach ($all_sliders as $slider) {
+                                        if ($slider->status == 1) {
+                                            $status = 'badge-success';
+                                            $statusContent = 'Avaiable';
+                                        } else {
                                             $status = 'badge-danger';
                                             $statusContent = 'Unavaiable';
                                         }
@@ -56,23 +50,24 @@ use Illuminate\Support\Facades\Session;
                                         <tr>
                                             <td><img class="rounded-circle" width="35" src="{{ asset('public/backend/images/profile/small/pic1.jpg') }}" alt="">
                                             </td>
-                                            <td>{{ $product->product_name }}</td>
-                                            <td>{{ $brand->brand_name }}</td>
-                                            <td>{{ $product->product_price }}</td>
-                                            <td>{{ $product->product_sale_price }}</td>
-                                            <td>{{ $product->product_amount }}</td>
-                                            <td>{{ $product->create_at }}</td>
+                                            <td>{{ $slider->slider_id }}</td>
+                                            <td>{{ $slider->slider_name }}</td>
+                                            <td>{{ $slider->slider_url }}</td>
+                                            <td>{{ $slider->slider_posittion }}</td>
+                                            <td>{{ $slider->slider_img_url }}</td>
+                                            <td>{{ $slider->create_at }}</td>
+                                            <td>{{ $slider->create_by }}</td>
                                             <td><span class='badge light {{ $status }} badge-sm'>{{ $statusContent }}</span></td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <a href="{{ URL::to('admin/edit-product/' . $product->product_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                    <a onclick="return confirm('Are you sure to delete?')" href="{{ URL::to('admin/delete-product/' . $product->product_id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    <a href="{{ URL::to('admin/edit-slider/' . $slider->slider_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a onclick="return confirm('Are you sure to delete?')" href="{{ URL::to('admin/delete-slider/' . $slider->slider_id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
                                 <?php
                                     }
-                                } 
+                                }
                                 ?>
 
                             </tbody>

@@ -18,4 +18,9 @@ class TypeDetail extends Model{
         ->where('product_id',$this->product_id)
         ->first();
     }
+    
+    public function getType(){
+        return Type::where('type_id',$this->type_id)
+        ->first();
+    }
 }

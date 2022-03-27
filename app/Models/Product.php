@@ -25,6 +25,14 @@ class Product extends Model{
         return Type::where('type_id',$this->category_id)->first();
     }
 
+    public function getCreator(){
+        return User::where('user_id',$this->created_by)->first();
+    }
+
+    public function getTypeDetails(){
+        return TypeDetail::where('product_id',$this->product_id)->get();
+    }
+
     public static function formatPriceToVND($product){
         // have price and no price sale
         $priceNPriceSale =(object)array(

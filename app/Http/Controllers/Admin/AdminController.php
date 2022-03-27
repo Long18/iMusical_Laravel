@@ -15,7 +15,7 @@ class AdminController extends Controller
 {
     public function index()
     {   
-        if(!isset($_SESSION['user_id'])){
+        if(Session::get('user_id')){
             return Redirect::to('/admin/dashboard');
         }
         return view('admin.main.admin_login');
@@ -36,7 +36,7 @@ class AdminController extends Controller
         if($user){
             foreach($user->getRoles() as $user_role){
                 $role = $user_role->getRole();
-                if($role->role_name == 'admin'||$role->role_name == 'manager'){
+                if($role->role_name != 'guest'){
                     $result = true;
                     break;
                 }
