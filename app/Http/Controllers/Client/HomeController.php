@@ -50,4 +50,9 @@ class HomeController extends Controller
         return view('client.sub.home');
     }
 
+    public function contact()
+    {
+        return view('client.sub.contact');
+    }
+
 }

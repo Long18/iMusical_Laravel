@@ -27,8 +27,8 @@
                         </div>
                         <div class="breadcrumbs style2">
                             <ul>
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="#">Explore</a></li>
+                                <li><a href="{{ URL::to('/')}}">Home</a></li>
+                                <li><a href="{{ URL::to('/explore')}}">Explore</a></li>
                                 <li>{{ $item_value->product_name }}</li>
                             </ul>
                         </div>
@@ -109,9 +109,6 @@
                                     class="sc-button loadmore style bag fl-button pri-3"><span>Place a bid</span></a>
                                 <div class="flat-tabs themesflat-tabs">
                                     <ul class="menu-tab tab-title">
-                                        <li class="item-title active">
-                                            <span class="inner">Bid History</span>
-                                        </li>
                                         <li class="item-title">
                                             <span class="inner">Info</span>
                                         </li>
@@ -120,172 +117,6 @@
                                         </li>
                                     </ul>
                                     <div class="content-tab">
-                                        <div class="content-inner tab-content">
-                                            <ul class="bid-history-list">
-                                                <li>
-                                                    <div class="content">
-                                                        <div class="client">
-                                                            <div class="sc-author-box style-2">
-                                                                <div class="author-avatar">
-                                                                    <a href="#">
-                                                                        <img src="{{ asset('public/frontend/images/avatar/avt-3.jpg') }}"
-                                                                            alt="" class="avatar">
-                                                                    </a>
-                                                                    <div class="badge"></div>
-                                                                </div>
-                                                                <div class="author-infor">
-                                                                    <div class="name">
-                                                                        <h6><a href="author02.html">Mason Woodward </a></h6>
-                                                                        <span> place a bid</span>
-                                                                    </div>
-                                                                    <span class="time">8 hours ago</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price">
-                                                            <h5> 4.89 ETH</h5>
-                                                            <span>= $12.246</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="content">
-                                                        <div class="client">
-                                                            <div class="sc-author-box style-2">
-                                                                <div class="author-avatar">
-                                                                    <a href="#">
-                                                                        <img src="{{ asset('public/frontend/images/avatar/avt-11.jpg') }}"
-                                                                            alt="" class="avatar">
-                                                                    </a>
-                                                                    <div class="badge"></div>
-                                                                </div>
-                                                                <div class="author-infor">
-                                                                    <div class="name">
-                                                                        <h6> <a href="author02.html">Mason Woodward </a>
-                                                                        </h6>
-                                                                        <span>bid accepted</span>
-                                                                    </div>
-                                                                    <span class="time">at 06/10/2021, 3:20
-                                                                        AM</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price">
-                                                            <h5> 4.89 ETH</h5>
-                                                            <span>= $12.246</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="content">
-                                                        <div class="client">
-                                                            <div class="sc-author-box style-2">
-                                                                <div class="author-avatar">
-                                                                    <a href="#">
-                                                                        <img src="{{ asset('public/frontend/images/avatar/avt-1.jpg') }}"
-                                                                            alt="" class="avatar">
-                                                                    </a>
-                                                                    <div class="badge"></div>
-                                                                </div>
-                                                                <div class="author-infor">
-                                                                    <div class="name">
-                                                                        <h6> <a href="author02.html">Mason Woodward </a>
-                                                                        </h6>
-                                                                        <span> place a bid</span>
-                                                                    </div>
-                                                                    <span class="time">8 hours ago</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price">
-                                                            <h5> 4.89 ETH</h5>
-                                                            <span>= $12.246</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="content">
-                                                        <div class="client">
-                                                            <div class="sc-author-box style-2">
-                                                                <div class="author-avatar">
-                                                                    <a href="#">
-                                                                        <img src="{{ asset('public/frontend/images/avatar/avt-5.jpg') }}"
-                                                                            alt="" class="avatar">
-                                                                    </a>
-                                                                    <div class="badge"></div>
-                                                                </div>
-                                                                <div class="author-infor">
-                                                                    <div class="name">
-                                                                        <h6> <a href="author02.html">Mason Woodward </a>
-                                                                        </h6>
-                                                                        <span> place a bid</span>
-                                                                    </div>
-                                                                    <span class="time">8 hours ago</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price">
-                                                            <h5> 4.89 ETH</h5>
-                                                            <span>= $12.246</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="content">
-                                                        <div class="client">
-                                                            <div class="sc-author-box style-2">
-                                                                <div class="author-avatar">
-                                                                    <a href="#">
-                                                                        <img src="{{ asset('public/frontend/images/avatar/avt-7.jpg') }}"
-                                                                            alt="" class="avatar">
-                                                                    </a>
-                                                                    <div class="badge"></div>
-                                                                </div>
-                                                                <div class="author-infor">
-                                                                    <div class="name">
-                                                                        <h6> <a href="author02.html">Mason Woodward </a>
-                                                                        </h6>
-                                                                        <span> place a bid</span>
-                                                                    </div>
-                                                                    <span class="time">8 hours ago</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price">
-                                                            <h5> 4.89 ETH</h5>
-                                                            <span>= $12.246</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="content">
-                                                        <div class="client">
-                                                            <div class="sc-author-box style-2">
-                                                                <div class="author-avatar">
-                                                                    <a href="#">
-                                                                        <img src="{{ asset('public/frontend/images/avatar/avt-8.jpg') }}"
-                                                                            alt="" class="avatar">
-                                                                    </a>
-                                                                    <div class="badge"></div>
-                                                                </div>
-                                                                <div class="author-infor">
-                                                                    <div class="name">
-                                                                        <h6> <a href="author02.html">Mason Woodward </a>
-                                                                        </h6>
-                                                                        <span> place a bid</span>
-                                                                    </div>
-                                                                    <span class="time">8 hours ago</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price">
-                                                            <h5> 4.89 ETH</h5>
-                                                            <span>= $12.246</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
                                         <div class="content-inner tab-content">
                                             <ul class="bid-history-list">
                                                 <li>
@@ -315,20 +146,9 @@
                                         </div>
                                         <div class="content-inner tab-content">
                                             <div class="provenance">
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry.
-                                                    Lorem Ipsum has been the industry's standard dummy text ever since the
-                                                    1500s,
-                                                    when an unknown printer took a galley of type and scrambled it to make a
-                                                    type specimen book.
-                                                    It has survived not only five centuries, but also the leap into
-                                                    electronic
-                                                    typesetting,
-                                                    remaining essentially unchanged. It was popularised in the 1960s with
-                                                    the
-                                                    release of Letraset sheets containing Lorem Ipsum passages,
-                                                    and more recently with desktop publishing software like Aldus PageMaker
-                                                    including versions of Lorem Ipsum.</p>
+                                                <p>
+                                                    {{ $item_value->product_detail }}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>

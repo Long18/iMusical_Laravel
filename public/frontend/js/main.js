@@ -132,9 +132,9 @@
 
         $(".tf-text").removeClass("style")
         $(".tf-text").addClass("s1")
-        document.getElementById("logo_header").src = "assets/images/logo/logo_dark.png";
-        document.getElementById("logo_footer").src = "assets/images/logo/logo_dark.png";
-        document.getElementById("moon_dark").src = "assets/images/icon/moon-2.png";
+        document.getElementById("logo_header").src = "public/frontend/images/logo/logo_dark.png";
+        document.getElementById("logo_footer").src = "public/frontend/images/logo/logo_dark.png";
+        document.getElementById("moon_dark").src = "public/frontend/images/icon/moon-2.png";
     });
 
     $(".light").on('click', function (e) {
@@ -145,9 +145,9 @@
 
         $(".tf-text").addClass("style")
         $(".tf-text").removeClass("s1")
-        document.getElementById("logo_header").src = "assets/images/logo/logo.png";
-        document.getElementById("logo_footer").src = "assets/images/logo/logo2.png";
-        document.getElementById("moon_dark").src = "assets/images/icon/moon.png";
+        document.getElementById("logo_header").src = "public/frontend/images/logo/logo.png";
+        document.getElementById("logo_footer").src = "public/frontend/images/logo/logo2.png";
+        document.getElementById("moon_dark").src = "public/frontend/images/icon/moon.png";
     });
 
     // Header Connect
@@ -162,7 +162,7 @@
                 }
             else
                 $('.avatar_popup2').removeClass('visible');
-        })    
+        })
     };
 
     var avatar_popup2 = function(){
@@ -189,7 +189,7 @@
                 $('.sortby-content').removeClass('visible');
         })
     };
-    
+
     // var loadmore = function () {
     //     $(".fl-item").slice(0, 8).show();
     //     $(".fl-blog.fl-item2").slice(0, 6).show();
@@ -260,11 +260,11 @@
         var wrapMenu = $("#site-header-inner .wrap-inner");
         var navExtw = $(".nav-extend.active");
         var navExt = $(".nav-extend.active").children();
-    
+
         responsivemenu(mobile);
-    
+
         mobile.addListener(responsivemenu);
-    
+
         function responsivemenu(mobile) {
           if (mobile.matches) {
             $("#main-nav")
@@ -291,7 +291,7 @@
               .removeAttr("style")
               .prev()
               .remove();
-    
+
             $(".mobile-button").removeClass("active");
             $(".mobile-button-style2").removeClass("active");
             $(".sub-menu").css({ display: "block" });
