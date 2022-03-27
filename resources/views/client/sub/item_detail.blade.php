@@ -27,8 +27,8 @@
                         </div>
                         <div class="breadcrumbs style2">
                             <ul>
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="#">Explore</a></li>
+                                <li><a href="{{ URL::to('/')}}">Home</a></li>
+                                <li><a href="{{ URL::to('/explore')}}">Explore</a></li>
                                 <li>{{ $item_value->product_name }}</li>
                             </ul>
                         </div>

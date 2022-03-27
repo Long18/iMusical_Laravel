@@ -4,16 +4,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <!--<![endif]-->
 
-
-<!-- Mirrored from demothemesflat.com/axies/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Mar 2022 03:48:25 GMT -->
-
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>Axies | NFT Marketplace HTML Template</title>
+    <title>iMusic | Buy Mucsical Instruments Online</title>
 
-    <meta name="author" content="themesflat.com">
+    {{-- <meta name="author" content=""> --}}
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -24,6 +21,10 @@
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="{{ asset('public/frontend/icon/Favicon.png') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ asset('public/frontend/icon/Favicon.png') }}">
+
+    <!-- Reponsive -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{ asset('public/css/textanimation.css')}}">
 
 </head>
 
@@ -47,7 +48,7 @@
                                         <div id="site-logo-inner">
                                             <a href="{{ URL::to('/')}}" rel="home" class="main-logo">
                                                 <img id="logo_header" src="{{ asset('public/frontend/images/logo/logo_dark.png') }}"
-                                                    alt="nft-gaming" width="133" height="56"
+                                                    alt="iMusic" width="133" height="56"
                                                     data-retina="{{ asset('public/frontend/images/logo/logo.png') }}" data-width="133"
                                                     data-height="56">
                                             </a>
@@ -57,66 +58,25 @@
                                     <nav id="main-nav" class="main-nav">
                                         <ul id="menu-primary-menu" class="menu">
                                             <li class="menu-item current-menu-item menu-item-has-children">
-                                                <a href="#">Home</a>
+                                                <a href="{{ URL::to('/')}}">Home</a>
                                                 <ul class="sub-menu">
-                                                    <li class="menu-item current-item"><a href="{{ URL::to('/')}}">Home 1</a>
-                                                    </li>
-                                                    <li class="menu-item"><a href="home2.html">Home 2</a></li>
-                                                    <li class="menu-item"><a href="home3.html">Home 3</a></li>
-                                                    <li class="menu-item"><a href="home4.html">Home 4</a></li>
-                                                    <li class="menu-item"><a href="home5.html">Home 5</a></li>
-                                                    <li class="menu-item"><a href="home6.html">Home 6</a></li>
-                                                    <li class="menu-item"><a href="home7.html">Home 7</a></li>
-                                                    <li class="menu-item"><a href="home8.html">Home 8 ( Special
-                                                            )</a></li>
-                                                    <li class="menu-item menu-item-has-children">
-                                                        <a href="#">Slider Styles</a>
-                                                        <ul class="sub-menu">
-                                                            <li class="menu-item"><a
-                                                                    href="slider-typer-text.html">Text Type</a></li>
-                                                            <li class="menu-item"><a
-                                                                    href="slider-scroll-text.html">Text Scroll</a></li>
-                                                            <li class="menu-item"><a
-                                                                    href="slider-rotate-text.html">Text Rotate</a></li>
-                                                        </ul>
+                                                    <li class="menu-item current-item"><a >Home 1</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item menu-item-has-children">
-                                                <a href="#">Explore</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item"><a href="explore-1.html">Explore Style
-                                                            1</a></li>
-                                                    <li class="menu-item"><a href="explore-2.html">Explore Style
-                                                            2</a></li>
-                                                    <li class="menu-item"><a href="explore-3.html">Explore Style
-                                                            3</a></li>
-                                                    <li class="menu-item"><a href="explore-4.html">Explore Style
-                                                            4</a></li>
-                                                    <li class="menu-item"><a href="auctions.html">Live Auctions</a>
-                                                    </li>
-                                                    <li class="menu-item"><a href="item-details.html">Item
-                                                            Details</a></li>
-                                                    <li class="menu-item"><a href="item-details-2.html">Item
-                                                            Details 2</a></li>
-                                                </ul>
+                                            <li class="menu-item">
+                                                <a href="{{ URL::to('/explore')}}">Explore</a>
                                             </li>
-                                            <li class="menu-item menu-item-has-children">
-                                                <a href="#">Activity</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item"><a href="activity1.html">Activity 1</a>
-                                                    </li>
-                                                    <li class="menu-item"><a href="activity2.html">Activity 2</a>
-                                                    </li>
-                                                </ul>
+                                            <li class="menu-item">
+                                                <a href="{{ URL::to('/activity')}}">Activity</a>
                                             </li>
                                             <li class="menu-item menu-item-has-children">
                                                 <a href="#">Community</a>
                                                 <ul class="sub-menu">
-                                                    <li class="menu-item"><a href="blog.html">Blog</a></li>
-                                                    <li class="menu-item"><a href="blog-details.html">Blog
+                                                    <li class="menu-item"><a href="{{ URL::to('/blog')}}">Blog</a></li>
+                                                    <li class="menu-item"><a href="{{ URL::to('/blog-detail')}}">Blog
                                                             Details</a></li>
-                                                    <li class="menu-item"><a href="help-center.html">Help
+                                                    <li class="menu-item"><a href="{{ URL::to('/help-center')}}">Help
                                                             Center</a></li>
                                                 </ul>
                                             </li>
@@ -141,14 +101,8 @@
                                                     <li class="menu-item"><a href="faq.html">FAQ</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item  menu-item-has-children">
-                                                <a href="#">Contact</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item"><a href="contact1.html">Contact 1</a>
-                                                    </li>
-                                                    <li class="menu-item"><a href="contact2.html">Contact 2</a>
-                                                    </li>
-                                                </ul>
+                                            <li class="menu-item ">
+                                                <a href="{{ URL::to('/contact')}}">Contact</a>
                                             </li>
                                         </ul>
                                     </nav><!-- /#main-nav -->
@@ -199,9 +153,8 @@
                                             </div>
                                         </div>
                                         <div class="sc-btn-top mg-r-12" id="site-header">
-                                            <a href="connect-wallet.html" id="connectbtn"
-                                                class="sc-button header-slider style style-1 wallet fl-button pri-1"><span>Wallet
-                                                    connect
+                                            <a href="{{ URL::to('/login')}}" id="connectbtn"
+                                                class="sc-button header-slider style style-1 wallet fl-button pri-1"><span>Login
                                                 </span></a>
                                         </div>
 
@@ -229,167 +182,6 @@
                                                             </ul>
                                                             <div class="content-tab">
                                                                 <div class="content-inner">
-                                                                    <div class="wrap-box">
-                                                                        <div class="heading">Today</div>
-                                                                        <div class="sc-box">
-                                                                            <div class="content">
-                                                                                <div class="avatar">
-                                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-6.jpg') }}"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="infor">
-                                                                                    <span class="fw-7">Tyler
-                                                                                        Covington</span>
-                                                                                    <span>started following you.</span>
-                                                                                    <p>1 hour ago
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="sc-box">
-                                                                            <div class="content">
-                                                                                <div class="avatar">
-                                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-6.jpg') }}"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="infor">
-                                                                                    <span class="fw-7">Tyler
-                                                                                        Covington</span>
-                                                                                    <span>started following you.</span>
-                                                                                    <p>1 hour ago
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="sc-box">
-                                                                            <div class="content">
-                                                                                <div class="avatar">
-                                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-6.jpg') }}"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="infor">
-                                                                                    <span class="fw-7">Tyler
-                                                                                        Covington</span>
-                                                                                    <span>liked your items.</span>
-                                                                                    <p>1 hour ago
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="sc-box">
-                                                                            <div class="content">
-                                                                                <div class="avatar">
-                                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-6.jpg') }}"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="infor">
-                                                                                    <span class="fw-7">Tyler
-                                                                                        Covington</span>
-                                                                                    <span>started following you.</span>
-                                                                                    <p>1 hour ago
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="sc-box">
-                                                                            <div class="content">
-                                                                                <div class="avatar">
-                                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-6.jpg') }}"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="infor">
-                                                                                    <span class="fw-7">Tyler
-                                                                                        Covington</span>
-                                                                                    <span>started following you.</span>
-                                                                                    <p>1 hour ago
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="wrap-box">
-                                                                        <div class="heading">Yesterday</div>
-                                                                        <div class="sc-box">
-                                                                            <div class="content">
-                                                                                <div class="avatar">
-                                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-6.jpg') }}"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="infor">
-                                                                                    <span class="fw-7">Tyler
-                                                                                        Covington</span>
-                                                                                    <span>started following you.</span>
-                                                                                    <p>1 hour ago
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="sc-box">
-                                                                            <div class="content">
-                                                                                <div class="avatar">
-                                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-6.jpg') }}"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="infor">
-                                                                                    <span class="fw-7">Tyler
-                                                                                        Covington</span>
-                                                                                    <span>started following you.</span>
-                                                                                    <p>1 hour ago
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="content-inner">
-                                                                    <div class="wrap-box">
-                                                                        <div class="heading">Today</div>
-                                                                        <div class="sc-box">
-                                                                            <div class="content">
-                                                                                <div class="avatar">
-                                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-6.jpg') }}"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="infor">
-                                                                                    <span class="fw-7">Tyler
-                                                                                        Covington</span>
-                                                                                    <span>started following you.</span>
-                                                                                    <p>1 hour ago
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="sc-box">
-                                                                            <div class="content">
-                                                                                <div class="avatar">
-                                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-6.jpg') }}"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="infor">
-                                                                                    <span class="fw-7">Tyler
-                                                                                        Covington</span>
-                                                                                    <span>started following you.</span>
-                                                                                    <p>1 hour ago
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="sc-box">
-                                                                            <div class="content">
-                                                                                <div class="avatar">
-                                                                                    <img src="{{ asset('public/frontend/images/avatar/avt-6.jpg') }}"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="infor">
-                                                                                    <span class="fw-7">Tyler
-                                                                                        Covington</span>
-                                                                                    <span>started following you.</span>
-                                                                                    <p>1 hour ago
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
                                                                     <div class="wrap-box">
                                                                         <div class="heading">Yesterday</div>
                                                                         <div class="sc-box">
@@ -497,14 +289,13 @@
                         <div class="col-lg-3 col-md-12 col-12">
                             <div class="widget widget-logo">
                                 <div class="logo-footer" id="logo-footer">
-                                    <a href="index-2.html">
-                                        <img id="logo_footer" src="{{ asset('public/frontend/images/logo/logo_dark.png') }}" alt="nft-gaming"
+                                    <a href="{{ URL::to('/')}}">
+                                        <img id="logo_footer" src="{{ asset('public/frontend/images/logo/logo_dark.png') }}" alt="iMusic"
                                             width="135" height="56" data-retina="{{ asset('public/frontend/images/logo/logo.png') }}"
                                             data-width="135" data-height="56">
                                     </a>
                                 </div>
-                                <p class="sub-widget-logo">Lorem ipsum dolor sit amet,consectetur adipisicing elit.
-                                    Quis non, fugit totam vel laboriosam vitae.</p>
+                                <p class="sub-widget-logo">hế lô xin chào các bạn đã đến với channel của mình.</p>
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-5 col-5">
@@ -647,7 +438,5 @@
 
 </body>
 
-
-<!-- Mirrored from demothemesflat.com/axies/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Mar 2022 03:49:14 GMT -->
 
 </html>

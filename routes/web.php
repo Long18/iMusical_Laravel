@@ -9,9 +9,12 @@ use App\Http\Controllers\Admin\BrandsAdminController;
 use App\Http\Controllers\Admin\UsersAdminController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\AboutController;
+use App\Http\Controllers\Client\ExploreController;
 use App\Http\Controllers\Client\ItemDetailController;
-
-
+use App\Http\Controllers\Client\LoginController;
+use App\Http\Controllers\Client\SignUpController;
+use App\Http\Controllers\Client\ActivityController;
+use App\Http\Controllers\Client\CommunityController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -81,9 +84,29 @@ Route::post('/admin/save-user-role/{user_id}', [UsersAdminController::class, 'sa
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
+Route::get('/contact', [HomeController::class, 'contact']);
 
+//Login routes
+Route::get('/login', [LoginController::class, 'index']);
+
+//Sign up routes
+Route::get('/sign-up', [SignUpController::class, 'index']);
+
+// item detail routes
 Route::get('/item-detail/{product_id}', [ItemDetailController::class, 'get_item_detail']);
 
+// Explore routes
+Route::get('/explore', [ExploreController::class, 'index']);
+
+// Activity routes
+Route::get('/activity', [ActivityController::class, 'index']);
+
+// Community routes
+Route::get('/blog', [CommunityController::class, 'blog']);
+Route::get('/blog-detail', [CommunityController::class, 'blog_detail']);
+Route::get('/help-center', [CommunityController::class, 'help_center']);
+
+//Contact   routes
 
 //----------------------------------------------------------------------------------------------------------------------
 //debug
