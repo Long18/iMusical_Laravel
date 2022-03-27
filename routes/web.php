@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ProductAdminController;
 use App\Http\Controllers\Admin\TypesAdminController;
 use App\Http\Controllers\Admin\BrandsAdminController;
+use App\Http\Controllers\Admin\SlidersAdminController;
 use App\Http\Controllers\Admin\UsersAdminController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\AboutController;
@@ -33,12 +34,16 @@ Route::post('/admin/admin-dashboard', [AdminController::class, 'dashboard']);
 //Product
 Route::get('/admin/all-products', [ProductAdminController::class, 'all_products']);
 Route::get('/admin/add-product', [ProductAdminController::class, 'add_product']);
+Route::get('/admin/add-product_type_detail', [ProductAdminController::class, 'add_product_type_detail']);
 Route::get('/admin/edit-product/{product_id}', [ProductAdminController::class, 'edit_product']);
+Route::get('/admin/edit-product-type-detail/{product_id}/{type_detail_id}', [ProductAdminController::class, 'edit_product_type_detail']);
 Route::get('/admin/delete-product/{product_id}', [ProductAdminController::class, 'delete_product']);
 
 
 Route::post('/admin/save-product', [ProductAdminController::class, 'save_product']);
+Route::post('/admin/save-product_type_detail/{product_id}', [ProductAdminController::class, 'save_product_type_detail']);
 Route::post('/admin/update-product/{product_id}', [ProductAdminController::class, 'update_product']);
+Route::post('/admin/update-product-type-detail/{product_id}/{type_detail_id}', [ProductAdminController::class, 'update_product_type_detail']);
 
 //Types
 Route::get('/admin/all-types', [TypesAdminController::class, 'all_types']);
@@ -63,15 +68,25 @@ Route::post('/admin/update-brand/{brand_id}', [BrandsAdminController::class, 'up
 // user manager
 Route::get('/admin/all-users', [UsersAdminController::class, 'all_users']);
 Route::get('/admin/edit-user/{user_id}', [UsersAdminController::class, 'edit_user']);
-
 Route::get('/admin/add-user-role/{user_id}', [UsersAdminController::class, 'add_user_role']);
 Route::get('/admin/edit-user-role/{user_role_id}/{user_id}', [UsersAdminController::class, 'edit_user_role']);
 Route::get('/admin/delete-user-role/{user_role_id}/{user_id}', [UsersAdminController::class, 'delete_user_role']);
 
 Route::post('/admin/update-user/{user_id}', [UsersAdminController::class, 'update_user']);
-
 Route::post('/admin/update-user-role/{user_role_id}/{user_id}', [UsersAdminController::class, 'update_user_role']);
 Route::post('/admin/save-user-role/{user_id}', [UsersAdminController::class, 'save_user_role']);
+
+//slider
+Route::get('/admin/all-sliders', [SlidersAdminController::class, 'all_sliders']);
+Route::get('/admin/add-slider', [SlidersAdminController::class, 'add_slider']);
+Route::get('/admin/edit-slider/{slider_id}', [SlidersAdminController::class, 'edit_slider']);
+Route::get('/admin/delete-slider/{slider_id}', [SlidersAdminController::class, 'delete_slider']);
+
+
+Route::post('/admin/save-slider', [SlidersAdminController::class, 'save_slider']);
+Route::post('/admin/update-slider/{slider_id}', [SlidersAdminController::class, 'update_slider']);
+
+
 //----------------------------------------------------------------------------------------------------------------------
 /////////// client routes
 

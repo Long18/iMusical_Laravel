@@ -437,17 +437,10 @@
                                 <a class="nav-link" href="javascript:void(0)" role="button" data-toggle="dropdown">
                                     <img src="{{ asset('public/backend/images/profile/17.jpg') }}" width="20" alt="" />
                                     <div class="header-info">
-                                        <span class="text-black">
-
                                             <?php
-                                            $name = Session::get('admin_name');
-                                            if ($name) {
-                                                echo $name;
-                                            }
+                                            $name = Session::get('user_name');
                                             ?>
-
-                                        </span>
-                                        <p class="fs-12 mb-0">Super Admin</p>
+                                        <p class="fs-12 mb-0">{{$name}}</p>
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
@@ -538,8 +531,8 @@
                             <span class="nav-text">Sliders</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ URL::to('/admin/all-products') }}">All Slider</a></li>
-                            <li><a href="{{ URL::to('/admin/add-product') }}">Add Slider</a></li>
+                            <li><a href="{{ URL::to('/admin/all-sliders') }}">All Slider</a></li>
+                            <li><a href="{{ URL::to('/admin/add-slider') }}">Add Slider</a></li>
                         </ul>
                     </li>
                 </ul>
