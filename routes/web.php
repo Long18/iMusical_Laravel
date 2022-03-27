@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\SlidersAdminController;
 use App\Http\Controllers\Admin\UsersAdminController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\AboutController;
+use App\Http\Controllers\Client\ItemDetailController;
 
 
 /*
@@ -22,6 +23,8 @@ use App\Http\Controllers\Client\AboutController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 //----------------------------------------------------------------------------------------------------------------------
 /////////// admin routes
 // home
@@ -93,6 +96,8 @@ Route::post('/admin/update-slider/{slider_id}', [SlidersAdminController::class, 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
+
+Route::get('/item-detail/{product_id}', [ItemDetailController::class, 'get_item_detail']);
 
 
 //----------------------------------------------------------------------------------------------------------------------

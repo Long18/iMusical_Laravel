@@ -1,5 +1,6 @@
 @extends('admin.main.admin_layout')
 @section('admin_content')
+
 <div class="content-body">
     <div class="container-fluid">
         <div class="col-12">
@@ -8,7 +9,6 @@
                     <h4 class="card-title">Product</h4>
                 </div>
                 <?php
-
 use App\Models\Product;
 use Illuminate\Support\Facades\Session;
 
