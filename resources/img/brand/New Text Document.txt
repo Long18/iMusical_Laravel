@@ -1,0 +1,28 @@
+Arturia( teen brand) KeyLab MkII(tên sản phẩm) 61 Keyboard Controller(loại phím) - White(màu) KEYLABMKII61WH(mã code)
+đó xem cho đúng rồi nhập vào thôi :V
+hiểu ko ? 
+hieeur
+có j làm chưa đc thì chụp hỏi m ok,. ảnh thì lưu vào 
+con mẹ nó đơ lộn cái :V hèn gì nó bắt mở port
+hèn j t thấy tải nhiều thế
+tài khoản mật khẩu trong file .env
+cái nào thiếu ko có bên admin thì vào trong này add
+đường dẫn thì từ hẵng add sau
+m thêm khoảng mỗi loại 10 sản phẩm giá thì để giá VND kiểu 200$ thì cứ nhân đôi lên thôi 
+vd 200$ = 4tr ( thêm xíu lẻ lẻ nauwx là ok ) ko cần đúng giá
+ ko cần giống ý đúc đâu, tựa tựa là đc
+à mà trc thì thêm phần guitar thôi
+đó kiểu v thôi cứ thêm nhiều nhiều là đc :V
+trng client nó đang lỗi bọn t sửa sau
+ok nha
+t cứ thêm trong admin trước thôi đúng ko?ừm 
+còn cái mysql như nào
+cái đó cugnx để thêm thôi, có một vài cái m ko thể thêm bằng admin đc nên thêm trong đó
+hiểu ko :V
+hiểu
+ảnh thì t thêm trong vscode đúng ko?
+đung r
+ủa bữa m chauw vào git à
+hình như thế, cái đầu tiên nhà đất ấy là vào sau là chưa
+
+ đâu cái imussic này cugnx là cái nhà đất mà nhỉ
