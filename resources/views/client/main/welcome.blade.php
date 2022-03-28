@@ -23,8 +23,9 @@
     <link rel="apple-touch-icon-precomposed" href="{{ asset('public/frontend/icon/Favicon.png') }}">
 
     <!-- Reponsive -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/responsive.css')}}">
-    <link rel="stylesheet" href="{{ asset('public/css/textanimation.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/css/responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/css/textanimation.css') }}">
+    <link rel="stylesheet"  href="{{ asset('public/frontend/css/sweetalert.css') }}">
 
 </head>
 
@@ -46,11 +47,12 @@
                                 <div class="wrap-box flex">
                                     <div id="site-logo" class="clearfix">
                                         <div id="site-logo-inner">
-                                            <a href="{{ URL::to('/')}}" rel="home" class="main-logo">
-                                                <img id="logo_header" src="{{ asset('public/frontend/images/logo/logo_dark.png') }}"
+                                            <a href="{{ URL::to('/') }}" rel="home" class="main-logo">
+                                                <img id="logo_header"
+                                                    src="{{ asset('public/frontend/images/logo/logo_dark.png') }}"
                                                     alt="iMusic" width="133" height="56"
-                                                    data-retina="{{ asset('public/frontend/images/logo/logo.png') }}" data-width="133"
-                                                    data-height="56">
+                                                    data-retina="{{ asset('public/frontend/images/logo/logo.png') }}"
+                                                    data-width="133" data-height="56">
                                             </a>
                                         </div>
                                     </div>
@@ -58,25 +60,28 @@
                                     <nav id="main-nav" class="main-nav">
                                         <ul id="menu-primary-menu" class="menu">
                                             <li class="menu-item current-menu-item menu-item-has-children">
-                                                <a href="{{ URL::to('/')}}">Home</a>
+                                                <a href="{{ URL::to('/') }}">Home</a>
                                                 <ul class="sub-menu">
-                                                    <li class="menu-item current-item"><a >Home 1</a>
+                                                    <li class="menu-item current-item"><a>Home 1</a>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="{{ URL::to('/explore')}}">Explore</a>
+                                                <a href="{{ URL::to('/explore') }}">Explore</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="{{ URL::to('/activity')}}">Activity</a>
+                                                <a href="{{ URL::to('/activity') }}">Activity</a>
                                             </li>
                                             <li class="menu-item menu-item-has-children">
                                                 <a href="#">Community</a>
                                                 <ul class="sub-menu">
-                                                    <li class="menu-item"><a href="{{ URL::to('/blog')}}">Blog</a></li>
-                                                    <li class="menu-item"><a href="{{ URL::to('/blog-detail')}}">Blog
+                                                    <li class="menu-item"><a
+                                                            href="{{ URL::to('/blog') }}">Blog</a></li>
+                                                    <li class="menu-item"><a
+                                                            href="{{ URL::to('/blog-detail') }}">Blog
                                                             Details</a></li>
-                                                    <li class="menu-item"><a href="{{ URL::to('/help-center')}}">Help
+                                                    <li class="menu-item"><a
+                                                            href="{{ URL::to('/help-center') }}">Help
                                                             Center</a></li>
                                                 </ul>
                                             </li>
@@ -102,7 +107,7 @@
                                                 </ul>
                                             </li>
                                             <li class="menu-item ">
-                                                <a href="{{ URL::to('/contact')}}">Contact</a>
+                                                <a href="{{ URL::to('/contact') }}">Contact</a>
                                             </li>
                                         </ul>
                                     </nav><!-- /#main-nav -->
@@ -153,7 +158,7 @@
                                             </div>
                                         </div>
                                         <div class="sc-btn-top mg-r-12" id="site-header">
-                                            <a href="{{ URL::to('/login')}}" id="connectbtn"
+                                            <a href="{{ URL::to('/login') }}" id="connectbtn"
                                                 class="sc-button header-slider style style-1 wallet fl-button pri-1"><span>Login
                                                 </span></a>
                                         </div>
@@ -206,7 +211,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="popup-user">
-                                                    <img class="avatar" src="{{ asset('public/frontend/images/avatar/avt-5.jpg') }}"
+                                                    <img class="avatar"
+                                                        src="{{ asset('public/frontend/images/avatar/avt-5.jpg') }}"
                                                         alt="avatar" />
                                                     <div class="avatar_popup mt-20">
                                                         <h4>Tyler Covington</h4>
@@ -289,9 +295,11 @@
                         <div class="col-lg-3 col-md-12 col-12">
                             <div class="widget widget-logo">
                                 <div class="logo-footer" id="logo-footer">
-                                    <a href="{{ URL::to('/')}}">
-                                        <img id="logo_footer" src="{{ asset('public/frontend/images/logo/logo_dark.png') }}" alt="iMusic"
-                                            width="135" height="56" data-retina="{{ asset('public/frontend/images/logo/logo.png') }}"
+                                    <a href="{{ URL::to('/') }}">
+                                        <img id="logo_footer"
+                                            src="{{ asset('public/frontend/images/logo/logo_dark.png') }}"
+                                            alt="iMusic" width="135" height="56"
+                                            data-retina="{{ asset('public/frontend/images/logo/logo.png') }}"
                                             data-width="135" data-height="56">
                                     </a>
                                 </div>
@@ -364,57 +372,6 @@
         </div>
         <!-- /#page -->
 
-        <!-- Modal Popup Bid -->
-        <div class="modal fade popup" id="popup_bid_success" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <div class="modal-body space-y-20 pd-40">
-                        <h3 class="text-center">Your Bidding
-                            Successfuly Added</h3>
-                        <p class="text-center">your bid <span class="price color-popup">(4ETH) </span> has been
-                            listing to our database</p>
-                        <a href class="btn btn-primary"> Watch the listings</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade popup" id="popup_bid" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <div class="modal-body space-y-20 pd-40">
-                        <h3>Place a Bid</h3>
-                        <p class="text-center">You must bid at least <span class="price color-popup">4.89
-                                ETH</span>
-                        </p>
-                        <input type="text" class="form-control" placeholder="00.00 ETH">
-                        <p>Enter quantity. <span class="color-popup">5 available</span>
-                        </p>
-                        <input type="text" class="form-control quantity" value="1">
-                        <div class="hr"></div>
-                        <div class="d-flex justify-content-between">
-                            <p> You must bid at least:</p>
-                            <p class="text-right price color-popup"> 4.89 ETH </p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p> Service free:</p>
-                            <p class="text-right price color-popup"> 0,89 ETH </p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p> Total bid amount:</p>
-                            <p class="text-right price color-popup"> 4 ETH </p>
-                        </div>
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#popup_bid_success"
-                            data-dismiss="modal" aria-label="Close"> Place a bid</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- /#wrapper -->
 
@@ -435,6 +392,51 @@
     <script src="{{ asset('public/frontend/js/web3.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/moralis.js') }}"></script>
     <script src="{{ asset('public/frontend/js/nft.js') }}"></script>
+    <script src="{{ asset('public/frontend/js/sweetalert2.all.js') }}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //Lấy class của button đang được click
+            $('.add-to-cart').click(function() {
+                // Lấy value của các input đưa vào các biến
+                // Kèm theo sau là id của chính product đó
+                var id = $(this).attr('data-id');
+                var cart_product_id = $('.cart_product_id_' + id).val();
+                var cart_product_name = $('.cart_product_name_' + id).val();
+                var cart_product_price = $('.cart_product_price_' + id).val();
+                var cart_product_quantity = $('.cart_product_quantity_' + id).val();
+                var _token = $('input[name="_token"]').val();
+
+                $.ajax({
+                    url: '{{ url('/add-to-cart') }}',
+                    method: 'POST',
+                    data: {
+                        _token: _token,
+                        cart_product_id: cart_product_id,
+                        cart_product_name: cart_product_name,
+                        cart_product_price: cart_product_price,
+                        cart_product_quantity: cart_product_quantity,
+                    },
+                    success: function(data) {
+                        swal({
+                            title: 'Success',
+                            text: 'Product added to cart',
+                            showCancelButton: true,
+                            cancelButtonText: 'Continue Shopping',
+                            confirmButtonClass: 'btn-success',
+                            confirmButtonText: 'Go to Cart',
+                            closeOnConfirm: false,
+                            icon: 'success',
+                            button: 'OK',
+                        }, function() {
+                            window.location.href = '{{ url('/cart') }}';
+                        });
+                    }
+
+                });
+            });
+        });
+    </script>
 
 </body>
 

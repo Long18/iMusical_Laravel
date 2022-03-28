@@ -11,7 +11,7 @@ use App\Models\Product;
 use App\Models\Type;
 use App\Models\Slider;
 use App\Models\TypeDetail;
-
+use Exception;
 use Facade\FlareClient\View;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
@@ -20,39 +20,16 @@ class DebugController extends Controller
 {
     //
     public function debug(){
-        
-        $brand = Brand::get();
-        if($brand){
-            Session:: put('brands', $brand);
+        try{
+            $carts = Cart::get();
+            if($carts){
+                Session::put('carts',$carts);
+                Session::save();
+            }
+        }catch(Exception $e){
+
         }
-        $brand = User::get();
-        if($brand){
-            Session:: put('User', $brand);
-        }
-        $brand = Cart::get();
-        if($brand){
-            Session:: put('Cart', $brand);
-        }
-        $brand = Order::get();
-        if($brand){
-            Session:: put('Order', $brand);
-        }
-        $brand = Product::get();
-        if($brand){
-            Session:: put('Product', $brand);
-        }
-        $brand = Type::get();
-        if($brand){
-            Session:: put('Type', $brand);
-        }
-        $brand = Slider::get();
-        if($brand){
-            Session:: put('Slider', $brand);
-        }
-        $brand = TypeDetail::get();
-        if($brand){
-            Session:: put('TypeDetail', $brand);
-        }
+
         return view('debug');
     }
 }

@@ -16,6 +16,9 @@ use App\Http\Controllers\Client\LoginController;
 use App\Http\Controllers\Client\SignUpController;
 use App\Http\Controllers\Client\ActivityController;
 use App\Http\Controllers\Client\CommunityController;
+use App\Http\Controllers\Client\CartController;
+use App\Http\Controllers\DebugController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -122,6 +125,13 @@ Route::get('/blog-detail', [CommunityController::class, 'blog_detail']);
 Route::get('/help-center', [CommunityController::class, 'help_center']);
 
 //Contact   routes
+
+// Cart routes
+// Route::post('/save-cart', [CartController::class, 'save_cart']);
+Route::post('/show-cart', [CartController::class, 'show_cart']);
+Route::get('/cart', [CartController::class, 'show_cart']);
+Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
+
 
 //----------------------------------------------------------------------------------------------------------------------
 //debug
