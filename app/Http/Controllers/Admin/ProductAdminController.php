@@ -15,8 +15,18 @@ session_start();
 
 class ProductAdminController extends Controller
 {
+    public function AuthLogin(){
+        $admin_id = Session::get('user_id');
+        if($admin_id){
+            return Redirect::to('admin/dashboard');
+        }else{
+            return Redirect::to('admin')->send();
+        }
+    }
+
     public function all_products()
     {
+        $this->AuthLogin();
         //get product from data base
         $all_products = Product::get();
 
@@ -27,12 +37,14 @@ class ProductAdminController extends Controller
 
     public function add_product()
     {
+        $this->AuthLogin();
         //return view
         return view('admin.sub.add_product');
     }
 
     public function save_product(Request $request)
     {
+        $this->AuthLogin();
         $data = array();
 
         // get data from request
@@ -55,6 +67,7 @@ class ProductAdminController extends Controller
 
     public function edit_product($product_id)
     {
+        $this->AuthLogin();
         $edit_product = Product::where('product_id', $product_id)->first();
         $brands = Brand::where('status', 1)->get();
 
@@ -70,6 +83,7 @@ class ProductAdminController extends Controller
 
     public function update_product(Request $request, $product_id)
     {
+        $this->AuthLogin();
         $data = array();
         $data['product_name'] = $request->val_name_product;
         $data['brand_id'] = $request->val_brand_product;
@@ -89,6 +103,7 @@ class ProductAdminController extends Controller
 
     public function delete_product($product_id)
     {
+        $this->AuthLogin();
         Product::where('product_id', $product_id)->delete();
         Session::put('messenge', 'Your product was deleted!!');
         return Redirect::to('admin/all-products');
@@ -96,12 +111,14 @@ class ProductAdminController extends Controller
 
     public function add_product_detail()
     {
+        $this->AuthLogin();
         //return view
         return view('admin.sub.add_product');
     }
 
     public function save_product_detail(Request $request)
     {
+        $this->AuthLogin();
         $data = array();
 
         // get data from request
@@ -124,6 +141,7 @@ class ProductAdminController extends Controller
 
     public function edit_product_type_detail($product_id, $type_detail_id)
     {
+        $this->AuthLogin();
         $edit_type_detail = TypeDetail::where('type_detail_id', $type_detail_id)
         ->first();
         $manager_products = view('admin.sub.edit_product_type_detail')
@@ -135,12 +153,13 @@ class ProductAdminController extends Controller
 
     public function update_product_type_detail(Request $request, $product_id, $type_detail_id)
     {
+        $this->AuthLogin();
         $data = array();
         $data['type_detail_value'] = $request->val_type_value;
 
 
         TypeDetail::where('type_detail_id', $type_detail_id)->update($data);
-        
+
         Session::put('messenge', 'Your product was updated!!');
         return Redirect::to('admin/edit-product/'.$product_id);
     }
