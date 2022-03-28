@@ -17,4 +17,14 @@ class Order extends Model{
         return OrderDetail::where('order_id',$this->order_id)
         ->get();
     }
+
+    public function getCreator(){
+        return User::where('user_id',$this->created_by)
+        ->first();
+    }
+
+    public function getUser(){
+        return User::where('user_id',$this->user_id)
+        ->first();
+    }
 }
