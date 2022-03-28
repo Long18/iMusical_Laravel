@@ -20,7 +20,7 @@ class HomeController extends Controller
 
         //get top 10 newest product
         $newProducts = Product::where('status','1')
-        ->orderBy('create_at','asc')
+        ->orderBy('created_at','asc')
         ->take(10)
         ->get();
 
@@ -39,7 +39,7 @@ class HomeController extends Controller
 
         // get product
         $products = Product::where('status','1')
-        ->orderBy('create_at','asc')
+        ->orderBy('created_at','asc')
         ->take(10)
         ->get();
 
