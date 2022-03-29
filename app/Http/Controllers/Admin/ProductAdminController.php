@@ -163,4 +163,14 @@ class ProductAdminController extends Controller
         Session::put('messenge', 'Your product was updated!!');
         return Redirect::to('admin/edit-product/'.$product_id);
     }
+    
+    public function get_product(Request $request){
+        if($request->get('value')){
+            $value = $request->get('value');
+            $product = Product::where('product_id', $value)->first();
+        }
+
+        return response()->json(array('price' => $product->product_price, 'sale_price' => $product->product_sale_price));
+    }
+
 }
