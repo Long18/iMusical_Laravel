@@ -27,8 +27,8 @@
                         </div>
                         <div class="breadcrumbs style2">
                             <ul>
-                                <li><a href="{{ URL::to('/')}}">Home</a></li>
-                                <li><a href="{{ URL::to('/explore')}}">Explore</a></li>
+                                <li><a href="{{ URL::to('/') }}">Home</a></li>
+                                <li><a href="{{ URL::to('/explore') }}">Explore</a></li>
                                 <li>{{ $item_value->product_name }}</li>
                             </ul>
                         </div>
@@ -93,8 +93,8 @@
                                         <span class="heading">Current Bid</span>
                                         <div class="price">
                                             <div class="price-box">
-                                                <h5> {{$priceNPriceSale->price}} </h5>
-                                                <span> <?php echo ''.$priceNPriceSale->priceSale  .'';?>  </span>
+                                                <h5> {{ $priceNPriceSale->price }} </h5>
+                                                <span> <?php echo '' . $priceNPriceSale->priceSale . ''; ?> </span>
                                             </div>
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                                 </div>
 
                                 <a href="#" data-toggle="modal" data-target="#popup_bid"
-                                    class="sc-button loadmore style bag fl-button pri-3"><span>Place a bid</span></a>
+                                    class="sc-button loadmore style bag fl-button pri-3"><span>Add to cart</span></a>
                                 <div class="flat-tabs themesflat-tabs">
                                     <ul class="menu-tab tab-title">
                                         <li class="item-title">
@@ -445,51 +445,56 @@
                                         </div>
                                     </div><!-- item-->
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="slider-item">
-                                        <div class="sc-card-product">
-                                            <div class="card-media">
-                                                <a href="item-details.html"><img
-                                                        src="{{ asset('public/frontend/images/box-item/image-box-11.jpg') }}"
-                                                        alt="Image"></a>
-                                                <button class="wishlist-button heart"><span class="number-like">
-                                                        90</span></button>
-                                                <div class="featured-countdown">
-                                                    <span class="slogan"></span>
-                                                    <span class="js-countdown" data-timer="316400"
-                                                        data-labels=" :  ,  : , : , "></span>
-                                                </div>
-                                                <div class="button-place-bid">
-                                                    <a href="#" data-toggle="modal" data-target="#popup_bid"
-                                                        class="sc-button style-place-bid style bag fl-button pri-3"><span>Place
-                                                            Bid</span></a>
-                                                </div>
-                                            </div>
-                                            <div class="card-title">
-                                                <h5 class="style2"><a href="item-details.html">"Living Vase 01 by
-                                                        Lanza
-                                                        Contemplates "</a></h5>
-                                                <div class="tags">bsc</div>
-                                            </div>
-                                            <div class="meta-info">
-                                                <div class="author">
-                                                    <div class="avatar">
-                                                        <img src="{{ asset('public/frontend/images/avatar/avt-13.jpg') }}"
-                                                            alt="Image">
+
+                                <form action="" method="POST">
+                                    {{ csrf_field() }}
+                                    <div class="swiper-slide">
+                                        <div class="slider-item">
+                                            <div class="sc-card-product">
+                                                <div class="card-media">
+                                                    <a href="item-details.html"><img
+                                                            src="{{ asset('public/frontend/images/box-item/image-box-11.jpg') }}"
+                                                            alt="Image"></a>
+                                                    <button class="wishlist-button heart"><span class="number-like">
+                                                            90</span></button>
+                                                    <div class="featured-countdown">
+                                                        <span class="slogan"></span>
+                                                        <span class="js-countdown" data-timer="316400"
+                                                            data-labels=" :  ,  : , : , "></span>
                                                     </div>
-                                                    <div class="info">
-                                                        <span>Creator</span>
-                                                        <h6> <a href="author02.html">Freddie Carpenter</a> </h6>
+                                                    <div class="button-place-bid">
+                                                        <a href="#" data-toggle="modal" data-target="#popup_bid"
+                                                            class="sc-button style-place-bid style bag fl-button pri-3"><span>Add
+                                                                to cart</span></a>
                                                     </div>
                                                 </div>
-                                                <div class="price">
-                                                    <span>Current Bid</span>
-                                                    <h5> 4.89 ETH</h5>
+                                                <div class="card-title">
+                                                    <h5 class="style2"><a href="item-details.html">"Living Vase 01
+                                                            by
+                                                            Lanza
+                                                            Contemplates "</a></h5>
+                                                    <div class="tags">bsc</div>
+                                                </div>
+                                                <div class="meta-info">
+                                                    <div class="author">
+                                                        <div class="avatar">
+                                                            <img src="{{ asset('public/frontend/images/avatar/avt-13.jpg') }}"
+                                                                alt="Image">
+                                                        </div>
+                                                        <div class="info">
+                                                            <span>Creator</span>
+                                                            <h6> <a href="author02.html">Freddie Carpenter</a> </h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="price">
+                                                        <span>Current Bid</span>
+                                                        <h5> 4.899 ETH</h5>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div><!-- item-->
-                                </div>
+                                        </div><!-- item-->
+                                    </div>
+                                </form>
                             </div>
                             <div class="swiper-pagination mg-t-12"></div>
                             <div class="swiper-button-next btn-slide-next active"></div>
@@ -499,5 +504,69 @@
                 </div>
             </div>
         </section>
+
+        <form action="{{ URL::to('/show-cart') }}" method="POST">
+            {{ csrf_field() }}
+
+
+            <!-- Modal Popup Bid -->
+            {{-- <div class="modal fade popup" id="popup_bid_success" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <button type="submit" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="modal-body space-y-20 pd-40">
+                            <h3 class="text-center">Your Bidding
+                                Successfuly Added</h3>
+                            {{-- <p class="text-center">your bid <span class="price color-popup">(4ETH) </span> has been
+                                listing to our database</p>
+                            <a href class="btn btn-primary"> Watch the listings</a> --}}
+                            {{-- <button type="submit" class="btn btn-primary"> Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>  --}}
+
+
+
+
+            <div class="modal fade popup" id="popup_bid" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <button type="submit" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="modal-body space-y-20 pd-40">
+                            <h3>Add to cart</h3>
+                            {{-- <p class="text-center">You must bid at least <span class="price color-popup">4.89
+                                    ETH</span>
+                            </p>
+                            <input type="text" class="form-control" placeholder="00.00 ETH"> --}}
+                            <p>Enter quantity. <span class="color-popup">5 available</span>
+                            </p>
+                            <input type="number" name="quantity" class="form-control quantity" value="1">
+                            <div class="hr"></div>
+                            <input name="producid_hidden" type="hidden" value="{{$item_value->product_id}}">
+                            {{-- <div class="d-flex justify-content-between">
+                                <p> You must bid at least:</p>
+                                <p class="text-right price color-popup"> 4.89 ETH </p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p> Service free:</p>
+                                <p class="text-right price color-popup"> 0,89 ETH </p>
+                            </div> --}}
+                            <div class="d-flex justify-content-between">
+                                <p> Total amount:</p>
+                                <p class="text-right price color-popup"> 4 ETH </p>
+                            </div>
+                            {{-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#popup_bid_success"
+                                data-dismiss="modal" aria-label="Close">Add to cart</a> --}}
+                            <button type="submit" class="btn btn-primary"> Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     @endforeach
 @endsection

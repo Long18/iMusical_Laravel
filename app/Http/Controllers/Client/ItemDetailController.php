@@ -15,10 +15,16 @@ class ItemDetailController extends Controller
 {
     public function get_item_detail($product_id)
     {
+        $products = Product::where('status','1')
+        ->orderBy('created_at','asc')
+        ->get();
+
         //get product from data base
         $item= Product::where('product_id',$product_id)->get();
 
-        $manager_products = view('client.sub.item_detail')->with('item_detail', $item);
+        $manager_products = view('client.sub.item_detail')
+        ->with('item_detail', $item)
+        ->with('products', $products);
         return view('client.sub.home')->with('client.sub.item_detail', $manager_products);
     }
 }
