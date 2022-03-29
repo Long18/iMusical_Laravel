@@ -13,8 +13,18 @@ use Illuminate\Support\Facades\Session;
 session_start();
 class UsersAdminController extends Controller
 {
+    public function AuthLogin(){
+        $admin_id = Session::get('user_id');
+        if($admin_id){
+            return Redirect::to('admin/dashboard');
+        }else{
+            return Redirect::to('admin')->send();
+        }
+    }
+
     public function all_users()
     {
+        $this->AuthLogin();
         //get data from database
         $all_users = User::get();
 
@@ -35,6 +45,7 @@ class UsersAdminController extends Controller
 
     public function add_user_role($user_id)
     {
+        $this->AuthLogin();
         $roles = Role::where("status", 1)->get();
 
         //return view
@@ -45,6 +56,7 @@ class UsersAdminController extends Controller
 
     // public function save_user(Request $request)
     // {
+    //    $this->AuthLogin();
     //     //get data from view
     //     $data = array();
     //     $data['user_name'] = $request->val_name_user;
@@ -77,6 +89,7 @@ class UsersAdminController extends Controller
 
     public function edit_user($user_id)
     {
+        $this->AuthLogin();
         //get data from database
         $edit_user = User::where('user_id', $user_id)
             ->first();
@@ -105,6 +118,7 @@ class UsersAdminController extends Controller
 
     public function edit_user_role($role_id, $user_id)
     {
+        $this->AuthLogin();
         //get data from database
         $edit_user_role = UserRole::where('user_id', $user_id)
             ->where('role_id', $role_id)
@@ -133,6 +147,7 @@ class UsersAdminController extends Controller
 
     public function update_user(Request $request, $user_id)
     {
+        $this->AuthLogin();
         //get data from view
         $data = array();
         $data['user_name'] = $request->val_name_user;
@@ -159,6 +174,7 @@ class UsersAdminController extends Controller
 
     public function update_user_role(Request $request, $role_id, $user_id)
     {
+        $this->AuthLogin();
         //get data from view
         $data = array();
         $data['user_id'] = $user_id;
@@ -184,6 +200,7 @@ class UsersAdminController extends Controller
 
     public function save_user_role(Request $request, $user_id)
     {
+        $this->AuthLogin();
         //get data from view
         $data = array();
         $data['user_id'] = $user_id;
@@ -206,6 +223,7 @@ class UsersAdminController extends Controller
 
     public function delete_user($user_id)
     {
+        $this->AuthLogin();
         //delete data from database
         $deleted = User::where('user_id', $user_id)->delete();
 
@@ -222,6 +240,7 @@ class UsersAdminController extends Controller
 
     public function delete_user_role($role_id, $user_id)
     {
+        $this->AuthLogin();
         //delete data from database
         $deleted = UserRole::where('user_id', $user_id)
         ->where('role_id', $role_id)

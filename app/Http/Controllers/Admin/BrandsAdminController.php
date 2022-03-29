@@ -11,8 +11,18 @@ use Illuminate\Support\Facades\Session;
 session_start();
 class BrandsAdminController extends Controller
 {
+    public function AuthLogin(){
+        $admin_id = Session::get('user_id');
+        if($admin_id){
+            return Redirect::to('admin/dashboard');
+        }else{
+            return Redirect::to('admin')->send();
+        }
+    }
+
     public function all_brands()
     {
+        $this->AuthLogin();
         //get data from database
         $all_brands = Brand::get();
 
@@ -24,6 +34,7 @@ class BrandsAdminController extends Controller
 
     public function add_brand()
     {
+        $this->AuthLogin();
         $parents = Brand::where("status",1)->get();
 
         //return view
@@ -33,6 +44,7 @@ class BrandsAdminController extends Controller
 
     public function save_brand(Request $request)
     {
+        $this->AuthLogin();
         //get data from view
         $data = array();
         $data['brand_name'] = $request->val_name_brand;
@@ -62,6 +74,7 @@ class BrandsAdminController extends Controller
 
     public function edit_brand($brand_id)
     {
+        $this->AuthLogin();
         //get data from database
         $edit_brand = Brand::where('brand_id', $brand_id)
             ->first();
@@ -88,6 +101,7 @@ class BrandsAdminController extends Controller
 
     public function update_brand(Request $request, $brand_id)
     {
+        $this->AuthLogin();
         //get data from view
         $data = array();
         $data['brand_name'] = $request->val_name_brand;
@@ -109,6 +123,7 @@ class BrandsAdminController extends Controller
 
     public function delete_brand($brand_id)
     {
+        $this->AuthLogin();
         //delete data from database
         $deleted = Brand::where('brand_id', $brand_id)->delete();
 
