@@ -39,11 +39,15 @@ class TypesAdminController extends Controller
         $data['type_name'] = $request->val_name_type;
         $data['type_slug'] = $request->val_slug_type;
         $data['type_image_url'] = $request->val_image_url;
-        $data['parent_id'] = $request->val_parent_type;
+        
         $data['type_meta_key'] = $request->val_meta_key;
         $data['type_meta_desc'] = $request->val_meta_desc;
         
         $data['status'] = $request->val_status_type ? 1 : 0;
+
+        if($request->val_parent_type != "NULL"){
+            $data['parent_id'] = $request->val_parent_type;
+        }
 
         $user_id = Session::get('user_id');
         if($user_id){
@@ -105,10 +109,13 @@ class TypesAdminController extends Controller
         $data['type_name'] = $request->val_name_type;
         $data['type_slug'] = $request->val_slug_type;
         $data['type_image_url'] = $request->val_image_url;
-        $data['parent_id'] = $request->val_parent_type;
         $data['type_meta_key'] = $request->val_meta_key;
         $data['type_meta_desc'] = $request->val_meta_desc;
         $data['status'] = $request->val_status_type ? 1 : 0;
+
+        if($request->val_parent_type != "NULL"){
+            $data['parent_id'] = $request->val_parent_type;
+        }
 
         //update data into database
         $updated = Type::where('type_id', $type_id)->update($data);
