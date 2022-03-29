@@ -535,6 +535,8 @@
                 class="cart_product_name_{{ $item_value->product_id }}">
             <input type="hidden" name="cart_product_price" value="{{ $item_value->product_price }}"
                 class="cart_product_price_{{ $item_value->product_id }}">
+            <input type="hidden" name="cart_product_sale_price" value="{{ $item_value->product_sale_price }}"
+                class="cart_product_sale_price_{{ $item_value->product_id }}">
             <input type="hidden" name="cart_product_quantity" value="1"
                 class="cart_product_quantity_{{ $item_value->product_id }}">
 
@@ -566,7 +568,7 @@
                             </div> --}}
                             <div class="d-flex justify-content-between">
                                 <p> Total amount:</p>
-                                <p class="text-right price color-popup"> 4 ETH </p>
+                                <p class="text-right price color-popup">{{ number_format($item_value->product_price, 0, ',', '.') }} đ</p>
                             </div>
                             {{-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#popup_bid_success"
                                 data-dismiss="modal" aria-label="Close">Add to cart</a> --}}

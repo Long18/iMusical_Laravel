@@ -20,7 +20,7 @@ class CartController extends Controller
     public function add_to_cart(Request $request)
     {
         $data = $request->all();
-        print_r($data);
+        //print_r($data);
 
         // get string, encode by md5, and random string form 0 to 50, get 5 charter
         // sesion id được tạo ra mỗi khi user thêm từ giỏ hàng
@@ -34,7 +34,7 @@ class CartController extends Controller
             $is_avaiable = 0;
             foreach ($cart as $key => $value) {
                 //Check xem giỏ hàng có trùng không
-                if ($value['product_id'] == $data['product_id']) {
+                if ($value['product_id'] == $data['cart_product_id']) {
                     $is_avaiable++;
                 }else{
                     $is_avaiable = 0;
@@ -47,6 +47,7 @@ class CartController extends Controller
                     'product_name' => $data['cart_product_name'],
                     'product_id' => $data['cart_product_id'],
                     'product_price' => $data['cart_product_price'],
+                    'product_sale_price' => $data['cart_product_sale_price'],
                     'product_quantity' => $data['cart_product_quantity'],
                 );
                 session()->put('cart', $cart);
@@ -66,6 +67,7 @@ class CartController extends Controller
                 'product_name' => $data['cart_product_name'],
                 'product_id' => $data['cart_product_id'],
                 'product_price' => $data['cart_product_price'],
+                'product_sale_price' => $data['cart_product_sale_price'],
                 'product_quantity' => $data['cart_product_quantity'],
             );
         }
