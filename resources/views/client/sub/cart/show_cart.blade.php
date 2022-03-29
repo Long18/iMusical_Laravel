@@ -6,14 +6,10 @@
     use App\Models\Product;
 
     $message = Session::get('message');
-    if ($message) {
-        echo '<span class="text-alert">' . $message . '</span>';
-        Session::put('message', null);
-        // If message not empty -> make empty
-    }
 
     $totalSale = 0;
     $percentSale = 0;
+    $total = 0;
     @endphp
 
 
@@ -31,19 +27,26 @@
                             <li><a href="{{ URL::to('/') }}">Home</a></li>
                             <li><a href="#">Pages</a></li>
                             <li>Cart</li>
-
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
     <section class="tf-section tf-rank">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="table-ranking">
 
+                    <div class="table-ranking">
+                        @php
+                            if ($message) {
+                                echo '<h3 class="text-rainbow">' . $message . '</h3>';
+                                Session::put('message', null);
+                                // If message not empty -> make empty
+                            }
+                        @endphp
                         <div class="flex th-title">
                             <div class="column1">
                                 <h3>Item</h3>
@@ -75,6 +78,9 @@
                                         $subTotal = $cart_item['product_price'] * $cart_item['product_quantity'];
                                     }
                                     $totalSale = $subTotal;
+
+                                    $ItemTotal = $cart_item['product_price'] * $cart_item['product_quantity'];
+                                    $total += $ItemTotal;
                                 @endphp
                                 <form action="{{ URL::to('/update-cart') }}" method="POST">
                                     @csrf
@@ -112,79 +118,80 @@
                                                     đ</span>
                                             </div>
                                             <div class="column td3">
-                                                <input style="margin-left: 5rem;" type="number" name="quantity" min="1"
-                                                    class="quantity" value="{{ $cart_item['product_quantity'] }}">
+                                                <input style="margin-left: 5rem;" type="number" min="1"
+                                                    class="cart_quantity"
+                                                    name="cart_quantity[{{ $cart_item['session_id'] }}]"
+                                                    value="{{ $cart_item['product_quantity'] }}">
                                             </div>
                                             <div class="column"></div>
                                             <div class="column td3 ">
-                                                <span>{{ number_format($totalSale, 0, ',', '.') }} đ</span>
+                                                <span>{{ number_format($ItemTotal, 0, ',', '.') }} đ</span>
                                             </div>
                                             <div class="column td6">
                                                 <span></span>
                                             </div>
                                             <div class="column td5">
-                                                <span> <a href="{{ URL::to('/delete-cart/' . $cart_item['session_id']) }}"
+                                                <span> <a
+                                                        href="{{ URL::to('/delete-cart/' . $cart_item['session_id']) }}"
                                                         class="box-widget-filter"><i
                                                             class="icon-fl-logout"></i>Delete</a></span>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                            @endforeach
+                            <div>
+                                <div class="wrap-flex-box style" style="float: right; margin-right: auto;">
+                                    <div class="details ">
+                                        <div class="widget widget-recent-post mg-bt-43">
+                                            <ul>
+                                                <li class="box-recent-post">
+                                                    <div class="box-content">
+                                                        <h3><a class="th-title">Total: </a><a class="th-title"
+                                                                style="color: #47A432; ">{{ number_format($totalSale, 0, ',', '.') }}
+                                                                đ</a>
+                                                        </h3>
+                                                    </div>
+                                                </li>
+                                                <li class="box-recent-post">
+                                                    <div class="box-content">
+                                                        <h3><a class="th-title">Tax: </a><a
+                                                                class="th-title">{{ number_format($totalSale, 0, ',', '.') }}
+                                                                đ</a>
+                                                        </h3>
+                                                    </div>
+                                                </li>
+                                                <li class="box-recent-post" style="float: right;">
+                                                    <div class="box-content">
+                                                        <h3><a class="th-title">Delivery: </a><a
+                                                                class="th-title">{{ number_format($totalSale, 0, ',', '.') }}
+                                                                đ</a>
+                                                        </h3>
+                                                    </div>
+                                                </li>
+                                                <li class="box-recent-post">
+                                                    <div class="box-content">
+                                                        <h3><a class="th-title">Sale: </a><a class="th-title"
+                                                                style="color: #DF4949;">{{ number_format($totalSale, 0, ',', '.') }}
+                                                                đ</a>
+                                                        </h3>
+                                                    </div>
+                                                </li>
 
-                                <div>
-                                    <div class="wrap-flex-box style" style="float: right; margin-right: auto;">
-                                        <div class="details ">
-                                            <div class="widget widget-recent-post mg-bt-43">
-                                                <ul>
-                                                    <li class="box-recent-post">
-                                                        <div class="box-content">
-                                                            <h3><a class="th-title">Total: </a><a
-                                                                    class="th-title"
-                                                                    style="color: #47A432; ">{{ number_format($totalSale, 0, ',', '.') }}
-                                                                    đ</a>
-                                                            </h3>
-                                                        </div>
-                                                    </li>
-                                                    <li class="box-recent-post">
-                                                        <div class="box-content">
-                                                            <h3><a class="th-title">Tax: </a><a
-                                                                    class="th-title">{{ number_format($totalSale, 0, ',', '.') }}
-                                                                    đ</a>
-                                                            </h3>
-                                                        </div>
-                                                    </li>
-                                                    <li class="box-recent-post" style="float: right;">
-                                                        <div class="box-content">
-                                                            <h3><a class="th-title">Delivery: </a><a
-                                                                    class="th-title">{{ number_format($totalSale, 0, ',', '.') }}
-                                                                    đ</a>
-                                                            </h3>
-                                                        </div>
-                                                    </li>
-                                                    <li class="box-recent-post">
-                                                        <div class="box-content">
-                                                            <h3><a class="th-title">Sale: </a><a
-                                                                    class="th-title"
-                                                                    style="color: #DF4949;">{{ number_format($totalSale, 0, ',', '.') }}
-                                                                    đ</a>
-                                                            </h3>
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-                                            </div>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                     </div>
 
 
                     <div class="col-md-12 wrap-inner load-more text-center mg-t16">
-                        <a href="{{URL::to('/delete-all-cart')}}" id="loadmore" class="sc-button loadmore fl-button pri-3"><span>Delete all products</span></a>
-                        <a href="#" id="loadmore" class="sc-button loadmore fl-button pri-3"><span>Payment</span></a>
-                        <a href="#" id="loadmore" class="sc-button loadmore fl-button pri-3"><span>Payment</span></a>
+                        <a href="{{ URL::to('/delete-all-cart') }}" class="sc-button fl-button pri-3"><span>Delete all
+                                products</span></a>
+                        <a href="{{ URL::to('/update-cart') }}" class="sc-button fl-button pri-3"><span>Update</span></a>
+                        <a href="#" class="sc-button fl-button pri-3"><span>Payment</span></a>
                     </div>
-                    @endforeach
+                    </form>
                 @else
                     {{-- empty cart, pls input your product --}}
                     <h2 class="text-rainbow">Please add product to cart</h2>

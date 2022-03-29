@@ -127,12 +127,12 @@ Route::get('/help-center', [CommunityController::class, 'help_center']);
 //Contact routes
 
 // Cart routes
-Route::post('/show-cart', [CartController::class, 'show_cart']);
+//Route::post('/show-cart', [CartController::class, 'show_cart']);
 Route::get('/cart', [CartController::class, 'show_cart']);
-Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
-Route::post('/update-cart', [CartController::class, 'update_cart']);
 Route::get('/delete-cart/{session_id}', [CartController::class, 'delete_cart']);
 Route::get('/delete-all-cart', [CartController::class, 'delete_all_cart']);
+Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
+Route::post('/update-cart', [CartController::class, 'update_cart']);
 
 //----------------------------------------------------------------------------------------------------------------------
 //debug

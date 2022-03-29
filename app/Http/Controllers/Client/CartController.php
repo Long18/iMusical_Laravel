@@ -36,7 +36,7 @@ class CartController extends Controller
                 //Check xem giỏ hàng có trùng không
                 if ($value['product_id'] == $data['cart_product_id']) {
                     $is_avaiable++;
-                }else{
+                } else {
                     $is_avaiable = 0;
                 }
             }
@@ -51,7 +51,7 @@ class CartController extends Controller
                     'product_quantity' => $data['cart_product_quantity'],
                 );
                 session()->put('cart', $cart);
-            }else{
+            } else {
                 // Nếu trùng thì cộng thêm số lượng
                 foreach ($cart as $key => $value) {
                     if ($value['product_id'] == $data['product_id']) {
@@ -73,7 +73,6 @@ class CartController extends Controller
         }
         session()->put('cart', $cart);
         session()->save();
-
     }
 
     public function update_cart(Request $request)
@@ -83,22 +82,23 @@ class CartController extends Controller
         //get cart from session
         $cart = session()->get('cart', []);
         if ($cart == true) {
+            $message = '';
             // get quantity by card
-            foreach ($data['quantity'] as $key => $value) {
+            foreach ($data['cart_quantity'] as $key => $value) {
                 foreach ($cart as $session => $val) {
-                    if ($val['session_id'] == $key) {
+                    if ($val['session_id'] == $key && $value < $cart[$session]['produc_quantity']) {
                         $cart[$session]['product_quantity'] = $value;
+                        $message = 'Update cart success';
+                    } elseif ($val['session_id'] == $key && $value > $cart[$session]['produc_quantity']) {
+                        $message = 'Update cart fail';
                     }
                 }
             }
             session()->put('cart', $cart);
-            return redirect()->back()->with('messenge', 'Update cart success');
+            return redirect()->back()->with('message', $message);
         } else {
-            return redirect()->back()->with('messenge', 'Update cart fail');
+            return redirect()->back()->with('message', 'Update cart fail');
         }
-
-        session()->put('cart', $cart);
-        session()->save();
     }
 
     public function delete_cart($session_id)
@@ -117,9 +117,9 @@ class CartController extends Controller
 
             session()->put('cart', $cart);
             session()->save();
-            return redirect()->back()->with('messenge', 'Delete cart success');
+            return redirect()->back()->with('message', 'Delete cart success');
         } else {
-            return redirect()->back()->with('messenge', 'Delete cart error');
+            return redirect()->back()->with('message', 'Delete cart error');
         }
     }
 
@@ -130,9 +130,9 @@ class CartController extends Controller
         if ($cart == true) {
             session()->forget('cart');
             session()->save();
-            return redirect()->back()->with('messenge', 'Delete all cart success');
+            return redirect()->back()->with('message', 'Delete all cart success');
         } else {
-            return redirect()->back()->with('messenge', 'Delete all cart fail');
+            return redirect()->back()->with('message', 'Delete all cart fail');
         }
     }
 
