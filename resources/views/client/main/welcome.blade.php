@@ -25,7 +25,7 @@
     <!-- Reponsive -->
     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/css/responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/css/textanimation.css') }}">
-    <link rel="stylesheet"  href="{{ asset('public/frontend/css/sweetalert.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/css/sweetalert.css') }}">
 
 </head>
 
@@ -400,7 +400,7 @@
             $('.add-to-cart').click(function() {
                 // Lấy value của các input đưa vào các biến
                 // Kèm theo sau là id của chính product đó
-                var id = $(this).attr('data-id');
+                var id = $(this).data('id');
                 var cart_product_id = $('.cart_product_id_' + id).val();
                 var cart_product_name = $('.cart_product_name_' + id).val();
                 var cart_product_price = $('.cart_product_price_' + id).val();
@@ -411,11 +411,11 @@
                     url: '{{ url('/add-to-cart') }}',
                     method: 'POST',
                     data: {
-                        _token: _token,
                         cart_product_id: cart_product_id,
                         cart_product_name: cart_product_name,
                         cart_product_price: cart_product_price,
                         cart_product_quantity: cart_product_quantity,
+                        _token: _token
                     },
                     success: function(data) {
                         swal({
@@ -427,12 +427,11 @@
                             confirmButtonText: 'Go to Cart',
                             closeOnConfirm: false,
                             icon: 'success',
-                            button: 'OK',
+                            button: 'OK'
                         }, function() {
                             window.location.href = '{{ url('/cart') }}';
                         });
                     }
-
                 });
             });
         });

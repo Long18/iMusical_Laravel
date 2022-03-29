@@ -146,7 +146,7 @@
                                 <div class="slider-item">
                                     <div class="sc-card-product">
 
-                                        <form>
+                                        <form action="">
                                             @csrf
                                             <input type="hidden" name="cart_product_id" value="{{ $product->product_id }}"
                                                 class="cart_product_id_{{ $product->product_id }}">

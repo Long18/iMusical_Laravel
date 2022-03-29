@@ -124,16 +124,16 @@ Route::get('/blog', [CommunityController::class, 'blog']);
 Route::get('/blog-detail', [CommunityController::class, 'blog_detail']);
 Route::get('/help-center', [CommunityController::class, 'help_center']);
 
-//Contact   routes
+//Contact routes
 
 // Cart routes
-// Route::post('/save-cart', [CartController::class, 'save_cart']);
 Route::post('/show-cart', [CartController::class, 'show_cart']);
 Route::get('/cart', [CartController::class, 'show_cart']);
 Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
-
+Route::post('/update-cart', [CartController::class, 'update_cart']);
+Route::get('/delete-cart/{session_id}', [CartController::class, 'delete_cart']);
+Route::get('/delete-all-cart', [CartController::class, 'delete_all_cart']);
 
 //----------------------------------------------------------------------------------------------------------------------
 //debug
-Route::get('/debug',[DebugController::class,'debug']);
-
+Route::get('/debug', [DebugController::class, 'debug']);
