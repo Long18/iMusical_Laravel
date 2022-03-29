@@ -505,8 +505,9 @@
             </div>
         </section>
 
-        <form action="{{ URL::to('/show-cart') }}" method="POST">
-            {{ csrf_field() }}
+        <form action="" method="POST">
+            {{-- {{ URL::to('/show-cart') }} --}}
+            @csrf
 
 
             <!-- Modal Popup Bid -->
@@ -522,13 +523,22 @@
                             {{-- <p class="text-center">your bid <span class="price color-popup">(4ETH) </span> has been
                                 listing to our database</p>
                             <a href class="btn btn-primary"> Watch the listings</a> --}}
-                            {{-- <button type="submit" class="btn btn-primary"> Add to cart</button>
+            {{-- <button type="submit" class="btn btn-primary"> Add to cart</button>
                         </div>
                     </div>
                 </div>
-            </div>  --}}
+            </div> --}}
 
-
+            <input type="hidden" name="cart_product_id" value="{{ $item_value->product_id }}"
+                class="cart_product_id_{{ $item_value->product_id }}">
+            <input type="hidden" name="cart_product_name" value="{{ $item_value->product_name }}"
+                class="cart_product_name_{{ $item_value->product_id }}">
+            <input type="hidden" name="cart_product_price" value="{{ $item_value->product_price }}"
+                class="cart_product_price_{{ $item_value->product_id }}">
+            <input type="hidden" name="cart_product_sale_price" value="{{ $item_value->product_sale_price }}"
+                class="cart_product_sale_price_{{ $item_value->product_id }}">
+            <input type="hidden" name="cart_product_quantity" value="1"
+                class="cart_product_quantity_{{ $item_value->product_id }}">
 
 
             <div class="modal fade popup" id="popup_bid" tabindex="-1" role="dialog" aria-hidden="true">
@@ -538,7 +548,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <div class="modal-body space-y-20 pd-40">
-                            <h3>Add to cart</h3>
+                            <h3>{{ $item_value->product_name }}</h3>
                             {{-- <p class="text-center">You must bid at least <span class="price color-popup">4.89
                                     ETH</span>
                             </p>
@@ -547,7 +557,7 @@
                             </p>
                             <input type="number" name="quantity" class="form-control quantity" value="1">
                             <div class="hr"></div>
-                            <input name="producid_hidden" type="hidden" value="{{$item_value->product_id}}">
+                            <input name="producid_hidden" type="hidden" value="{{ $item_value->product_id }}">
                             {{-- <div class="d-flex justify-content-between">
                                 <p> You must bid at least:</p>
                                 <p class="text-right price color-popup"> 4.89 ETH </p>
@@ -558,15 +568,17 @@
                             </div> --}}
                             <div class="d-flex justify-content-between">
                                 <p> Total amount:</p>
-                                <p class="text-right price color-popup"> 4 ETH </p>
+                                <p class="text-right price color-popup">{{ number_format($item_value->product_price, 0, ',', '.') }} đ</p>
                             </div>
                             {{-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#popup_bid_success"
                                 data-dismiss="modal" aria-label="Close">Add to cart</a> --}}
-                            <button type="submit" class="btn btn-primary"> Add to cart</button>
+                            <button name="add-to-cart" type="button" data-id="{{ $item_value->product_id }}"
+                                class="btn btn-primary add-to-cart"> Add to cart</button>
                         </div>
                     </div>
                 </div>
             </div>
+
         </form>
     @endforeach
 @endsection

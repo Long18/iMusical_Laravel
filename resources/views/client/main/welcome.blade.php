@@ -25,7 +25,8 @@
     <!-- Reponsive -->
     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/css/responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/css/textanimation.css') }}">
-    <link rel="stylesheet"  href="{{ asset('public/frontend/css/sweetalert.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/css/sweetalert.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css">
 
 </head>
 
@@ -59,12 +60,8 @@
                                     <div class="mobile-button"><span></span></div><!-- /.mobile-button -->
                                     <nav id="main-nav" class="main-nav">
                                         <ul id="menu-primary-menu" class="menu">
-                                            <li class="menu-item current-menu-item menu-item-has-children">
+                                            <li class="menu-item current-menu-item">
                                                 <a href="{{ URL::to('/') }}">Home</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item current-item"><a>Home 1</a>
-                                                    </li>
-                                                </ul>
                                             </li>
                                             <li class="menu-item">
                                                 <a href="{{ URL::to('/explore') }}">Explore</a>
@@ -393,6 +390,7 @@
     <script src="{{ asset('public/frontend/js/moralis.js') }}"></script>
     <script src="{{ asset('public/frontend/js/nft.js') }}"></script>
     <script src="{{ asset('public/frontend/js/sweetalert2.all.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -400,10 +398,11 @@
             $('.add-to-cart').click(function() {
                 // Lấy value của các input đưa vào các biến
                 // Kèm theo sau là id của chính product đó
-                var id = $(this).attr('data-id');
+                var id = $(this).data('id');
                 var cart_product_id = $('.cart_product_id_' + id).val();
                 var cart_product_name = $('.cart_product_name_' + id).val();
                 var cart_product_price = $('.cart_product_price_' + id).val();
+                var cart_product_sale_price = $('.cart_product_sale_price_' + id).val();
                 var cart_product_quantity = $('.cart_product_quantity_' + id).val();
                 var _token = $('input[name="_token"]').val();
 
@@ -411,28 +410,29 @@
                     url: '{{ url('/add-to-cart') }}',
                     method: 'POST',
                     data: {
-                        _token: _token,
                         cart_product_id: cart_product_id,
                         cart_product_name: cart_product_name,
                         cart_product_price: cart_product_price,
+                        cart_product_sale_price: cart_product_sale_price,
                         cart_product_quantity: cart_product_quantity,
+                        _token: _token
                     },
                     success: function(data) {
-                        swal({
-                            title: 'Success',
+                        swal.fire({
+                            title: 'success',
                             text: 'Product added to cart',
                             showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
                             cancelButtonText: 'Continue Shopping',
-                            confirmButtonClass: 'btn-success',
                             confirmButtonText: 'Go to Cart',
-                            closeOnConfirm: false,
                             icon: 'success',
-                            button: 'OK',
-                        }, function() {
-                            window.location.href = '{{ url('/cart') }}';
-                        });
+                        }).then((result) => {
+                            if (result.value) {
+                                window.location.href = '{{ url('/cart') }}';
+                            }
+                        })
                     }
-
                 });
             });
         });
