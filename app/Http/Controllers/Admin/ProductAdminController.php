@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Product;
-use App\Models\Type;
 use App\Models\TypeDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,8 +15,18 @@ session_start();
 
 class ProductAdminController extends Controller
 {
+    public function AuthLogin(){
+        $admin_id = Session::get('user_id');
+        if($admin_id){
+            return Redirect::to('admin/dashboard');
+        }else{
+            return Redirect::to('admin')->send();
+        }
+    }
+
     public function all_products()
     {
+        $this->AuthLogin();
         //get product from data base
         $all_products = Product::get();
 
@@ -28,32 +37,23 @@ class ProductAdminController extends Controller
 
     public function add_product()
     {
-        $brands = Brand::where('status',1)->get();
-        $categories = Type::where('status',1)->whereNULL('parent_id')->get();
+        $this->AuthLogin();
         //return view
-        return view('admin.sub.add_product')->with('brands', $brands)->with('categories', $categories);
+        return view('admin.sub.add_product');
     }
 
     public function save_product(Request $request)
     {
+        $this->AuthLogin();
         $data = array();
-        $data['product_name'] = $request->val_name_product;
-        $data['brand_id'] = $request->val_brand_product;
-        $data['slug'] = $request->val_slug_product;
-        $data['product_price'] = $request->val_price_product;
-        $data['product_sale_price'] = $request->val_price_sale;
-        $data['product_end_sale'] = $request->val_end_sale;
-        $data['product_amount'] = $request->val_amount_product;
-        $data['product_detail'] = $request->val_detail_product;
-        $data['category_id'] = $request->val_category_product;
-        $data['status'] = $request->val_status_product ? 1 : 0;
 
-        $user_id = Session::get('user_id');
-        if($user_id){
-            $data['created_by'] = $user_id;
-        }else{
-            return Redirect::to('/admin/logout');
-        }
+        // get data from request
+        $data['name'] = $request->val_name_product;
+        // $data['name'] = $request->val_name_product;
+        // $data['name'] = $request->val_name_product;
+        // $data['name'] = $request->val_name_product;
+        // $data['name'] = $request->val_name_product;
+        $data['status'] = $request->val_status;
 
         // update to database
         Product::insert($data);
@@ -62,11 +62,12 @@ class ProductAdminController extends Controller
         Session::put('messenge', 'Your product was added!!');
 
         //return view
-        return Redirect::to('admin/all-products');
+        return Redirect::to('admin/add-product');
     }
 
     public function edit_product($product_id)
     {
+        $this->AuthLogin();
         $edit_product = Product::where('product_id', $product_id)->first();
         $brands = Brand::where('status', 1)->get();
 
@@ -82,6 +83,7 @@ class ProductAdminController extends Controller
 
     public function update_product(Request $request, $product_id)
     {
+        $this->AuthLogin();
         $data = array();
         $data['product_name'] = $request->val_name_product;
         $data['brand_id'] = $request->val_brand_product;
@@ -101,42 +103,45 @@ class ProductAdminController extends Controller
 
     public function delete_product($product_id)
     {
+        $this->AuthLogin();
         Product::where('product_id', $product_id)->delete();
         Session::put('messenge', 'Your product was deleted!!');
         return Redirect::to('admin/all-products');
     }
 
-    public function add_product_type_detail($product_id)
+    public function add_product_detail()
     {
-        $product = Product::where('product_id', $product_id)->first();
-        $category = Type::where('type_id', $product->category_id)->first();
+        $this->AuthLogin();
         //return view
-        return view('admin.sub.add_product_type_detail')
-            ->with('product', $product)
-            ->with('category', $category);
+        return view('admin.sub.add_product');
     }
 
-    public function save_product_type_detail(Request $request, $product_id)
+    public function save_product_detail(Request $request)
     {
+        $this->AuthLogin();
         $data = array();
 
         // get data from request
-        $data['product_id'] = $request->product_id;
-        $data['type_id'] = $request->val_type_type_detail;
-        $data['type_detail_value'] = $request->val_value_type_detail;
+        $data['name'] = $request->val_name_product;
+        // $data['name'] = $request->val_name_product;
+        // $data['name'] = $request->val_name_product;
+        // $data['name'] = $request->val_name_product;
+        // $data['name'] = $request->val_name_product;
+        $data['status'] = $request->val_status;
 
         // update to database
-        TypeDetail::insert($data);
+        Product::insert($data);
 
         // send to view
         Session::put('messenge', 'Your product was added!!');
 
         //return view
-        return Redirect::to('admin/edit-product/'.$product_id);
+        return Redirect::to('admin/add-product');
     }
 
     public function edit_product_type_detail($product_id, $type_detail_id)
     {
+        $this->AuthLogin();
         $edit_type_detail = TypeDetail::where('type_detail_id', $type_detail_id)
         ->first();
         $manager_products = view('admin.sub.edit_product_type_detail')
@@ -148,23 +153,14 @@ class ProductAdminController extends Controller
 
     public function update_product_type_detail(Request $request, $product_id, $type_detail_id)
     {
+        $this->AuthLogin();
         $data = array();
         $data['type_detail_value'] = $request->val_type_value;
 
+
         TypeDetail::where('type_detail_id', $type_detail_id)->update($data);
-        
+
         Session::put('messenge', 'Your product was updated!!');
         return Redirect::to('admin/edit-product/'.$product_id);
-    }
-
-    public function delete_product_type_detail($type_detail_id)
-    {
-        TypeDetail::where('type_detail_id', $type_detail_id)->delete();
-        Session::put('messenge', 'Your product was deleted!!');
-        return Redirect::back();
-    }
-
-    public function get_product($product_id){
-        return Product::where('product_id', $product_id);
     }
 }

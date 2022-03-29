@@ -12,8 +12,18 @@ use Illuminate\Support\Facades\Session;
 session_start();
 class TypesAdminController extends Controller
 {
+    public function AuthLogin(){
+        $admin_id = Session::get('user_id');
+        if($admin_id){
+            return Redirect::to('admin/dashboard');
+        }else{
+            return Redirect::to('admin')->send();
+        }
+    }
+
     public function all_types()
     {
+        $this->AuthLogin();
         //get data from database
         $all_types = Type::get();
 
@@ -25,6 +35,7 @@ class TypesAdminController extends Controller
 
     public function add_type()
     {
+        $this->AuthLogin();
         $parents = Type::where("status",1)->get();
 
         //return view
@@ -34,6 +45,7 @@ class TypesAdminController extends Controller
 
     public function save_type(Request $request)
     {
+        $this->AuthLogin();
         //get data from view
         $data = array();
         $data['type_name'] = $request->val_name_type;
@@ -42,7 +54,7 @@ class TypesAdminController extends Controller
         
         $data['type_meta_key'] = $request->val_meta_key;
         $data['type_meta_desc'] = $request->val_meta_desc;
-        
+
         $data['status'] = $request->val_status_type ? 1 : 0;
 
         if($request->val_parent_type != "NULL"){
@@ -73,6 +85,7 @@ class TypesAdminController extends Controller
 
     public function edit_type($type_id)
     {
+        $this->AuthLogin();
         //get data from database
         $edit_type = Type::where('type_id', $type_id)
             ->first();
@@ -104,6 +117,7 @@ class TypesAdminController extends Controller
 
     public function update_type(Request $request, $type_id)
     {
+        $this->AuthLogin();
         //get data from view
         $data = array();
         $data['type_name'] = $request->val_name_type;
@@ -133,6 +147,7 @@ class TypesAdminController extends Controller
 
     public function delete_type($type_id)
     {
+        $this->AuthLogin();
         //delete data from database
         $deleted = Type::where('type_id', $type_id)->delete();
 
