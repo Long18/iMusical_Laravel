@@ -43,11 +43,12 @@ class HomeController extends Controller
         ->take(10)
         ->get();
 
-        Session::put('newProducts',$newProducts);
-        Session::put('topSellers',$topSellers);
-        Session::put('categories',$categories);
-        Session::put('newProducts',$newProducts);
-        return view('client.sub.home');
+        return view('client.sub.home')
+        ->with('newProducts',$newProducts)
+        ->with('sliders', $sliders)
+        ->with('topSellers', $topSellers)
+        ->with('categories', $categories)
+        ->with('products', $products);
     }
 
     public function contact()
