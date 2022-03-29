@@ -123,19 +123,19 @@ use Illuminate\Support\Facades\Session;
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_amount_order">Payment Method
+                                            <label class="col-lg-4 col-form-label" for="val_payment_method">Payment Method
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_amount_order" name="val_amount_order" value="{{$edit_order->delivery_payment_method}}">
+                                                <input type="text" class="form-control" id="val_payment_method" name="val_payment_method" value="{{$edit_order->delivery_payment_method}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_amount_order">Payment Status
+                                            <label class="col-lg-4 col-form-label" for="val_payment_status">Payment Status
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_amount_order" name="val_amount_order"  value="{{$edit_order->delivery_payment_status}}">
+                                                <input type="text" class="form-control" id="val_payment_status" name="val_payment_status"  value="{{$edit_order->delivery_payment_status}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
