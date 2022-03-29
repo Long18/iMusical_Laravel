@@ -31,95 +31,95 @@ use Illuminate\Support\Facades\Session;
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_name_order">Order Code
+                                            <label class="col-lg-4 col-form-label" for="val_code_order">Order Code
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_name_order" name="val_name_order" value="{{$edit_order->order_code}}">
+                                                <input type="text" class="form-control" id="val_code_order" name="val_code_order" value="{{$edit_order->order_code}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_slug_order">Export Day<span class="text-danger">*</span>
+                                            <label class="col-lg-4 col-form-label" for="val_export_day">Export Day<span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_slug_order" name="val_slug_order"  value="{{$edit_order->order_export_date}}">
+                                                <input type="text" class="form-control" id="val_export_day" name="val_export_day"  value="{{$edit_order->order_export_date}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_price_order">Total Price
+                                            <label class="col-lg-4 col-form-label" for="val_total_price_order">Total Price
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_price_order" name="val_price_order"value="{{$edit_order->order_total_sum}}">
+                                                <input type="text" class="form-control" id="val_total_price_order" name="val_total_price_order"value="{{$edit_order->order_total_sum}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_price_sale">Transport Fee
+                                            <label class="col-lg-4 col-form-label" for="val_transport_fee">Transport Fee
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_price_sale" name="val_price_sale"  value="{{$edit_order->transport_fee}}">
+                                                <input type="text" class="form-control" id="val_transport_fee" name="val_transport_fee"  value="{{$edit_order->transport_fee}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_end_sale">Transport Type<span class="text-danger">*</span>
+                                            <label class="col-lg-4 col-form-label" for="val_transport_type">Transport Type<span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_end_sale" name="val_end_sale" value="{{$edit_order->transport_type}}">
+                                                <input type="text" class="form-control" id="val_transport_type" name="val_transport_type" value="{{$edit_order->transport_type}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_detail_order">Created At
+                                            <label class="col-lg-4 col-form-label" for="val_created_at">Created At
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="val_end_sale" name="val_end_sale" value="{{$edit_order->created_at}}" disabled>
+                                            <input type="text" class="form-control" id="val_created_at" name="val_created_at" value="{{$edit_order->created_at}}" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_detail_order">Creator
+                                            <label class="col-lg-4 col-form-label" for="val_creator">Creator
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="val_end_sale" name="val_end_sale"  value="{{$creator->user_name}}" disabled>
+                                            <input type="text" class="form-control" id="val_creator" name="val_creator"  value="{{$creator->user_name}}" disabled>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-xl-6">
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_category_order">Buyer
+                                            <label class="col-lg-4 col-form-label" for="val_buyer">Buyer
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_category_order" name="val_category_order" value="{{$buyer->user_name}}" disabled>
+                                                <input type="text" class="form-control" id="val_buyer" name="val_buyer" value="{{$buyer->user_name}}" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_created_at">Delivery Receiver
+                                            <label class="col-lg-4 col-form-label" for="val_delivery_name">Delivery Receiver
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_created_at" name="val_created_at" value="{{$edit_order->delivery_name}}">
+                                                <input type="text" class="form-control" id="val_delivery_name" name="val_delivery_name" value="{{$edit_order->delivery_name}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_created_by">Delivery Address
+                                            <label class="col-lg-4 col-form-label" for="val_delivery_address">Delivery Address
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_created_by" name="val_created_by" value="{{$creator->delivery_address}}">
+                                                <input type="text" class="form-control" id="val_delivery_address" name="val_delivery_address" value="{{$creator->delivery_address}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_amount_order">Delivery Phone
+                                            <label class="col-lg-4 col-form-label" for="val_delivery_phone">Delivery Phone
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_amount_order" name="val_amount_order"  value="{{$edit_order->delivery_phone}}">
+                                                <input type="text" class="form-control" id="val_delivery_phone" name="val_delivery_phone"  value="{{$edit_order->delivery_phone}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_amount_order">Delivery Email
+                                            <label class="col-lg-4 col-form-label" for="val_delivery_email">Delivery Email
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_amount_order" name="val_amount_order" value="{{$edit_order->delivery_email}}">
+                                                <input type="text" class="form-control" id="val_delivery_email" name="val_delivery_email" value="{{$edit_order->delivery_email}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -176,8 +176,11 @@ use Illuminate\Support\Facades\Session;
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Type</th>
-                                        <th>Value</th>
+                                        <th>Product ID</th>
+                                        <th>Price</th>
+                                        <th>Price Sale</th>
+                                        <th>Qty</th>
+                                        <th>Total</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -187,7 +190,20 @@ use Illuminate\Support\Facades\Session;
                                         foreach ($order_details as $order_detail) {                          
                                     ?>
                                         <tr>
-                                            
+                                            <td>{{ $order_detail->order_detail_id }}</td>
+                                            <td>{{ $order_detail->product_id }}</td>
+                                            <td>{{ $order_detail->order_detail_price }}</td>
+                                            <td>{{ $order_detail->order_detail_price_sale }}</td>
+                                            <td>{{ $order_detail->order_detail_quantity }}</td>
+                                            <td>{{ $order_detail->getTotalSum() }}</td>
+                                            <td>
+                                                <div class="d-flex">
+
+                                                    <a href="{{ URL::to('admin/edit-order-detail/' . $order_detail->order_detail_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a onclick="return confirm('Are you sure to delete?')" href="{{ URL::to('admin/delete-order-detail/' . $order_detail->order_detail_id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+
+                                                </div>
+                                            </td>
                                         </tr>
                                     <?php
                                         }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\Type;
 use App\Models\TypeDetail;
 use Illuminate\Http\Request;
@@ -101,17 +102,14 @@ class OrdersAdminController extends Controller
         return Redirect::to('admin/all-orders');
     }
 
-    public function add_order_type_detail($order_id)
-    {
-        $order = Order::where('order_id', $order_id)->first();
-        $category = Type::where('type_id', $order->category_id)->first();
+    public function add_order_detail($order_id)
+    {   
         //return view
-        return view('admin.sub.add_order_type_detail')
-            ->with('order', $order)
-            ->with('category', $category);
+        return view('admin.sub.add_order_detail')
+            ->with('order_id', $order_id);
     }
 
-    public function save_order_type_detail(Request $request, $order_id)
+    public function save_order_detail(Request $request, $order_id)
     {
         $data = array();
 
@@ -130,7 +128,7 @@ class OrdersAdminController extends Controller
         return Redirect::to('admin/edit-order/'.$order_id);
     }
 
-    public function edit_order_type_detail($order_id, $type_detail_id)
+    public function edit_order_detail($order_id, $type_detail_id)
     {
         $edit_type_detail = TypeDetail::where('type_detail_id', $type_detail_id)
         ->first();
@@ -138,10 +136,10 @@ class OrdersAdminController extends Controller
             ->with('edit_type_detail', $edit_type_detail)
             ->with('order_id', $order_id);
         Session::put('messenge', 'Your order was edited!!');
-        return view('admin.main.admin_layout')->with('admin.sub.edit_order_type_detail', $manager_orders);
+        return view('admin.main.admin_layout')->with('admin.sub.edit_order_detail', $manager_orders);
     }
 
-    public function update_order_type_detail(Request $request, $order_id, $type_detail_id)
+    public function update_order_detail(Request $request, $order_id, $type_detail_id)
     {
         $data = array();
         $data['type_detail_value'] = $request->val_type_value;
@@ -152,7 +150,7 @@ class OrdersAdminController extends Controller
         return Redirect::to('admin/edit-order/'.$order_id);
     }
 
-    public function delete_order_type_detail($type_detail_id)
+    public function delete_order_detail($type_detail_id)
     {
         TypeDetail::where('type_detail_id', $type_detail_id)->delete();
         Session::put('messenge', 'Your order was deleted!!');

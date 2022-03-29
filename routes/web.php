@@ -60,8 +60,8 @@ Route::get('/admin/edit-type/{type_id}', [TypesAdminController::class, 'edit_typ
 Route::get('/admin/delete-type/{type_id}', [TypesAdminController::class, 'delete_type']);
 
 
-Route::post('/admin/save-type', [TypesAdminController::class, 'save_brand']);
-Route::post('/admin/update-type/{type_id}', [TypesAdminController::class, 'update_brand']);
+Route::post('/admin/save-type', [TypesAdminController::class, 'save_type']);
+Route::post('/admin/update-type/{type_id}', [TypesAdminController::class, 'update_type']);
 
 // brands
 Route::get('/admin/all-brands', [BrandsAdminController::class, 'all_brands']);
@@ -98,17 +98,17 @@ Route::post('/admin/update-slider/{slider_id}', [SlidersAdminController::class, 
 
 Route::get('/admin/all-orders', [OrdersAdminController::class, 'all_orders']);
 Route::get('/admin/add-order', [OrdersAdminController::class, 'add_order']);
-Route::get('/admin/add-order-type-detail/{order_id}', [OrdersAdminController::class, 'add_order_type_detail']);
+Route::get('/admin/add-order-detail/{order_id}', [OrdersAdminController::class, 'add_order_detail']);
 Route::get('/admin/edit-order/{order_id}', [OrdersAdminController::class, 'edit_order']);
-Route::get('/admin/edit-order-type-detail/{order_id}/{type_detail_id}', [OrdersAdminController::class, 'edit_order_type_detail']);
+Route::get('/admin/edit-order-detail/{order_id}/{type_detail_id}', [OrdersAdminController::class, 'edit_order_detail']);
 Route::get('/admin/delete-order/{order_id}', [OrdersAdminController::class, 'delete_order']);
-Route::get('/admin/delete-order-type-detail/{type_detail_id}', [OrdersAdminController::class, 'delete_order_type_detail']);
+Route::get('/admin/delete-order-detail/{type_detail_id}', [OrdersAdminController::class, 'delete_order_detail']);
 
 
 Route::post('/admin/save-order', [OrdersAdminController::class, 'save_order']);
-Route::post('/admin/save-order-type-detail/{order_id}', [OrdersAdminController::class, 'save_order_type_detail']);
+Route::post('/admin/save-order-detail/{order_id}', [OrdersAdminController::class, 'save_order_detail']);
 Route::post('/admin/update-order/{order_id}', [OrdersAdminController::class, 'update_order']);
-Route::post('/admin/update-order-type-detail/{order_id}/{type_detail_id}', [OrdersAdminController::class, 'update_order_type_detail']);
+Route::post('/admin/update-order-detail/{order_id}/{type_detail_id}', [OrdersAdminController::class, 'update_order_detail']);
 
 
 //----------------------------------------------------------------------------------------------------------------------
