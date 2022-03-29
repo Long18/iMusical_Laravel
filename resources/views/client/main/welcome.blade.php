@@ -422,12 +422,11 @@
                             title: 'success',
                             text: 'Product added to cart',
                             showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
                             cancelButtonText: 'Continue Shopping',
-                            confirmButtonClass: 'btn-success',
                             confirmButtonText: 'Go to Cart',
-                            closeOnConfirm: false,
                             icon: 'success',
-                            button: 'OK'
                         }).then((result) => {
                             if (result.value) {
                                 window.location.href = '{{ url('/cart') }}';
