@@ -492,6 +492,14 @@
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-layer-1"></i>
+                            <span class="nav-text">Order Manager</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ URL::to('/admin/all-orders') }}">All Order</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-381-network"></i>
                             <span class="nav-text">Products</span>
                         </a>

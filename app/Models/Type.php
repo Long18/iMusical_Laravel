@@ -19,6 +19,12 @@ class Type extends Model{
         ->first();
     }
 
+    public function getAllChilds(){
+        return Type::where('status',1)
+        ->where('parent_id',$this->type_id)
+        ->get();
+    }
+
     public function getTypeDetails(){
         return TypeDetail::where('type_id',$this->type_id)
         ->get();

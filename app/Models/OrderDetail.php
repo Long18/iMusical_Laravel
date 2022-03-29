@@ -20,4 +20,13 @@ class OrderDetail extends Model
         ->where('product_id', $this->product_id)
         ->first();
     }
+
+    public function getTotalSum(){
+        if($this->order_detail_price_sale){
+            $total =  $this->order_detail_price_sale * $this->order_detail_quantity;
+        }else{
+            $total = $this->order_detail_price * $this->order_detail_quantity;
+        }
+        return $total;
+    }
 }

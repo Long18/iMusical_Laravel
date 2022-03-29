@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ProductAdminController;
 use App\Http\Controllers\Admin\TypesAdminController;
 use App\Http\Controllers\Admin\BrandsAdminController;
+use App\Http\Controllers\Admin\OrdersAdminController;
 use App\Http\Controllers\Admin\SlidersAdminController;
 use App\Http\Controllers\Admin\UsersAdminController;
 use App\Http\Controllers\Client\HomeController;
@@ -43,14 +44,15 @@ Route::post('/admin/admin-dashboard', [AdminController::class, 'dashboard']);
 //Product
 Route::get('/admin/all-products', [ProductAdminController::class, 'all_products']);
 Route::get('/admin/add-product', [ProductAdminController::class, 'add_product']);
-Route::get('/admin/add-product_type_detail', [ProductAdminController::class, 'add_product_type_detail']);
+Route::get('/admin/add-product-type-detail/{product_id}', [ProductAdminController::class, 'add_product_type_detail']);
 Route::get('/admin/edit-product/{product_id}', [ProductAdminController::class, 'edit_product']);
 Route::get('/admin/edit-product-type-detail/{product_id}/{type_detail_id}', [ProductAdminController::class, 'edit_product_type_detail']);
 Route::get('/admin/delete-product/{product_id}', [ProductAdminController::class, 'delete_product']);
+Route::get('/admin/delete-product-type-detail/{type_detail_id}', [ProductAdminController::class, 'delete_product_type_detail']);
 
 
 Route::post('/admin/save-product', [ProductAdminController::class, 'save_product']);
-Route::post('/admin/save-product_type_detail/{product_id}', [ProductAdminController::class, 'save_product_type_detail']);
+Route::post('/admin/save-product-type-detail/{product_id}', [ProductAdminController::class, 'save_product_type_detail']);
 Route::post('/admin/update-product/{product_id}', [ProductAdminController::class, 'update_product']);
 Route::post('/admin/update-product-type-detail/{product_id}/{type_detail_id}', [ProductAdminController::class, 'update_product_type_detail']);
 
@@ -61,8 +63,8 @@ Route::get('/admin/edit-type/{type_id}', [TypesAdminController::class, 'edit_typ
 Route::get('/admin/delete-type/{type_id}', [TypesAdminController::class, 'delete_type']);
 
 
-Route::post('/admin/save-type', [TypesAdminController::class, 'save_brand']);
-Route::post('/admin/update-type/{type_id}', [TypesAdminController::class, 'update_brand']);
+Route::post('/admin/save-type', [TypesAdminController::class, 'save_type']);
+Route::post('/admin/update-type/{type_id}', [TypesAdminController::class, 'update_type']);
 
 // brands
 Route::get('/admin/all-brands', [BrandsAdminController::class, 'all_brands']);
@@ -94,6 +96,22 @@ Route::get('/admin/delete-slider/{slider_id}', [SlidersAdminController::class, '
 
 Route::post('/admin/save-slider', [SlidersAdminController::class, 'save_slider']);
 Route::post('/admin/update-slider/{slider_id}', [SlidersAdminController::class, 'update_slider']);
+
+//order manager
+
+Route::get('/admin/all-orders', [OrdersAdminController::class, 'all_orders']);
+Route::get('/admin/add-order', [OrdersAdminController::class, 'add_order']);
+Route::get('/admin/add-order-detail/{order_id}', [OrdersAdminController::class, 'add_order_detail']);
+Route::get('/admin/edit-order/{order_id}', [OrdersAdminController::class, 'edit_order']);
+Route::get('/admin/edit-order-detail/{order_id}/{type_detail_id}', [OrdersAdminController::class, 'edit_order_detail']);
+Route::get('/admin/delete-order/{order_id}', [OrdersAdminController::class, 'delete_order']);
+Route::get('/admin/delete-order-detail/{type_detail_id}', [OrdersAdminController::class, 'delete_order_detail']);
+
+
+Route::post('/admin/save-order', [OrdersAdminController::class, 'save_order']);
+Route::post('/admin/save-order-detail/{order_id}', [OrdersAdminController::class, 'save_order_detail']);
+Route::post('/admin/update-order/{order_id}', [OrdersAdminController::class, 'update_order']);
+Route::post('/admin/update-order-detail/{order_id}/{type_detail_id}', [OrdersAdminController::class, 'update_order_detail']);
 
 
 //----------------------------------------------------------------------------------------------------------------------
