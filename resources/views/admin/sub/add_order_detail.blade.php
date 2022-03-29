@@ -7,7 +7,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Add type</h4>
+                        <h4 class="card-title">Add Order Detail</h4>
                     </div>
                     <div class="card-body">
                         <?php

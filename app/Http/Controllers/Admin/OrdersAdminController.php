@@ -133,23 +133,29 @@ class OrdersAdminController extends Controller
         return Redirect::to('admin/edit-order/'.$order_id);
     }
 
-    public function edit_order_detail($order_id, $type_detail_id)
+    public function edit_order_detail($order_id, $order_detail_id)
     {
-        $edit_type_detail = TypeDetail::where('type_detail_id', $type_detail_id)
-        ->first();
-        $manager_orders = view('admin.sub.edit_order_type_detail')
-            ->with('edit_type_detail', $edit_type_detail)
+        $edit_order_detail = OrderDetail::where('order_id', $order_id)
+        ->where('order_detail_id', $order_detail_id)->first();
+
+
+        $manager_orders = view('admin.sub.edit_order_detail')
+            ->with('edit_order_detail', $edit_order_detail)
             ->with('order_id', $order_id);
+            
         Session::put('messenge', 'Your order was edited!!');
         return view('admin.main.admin_layout')->with('admin.sub.edit_order_detail', $manager_orders);
     }
 
-    public function update_order_detail(Request $request, $order_id, $type_detail_id)
+    public function update_order_detail(Request $request, $order_id, $order_detail_id)
     {
         $data = array();
-        $data['type_detail_value'] = $request->val_type_value;
+        $data['order_detail_price'] = $request->val_price;
+        $data['order_detail_price_sale'] = $request->val_sale_price;
+        $data['order_detail_quantity'] = $request->val_quantity;
+        $data['order_detail_amount'] = $request->val_amount;
 
-        TypeDetail::where('type_detail_id', $type_detail_id)->update($data);
+        OrderDetail::where('order_detail_id', $order_detail_id)->update($data);
         
         Session::put('messenge', 'Your order was updated!!');
         return Redirect::to('admin/edit-order/'.$order_id);

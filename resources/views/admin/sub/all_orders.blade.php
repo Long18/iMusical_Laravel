@@ -6,7 +6,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Product</h4>
+                    <h4 class="card-title">Orders</h4>
                 </div>
                 <?php
 

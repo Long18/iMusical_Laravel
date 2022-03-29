@@ -7,7 +7,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Update Product</h4>
+                        <h4 class="card-title">Update Order</h4>
                     </div>
                     <div class="card-body">
                         <?php
@@ -198,7 +198,7 @@
                                                 <td>
                                                     <div class="d-flex">
 
-                                                        <a href="{{ URL::to('admin/edit-order-detail/' . $order_detail->order_detail_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                        <a href="{{ URL::to('admin/edit-order-detail/'.$edit_order->order_id .'/'.$order_detail->order_detail_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                                                         <a onclick="return confirm('Are you sure to delete?')" href="{{ URL::to('admin/delete-order-detail/' . $order_detail->order_detail_id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
 
                                                     </div>

@@ -7,7 +7,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Update brand</h4>
+                        <h4 class="card-title">Update Order Detail</h4>
                     </div>
                     <div class="card-body">
                         <?php
@@ -22,7 +22,7 @@
                         }
                         ?>
                         <div class="form-validation">
-                            <form class="form-valide" action="{{ URL::to('/admin/update-order-detail/'.$order_id) }}" method="post">
+                            <form class="form-valide" action="{{ URL::to('/admin/update-order-detail/'.$order_id .'/'. $edit_order_detail->order_detail_id) }}" method="post">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-xl-6">

@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Types</h4>
+                    <h4 class="card-title">Users</h4>
                 </div>
                 <?php
 
