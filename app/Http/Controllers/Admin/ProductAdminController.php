@@ -163,4 +163,8 @@ class ProductAdminController extends Controller
         Session::put('messenge', 'Your product was deleted!!');
         return Redirect::back();
     }
+
+    public function get_product($product_id){
+        return Product::where('product_id', $product_id);
+    }
 }

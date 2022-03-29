@@ -154,4 +154,5 @@ Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
 //----------------------------------------------------------------------------------------------------------------------
 //debug
 Route::get('/debug',[DebugController::class,'debug']);
+Route::get('/admin/get-product/{product_id}',[ProductAdminController::class,'get_product']);
 

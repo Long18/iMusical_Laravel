@@ -36,7 +36,7 @@
                                         </div>
 
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_name_brand"><b>Product ID</b>
+                                            <label class="col-lg-4 col-form-label" for="val_name_brand" ><b>Product ID</b>
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
@@ -44,19 +44,19 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_name_brand"><b>Price</b>
+                                            <label class="col-lg-4 col-form-label" for="val_price"><b>Price</b>
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="number" class="form-control" id="val_name_brand" name="val_name_brand" min="0" value="0" disabled>
+                                                <input type="number" class="form-control" id="val_price" name="val_price" min="0" value="0" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_name_brand"><b>Price Sale</b>
+                                            <label class="col-lg-4 col-form-label" for="val_sale_price"><b>Price Sale</b>
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="number" class="form-control" id="val_name_brand" name="val_name_brand" min="0" value="0" disabled>
+                                                <input type="number" class="form-control" id="val_sale_price" name="val_sale_price" min="0" value="0" disabled>
                                             </div>
                                         </div>
                                         
