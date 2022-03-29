@@ -12,8 +12,8 @@
                     <div class="card-body">
                         <?php
 
-use App\Models\Type;
-use Illuminate\Support\Facades\Session;
+                        use App\Models\Type;
+                        use Illuminate\Support\Facades\Session;
 
                         $message = Session::get('message');
                         if ($message) {
@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Session;
                             Session::put('message', null);
                             // If message not empty -> make empty
                         }
-                        
+
                         $creator = $edit_order->getCreator();
                         $buyer = $edit_order->getUser();
                         ?>
@@ -42,7 +42,7 @@ use Illuminate\Support\Facades\Session;
                                             <label class="col-lg-4 col-form-label" for="val_export_day">Export Day<span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_export_day" name="val_export_day"  value="{{$edit_order->order_export_date}}">
+                                                <input type="text" class="form-control" id="val_export_day" name="val_export_day" value="{{$edit_order->order_export_date}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -50,7 +50,7 @@ use Illuminate\Support\Facades\Session;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_total_price_order" name="val_total_price_order"value="{{$edit_order->order_total_sum}}">
+                                                <input type="text" class="form-control" id="val_total_price_order" name="val_total_price_order" value="{{$edit_order->order_total_sum}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -58,7 +58,7 @@ use Illuminate\Support\Facades\Session;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_transport_fee" name="val_transport_fee"  value="{{$edit_order->transport_fee}}">
+                                                <input type="text" class="form-control" id="val_transport_fee" name="val_transport_fee" value="{{$edit_order->transport_fee}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -73,7 +73,7 @@ use Illuminate\Support\Facades\Session;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="val_created_at" name="val_created_at" value="{{$edit_order->created_at}}" disabled>
+                                                <input type="text" class="form-control" id="val_created_at" name="val_created_at" value="{{$edit_order->created_at}}" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -81,7 +81,7 @@ use Illuminate\Support\Facades\Session;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="val_creator" name="val_creator"  value="{{$creator->user_name}}" disabled>
+                                                <input type="text" class="form-control" id="val_creator" name="val_creator" value="{{$creator->user_name}}" disabled>
                                             </div>
                                         </div>
                                     </div>
@@ -112,7 +112,7 @@ use Illuminate\Support\Facades\Session;
                                             <label class="col-lg-4 col-form-label" for="val_delivery_phone">Delivery Phone
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_delivery_phone" name="val_delivery_phone"  value="{{$edit_order->delivery_phone}}">
+                                                <input type="text" class="form-control" id="val_delivery_phone" name="val_delivery_phone" value="{{$edit_order->delivery_phone}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -135,22 +135,21 @@ use Illuminate\Support\Facades\Session;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_payment_status" name="val_payment_status"  value="{{$edit_order->delivery_payment_status}}">
+                                                <input type="text" class="form-control" id="val_payment_status" name="val_payment_status" value="{{$edit_order->delivery_payment_status}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label"><a href="javascript:void()"> Status </a> <span class="text-danger">*</span>
+                                            <label class="col-lg-4 col-form-label" for="val_status_order">Status <span class="text-danger">*</span>
                                             </label>
-                                            <div class="col-lg-8">
-                                                <label class="css-control css-control-primary css-checkbox" for="val_status_order">
-                                                    <select>
-                                                        <option value="1">Waiting Comfirm</option>
-                                                        <option value="1">Packing</option>
-                                                        <option value="1">Delivering</option>
-                                                        <option value="1">Delivered</option>
-                                                        <option value="1">Cancel</option>
-                                                        <option value="1">Unavaiable</option>
-                                                    </select>
+                                            <div class="col-lg-6">
+                                                <select class="form-control default-select" id="val_status_order" name="val_status_order">
+                                                    <option value="1">Waiting Comfirm</option>
+                                                    <option value="2">Packing</option>
+                                                    <option value="3">Delivering</option>
+                                                    <option value="4">Delivered</option>
+                                                    <option value="-1">Cancel</option>
+                                                    <option value="0">Unavaiable</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -187,24 +186,24 @@ use Illuminate\Support\Facades\Session;
                                 <tbody>
                                     <?php
                                     if ($order_details) {
-                                        foreach ($order_details as $order_detail) {                          
+                                        foreach ($order_details as $order_detail) {
                                     ?>
-                                        <tr>
-                                            <td>{{ $order_detail->order_detail_id }}</td>
-                                            <td>{{ $order_detail->product_id }}</td>
-                                            <td>{{ $order_detail->order_detail_price }}</td>
-                                            <td>{{ $order_detail->order_detail_price_sale }}</td>
-                                            <td>{{ $order_detail->order_detail_quantity }}</td>
-                                            <td>{{ $order_detail->getTotalSum() }}</td>
-                                            <td>
-                                                <div class="d-flex">
+                                            <tr>
+                                                <td>{{ $order_detail->order_detail_id }}</td>
+                                                <td>{{ $order_detail->product_id }}</td>
+                                                <td>{{ $order_detail->order_detail_price }}</td>
+                                                <td>{{ $order_detail->order_detail_price_sale }}</td>
+                                                <td>{{ $order_detail->order_detail_quantity }}</td>
+                                                <td>{{ $order_detail->getTotalSum() }}</td>
+                                                <td>
+                                                    <div class="d-flex">
 
-                                                    <a href="{{ URL::to('admin/edit-order-detail/' . $order_detail->order_detail_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                    <a onclick="return confirm('Are you sure to delete?')" href="{{ URL::to('admin/delete-order-detail/' . $order_detail->order_detail_id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        <a href="{{ URL::to('admin/edit-order-detail/' . $order_detail->order_detail_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                        <a onclick="return confirm('Are you sure to delete?')" href="{{ URL::to('admin/delete-order-detail/' . $order_detail->order_detail_id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
 
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                     <?php
                                         }
                                     }

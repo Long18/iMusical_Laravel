@@ -38,14 +38,13 @@ class OrdersAdminController extends Controller
         $data['order_code'] = $request->val_code_order;
         $data['order_export_date'] = $request->val_export_day;
         $data['order_total_sum'] = $request->val_total_price_order;
-        $data['delivery_name'] = $request->val_end_sale;
-        $data['delivery_adress'] = $request->val_price_order;
-        $data['delivery_phone'] = $request->val_price_sale;
-
-        $data['delivery_email'] = $request->val_amount_order;
-        $data['delivery_payment_method'] = $request->val_amount_order;
-        $data['delivery_payment_status'] = $request->val_amount_order;
-        $data['transport_fee'] = $request->val_detail_order;
+        $data['delivery_name'] = $request->val_delivery_name;
+        $data['delivery_address'] = $request->val_delivery_address;
+        $data['delivery_phone'] = $request->val_delivery_phone;
+        $data['delivery_email'] = $request->val_delivery_email;
+        $data['delivery_payment_method'] = $request->val_payment_method;
+        $data['delivery_payment_status'] = $request->val_payment_status;
+        $data['transport_fee'] = $request->val_transport_fee;
         $data['transport_type'] = $request->val_category_order;
         $data['status'] = $request->val_status_order;
 
@@ -86,7 +85,7 @@ class OrdersAdminController extends Controller
         $data['order_export_date'] = $request->val_export_day;
         $data['order_total_sum'] = $request->val_total_price_order;
         $data['delivery_name'] = $request->val_delivery_name;
-        $data['delivery_adress'] = $request->val_delivery_address;
+        $data['delivery_address'] = $request->val_delivery_address;
         $data['delivery_phone'] = $request->val_delivery_phone;
         $data['delivery_email'] = $request->val_delivery_email;
         $data['delivery_payment_method'] = $request->val_payment_method;
