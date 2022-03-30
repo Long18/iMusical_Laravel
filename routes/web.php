@@ -153,6 +153,11 @@ Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
 Route::post('/update-cart', [CartController::class, 'update_cart']);
 
 //----------------------------------------------------------------------------------------------------------------------
+//Login routes
+Route::get('/login-facebook', [LoginController::class, 'login_facebook']);
+
+
+//----------------------------------------------------------------------------------------------------------------------
 //debug
 Route::get('/debug',[DebugController::class,'debug']);
 

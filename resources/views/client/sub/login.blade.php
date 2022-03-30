@@ -35,6 +35,14 @@
         </div>
     </section>
 
+    @php
+    if ($message) {
+        echo '<h3 class="text-rainbow">' . $message . '</h3>';
+        Session::put('message', null);
+        // If message not empty -> make empty
+    }
+    @endphp
+
     <section class="tf-login tf-section">
         <div class="themesflat-container">
             <div class="row">
@@ -55,13 +63,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="sc-button style-2 fl-button pri-3">
+                                <a href="{{URL::to('/login-facebook')}}" class="sc-button style-2 fl-button pri-3">
                                     <i class="icon-fl-facebook"></i>
                                     <span>Facebook</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ URL::to('/sign-up')}}" class="sc-button style-2 fl-button pri-3">
+                                <a href="{{ URL::to('/sign-up') }}" class="sc-button style-2 fl-button pri-3">
                                     <i class="fa fa-sign-in"></i>
                                     <span>Sign up</span>
                                 </a>
@@ -75,11 +83,11 @@
                         </div>
 
                         <div class="form-inner">
-                            <form action="#" id="contactform">
-                                <input id="name" name="name" tabindex="1" value="" aria-required="true" required type="text"
-                                    placeholder="Your Full Name">
-                                <input id="email" name="email" tabindex="2" value="" aria-required="true" type="email"
-                                    placeholder="Your Email Address" required>
+                            <form action="{{URL::to('/profile')}}" id="contactform" method="POST">
+                                <input id="email" name="user_email" tabindex="1" value="" aria-required="true" required type="email"
+                                    placeholder="Your Email Address">
+                                <input id="email" name="email" tabindex="2" value="" aria-required="true" type="password"
+                                    placeholder="Your Password" required>
                                 <div class="row-form style-1">
                                     <label>Remember me
                                         <input type="checkbox">

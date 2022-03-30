@@ -75,32 +75,6 @@ class CartController extends Controller
         session()->save();
     }
 
-    public function update_cart(Request $request)
-    {
-        // get all data from cart
-        $data = $request->all();
-        //get cart from session
-        $cart = session()->get('cart', []);
-        if ($cart == true) {
-            $message = '';
-            // get quantity by card
-            foreach ($data['cart_quantity'] as $key => $value) {
-                foreach ($cart as $session => $val) {
-                    if ($val['session_id'] == $key && $value < $cart[$session]['produc_quantity']) {
-                        $cart[$session]['product_quantity'] = $value;
-                        $message = 'Update cart success';
-                    } elseif ($val['session_id'] == $key && $value > $cart[$session]['produc_quantity']) {
-                        $message = 'Update cart fail';
-                    }
-                }
-            }
-            session()->put('cart', $cart);
-            return redirect()->back()->with('message', $message);
-        } else {
-            return redirect()->back()->with('message', 'Update cart fail');
-        }
-    }
-
     public function delete_cart($session_id)
     {
         //get cart from session
@@ -133,6 +107,32 @@ class CartController extends Controller
             return redirect()->back()->with('message', 'Delete all cart success');
         } else {
             return redirect()->back()->with('message', 'Delete all cart fail');
+        }
+    }
+
+    public function update_cart(Request $request)
+    {
+        // get all data from cart
+        $data = $request->all();
+        //get cart from session
+        $cart = session()->get('cart', []);
+        if ($cart == true) {
+            $message = '';
+            // get quantity by card
+            foreach ($data['cart_quantity'] as $key => $value) {
+                foreach ($cart as $session => $val) {
+                    if ($val['session_id'] == $key ) { //&& $value < $cart[$session]['product_quantity']
+                        $cart[$session]['product_quantity'] = $value;
+                        $message = 'Update cart success';
+                    } elseif ($val['session_id'] == $key ) { //&& $value > $cart[$session]['product_quantity']
+                        $message = 'Update cart fail';
+                    }
+                }
+            }
+            session()->put('cart', $cart);
+            return redirect()->back()->with('message', $message);
+        } else {
+            return redirect()->back()->with('message', 'Update cart fail');
         }
     }
 
