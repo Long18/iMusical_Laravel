@@ -250,7 +250,7 @@ use App\Models\Product;
                         <div class="swiper-wrapper">
 
                             <?php
-                            $categories = Session::get('categories');
+                            //$categories = Session::get('categories');
 
                             foreach ($categories as $category) {
                             ?>
@@ -334,7 +334,7 @@ use App\Models\Product;
                                     </div>
                                 </a>
                                 <?php
-                                $categories = Session::get('categories');
+                                //$categories = Session::get('categories');
                                 foreach ($categories as $category) {
                                 ?>
                                     <a class="dropdown-item" href="category/">
