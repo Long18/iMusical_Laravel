@@ -126,7 +126,7 @@
                                             </div>
                                             <div class="column"></div>
                                             <div class="column td3 ">
-                                                <span>{{ number_format($ItemTotal, 0, ',', '.') }} VND</span>
+                                                <span>{{ number_format($salePrice, 0, ',', '.') }} VND</span>
                                             </div>
                                             <div class="column td6">
                                                 <span></span>
@@ -141,9 +141,11 @@
                                     </div>
                             @endforeach
                             <div>
+
                                 <div class="wrap-flex-box style" style="float: right; margin-right: auto;">
                                     <div class="details ">
                                         <div class="widget widget-recent-post mg-bt-43">
+
                                             <ul>
                                                 <li class="box-recent-post">
                                                     <div class="box-content">
@@ -185,13 +187,21 @@
                                 </div>
                             </div>
                     </div>
-
+                    @php
+                        $web;
+                        if (Session::get('user_name') == null) {
+                            $web = "href=/login-payment";
+                        } else {
+                            $web = "href=/checkout";
+                        }
+                    @endphp
 
                     <div class="col-md-12 wrap-inner load-more text-center mg-t16">
                         <a href="{{ URL::to('/delete-all-cart') }}" class="sc-button fl-button pri-3"><span>Delete all
                                 products</span></a>
                         <button type="submit" class="sc-button fl-button pri-3"><span>Update</span></button>
-                        <a href="#" class="sc-button fl-button pri-3"><span>Payment</span></a>
+                        <a {{ $web }}
+                            class="sc-button fl-button pri-3"><span>Payment</span></a>
                     </div>
                     </form>
                 @else

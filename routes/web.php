@@ -19,7 +19,8 @@ use App\Http\Controllers\Client\ActivityController;
 use App\Http\Controllers\Client\CommunityController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\DebugController;
-
+use App\Http\Controllers\Client\PaymentController;
+use App\Http\Controllers\Client\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -152,9 +153,19 @@ Route::get('/delete-all-cart', [CartController::class, 'delete_all_cart']);
 Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
 Route::post('/update-cart', [CartController::class, 'update_cart']);
 
+//Payment
+Route::get('/login-payment', [PaymentController::class, 'login_payment']);
+Route::get('/checkout', [PaymentController::class, 'checkout']);
+
 //----------------------------------------------------------------------------------------------------------------------
 //Login routes
 Route::get('/login-facebook', [LoginController::class, 'login_facebook']);
+
+//Profile routes
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('logout', [LoginController::class, 'logout']);
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/add-user', [ProfileController::class, 'add_user']);
 
 
 //----------------------------------------------------------------------------------------------------------------------
