@@ -155,4 +155,5 @@ Route::post('/update-cart', [CartController::class, 'update_cart']);
 //----------------------------------------------------------------------------------------------------------------------
 //debug
 Route::get('/debug',[DebugController::class,'debug']);
-Route::get('/admin/get-product/{product_id}',[ProductAdminController::class,'get_product']);
+
+Route::post('get-product',[ProductAdminController::class,'get_product']);

@@ -14,6 +14,7 @@ class OrderDetail extends Model
     public $timestamps = false;
 
     protected $primaryKey = 'orders_detail_id';
+    protected $fillable = ['order_id','product_id','order_detail_price','order_detail_price_sale','order_detail_quantity','order_detail_total']; 
 
     public function getProduct(){
         return Product::where('status',1)

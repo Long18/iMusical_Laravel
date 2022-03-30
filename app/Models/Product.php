@@ -57,4 +57,12 @@ class Product extends Model{
         }
         return $priceNPriceSale;
     }
+
+    public static function formatVND($price){
+        $value = (int)$price;
+        if($value != "" && $value != null){
+            return number_format($value, 0, '', ',') + " VND";
+        }
+        return "0 VND";
+    }
 }

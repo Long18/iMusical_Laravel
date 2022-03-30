@@ -120,11 +120,16 @@ class OrdersAdminController extends Controller
 
         // get data from request
         $data['order_id'] = $request->order_id;
-        $data['type_id'] = $request->val_type_type_detail;
-        $data['type_detail_value'] = $request->val_value_type_detail;
+        $data['product_id'] = $request->val_product_id;
+        $data['order_detail_price'] = $request->val_price;
+        $data['order_detail_price_sale'] = $request->val_sale_price;
+        $data['order_detail_quantity'] = $request->val_quantity;
+        $data['order_detail_total'] = $request->val_total;
+
+
 
         // update to database
-        TypeDetail::insert($data);
+        OrderDetail::updateOrCreate($data);
 
         // send to view
         Session::put('messenge', 'Your order was added!!');
@@ -150,10 +155,12 @@ class OrdersAdminController extends Controller
     public function update_order_detail(Request $request, $order_id, $order_detail_id)
     {
         $data = array();
+        $data['order_id'] = $request->order_id;
+        $data['product_id'] = $request->val_product_id;
         $data['order_detail_price'] = $request->val_price;
         $data['order_detail_price_sale'] = $request->val_sale_price;
         $data['order_detail_quantity'] = $request->val_quantity;
-        $data['order_detail_amount'] = $request->val_amount;
+        $data['order_detail_total'] = $request->val_total;
 
         OrderDetail::where('order_detail_id', $order_detail_id)->update($data);
         
@@ -161,9 +168,9 @@ class OrdersAdminController extends Controller
         return Redirect::to('admin/edit-order/'.$order_id);
     }
 
-    public function delete_order_detail($type_detail_id)
+    public function delete_order_detail($order_detail_id)
     {
-        TypeDetail::where('type_detail_id', $type_detail_id)->delete();
+        OrderDetail::where('order_detail_id', $order_detail_id)->delete();
         Session::put('messenge', 'Your order was deleted!!');
         return Redirect::back();
     }
