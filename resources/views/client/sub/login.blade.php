@@ -34,7 +34,6 @@
             </div>
         </div>
     </section>
-
     <section class="tf-login tf-section">
         <div class="themesflat-container">
             <div class="row">
@@ -42,7 +41,13 @@
                     <h2 class="tf-title-heading ct style-1">
                         Login To iMusic
                     </h2>
-
+                    @php
+                    if ($message) {
+                        echo '<h3 class="text-rainbow">' . $message . '</h3>';
+                        Session::put('message', null);
+                        // If message not empty -> make empty
+                    }
+                    @endphp
                     <div class="flat-form box-login-social">
                         <div class="box-title-login">
                             <h5>Login with social</h5>
@@ -55,13 +60,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="sc-button style-2 fl-button pri-3">
+                                <a href="{{ route('facebook.login') }}" class="sc-button style-2 fl-button pri-3">
                                     <i class="icon-fl-facebook"></i>
                                     <span>Facebook</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ URL::to('/sign-up')}}" class="sc-button style-2 fl-button pri-3">
+                                <a href="{{ URL::to('/sign-up') }}" class="sc-button style-2 fl-button pri-3">
                                     <i class="fa fa-sign-in"></i>
                                     <span>Sign up</span>
                                 </a>
@@ -75,11 +80,12 @@
                         </div>
 
                         <div class="form-inner">
-                            <form action="#" id="contactform">
-                                <input id="name" name="name" tabindex="1" value="" aria-required="true" required type="text"
-                                    placeholder="Your Full Name">
-                                <input id="email" name="email" tabindex="2" value="" aria-required="true" type="email"
-                                    placeholder="Your Email Address" required>
+                            <form action="{{URL::to('/home')}}" id="contactform" method="POST">
+                                {{ csrf_field() }}
+                                <input id="email" name="user_email" tabindex="1" value="<?php echo Session::get('user_email') ?>" aria-required="true" required type="email"
+                                    placeholder="Your Email Address">
+                                <input id="email" name="user_password" tabindex="2" value="<?php echo Session::get('password') ?>" aria-required="true" type="password"
+                                    placeholder="Your Password" required>
                                 <div class="row-form style-1">
                                     <label>Remember me
                                         <input type="checkbox">
@@ -88,7 +94,7 @@
                                     <a href="#" class="forgot-pass">Forgot Password ?</a>
                                 </div>
 
-                                <button class="submit">Login</button>
+                                <button class="submit login-success">Login</button>
 
                             </form>
                         </div>

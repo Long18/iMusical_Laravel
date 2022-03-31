@@ -40,5 +40,5 @@ const connectBtn = document.getElementById('connectbtn');
 
 connectBtn.onclick = login;
 
-init()
+//init()
 }

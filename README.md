@@ -19,3 +19,8 @@ Open file .env and change:
     DB_PASSWORD=remote@123
 
 to connect to remote database ( MySQL Workbench ) 
+
+
+## Using Laravel Project
+
+Change project name from "iMusical_Laravel" to "iMusical"

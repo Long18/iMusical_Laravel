@@ -60,9 +60,6 @@
                                     <div class="mobile-button"><span></span></div><!-- /.mobile-button -->
                                     <nav id="main-nav" class="main-nav">
                                         <ul id="menu-primary-menu" class="menu">
-                                            <li class="menu-item current-menu-item">
-                                                <a href="{{ URL::to('/') }}">Home</a>
-                                            </li>
                                             <li class="menu-item">
                                                 <a href="{{ URL::to('/explore') }}">Explore</a>
                                             </li>
@@ -105,6 +102,9 @@
                                             </li>
                                             <li class="menu-item ">
                                                 <a href="{{ URL::to('/contact') }}">Contact</a>
+                                            </li>
+                                            <li class="menu-item current-menu-item">
+                                                <a href="{{ URL::to('/cart') }}">Cart</a>
                                             </li>
                                         </ul>
                                     </nav><!-- /#main-nav -->
@@ -154,13 +154,32 @@
                                                 </form>
                                             </div>
                                         </div>
-                                        <div class="sc-btn-top mg-r-12" id="site-header">
+
+                                        @php
+                                            $login_check = Session::get('user_name');
+                                        @endphp
+
+                                        <div class="sc-btn-top mg-r-12" id="site-header"
+                                            style="display: <?php
+if ($login_check) {
+    echo 'none';
+} else {
+    echo 'block';
+}
+?>">
                                             <a href="{{ URL::to('/login') }}" id="connectbtn"
                                                 class="sc-button header-slider style style-1 wallet fl-button pri-1"><span>Login
                                                 </span></a>
                                         </div>
 
-                                        <div class="admin_active" id="header_admin">
+                                        <div class="admin_active" id="header_admin"
+                                            style="display: <?php
+if ($login_check) {
+    echo 'block';
+} else {
+    echo 'none';
+}
+?>">
                                             <div class="header_avatar">
                                                 <div class="popup-notification">
                                                     <div class="notification">
@@ -207,30 +226,26 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
                                                 <div class="popup-user">
                                                     <img class="avatar"
                                                         src="{{ asset('public/frontend/images/avatar/avt-5.jpg') }}"
                                                         alt="avatar" />
                                                     <div class="avatar_popup mt-20">
-                                                        <h4>Tyler Covington</h4>
-                                                        <div class="d-flex align-items-center mt-20 mg-bt-12">
+                                                        <h4>@php
+                                                            echo $login_check;
+                                                        @endphp</h4>
+                                                        {{-- <div class="d-flex align-items-center mt-20 mg-bt-12">
                                                             <div class="info">
                                                                 <p>Balance</p>
                                                                 <p class="style">45.57 ETH</p>
                                                             </div>
-                                                        </div>
-                                                        <p>Wallet</p>
-                                                        <div
-                                                            class="d-flex align-items-center justify-content-between mg-t-5 mg-bt-17">
-                                                            <p> 0x84569v....3d5t7e5fd</p>
-                                                            <a href="index-2.html" class="ml-2">
-                                                                <i class="fal fa-copy"></i>
-                                                            </a>
-                                                        </div>
+                                                        </div> --}}
+
                                                         <div class="divider"></div>
                                                         <div class="hr"></div>
                                                         <div class="links mt-20">
-                                                            <a href="#">
+                                                            <a href="{{ URL::to('/profile') }}">
                                                                 <svg width="20" height="20" viewBox="0 0 20 20"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <path
@@ -248,7 +263,8 @@
                                                                 </svg>
                                                                 <span>Wallet</span>
                                                             </a>
-                                                            <a class="mt-10" href="login.html" id="logout">
+                                                            <a class="mt-10" href="{{ URL::to('/logout') }}"
+                                                                id="logout">
                                                                 <svg width="20" height="20" viewBox="0 0 20 20"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <path
@@ -436,6 +452,31 @@
                 });
             });
         });
+    </script>
+
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '.env.APP_ID',
+                cookie: true,
+                xfbml: true,
+                version: '.env.APP_VERSION'
+            });
+
+            FB.AppEvents.logPageView();
+
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     </script>
 
 </body>
