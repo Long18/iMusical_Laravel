@@ -68,11 +68,11 @@ use Illuminate\Support\Facades\Session;
                                     </div>
                                     <div class="col-xl-6">
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_qty"><b>Quantity</b>
+                                            <label class="col-lg-4 col-form-label" for="val_quantity"><b>Quantity</b>
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="number" class="form-control" id="val_qty" name="val_qty" min="0" value="0">
+                                                <input type="number" class="form-control" id="val_quantity" name="val_quantity" min="0" value="0">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -106,7 +106,7 @@ use Illuminate\Support\Facades\Session;
                         var _token = $('input[name="_token"]').val();
 
                         $.ajax({
-                            url: "get-product", // đường dẫn khi gửi dữ liệu đi 'search' là tên route mình đặt bạn mở route lên xem là hiểu nó là cái j.
+                            url: "{{ URL::to('/get-product') }}", // đường dẫn khi gửi dữ liệu đi 'search' là tên route mình đặt bạn mở route lên xem là hiểu nó là cái j.
                             method: "POST", // phương thức gửi dữ liệu.
                             data: {
                                 value: value,
@@ -124,6 +124,13 @@ use Illuminate\Support\Facades\Session;
                                     
                                 }
                                 getTotal();
+                            },
+                            error: function(){
+                                $('#val_price').val(null);
+                                $('#val_price_txt').val("Product Not found!!");
+                                $('#val_sale_price').val(null);
+                                $('#val_sale_price_txt').val("Product Not found!!");
+                                getTotal();
                             }
                         });
                     }
@@ -138,7 +145,7 @@ use Illuminate\Support\Facades\Session;
                         price = $('#val_price').val()
                     }
                     
-                    var quantity = $('#val_qty').val();
+                    var quantity = $('#val_quantity').val();
                     var amount = formatNumber(price * quantity);
                     $('#val_total').val(amount);
                 }
@@ -146,7 +153,7 @@ use Illuminate\Support\Facades\Session;
                     return num = num.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});
                 }
 
-                $('#val_qty').change(function() {
+                $('#val_quantity').change(function() {
                     getTotal();
                 });
 

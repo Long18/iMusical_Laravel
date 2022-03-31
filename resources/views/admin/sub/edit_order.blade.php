@@ -12,7 +12,8 @@
                     <div class="card-body">
                         <?php
 
-                        use App\Models\Type;
+use App\Models\Product;
+use App\Models\Type;
                         use Illuminate\Support\Facades\Session;
 
                         $message = Session::get('message');
@@ -191,10 +192,10 @@
                                             <tr>
                                                 <td>{{ $order_detail->order_detail_id }}</td>
                                                 <td>{{ $order_detail->product_id }}</td>
-                                                <td>{{ $order_detail->order_detail_price }}</td>
-                                                <td>{{ $order_detail->order_detail_price_sale }}</td>
+                                                <td>{{$order_detail->order_detail_price}}</td>
+                                                <td>{{ $order_detail->order_detail_price_sale}}</td>
                                                 <td>{{ $order_detail->order_detail_quantity }}</td>
-                                                <td>{{ $order_detail->getTotalSum() }}</td>
+                                                <td>{{$order_detail->getTotalSum()}}</td>
                                                 <td>
                                                     <div class="d-flex">
 

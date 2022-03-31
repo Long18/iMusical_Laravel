@@ -15,11 +15,12 @@ session_start();
 
 class ProductAdminController extends Controller
 {
-    public function AuthLogin(){
+    public function AuthLogin()
+    {
         $admin_id = Session::get('user_id');
-        if($admin_id){
+        if ($admin_id) {
             return Redirect::to('admin/dashboard');
-        }else{
+        } else {
             return Redirect::to('admin')->send();
         }
     }
@@ -143,7 +144,7 @@ class ProductAdminController extends Controller
     {
         $this->AuthLogin();
         $edit_type_detail = TypeDetail::where('type_detail_id', $type_detail_id)
-        ->first();
+            ->first();
         $manager_products = view('admin.sub.edit_product_type_detail')
             ->with('edit_type_detail', $edit_type_detail)
             ->with('product_id', $product_id);
@@ -161,16 +162,16 @@ class ProductAdminController extends Controller
         TypeDetail::where('type_detail_id', $type_detail_id)->update($data);
 
         Session::put('messenge', 'Your product was updated!!');
-        return Redirect::to('admin/edit-product/'.$product_id);
+        return Redirect::to('admin/edit-product/' . $product_id);
     }
-    
-    public function get_product(Request $request){
-        if($request->get('value')){
+
+    public function get_product(Request $request)
+    {
+
+        if ($request->get('value')) {
             $value = $request->get('value');
             $product = Product::where('product_id', $value)->first();
         }
-
         return response()->json(array('price' => $product->product_price, 'sale_price' => $product->product_sale_price));
     }
-
 }

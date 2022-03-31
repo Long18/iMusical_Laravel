@@ -172,4 +172,4 @@ Route::post('/add-user', [ProfileController::class, 'add_user']);
 //debug
 Route::get('/debug',[DebugController::class,'debug']);
 
-Route::post('/admin/add-order-detail/get-product',[ProductAdminController::class,'get_product']);
+Route::post('get-product',[ProductAdminController::class,'get_product']);
