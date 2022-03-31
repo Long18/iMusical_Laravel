@@ -60,7 +60,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{URL::to('/login-facebook')}}" class="sc-button style-2 fl-button pri-3">
+                                <a href="{{ route('facebook.login') }}" class="sc-button style-2 fl-button pri-3">
                                     <i class="icon-fl-facebook"></i>
                                     <span>Facebook</span>
                                 </a>

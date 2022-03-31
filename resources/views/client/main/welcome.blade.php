@@ -159,27 +159,27 @@
                                             $login_check = Session::get('user_name');
                                         @endphp
 
-                                        <div class="sc-btn-top mg-r-12" id="site-header" style="display: <?php
-                                        if ($login_check) {
-                                            echo "none";
-                                        }
-                                        else {
-                                            echo "block";
-                                        }
-                                        ?>">
+                                        <div class="sc-btn-top mg-r-12" id="site-header"
+                                            style="display: <?php
+if ($login_check) {
+    echo 'none';
+} else {
+    echo 'block';
+}
+?>">
                                             <a href="{{ URL::to('/login') }}" id="connectbtn"
                                                 class="sc-button header-slider style style-1 wallet fl-button pri-1"><span>Login
                                                 </span></a>
                                         </div>
 
-                                        <div class="admin_active" id="header_admin" style="display: <?php
-                                        if ($login_check) {
-                                            echo "block";
-                                        }
-                                        else {
-                                            echo "none";
-                                        }
-                                        ?>">
+                                        <div class="admin_active" id="header_admin"
+                                            style="display: <?php
+if ($login_check) {
+    echo 'block';
+} else {
+    echo 'none';
+}
+?>">
                                             <div class="header_avatar">
                                                 <div class="popup-notification">
                                                     <div class="notification">
@@ -245,7 +245,7 @@
                                                         <div class="divider"></div>
                                                         <div class="hr"></div>
                                                         <div class="links mt-20">
-                                                            <a href="{{URL::to('/profile')}}">
+                                                            <a href="{{ URL::to('/profile') }}">
                                                                 <svg width="20" height="20" viewBox="0 0 20 20"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <path
@@ -263,7 +263,8 @@
                                                                 </svg>
                                                                 <span>Wallet</span>
                                                             </a>
-                                                            <a class="mt-10" href="{{URL::to('/logout')}}" id="logout">
+                                                            <a class="mt-10" href="{{ URL::to('/logout') }}"
+                                                                id="logout">
                                                                 <svg width="20" height="20" viewBox="0 0 20 20"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <path
@@ -451,6 +452,31 @@
                 });
             });
         });
+    </script>
+
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '.env.APP_ID',
+                cookie: true,
+                xfbml: true,
+                version: '.env.APP_VERSION'
+            });
+
+            FB.AppEvents.logPageView();
+
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     </script>
 
 </body>

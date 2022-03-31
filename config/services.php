@@ -30,9 +30,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'facebook' => [
-        'client_id' => '465581898599828', // Client ID Facebook
-        'client_secret' => '47a47adeabcdb325e826832713b366b3', // Client secret Facebook
-        'redirect' => 'http://imusical_laravel.com/login/callback', // Redirect URL Facebook login into your website
+        'client_id' => env('FACEBOOK_APP_ID'), // Client ID Facebook
+        'client_secret' => env('FACEBOOK_APP_SECRET'), // Client secret Facebook
+        'redirect' => env('FACEBOOK_REDIRECT'), // Redirect URL Facebook login into your website
     ],
 
 ];

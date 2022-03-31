@@ -21,6 +21,7 @@ use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\DebugController;
 use App\Http\Controllers\Client\PaymentController;
 use App\Http\Controllers\Client\ProfileController;
+use App\Http\Controllers\Client\FacebookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -159,7 +160,11 @@ Route::get('/checkout', [PaymentController::class, 'checkout']);
 
 //----------------------------------------------------------------------------------------------------------------------
 //Login routes
-Route::get('/login-facebook', [LoginController::class, 'login_facebook']);
+//Route::get('/login-facebook', [LoginController::class, 'login_facebook']);
+Route::prefix('facebook')->name('facebook.')->group( function(){
+    Route::get('auth', [FacebookController::class, 'login_facebook'])->name('login');
+    Route::get('callback', [FacebookController::class, 'callback_facebook'])->name('callback');
+});
 
 //Profile routes
 Route::get('/profile', [ProfileController::class, 'index']);

@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "@sweetalert2/themes": "^5.0.10",
-        "sweetalert2": "^11.4.7"
+        "sweetalert2": "^11.4.7",
+        "universal-social-auth": "^0.2.6"
     }
 }
