@@ -44,14 +44,15 @@
 
                 <div class="col-xl-3 col-lg-6 col-md-6 col-12">
                     <h4 class="title-create-item">Preview item</h4>
-                    @if ((array) session('cart'))
-                        @foreach ((array) session('cart') as $cart_item)
 
-                        @php
-                            $priceItem = $cart_item['product_price'];
-                        @endphp
+
+                        @if ((array) session('cart'))
+                            @foreach ((array) session('cart') as $cart_item)
                             <div class="sc-card-product">
-                                <div class="card-media">
+                                @php
+                                    $priceItem = $cart_item['product_price'];
+                                @endphp
+                                <div class="card-media" style="padding-bottom: 3rem">
                                     <a href="item-details.html"><img
                                             src="{{ asset('public/frontend//images/box-item/image-box-6.jpg') }}"
                                             alt="Image"></a>
@@ -76,60 +77,60 @@
                                         </div>
                                         <div class="info">
                                             <span>Brand</span>
-                                            <h6> <a href="#">{{ $cart_item['product_brand'] }}</a></h6>
+                                            {{-- <h6> <a href="#">{{ $cart_item['product_brand'] }}</a></h6> --}}
                                         </div>
                                     </div>
                                     <div class="price">
                                         {{-- <span>Current Bid</span> --}}
-                                        <h5>{{$priceItem}}</h5>
+                                        <h5>{{ number_format($priceItem, 0, ',', '.') }} VND</h5>
                                     </div>
                                 </div>
-                                {{-- <div class="card-bottom">
-                            <a href="#" data-toggle="modal" data-target="#popup_bid"
-                                class="sc-button style bag fl-button pri-3"><span>Place Bid</span></a>
-                            <a href="activity1.html" class="view-history reload">View History</a>
-                        </div> --}}
-                        @endforeach
+                                <div class="card-bottom">
+                                    <a href="{{ URL::to('/delete-cart/' . $cart_item['session_id']) }}"
+                                        class="sc-button style bag fl-button pri-3"><span>Delete this product</span></a>
+                                </div>
+                    </div>
+                    @endforeach
                     @endif
+
+
+
                 </div>
 
+                <div class="col-xl-9 col-lg-6 col-md-12 col-12">
+                    <div class="form-create-item">
 
-
-
-            </div>
-
-            <div class="col-xl-9 col-lg-6 col-md-12 col-12">
-                <div class="form-create-item">
-
-                    <form action="{{ URL::to('/save-order') }}" method="POST">
-                        @csrf
-                        <div class="flat-tabs tab-create-item">
-                            <h4 class="title-create-item">Select method</h4>
-                            <ul class="menu-tab tabs">
-                                <li class="tablinks active"><span class="icon-fl-tag"></span>Information</li>
-                                <li class="tablinks"><span class="icon-fl-bag"></span>Address</li>
-                                <li class="tablinks"><span class="icon-fl-discount"></span>Payment</li>
-                            </ul>
-                            <div class="content-tab">
-                                <div class="content-inner">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <h4 class="title-create-item">Email</h4>
-                                            <input required type="email" name="order_email" placeholder="Enter your email">
+                        <form action="{{ URL::to('/save-order') }}" method="POST">
+                            @csrf
+                            <div class="flat-tabs tab-create-item">
+                                <h4 class="title-create-item">Select method</h4>
+                                <ul class="menu-tab tabs">
+                                    <li class="tablinks active"><span class="icon-fl-tag"></span>Information</li>
+                                    <li class="tablinks"><span class="icon-fl-bag"></span>Address</li>
+                                    <li class="tablinks"><span class="icon-fl-discount"></span>Payment</li>
+                                </ul>
+                                <div class="content-tab">
+                                    <div class="content-inner">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h4 class="title-create-item">Email</h4>
+                                                <input required type="email" name="order_email"
+                                                    placeholder="Enter your email">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h4 class="title-create-item">Name</h4>
+                                                <input required type="text" name="order_name" placeholder="Enter your name">
+                                            </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <h4 class="title-create-item">Name</h4>
-                                            <input required type="text" name="order_name" placeholder="Enter your name">
-                                        </div>
-                                    </div>
 
-                                    <h4 class="title-create-item" style="padding-top: 3rem">Phone</h4>
-                                    <input required type="number" name="order_phone" placeholder="Enter your phone number">
+                                        <h4 class="title-create-item" style="padding-top: 3rem">Phone</h4>
+                                        <input required type="number" name="order_phone"
+                                            placeholder="Enter your phone number">
 
-                                    <h4 class="title-create-item" style="padding-top: 3rem">Description</h4>
-                                    <textarea name="order_description" placeholder="e.g. “This is very limited item, I need...”"></textarea>
+                                        <h4 class="title-create-item" style="padding-top: 3rem">Description</h4>
+                                        <textarea name="order_description" placeholder="e.g. “This is very limited item, I need...”"></textarea>
 
-                                    {{-- <div class="row-form style-3">
+                                        {{-- <div class="row-form style-3">
                                             <div class="inner-row-form">
                                                 <h4 class="title-create-item">Royalties</h4>
                                                 <input type="text" placeholder="5%">
@@ -157,12 +158,12 @@
                                                 </div>
                                             </div>
                                         </div> --}}
-                                </div>
+                                    </div>
 
-                                <div class="content-inner">
-                                    <h4 class="title-create-item">Street address</h4>
-                                    <input type="text" required name="order_address" placeholder="Enter your address">
-                                    {{-- <div class="row">
+                                    <div class="content-inner">
+                                        <h4 class="title-create-item">Street address</h4>
+                                        <input type="text" required name="order_address" placeholder="Enter your address">
+                                        {{-- <div class="row">
                                             <div class="col-md-6">
                                                 <h5 class="title-create-item">Starting date</h5>
                                                 <input type="date" name="bid_starting_date" id="bid_starting_date"
@@ -182,7 +183,7 @@
                                         <textarea placeholder="e.g. “This is very limited item”"></textarea> --}}
 
 
-                                    {{-- <div class="inner-row-form style-2">
+                                        {{-- <div class="inner-row-form style-2">
                                             <div class="seclect-box">
                                                 <div id="item-create" class="dropdown">
                                                     <a href="#" class="btn-selector nolink">State / Province / Region</a>
@@ -199,62 +200,62 @@
                                             </div>
                                         </div> --}}
 
-                                    <div class="row" style="padding-top: 3rem">
-                                        <div class="col-md-6">
-                                            <h4 class="title-create-item">City</h4>
-                                            <div class="inner-row-form style-2">
-                                                <div class="seclect-box">
-                                                    <div id="item-create2" class="dropdown">
-                                                        <a href="#" class="btn-selector nolink">--- Pick A City
-                                                            ---</a>
-                                                        <ul>
-                                                            <li><span>Art</span></li>
-                                                            <li><span>Music</span></li>
-                                                            <li><span>Domain Names</span></li>
-                                                            <li><span>Virtual World</span></li>
-                                                            <li><span>Trading Cards</span></li>
-                                                            <li><span>Sports</span></li>
-                                                            <li><span>Utility</span></li>
-                                                        </ul>
+                                        <div class="row" style="padding-top: 3rem">
+                                            <div class="col-md-6">
+                                                <h4 class="title-create-item">City</h4>
+                                                <div class="inner-row-form style-2">
+                                                    <div class="seclect-box">
+                                                        <div id="item-create2" class="dropdown">
+                                                            <a href="#" class="btn-selector nolink">--- Pick A City
+                                                                ---</a>
+                                                            <ul>
+                                                                <li><span>Art</span></li>
+                                                                <li><span>Music</span></li>
+                                                                <li><span>Domain Names</span></li>
+                                                                <li><span>Virtual World</span></li>
+                                                                <li><span>Trading Cards</span></li>
+                                                                <li><span>Sports</span></li>
+                                                                <li><span>Utility</span></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h4 class="title-create-item">State / Province /
+                                                    Region</h4>
+                                                <div class="inner-row-form style-2">
+                                                    <div class="seclect-box">
+                                                        <div id="item-create" class="dropdown">
+                                                            <a href="#" class="btn-selector nolink">--- Pick A Province
+                                                                ---</a>
+                                                            <ul>
+                                                                <li><span>Art</span></li>
+                                                                <li><span>Music</span></li>
+                                                                <li><span>Domain Names</span></li>
+                                                                <li><span>Virtual World</span></li>
+                                                                <li><span>Trading Cards</span></li>
+                                                                <li><span>Sports</span></li>
+                                                                <li><span>Utility</span></li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <h4 class="title-create-item">State / Province /
-                                                Region</h4>
-                                            <div class="inner-row-form style-2">
-                                                <div class="seclect-box">
-                                                    <div id="item-create" class="dropdown">
-                                                        <a href="#" class="btn-selector nolink">--- Pick A Province
-                                                            ---</a>
-                                                        <ul>
-                                                            <li><span>Art</span></li>
-                                                            <li><span>Music</span></li>
-                                                            <li><span>Domain Names</span></li>
-                                                            <li><span>Virtual World</span></li>
-                                                            <li><span>Trading Cards</span></li>
-                                                            <li><span>Sports</span></li>
-                                                            <li><span>Utility</span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h4 class="title-create-item" style="padding-top: 3rem">Zip Code</h4>
+                                                <input required type="number" name="order_zip_code"
+                                                    placeholder="Enter your zip code">
                                             </div>
                                         </div>
+
+
                                     </div>
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <h4 class="title-create-item" style="padding-top: 3rem">Zip Code</h4>
-                                            <input required type="number" name="order_zip_code"
-                                                placeholder="Enter your zip code">
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="content-inner">
-                                    {{-- <h4 class="title-create-item">Price</h4>
+                                    <div class="content-inner">
+                                        {{-- <h4 class="title-create-item">Price</h4>
                                         <input type="text" placeholder="Enter price for one item (ETH)">
 
                                         <h4 class="title-create-item">Minimum bid</h4>
@@ -279,80 +280,80 @@
                                         <h4 class="title-create-item">Description</h4>
                                         <textarea placeholder="e.g. “This is very limited item”"></textarea> --}}
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <h4 class="title-create-item">Items</h4>
-                                            <input disabled type="text" name="order_items_price" value="200VND">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h4 class="title-create-item">Items</h4>
+                                                <input disabled type="text" name="order_items_price" value="200VND">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <h4 class="title-create-item">Shipping & handling</h4>
+                                                <input disabled type="text" name="order_shipping_fee" value="200VND">
+                                            </div>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <h4 class="title-create-item">Shipping & handling</h4>
-                                            <input disabled type="text" name="order_shipping_fee" value="200VND">
+                                        <div class="row" style="padding-top: 3rem">
+                                            <div class="col-md-6">
+                                                <h5 class="title-create-item">Add a gift card, promotion code, or
+                                                    voucher
+                                                </h5>
+                                                <input type="text" name="order_code" value="Enter code">
+
+                                            </div>
+                                            <div class="col-md-6" style="padding-top: 4.5rem">
+
+                                                <input type="button" value="Apply">
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row" style="padding-top: 3rem">
-                                        <div class="col-md-6">
-                                            <h5 class="title-create-item">Add a gift card, promotion code, or
-                                                voucher
-                                            </h5>
-                                            <input type="text" name="order_code" value="Enter code">
-
-                                        </div>
-                                        <div class="col-md-6" style="padding-top: 4.5rem">
-
-                                            <input type="button" value="Apply">
-                                        </div>
-                                    </div>
-
-                                    <div class="row" style="padding-bottom: 3rem; padding-top: 3rem">
-                                        <div class="col-md-6">
-                                            <h5 class="title-create-item">Select a payment method
-                                            </h5>
-                                            <div class="inner-row-form style-2">
-                                                <div class="seclect-box">
-                                                    <div id="item-create3" class="dropdown">
-                                                        <a href="#" class="btn-selector nolink">--- More payment
-                                                            options
-                                                            ---</a>
-                                                        <ul>
-                                                            <li><span class='bi bi-wallet'> Momo</span></li>
-                                                            <li><span class='bi bi-paypal'> Paypal</span></li>
-                                                            <li><span class='bi bi-cash-stack'> Cash</span></li>
-                                                        </ul>
+                                        <div class="row" style="padding-bottom: 3rem; padding-top: 3rem">
+                                            <div class="col-md-6">
+                                                <h5 class="title-create-item">Select a payment method
+                                                </h5>
+                                                <div class="inner-row-form style-2">
+                                                    <div class="seclect-box">
+                                                        <div id="item-create3" class="dropdown">
+                                                            <a href="#" class="btn-selector nolink">--- More payment
+                                                                options
+                                                                ---</a>
+                                                            <ul>
+                                                                <li><span class='bi bi-wallet'> Momo</span></li>
+                                                                <li><span class='bi bi-paypal'> Paypal</span></li>
+                                                                <li><span class='bi bi-cash-stack'> Cash</span></li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
 
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <h4 class="title-create-item">Payment Total</h4>
-                                            <input disabled type="text" name="order_total_price"
-                                                value="{{ number_format($total_price, 0, ',', '.') }} VND">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h4 class="title-create-item">Payment Total</h4>
+                                                <input disabled type="text" name="order_total_price"
+                                                    value="{{ number_format($total_price, 0, ',', '.') }} VND">
+                                            </div>
                                         </div>
+
+                                        <div class="form-inner" style="padding-top: 3rem">
+                                            <button class="tf-button-submit mg-t-15 submit" type="submit" name="place_order"
+                                                value="Place your
+                                                                                    order">Place your
+                                                order</button>
+                                        </div>
+
+
                                     </div>
-
-                                    <div class="form-inner" style="padding-top: 3rem">
-                                        <button class="tf-button-submit mg-t-15 submit" type="submit" name="place_order"
-                                            value="Place your
-                                                                order">Place your
-                                            order</button>
-                                    </div>
-
-
                                 </div>
                             </div>
-                        </div>
 
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
     </div>
 @endsection
