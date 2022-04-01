@@ -16,7 +16,8 @@ class PaymentController extends Controller
         return view('client.sub.login');
     }
 
-    public function checkout(){
+    public function checkout(Request $request){
+
         return view('client.sub.cart.checkout');
     }
 }

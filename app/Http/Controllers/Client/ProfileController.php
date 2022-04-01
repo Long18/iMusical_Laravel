@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -23,7 +24,8 @@ class ProfileController extends Controller
         }
     }
 
-    public function add_user(Request $request){
+    public function add_user(Request $request)
+    {
         $data = array();
 
         $data['user_name'] = $request->user_name;
@@ -33,15 +35,23 @@ class ProfileController extends Controller
         //When insert, get info of user
         $user_id = User::insertGetId($data);
 
+        $role = array();
+
+        $role['user_id'] = $user_id;
+        $role['role_id'] = '4'; //4 is Guest
+
+        UserRole::insert($role);
+
+
         Session::put('user_id', $user_id);
         Session::put('user_name', $request->user_name);
         Session::put('user_email', $request->user_email);
 
         return Redirect::to('/profile');
-
     }
 
-    public function index(){
+    public function index()
+    {
         $this->AuthLogin();
         return view('client.sub.profile');
     }

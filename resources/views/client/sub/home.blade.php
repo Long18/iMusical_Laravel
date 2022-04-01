@@ -139,6 +139,7 @@ use App\Models\Product;
                                                 <input type="hidden" name="cart_product_price" value="{{ $product->product_price }}" class="cart_product_price_{{ $product->product_id }}">
                                                 <input type="hidden" name="cart_product_sale_price" value="{{ $product->product_sale_price }}" class="cart_product_sale_price_{{ $product->product_id }}">
                                                 <input type="hidden" name="cart_product_quantity" value="1" class="cart_product_quantity_{{ $product->product_id }}">
+                                                <input type="hidden" name="cart_product_created_by" value="{{ $product->created_by }}" class="cart_product_created_by_{{ $product->product_id }}">
 
                                                 <div class="card-media">
                                                     <a href="{{ URL::to('/item-detail/' . $product->product_id) }}"><img src="public/frontend/images/box-item/card-item8.jpg" alt="Image"></a>

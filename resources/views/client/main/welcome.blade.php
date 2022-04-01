@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/css/textanimation.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/css/sweetalert.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
 </head>
 
@@ -407,6 +408,9 @@ if ($login_check) {
     <script src="{{ asset('public/frontend/js/nft.js') }}"></script>
     <script src="{{ asset('public/frontend/js/sweetalert2.all.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0&appId=435206154792265&autoLogAppEvents=1"
+        nonce="UVTONwsm"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -420,6 +424,7 @@ if ($login_check) {
                 var cart_product_price = $('.cart_product_price_' + id).val();
                 var cart_product_sale_price = $('.cart_product_sale_price_' + id).val();
                 var cart_product_quantity = $('.cart_product_quantity_' + id).val();
+                var cart_product_created_by = $('.cart_product_created_by_' + id).val();
                 var _token = $('input[name="_token"]').val();
 
                 $.ajax({
@@ -431,6 +436,7 @@ if ($login_check) {
                         cart_product_price: cart_product_price,
                         cart_product_sale_price: cart_product_sale_price,
                         cart_product_quantity: cart_product_quantity,
+                        cart_product_created_by: cart_product_created_by,
                         _token: _token
                     },
                     success: function(data) {
@@ -457,7 +463,7 @@ if ($login_check) {
     <script>
         window.fbAsyncInit = function() {
             FB.init({
-                appId: '.env.APP_ID',
+                appId: '.env.FACEBOOK_APP_ID',
                 cookie: true,
                 xfbml: true,
                 version: '.env.APP_VERSION'
@@ -478,6 +484,8 @@ if ($login_check) {
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+
+
 
 </body>
 

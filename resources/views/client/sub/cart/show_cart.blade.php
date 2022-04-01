@@ -60,7 +60,7 @@
                             </div>
 
                             <div class="column">
-                                <h3>Total</h3>
+                                <h3>Sale Price</h3>
                             </div>
                             <div class="column">
                                 <h3></h3>
@@ -75,11 +75,14 @@
                                     if ($cart_item['product_sale_price']) {
                                         $percentSale = ((float) $cart_item['product_sale_price'] / (float) $cart_item['product_price'] - 1) * $cart_item['product_quantity'] * 100;
                                         $salePrice = $cart_item['product_sale_price'] * $cart_item['product_quantity'];
+                                        $total += $salePrice;
+                                    } else {
+
+                                        $ItemTotal = $cart_item['product_price'] * $cart_item['product_quantity'];
+                                        $total += $ItemTotal;
                                     }
                                     $totalSale += $salePrice;
 
-                                    $ItemTotal = $cart_item['product_price'] * $cart_item['product_quantity'];
-                                    $total += $ItemTotal;
                                 @endphp
                                 <form action="{{ URL::to('/update-cart') }}" method="POST">
                                     @csrf
@@ -119,11 +122,12 @@
                                             <div class="column td3">
 
                                                 <input style="margin-left: 5rem;" type="number" min="1"
-                                                    class="cart_quantity"
+                                                    class="cart_quantity" id="cart_quantity"
                                                     name="cart_quantity[{{ $cart_item['session_id'] }}]"
                                                     value="{{ $cart_item['product_quantity'] }}">
 
                                             </div>
+
                                             <div class="column"></div>
                                             <div class="column td3 ">
                                                 <span>{{ number_format($salePrice, 0, ',', '.') }} VND</span>
@@ -175,6 +179,7 @@
                                                 <li class="box-recent-post">
                                                     <div class="box-content">
                                                         <h3><a class="th-title">Total: </a><a class="th-title"
+                                                                name="total_price" id="total_price"
                                                                 style="color: #47A432; ">{{ number_format($total, 0, ',', '.') }}
                                                                 VND</a>
                                                         </h3>
@@ -190,18 +195,21 @@
                     @php
                         $web;
                         if (Session::get('user_name') == null) {
-                            $web = "href=/login-payment";
+                            $web = 'href=/login';
                         } else {
-                            $web = "href=/checkout";
+                            $web = 'href=/checkout';
                         }
+
+                        Session::put('total_price', $total);
                     @endphp
 
                     <div class="col-md-12 wrap-inner load-more text-center mg-t16">
+                        <button type="submit" class="sc-button fl-button pri-3"><span>Update</span></button>
                         <a href="{{ URL::to('/delete-all-cart') }}" class="sc-button fl-button pri-3"><span>Delete all
                                 products</span></a>
-                        <button type="submit" class="sc-button fl-button pri-3"><span>Update</span></button>
-                        <a {{ $web }}
-                            class="sc-button fl-button pri-3"><span>Payment</span></a>
+                        <a {{ $web }} class="sc-button fl-button pri-3"><span>Buy</span></a>
+                        <a href="{{ URL::to('/momo-payment') }}" class="sc-button fl-button pri-3"><span>Buy with
+                                Momo</span></a>
                     </div>
                     </form>
                 @else
@@ -213,4 +221,6 @@
             </div>
 
     </section>
+
+
 @endsection

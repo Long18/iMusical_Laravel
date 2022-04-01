@@ -49,6 +49,7 @@ class CartController extends Controller
                     'product_price' => $data['cart_product_price'],
                     'product_sale_price' => $data['cart_product_sale_price'],
                     'product_quantity' => $data['cart_product_quantity'],
+                    'created_by' => $data['cart_product_created_by'],
                 );
                 session()->put('cart', $cart);
             } else {
@@ -69,6 +70,7 @@ class CartController extends Controller
                 'product_price' => $data['cart_product_price'],
                 'product_sale_price' => $data['cart_product_sale_price'],
                 'product_quantity' => $data['cart_product_quantity'],
+                'created_by' => $data['cart_product_created_by'],
             );
         }
         session()->put('cart', $cart);
