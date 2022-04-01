@@ -11,6 +11,7 @@
         Session::put('message', null);
         // If message not empty -> make empty
     }
+    $brand = $product->getBrand();
     ?>
     <!-- title page -->
 
@@ -528,18 +529,24 @@
                     </div>
                 </div>
             </div> --}}
-
-            <input type="hidden" name="cart_product_id" value="{{ $item_value->product_id }}"
-                class="cart_product_id_{{ $item_value->product_id }}">
-            <input type="hidden" name="cart_product_name" value="{{ $item_value->product_name }}"
-                class="cart_product_name_{{ $item_value->product_id }}">
-            <input type="hidden" name="cart_product_price" value="{{ $item_value->product_price }}"
-                class="cart_product_price_{{ $item_value->product_id }}">
-            <input type="hidden" name="cart_product_sale_price" value="{{ $item_value->product_sale_price }}"
-                class="cart_product_sale_price_{{ $item_value->product_id }}">
-            <input type="hidden" name="cart_product_quantity" value="1"
-                class="cart_product_quantity_{{ $item_value->product_id }}">
-
+            @if ($newProducts)
+                @foreach ($newProducts as $product)
+                    <input type="hidden" name="cart_product_id" value="{{ $item_value->product_id }}"
+                        class="cart_product_id_{{ $item_value->product_id }}">
+                    <input type="hidden" name="cart_product_name" value="{{ $item_value->product_name }}"
+                        class="cart_product_name_{{ $item_value->product_id }}">
+                    <input type="hidden" name="cart_product_price" value="{{ $item_value->product_price }}"
+                        class="cart_product_price_{{ $item_value->product_id }}">
+                    <input type="hidden" name="cart_product_sale_price" value="{{ $item_value->product_sale_price }}"
+                        class="cart_product_sale_price_{{ $item_value->product_id }}">
+                    <input type="hidden" name="cart_product_quantity" value="1"
+                        class="cart_product_quantity_{{ $item_value->product_id }}">
+                    <input type="hidden" name="cart_product_created_by" value="{{ $product->created_by }}"
+                        class="cart_product_created_by_{{ $product->product_id }}">
+                    <input type="hidden" name="cart_product_brand" value="{{ $brand->brand_name }}"
+                        class="cart_product_brand_{{ $product->product_id }}">
+                @endforeach
+            @endif
 
             <div class="modal fade popup" id="popup_bid" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -568,7 +575,8 @@
                             </div> --}}
                             <div class="d-flex justify-content-between">
                                 <p> Total amount:</p>
-                                <p class="text-right price color-popup">{{ number_format($item_value->product_price, 0, ',', '.') }} đ</p>
+                                <p class="text-right price color-popup">
+                                    {{ number_format($item_value->product_price, 0, ',', '.') }} đ</p>
                             </div>
                             {{-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#popup_bid_success"
                                 data-dismiss="modal" aria-label="Close">Add to cart</a> --}}

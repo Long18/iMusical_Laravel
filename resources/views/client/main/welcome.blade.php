@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/css/textanimation.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/css/sweetalert.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
 </head>
 
@@ -254,14 +255,14 @@ if ($login_check) {
                                                                 </svg>
                                                                 <span>My Profile</span>
                                                             </a>
-                                                            <a class="mt-10" href="profile.html">
+                                                            <a class="mt-10" href="{{URL::to('/checkout')}}">
                                                                 <svg width="20" height="18" viewBox="0 0 20 18"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <path
                                                                         d="M17.1154 0.730469H2.88461C1.29402 0.730469 0 2.02449 0 3.61508V14.3843C0 15.9749 1.29402 17.2689 2.88461 17.2689H17.1154C18.706 17.2689 20 15.9749 20 14.3843V3.61508C20 2.02449 18.706 0.730469 17.1154 0.730469ZM18.7529 10.6035H14.6154C13.6611 10.6035 13 9.95407 13 8.99969C13 8.04532 13.661 7.34544 14.6154 7.34544H18.7529V10.6035ZM18.7529 6.11508H14.6154C13.0248 6.11508 11.7308 7.40911 11.7308 8.99969C11.7308 10.5903 13.0248 11.8843 14.6154 11.8843H18.7529V14.3843C18.7529 15.3386 18.0698 15.9996 17.1154 15.9996H2.88461C1.93027 15.9996 1.29231 15.3387 1.29231 14.3843V3.61508C1.29231 2.66074 1.93023 1.99963 2.88461 1.99963H17.1266C18.0809 1.99963 18.7529 2.6607 18.7529 3.61508V6.11508Z"
                                                                         fill="white" />
                                                                 </svg>
-                                                                <span>Wallet</span>
+                                                                <span>Checkout</span>
                                                             </a>
                                                             <a class="mt-10" href="{{ URL::to('/logout') }}"
                                                                 id="logout">
@@ -407,6 +408,9 @@ if ($login_check) {
     <script src="{{ asset('public/frontend/js/nft.js') }}"></script>
     <script src="{{ asset('public/frontend/js/sweetalert2.all.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0&appId=435206154792265&autoLogAppEvents=1"
+        nonce="UVTONwsm"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -420,6 +424,8 @@ if ($login_check) {
                 var cart_product_price = $('.cart_product_price_' + id).val();
                 var cart_product_sale_price = $('.cart_product_sale_price_' + id).val();
                 var cart_product_quantity = $('.cart_product_quantity_' + id).val();
+                var cart_product_created_by = $('.cart_product_created_by_' + id).val();
+                var cart_product_brand = $('.cart_product_brand_' + id).val();
                 var _token = $('input[name="_token"]').val();
 
                 $.ajax({
@@ -431,6 +437,8 @@ if ($login_check) {
                         cart_product_price: cart_product_price,
                         cart_product_sale_price: cart_product_sale_price,
                         cart_product_quantity: cart_product_quantity,
+                        cart_product_created_by: cart_product_created_by,
+                        cart_product_brand: cart_product_brand,
                         _token: _token
                     },
                     success: function(data) {
@@ -457,7 +465,7 @@ if ($login_check) {
     <script>
         window.fbAsyncInit = function() {
             FB.init({
-                appId: '.env.APP_ID',
+                appId: '.env.FACEBOOK_APP_ID',
                 cookie: true,
                 xfbml: true,
                 version: '.env.APP_VERSION'
@@ -478,6 +486,8 @@ if ($login_check) {
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+
+
 
 </body>
 

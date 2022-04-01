@@ -15,7 +15,7 @@ class AdminController extends Controller
 {
 
     public function AuthLogin(){
-        $admin_id = Session::get('user_id');
+        $admin_id = Session::get('admin_id');
         if($admin_id){
             return Redirect::to('admin/dashboard');
         }else{
@@ -55,21 +55,21 @@ class AdminController extends Controller
         }
 
         if($result){
-            Session::put('user_name',$user->user_name);
-            Session::put('user_email',$user_email);
-            Session::put('user_id',$user->user_id);
+            Session::put('admin_name',$user->user_name);
+            Session::put('admin_email',$user_email);
+            Session::put('admin_id',$user->user_id);
             return Redirect::to('/admin/dashboard');
         }else{
             Session::put('message',"Wrong!! You don't have permission to access this page");
-            Session::put('user_email',$user_email);
+            Session::put('admin_email',$user_email);
             return Redirect::to('/admin');
         }
     }
 
     public function logout(){
         $this->AuthLogin();
-        Session::put('user_name',null);
-        Session::put('user_id',null);
+        Session::put('admin_name',null);
+        Session::put('admin_id',null);
         return Redirect::to('/admin');
     }
 }

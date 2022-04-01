@@ -6,13 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\Slider;
-use App\Models\Social;
 use App\Models\Type;
 use App\Models\User;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Laravel\Socialite\Facades\Socialite;
 
 session_start();
 class LoginController extends Controller
@@ -21,9 +19,9 @@ class LoginController extends Controller
     {
         $user_id = Session::get('user_id');
         if ($user_id) {
-            return redirect()->route('client.home');
+            return Redirect::to('/');
         } else {
-            return redirect()->route('client.sub.login')->send();
+            return Redirect::to('/login')->send();
         }
     }
     public function index()
@@ -56,15 +54,15 @@ class LoginController extends Controller
             ->take(10)
             ->get();
 
-        // if (Session::get('user_id')) {
-        //     return Redirect::to('/');
-        // }
+        if (Session::get('user_id')) {
+            return Redirect::to('/');
+        }
         return view('client.sub.login')
-        ->with('newProducts',$newProducts)
-        ->with('sliders', $sliders)
-        ->with('topSellers', $topSellers)
-        ->with('categories', $categories)
-        ->with('products', $products);
+            ->with('newProducts', $newProducts)
+            ->with('sliders', $sliders)
+            ->with('topSellers', $topSellers)
+            ->with('categories', $categories)
+            ->with('products', $products);
     }
 
     public function login(Request $request)
@@ -76,22 +74,11 @@ class LoginController extends Controller
             ->where('password', $user_password)
             ->first();
 
-        $result = false;
         if ($login) {
-            foreach ($login->getRole() as $user_role) {
-                $role = $user_role->getRole();
-                if ($role->role_name != 'admin') {
-                    $result = true;
-                    break;
-                }
-            }
-        }
-
-        if ($result) {
             session()->put('user_email', $user_email);
             session()->put('user_name', $login->user_name);
             session()->put('user_id', $login->user_id);
-            return Redirect::to('/profile');
+            return Redirect::to('/');
         } else {
             return Redirect::to('/login');
             session()->put('message', 'Login failed');
@@ -100,11 +87,10 @@ class LoginController extends Controller
 
     public function logout()
     {
-        //$this->AuthLogin();
+        $this->AuthLogin();
         session()->put('user_id', null);
         session()->put('user_name', null);
         session()->put('user_email', null);
         return Redirect::to('/login');
     }
-
 }

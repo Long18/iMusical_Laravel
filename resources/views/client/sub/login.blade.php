@@ -6,11 +6,8 @@
     use App\Models\Product;
 
     $message = Session::get('message');
-    if ($message) {
-        echo '<span class="text-alert">' . $message . '</span>';
-        Session::put('message', null);
-        // If message not empty -> make empty
-    }
+
+
     ?>
 
 
@@ -60,7 +57,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('facebook.login') }}" class="sc-button style-2 fl-button pri-3">
+                                <a href="{{ route('facebook.login') }}" class="sc-button style-2 fl-button pri-3" data-auto-logout-link="true" data-use-continue-as="false">
                                     <i class="icon-fl-facebook"></i>
                                     <span>Facebook</span>
                                 </a>
@@ -80,11 +77,11 @@
                         </div>
 
                         <div class="form-inner">
-                            <form action="{{URL::to('/home')}}" id="contactform" method="POST">
+                            <form action="{{URL::to('/login-success')}}" id="contactform" method="POST">
                                 {{ csrf_field() }}
                                 <input id="email" name="user_email" tabindex="1" value="<?php echo Session::get('user_email') ?>" aria-required="true" required type="email"
                                     placeholder="Your Email Address">
-                                <input id="email" name="user_password" tabindex="2" value="<?php echo Session::get('password') ?>" aria-required="true" type="password"
+                                <input id="email" name="user_password" tabindex="1" value="<?php echo Session::get('password') ?>" aria-required="true" type="password"
                                     placeholder="Your Password" required>
                                 <div class="row-form style-1">
                                     <label>Remember me

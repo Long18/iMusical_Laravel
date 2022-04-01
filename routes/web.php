@@ -21,6 +21,7 @@ use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\DebugController;
 use App\Http\Controllers\Client\PaymentController;
 use App\Http\Controllers\Client\ProfileController;
+use App\Http\Controllers\Client\OrdersController;
 use App\Http\Controllers\Client\FacebookController;
 /*
 |--------------------------------------------------------------------------
@@ -154,8 +155,11 @@ Route::get('/delete-all-cart', [CartController::class, 'delete_all_cart']);
 Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
 Route::post('/update-cart', [CartController::class, 'update_cart']);
 
+//Oders routes
+
+Route::post('/save-order', [OrdersController::class, 'save_order']);
+
 //Payment
-Route::get('/login-payment', [PaymentController::class, 'login_payment']);
 Route::get('/checkout', [PaymentController::class, 'checkout']);
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -168,9 +172,11 @@ Route::prefix('facebook')->name('facebook.')->group( function(){
 
 //Profile routes
 Route::get('/profile', [ProfileController::class, 'index']);
-Route::get('logout', [LoginController::class, 'logout']);
-Route::post('/login', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout']);
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login-success', [LoginController::class, 'login']);
 Route::post('/add-user', [ProfileController::class, 'add_user']);
+
 
 
 //----------------------------------------------------------------------------------------------------------------------
