@@ -425,6 +425,7 @@ if ($login_check) {
                 var cart_product_sale_price = $('.cart_product_sale_price_' + id).val();
                 var cart_product_quantity = $('.cart_product_quantity_' + id).val();
                 var cart_product_created_by = $('.cart_product_created_by_' + id).val();
+                var cart_product_brand = $('.cart_product_brand_' + id).val();
                 var _token = $('input[name="_token"]').val();
 
                 $.ajax({
@@ -437,6 +438,7 @@ if ($login_check) {
                         cart_product_sale_price: cart_product_sale_price,
                         cart_product_quantity: cart_product_quantity,
                         cart_product_created_by: cart_product_created_by,
+                        cart_product_brand: cart_product_brand,
                         _token: _token
                     },
                     success: function(data) {

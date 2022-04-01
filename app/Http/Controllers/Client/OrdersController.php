@@ -24,6 +24,7 @@ class OrdersController extends Controller
         $user_id = session()->get('user_id');
         $cart = session()->get('cart', []);
         $total_price = session()->get('total_price');
+        // Get current date, time
         $date = date('d/m/Y H:i:s');
 
         foreach ($cart as $key => $value) {
