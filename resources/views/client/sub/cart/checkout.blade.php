@@ -313,40 +313,53 @@
                                             <div class="col-md-6">
                                                 <h5 class="title-create-item">Select a payment method
                                                 </h5>
+
                                                 <div class="inner-row-form style-2">
                                                     <div class="seclect-box">
                                                         <div id="item-create3" class="dropdown">
-                                                            <a href="#" class="btn-selector nolink">--- More payment
+                                                            {{-- <input type="text" name="order_payment_method" class="btn-selector nolink"
+                                                            name="order_payment_method" id="order_payment_method" value="a"
+                                                                placeholder="--- Select a payment method ---">
+                                                                <a href="#" class="btn-selector nolink"
+                                                                name="order_payment_method" id="order_payment_method">--- More payment
                                                                 options
                                                                 ---</a>
                                                             <ul>
-                                                                <li><span class='bi bi-wallet'> Momo</span></li>
-                                                                <li><span class='bi bi-paypal'> Paypal</span></li>
-                                                                <li><span class='bi bi-cash-stack'> Cash</span></li>
-                                                            </ul>
+                                                                <li><span class='bi bi-wallet'>Momo</span></li>
+                                                                <li><span class='bi bi-paypal'>Paypal</span></li>
+                                                                <li><span class='bi bi-cash-stack'>Cash</span></li>
+                                                            </ul> --}}
+
+                                                            <input type="checkbox" name="order_payment_method" value="Momo">
+                                                            <span class='bi bi-wallet' for="order_payment_method">
+                                                                Momo</span>
+                                                            <input type="checkbox" name="order_payment_method"
+                                                                value="Paypal">
+                                                            <span class='bi bi-paypal' for="order_payment_method">
+                                                                Paypal</span>
+                                                            <input type="checkbox" name="order_payment_method" value="Cash">
+                                                            <span class='bi bi-cash-stack' for="order_payment_method">
+                                                                Cash</span>
                                                         </div>
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </div>
 
-                                        <input type="hidden" name="created_at" type="datetime-local" id="created_at">
 
 
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h4 class="title-create-item">Payment Total</h4>
-                                                <input disabled type="text" name="order_total_price"
-                                                    value="{{ number_format($total_price, 0, ',', '.') }} VND">
+                                        @if (Session::get('cart') != null)
+                                            <div class="form-inner" style="padding-top: 3rem">
+                                                <button class="tf-button-submit mg-t-15 submit" type="submit"
+                                                    name="place_order" value="Place your order">Place your
+                                                    order</button>
                                             </div>
-                                        </div>
-
-                                        @if (Session::get('cart') != null)'))
-                                        <div class="form-inner" style="padding-top: 3rem">
-                                            <span href="{{URL::to('/')}}" class="text-alert">Place some products</span>
-                                        </div>
-
+                                        @else
+                                            <div class="form-inner" style="padding-top: 3rem">
+                                                <span href="{{ URL::to('/') }}" class="text-alert">Place some
+                                                    products</span>
+                                            </div>
                                         @endif
 
 

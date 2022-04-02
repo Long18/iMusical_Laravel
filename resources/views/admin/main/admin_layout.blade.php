@@ -439,7 +439,7 @@
                                     <img src="{{ asset('public/backend/images/profile/17.jpg') }}" width="20" alt="" />
                                     <div class="header-info">
                                             <?php
-                                            $name = Session::get('user_name');
+                                            $name = Session::get('admin_name');
                                             ?>
                                         <p class="fs-12 mb-0">{{$name}}</p>
                                     </div>

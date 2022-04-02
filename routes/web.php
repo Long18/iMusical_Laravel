@@ -158,8 +158,8 @@ Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
 Route::post('/update-cart', [CartController::class, 'update_cart']);
 
 //Oders routes
-
 Route::post('/save-order', [OrdersController::class, 'save_order']);
+Route::get('/payment', [OrdersController::class, 'payment']);
 
 //Payment
 Route::get('/checkout', [PaymentController::class, 'checkout']);

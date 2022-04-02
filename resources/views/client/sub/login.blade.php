@@ -79,7 +79,7 @@
                         <div class="form-inner">
                             <form action="{{URL::to('/login-success')}}" id="contactform" method="POST">
                                 {{ csrf_field() }}
-                                <input id="email" name="user_email" tabindex="1" value="<?php echo Session::get('user_email') ?>" aria-required="true" required type="email"
+                                <input id="user_email" name="user_email" tabindex="1" value="<?php echo Session::get('user_email') ?>" aria-required="true" required type="email"
                                     placeholder="Your Email Address">
                                 <input id="password" name="password" tabindex="1" value="<?php echo Session::get('password') ?>" aria-required="true" type="password"
                                     placeholder="Your Password" required>

@@ -68,13 +68,11 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $user_email = $request->user_email;
-        $user_password = md5($request->password);
+        $user_password = md5("$request->password");
 
         $result = User::where('user_email', $user_email)
             ->where('password', $user_password)
             ->first();
-
-        // dd($result);
 
         if ($result) {
             session()->put('user_id', $result->user_id);

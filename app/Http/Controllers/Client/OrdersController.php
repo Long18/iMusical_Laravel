@@ -26,11 +26,11 @@ class OrdersController extends Controller
         $cart = session()->get('cart', []);
         $total_price = session()->get('total_price');
         // Get current date, time
-        $date = date('d/m/Y H:i:s');
+        $date = date('Y-m-d H:i:s');
 
 
         $data['user_id'] = $user_id;
-        $data['created_at'] = $request->created_at;
+        $data['created_at'] = $date;
         $data['order_total_sum'] = $total_price;
         $data['delivery_email'] = $request->order_email;
         $data['delivery_name'] = $request->order_name;
@@ -61,12 +61,10 @@ class OrdersController extends Controller
             $order_detail_id = OrderDetail::insertGetId($detail);
         }
 
-
-
-
+        //dd($request->all());
 
         session()->put('order_id', $order_id);
-        session()->put('orderorder_detail_id_id', $order_detail_id);
+        session()->put('order_detail_id', $order_detail_id);
         session()->remove('cart');
 
         return Redirect::to('/payment');
@@ -74,5 +72,6 @@ class OrdersController extends Controller
 
     public function payment()
     {
+        return view('client.sub.cart.payment');
     }
 }
