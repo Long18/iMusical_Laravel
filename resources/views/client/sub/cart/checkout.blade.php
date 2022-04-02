@@ -12,6 +12,8 @@
         // If message not empty -> make empty
     }
     $total_price = Session::get('total_price');
+    $user_name = Session::get('user_name');
+    $user_email = Session::get('user_email');
     ?>
 
     <!-- title page -->
@@ -46,8 +48,8 @@
                     <h4 class="title-create-item">Preview item</h4>
 
 
-                        @if ((array) session('cart'))
-                            @foreach ((array) session('cart') as $cart_item)
+                    @if ((array) session('cart'))
+                        @foreach ((array) session('cart') as $cart_item)
                             <div class="sc-card-product">
                                 @php
                                     $priceItem = $cart_item['product_price'];
@@ -89,8 +91,8 @@
                                     <a href="{{ URL::to('/delete-cart/' . $cart_item['session_id']) }}"
                                         class="sc-button style bag fl-button pri-3"><span>Delete this product</span></a>
                                 </div>
-                    </div>
-                    @endforeach
+                            </div>
+                        @endforeach
                     @endif
 
 
@@ -114,12 +116,13 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <h4 class="title-create-item">Email</h4>
-                                                <input required type="email" name="order_email"
+                                                <input required type="email" name="order_email" value="{{ $user_email }}"
                                                     placeholder="Enter your email">
                                             </div>
                                             <div class="col-md-6">
                                                 <h4 class="title-create-item">Name</h4>
-                                                <input required type="text" name="order_name" placeholder="Enter your name">
+                                                <input required type="text" name="order_name" placeholder="Enter your name"
+                                                    value="{{ $user_name }}">
                                             </div>
                                         </div>
 
@@ -247,7 +250,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <h4 class="title-create-item" style="padding-top: 3rem">Zip Code</h4>
-                                                <input required type="number" name="order_zip_code"
+                                                <input type="number" name="order_zip_code"
                                                     placeholder="Enter your zip code">
                                             </div>
                                         </div>
@@ -327,6 +330,8 @@
                                             </div>
                                         </div>
 
+                                        <input type="hidden" name="created_at" type="datetime-local" id="created_at">
+
 
 
                                         <div class="row">
@@ -337,12 +342,13 @@
                                             </div>
                                         </div>
 
+                                        @if (Session::get('cart') != null)'))
                                         <div class="form-inner" style="padding-top: 3rem">
-                                            <button class="tf-button-submit mg-t-15 submit" type="submit" name="place_order"
-                                                value="Place your
-                                                                                    order">Place your
-                                                order</button>
+                                            <span href="{{URL::to('/')}}" class="text-alert">Place some products</span>
                                         </div>
+
+                                        @endif
+
 
 
                                     </div>

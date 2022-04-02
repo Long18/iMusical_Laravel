@@ -13,7 +13,7 @@ session_start();
 class TypesAdminController extends Controller
 {
     public function AuthLogin(){
-        $admin_id = Session::get('user_id');
+        $admin_id = Session::get('admin_id');
         if($admin_id){
             return Redirect::to('admin/dashboard');
         }else{
@@ -51,7 +51,7 @@ class TypesAdminController extends Controller
         $data['type_name'] = $request->val_name_type;
         $data['type_slug'] = $request->val_slug_type;
         $data['type_image_url'] = $request->val_image_url;
-        
+
         $data['type_meta_key'] = $request->val_meta_key;
         $data['type_meta_desc'] = $request->val_meta_desc;
 
@@ -61,7 +61,7 @@ class TypesAdminController extends Controller
             $data['parent_id'] = $request->val_parent_type;
         }
 
-        $user_id = Session::get('user_id');
+        $user_id = Session::get('admin_id');
         if($user_id){
             $data['create_by'] = $user_id;
         }else{

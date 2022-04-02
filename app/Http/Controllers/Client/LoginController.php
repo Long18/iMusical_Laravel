@@ -68,16 +68,18 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $user_email = $request->user_email;
-        $user_password = md5($request->user_password);
+        $user_password = md5($request->password);
 
-        $login = User::where('user_email', $user_email)
+        $result = User::where('user_email', $user_email)
             ->where('password', $user_password)
             ->first();
 
-        if ($login) {
+        // dd($result);
+
+        if ($result) {
+            session()->put('user_id', $result->user_id);
             session()->put('user_email', $user_email);
-            session()->put('user_name', $login->user_name);
-            session()->put('user_id', $login->user_id);
+            session()->put('user_name', $result->user_name);
             return Redirect::to('/');
         } else {
             return Redirect::to('/login');

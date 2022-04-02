@@ -51,7 +51,7 @@ class SlidersAdminController extends Controller
         $data['status'] = $request->val_status_slider ? 1 : 0;
 
 
-        $user_id = Session::get('user_id');
+        $user_id = Session::get('admin_id');
         if (isset($user_id)) {
             $data['created_by'] = $user_id;
         } else {

@@ -81,7 +81,7 @@
                                 {{ csrf_field() }}
                                 <input id="email" name="user_email" tabindex="1" value="<?php echo Session::get('user_email') ?>" aria-required="true" required type="email"
                                     placeholder="Your Email Address">
-                                <input id="email" name="user_password" tabindex="1" value="<?php echo Session::get('password') ?>" aria-required="true" type="password"
+                                <input id="password" name="password" tabindex="1" value="<?php echo Session::get('password') ?>" aria-required="true" type="password"
                                     placeholder="Your Password" required>
                                 <div class="row-form style-1">
                                     <label>Remember me

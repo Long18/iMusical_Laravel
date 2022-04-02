@@ -25,7 +25,7 @@ class AdminController extends Controller
 
     public function index()
     {
-        if(Session::get('user_id')){
+        if(Session::get('admin_id')){
             return Redirect::to('/admin/dashboard');
         }
         return view('admin.main.admin_login');
@@ -55,9 +55,9 @@ class AdminController extends Controller
         }
 
         if($result){
-            Session::put('admin_name',$user->user_name);
+            Session::put('admin_name',$user->admin_name);
             Session::put('admin_email',$user_email);
-            Session::put('admin_id',$user->user_id);
+            Session::put('admin_id',$user->admin_id);
             return Redirect::to('/admin/dashboard');
         }else{
             Session::put('message',"Wrong!! You don't have permission to access this page");

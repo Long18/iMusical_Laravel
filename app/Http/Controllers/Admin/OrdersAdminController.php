@@ -48,7 +48,7 @@ class OrdersAdminController extends Controller
         $data['transport_type'] = $request->val_category_order;
         $data['status'] = $request->val_status_order;
 
-        $user_id = Session::get('user_id');
+        $user_id = Session::get('admin_id');
         if($user_id){
             $data['created_by'] = $user_id;
         }else{
@@ -108,7 +108,7 @@ class OrdersAdminController extends Controller
     }
 
     public function add_order_detail($order_id)
-    {   
+    {
         //return view
         return view('admin.sub.add_order_detail')
             ->with('order_id', $order_id);
@@ -147,7 +147,7 @@ class OrdersAdminController extends Controller
         $manager_orders = view('admin.sub.edit_order_detail')
             ->with('edit_order_detail', $edit_order_detail)
             ->with('order_id', $order_id);
-            
+
         Session::put('messenge', 'Your order was edited!!');
         return view('admin.main.admin_layout')->with('admin.sub.edit_order_detail', $manager_orders);
     }
@@ -163,7 +163,7 @@ class OrdersAdminController extends Controller
         $data['order_detail_total'] = $request->val_total;
 
         OrderDetail::where('order_detail_id', $order_detail_id)->update($data);
-        
+
         Session::put('messenge', 'Your order was updated!!');
         return Redirect::to('admin/edit-order/'.$order_id);
     }
