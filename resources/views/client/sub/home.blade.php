@@ -192,7 +192,7 @@
                                                         {{ rand(10, 1000) }}</span></button>
                                                 <div class="featured-countdown">
                                                     <span class="slogan"></span>
-                                                    <span class="js-countdown" data-timer="516400"
+                                                    <span class="js-countdown" data-timer="{{rand(12345,716400)}}"
                                                         data-labels=" :  ,  : , : , "></span>
                                                 </div>
                                                 <div class="button-place-bid">

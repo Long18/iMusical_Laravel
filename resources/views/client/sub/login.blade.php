@@ -51,7 +51,7 @@
                         </div>
                         <ul>
                             <li>
-                                <a href="#" class="sc-button style-2 fl-button pri-3">
+                                <a href="{{ route('google.login') }}" class="sc-button style-2 fl-button pri-3">
                                     <i class="icon-fl-google-2"></i>
                                     <span>Google</span>
                                 </a>

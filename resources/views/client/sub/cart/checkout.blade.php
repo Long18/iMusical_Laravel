@@ -55,13 +55,20 @@
                                     $priceItem = $cart_item['product_price'];
                                 @endphp
                                 <div class="card-media" style="padding-bottom: 3rem">
-                                    <a href="item-details.html"><img
-                                            src="{{ asset('public/frontend//images/box-item/image-box-6.jpg') }}"
-                                            alt="Image"></a>
-                                    <button class="wishlist-button heart"><span class="number-like"> 100</span></button>
+                                    <a href="item-details.html"><img src="
+                                                /<?php
+                                                if ($cart_item['product_image'] != null) {
+                                                    echo $cart_item['product_image'];
+                                                } else {
+                                                    echo 'public/frontend/images/box-item/nonImage.png';
+                                                }
+
+                                                ?>
+                                                " alt="Image"></a>
+                                    <button class="wishlist-button heart"><span class="number-like">{{rand(10,10000)}}</span></button>
                                     <div class="featured-countdown">
                                         <span class="slogan"></span>
-                                        <span class="js-countdown" data-timer="716400"
+                                        <span class="js-countdown" data-timer="{{rand(600,716400)}}"
                                             data-labels=" :  ,  : , : , "></span>
                                     </div>
                                 </div>

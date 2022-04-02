@@ -12,7 +12,7 @@ class User extends Authenticatable
 {
     use HasFactory;
 
-    protected $fillable = ['user_email', 'password', 'user_name','status'];
+    protected $fillable = ['user_email', 'password', 'user_name','facebook_id','google_id','status'];
 
     protected $table = 'users';
     public $timestamps = false;

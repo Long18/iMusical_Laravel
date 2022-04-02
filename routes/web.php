@@ -23,6 +23,7 @@ use App\Http\Controllers\Client\PaymentController;
 use App\Http\Controllers\Client\ProfileController;
 use App\Http\Controllers\Client\OrdersController;
 use App\Http\Controllers\Client\FacebookController;
+use App\Http\Controllers\Client\GoogleController;
 use App\Http\Controllers\Client\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -173,6 +174,11 @@ Route::get('/user/{user_id}', [UserController::class, 'user']);
 Route::prefix('facebook')->name('facebook.')->group( function(){
     Route::get('auth', [FacebookController::class, 'login_facebook'])->name('login');
     Route::get('callback', [FacebookController::class, 'callback_facebook'])->name('callback');
+});
+
+Route::prefix('google')->name('google.')->group( function(){
+    Route::get('auth', [GoogleController::class, 'login_google'])->name('login');
+    Route::get('callback', [GoogleController::class, 'callback_google'])->name('callback');
 });
 
 //Profile routes

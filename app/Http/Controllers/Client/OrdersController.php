@@ -37,6 +37,7 @@ class OrdersController extends Controller
         $data['delivery_phone'] = $request->order_phone;
         $data['delivery_notes'] = $request->order_description;
         $data['delivery_address'] = $request->order_address;
+        $data['delivery_payment_method'] = $request->order_payment_method;
         $data['transport_fee'] = $request->order_shipping_fee;
         $data['status'] = 1;
         foreach ($cart as $val => $vla) {
@@ -64,6 +65,7 @@ class OrdersController extends Controller
         //dd($request->all());
 
         session()->put('order_id', $order_id);
+        session()->put('order_method', $request->order_payment_method);
         session()->put('order_detail_id', $order_detail_id);
         session()->remove('cart');
 
@@ -72,6 +74,16 @@ class OrdersController extends Controller
 
     public function payment()
     {
+        if (Session::get('order_method') == "Momo") {
+            return view('client.payment.momo');
+        } else if (Session::get('order_method') == "Paypal") {
+            return view('client.payment.paypal');
+        } else {
+            return view('client.payment.cash');
+        }
+
+        session()->remove('order_method');
+
         return view('client.sub.cart.payment');
     }
 }

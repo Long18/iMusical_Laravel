@@ -34,5 +34,10 @@ return [
         'client_secret' => env('FACEBOOK_APP_SECRET'), // Client secret Facebook
         'redirect' => env('FACEBOOK_REDIRECT'), // Redirect URL Facebook login into your website
     ],
+    'google' => [
+        'client_id' => env('GOOGLE_ID'), // Client ID Google
+        'client_secret' => env('GOOGLE_SECRET'), // Client secret Google
+        'redirect' => env('GOOGLE_REDIRECT'), // Redirect URL Google login into your website
+    ],
 
 ];
