@@ -125,6 +125,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/contact', [HomeController::class, 'contact']);
+Route::post('/search', [HomeController::class, 'search']);
 
 //Login routes
 Route::get('/login', [LoginController::class, 'index']);

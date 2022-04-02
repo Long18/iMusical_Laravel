@@ -85,7 +85,7 @@
                                                 </div>
                                                 <div class="info">
                                                     <span>Owned By</span>
-                                                    <h6> <a href="author02.html">{{ $name_creater->user_name }}</a> </h6>
+                                                    <h6> <a href="{{ URL::to('/user/' . $name_creater->user_id) }}">{{ $name_creater->user_name }}</a> </h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -97,7 +97,7 @@
                                                 </div>
                                                 <div class="info">
                                                     <span>Create By</span>
-                                                    <h6> <a href="author02.html">{{ $name_creater->user_name }}</a>
+                                                    <h6> <a href="{{ URL::to('/user/' . $name_creater->user_id) }}">{{ $name_creater->user_name }}</a>
                                                     </h6>
                                                 </div>
                                             </div>

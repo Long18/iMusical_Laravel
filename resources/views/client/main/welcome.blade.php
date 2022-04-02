@@ -145,10 +145,12 @@
                                                 </svg>
                                             </a>
                                             <div class="top-search">
-                                                <form action="#" method="get" role="search" class="search-form">
-                                                    <input type="search" id="s" class="search-field"
-                                                        placeholder="Search..." value="" name="s" title="Search for"
-                                                        required="">
+                                                <form action="{{ URL::to('/search') }}" method="POST" role="search"
+                                                    class="search-form">
+                                                    @csrf
+                                                    <input type="search" id="keyword" class="search-field"
+                                                        placeholder="Search..." value="" name="keyword"
+                                                        title="Search for" required="">
                                                     <button class="search search-submit" type="submit" title="Search">
                                                         <i class="icon-fl-search-filled"></i>
                                                     </button>
@@ -255,7 +257,8 @@ if ($login_check) {
                                                                 </svg>
                                                                 <span>My Profile</span>
                                                             </a>
-                                                            <a class="mt-10" href="{{URL::to('/checkout')}}">
+                                                            <a class="mt-10"
+                                                                href="{{ URL::to('/checkout') }}">
                                                                 <svg width="20" height="18" viewBox="0 0 20 18"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <path
