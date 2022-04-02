@@ -23,6 +23,7 @@ use App\Http\Controllers\Client\PaymentController;
 use App\Http\Controllers\Client\ProfileController;
 use App\Http\Controllers\Client\OrdersController;
 use App\Http\Controllers\Client\FacebookController;
+use App\Http\Controllers\Client\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -161,6 +162,9 @@ Route::post('/save-order', [OrdersController::class, 'save_order']);
 
 //Payment
 Route::get('/checkout', [PaymentController::class, 'checkout']);
+
+//User routes
+Route::get('/user/{user_id}', [UserController::class, 'user']);
 
 //----------------------------------------------------------------------------------------------------------------------
 //Login routes

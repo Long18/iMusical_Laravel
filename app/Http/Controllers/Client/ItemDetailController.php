@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\OrderDetail;
 use App\Models\Product;
+use App\Models\ProductImages;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,9 +20,8 @@ class ItemDetailController extends Controller
     {
 
         //get top 10 newest product
-        $newProducts = Product::where('status', '1')
+        $newProducts = Product::where('product_id', $product_id)
             ->orderBy('created_at', 'asc')
-            ->take(10)
             ->get();
 
 
@@ -42,15 +42,26 @@ class ItemDetailController extends Controller
             ->orderBy('created_at', 'asc')
             ->get();
 
-        //get product from data base
-        $item = Product::where('product_id', $product_id)->get();
 
-        $manager_products = view('client.sub.item_detail')
+
+        //get top 10 newest product image
+        $productsImage = ProductImages::where('status', '1')->get();
+
+        // $manager_products = view('client.sub.item_detail')
+        //     ->with('newProducts', $newProducts)
+        //     ->with('topSellers', $topSellers)
+        //     ->with('categories', $categories)
+        //     ->with('item_detail', $item)
+        //     ->with('products', $products)
+        //     ->with('productsImage', $productsImage);
+
+        // return view('client.sub.home')->with('client.sub.item_detail', $manager_products);
+
+        return view('client.sub.item_detail')
             ->with('newProducts', $newProducts)
             ->with('topSellers', $topSellers)
             ->with('categories', $categories)
-            ->with('item_detail', $item)
-            ->with('products', $products);
-        return view('client.sub.home')->with('client.sub.item_detail', $manager_products);
+            ->with('products', $products)
+            ->with('productsImage', $productsImage);
     }
 }

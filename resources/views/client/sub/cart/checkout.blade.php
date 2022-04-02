@@ -79,7 +79,7 @@
                                         </div>
                                         <div class="info">
                                             <span>Brand</span>
-                                            {{-- <h6> <a href="#">{{ $cart_item['product_brand'] }}</a></h6> --}}
+                                            <h6> <a href="#">{{ $cart_item['product_brand'] }}</a></h6>
                                         </div>
                                     </div>
                                     <div class="price">

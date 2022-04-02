@@ -92,7 +92,7 @@
                                             <div class="infor-item flex column1">
                                                 <input type="checkbox" name="checkbox" id="checkbox">
                                                 <div class="media">
-                                                    <img src="{{ asset('public/frontend/images/box-item/img1rank.jpg') }}"
+                                                    <img src="{{$cart_item['product_image']}}"
                                                         alt="Images">
                                                 </div>
                                                 <div class="content-collection pad-t-4">
@@ -106,7 +106,7 @@
                                                             <div class="badge"><i class="ripple"></i></div>
                                                         </div>
                                                         <div class="content">
-                                                            <p>Owned By: Smatha</p>
+                                                            <p>Owned By: {{$cart_item['product_author']}}</p>
                                                             <h6><a href="#">Sale:
                                                                     <span
                                                                         style="color: #DF4949;">{{ number_format($percentSale) }}%</span></a>

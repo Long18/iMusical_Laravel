@@ -50,6 +50,8 @@ class CartController extends Controller
                     'product_sale_price' => $data['cart_product_sale_price'],
                     'product_quantity' => $data['cart_product_quantity'],
                     'product_brand' => $data['cart_product_brand'],
+                    'product_image' => $data['cart_product_image'],
+                    'product_author' => $data['cart_product_author'],
                     'created_by' => $data['cart_product_created_by'],
                 );
                 session()->put('cart', $cart);
@@ -72,6 +74,8 @@ class CartController extends Controller
                 'product_sale_price' => $data['cart_product_sale_price'],
                 'product_quantity' => $data['cart_product_quantity'],
                 'product_brand' => $data['cart_product_brand'],
+                'product_image' => $data['cart_product_image'],
+                'product_author' => $data['cart_product_author'],
                 'created_by' => $data['cart_product_created_by'],
             );
         }

@@ -13,8 +13,18 @@ class Product extends Model{
 
     protected $primaryKey = 'product_id';
 
+    public function getImgs(){
+        return ProductImages::where('product_id',$this->product_id)->first();
+    }
+
     public function getBrand(){
         return Brand::where('brand_id',$this->brand_id)->first();
+    }
+
+    public function getImagesBrand(){
+        return BrandImage::where('brand_id',$this->brand_id)
+        ->where('status',1)
+        ->get();
     }
 
     public function getNameProduct(){
@@ -26,6 +36,10 @@ class Product extends Model{
     }
 
     public function getCreator(){
+        return User::where('user_id',$this->created_by)->first();
+    }
+
+    public function getUserImage(){
         return User::where('user_id',$this->created_by)->first();
     }
 

@@ -426,6 +426,8 @@ if ($login_check) {
                 var cart_product_quantity = $('.cart_product_quantity_' + id).val();
                 var cart_product_created_by = $('.cart_product_created_by_' + id).val();
                 var cart_product_brand = $('.cart_product_brand_' + id).val();
+                var cart_product_image = $('.cart_product_image_' + id).val();
+                var cart_product_author = $('.cart_product_author_' + id).val();
                 var _token = $('input[name="_token"]').val();
 
                 $.ajax({
@@ -439,6 +441,8 @@ if ($login_check) {
                         cart_product_quantity: cart_product_quantity,
                         cart_product_created_by: cart_product_created_by,
                         cart_product_brand: cart_product_brand,
+                        cart_product_image: cart_product_image,
+                        cart_product_author: cart_product_author,
                         _token: _token
                     },
                     success: function(data) {

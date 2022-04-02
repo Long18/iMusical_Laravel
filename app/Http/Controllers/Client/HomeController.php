@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\OrderDetail;
 use App\Models\Product;
+use App\Models\ProductImages;
 use App\Models\Slider;
 use App\Models\Type;
 use Illuminate\Http\Request;
@@ -43,12 +44,16 @@ class HomeController extends Controller
         ->take(10)
         ->get();
 
+        //get top 10 newest product image
+        $productsImage = ProductImages::where('status','1')->get();
+
         return view('client.sub.home')
         ->with('newProducts',$newProducts)
         ->with('sliders', $sliders)
         ->with('topSellers', $topSellers)
         ->with('categories', $categories)
-        ->with('products', $products);
+        ->with('products', $products)
+        ->with('productsImage', $productsImage);
     }
 
     public function contact()

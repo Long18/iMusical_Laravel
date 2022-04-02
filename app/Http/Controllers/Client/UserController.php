@@ -6,23 +6,22 @@ use App\Http\Controllers\Controller;
 use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\ProductImages;
-use App\Models\Slider;
 use App\Models\Type;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class ExploreController extends Controller
+class UserController extends Controller
 {
-    public function index()
+    public function user($user_id)
     {
-        //get slider for home page
-        $sliders = Slider::where('status', '1')->get();
+
+        //Get user
+        $user = User::where('user_id', $user_id)->get();
 
         //get top 10 newest product
-        $newProducts = Product::where('status', '1')
+        $newProducts = Product::where('created_by', $user_id)
             ->orderBy('created_at', 'asc')
-            ->take(10)
             ->get();
-
 
         //get top 10 Top seller product
         // return obj(product_id, total)
@@ -36,21 +35,16 @@ class ExploreController extends Controller
             ->whereNULL('parent_id')
             ->get();
 
-        // get product
-        $products = Product::where('status', '1')
-            ->orderBy('created_at', 'asc')
-            ->take(10)
-            ->get();
 
         //get top 10 newest product image
         $productsImage = ProductImages::where('status', '1')->get();
 
-        return view('client.sub.explore')
+
+        return view('client.sub.user')
+            ->with('user', $user)
             ->with('newProducts', $newProducts)
-            ->with('sliders', $sliders)
             ->with('topSellers', $topSellers)
             ->with('categories', $categories)
-            ->with('products', $products)
             ->with('productsImage', $productsImage);
     }
 }
