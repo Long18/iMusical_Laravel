@@ -36,7 +36,7 @@
         </div>
     </section>
 
-    @if ($search == null)
+    @if ($search->count() == 0)
         <section class="tf-no-result tf-section">
             <div class="themesflat-container">
                 <div class="row">
@@ -46,7 +46,8 @@
                         </h2>
                         <h5 class="sub-title help-center mg-bt-32 ">
                         </h5>
-                        <form action="#" class="help-center-form">
+                        <form action="{{ URL::to('/search') }}" class="help-center-form" method="POST" role="search">
+                            @csrf
                             <input type="text" placeholder="Type your question here" required>
                             <button>
                                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
@@ -122,10 +123,10 @@
                                     <input type="hidden" name="cart_product_brand" value="{{ $brand->brand_name }}"
                                         class="cart_product_brand_{{ $product->product_id }}">
                                     <input type="hidden" name="cart_product_image" value="
-                                                                    @if ($image) {{ $image->product_img_name }}
+                                                                        @if ($image) {{ $image->product_img_name }}
                                 @else
                                 public/frontend/images/box-item/nonImage.png @endif
-                                                                                "
+                                                                                    "
                                         class="cart_product_image_{{ $product->product_id }}">
                                     <input type="hidden" name="cart_product_author"
                                         value="{{ $name_creater->user_name }}"
@@ -135,14 +136,15 @@
                                         <div class="slider-item">
                                             <div class="sc-card-product">
                                                 <div class="card-media">
-                                                    <a href="{{ URL::to('/item-detail/' . $product->product_id) }}"><img src="/<?php
-if ($image) {
-    echo $image->product_img_name;
-} else {
-    echo 'public/frontend/images/box-item/nonImage.png';
-}
+                                                    <a href="{{ URL::to('/item-detail/' . $product->product_id) }}"><img
+                                                            src="/<?php
+                                                            if ($image) {
+                                                                echo $image->product_img_name;
+                                                            } else {
+                                                                echo 'public/frontend/images/box-item/nonImage.png';
+                                                            }
 
-?>"
+                                                            ?>"
                                                             alt="{{ $product->product_name }}"></a>
                                                     <button class="wishlist-button heart"><span class="number-like">
                                                             {{ rand(10, 1000) }}</span></button>
@@ -168,15 +170,15 @@ if ($image) {
                                                     <div class="author">
                                                         <div class="avatar">
                                                             <img src="
-                                                                                        /<?php
-                                                                                        if ($name_creater->user_image) {
-                                                                                            echo $name_creater->user_image;
-                                                                                        } else {
-                                                                                            echo 'public/frontend/images/box-item/nonImage.png';
-                                                                                        }
+                                                                                            /<?php
+                                                                                            if ($name_creater->user_image) {
+                                                                                                echo $name_creater->user_image;
+                                                                                            } else {
+                                                                                                echo 'public/frontend/images/box-item/nonImage.png';
+                                                                                            }
 
-                                                                                        ?>
-                                                                                        " alt="Image">
+                                                                                            ?>
+                                                                                            " alt="Image">
                                                         </div>
                                                         <div class="info">
                                                             <span>Creator</span>
