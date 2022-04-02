@@ -28,47 +28,20 @@ class GoogleController extends Controller
 
     public function callback_google()
     {
-        // try {
 
-        //     $user = Socialite::driver('google')->user();
-
-        //     $finduser = User::where('google_id', $user->id)->first();
-
-        //     if ($finduser) {
-
-        //         Auth::login($finduser);
-
-        //         return redirect()->intended('dashboard');
-        //     } else {
-        //         $newUser = User::create([
-        //             'user_name' => $user->name,
-        //             'user_email' => $user->email,
-        //             'google_id' => $user->id,
-        //             'password' => '',
-        //         ]);
-
-        //         Auth::login($newUser);
-
-        //         // session()->put('user_id', $finduser->user_id);
-        //         // session()->put('user_email', $finduser->user_email);
-        //         // session()->put('user_name', $finduser->user_name);
-
-        //         return Redirect::to('/');
-        //     }
-        // } catch (Exception $e) {
-        //     dd($e->getMessage());
-        // }
-
-        //Get user data from facebook
         $users = Socialite::driver('google')->user();
         //
         $authUser = $this->findOrCreateUser($users, 'google');
-        $account_name = User::where('user_id', $authUser->user_id)->first();
+        try{
+            $account_name = User::where('user_id', $authUser->user)->first();
+        }catch(Exception $e){
 
-        session()->put('user_id', $authUser->user_id);
-        session()->put('user_name', $authUser->user_name);
+        }
 
-        return redirect()->route('client.home')->with('message', 'Login success');
+        session()->put('user_id', $account_name->user_id);
+        session()->put('user_name', $account_name->user_name);
+
+        return Redirect::to('/')->with('message', 'Login success');
     }
 
     public function findOrCreateUser($users, $social)
@@ -89,8 +62,9 @@ class GoogleController extends Controller
         if (!$exits) {
 
             $exits = User::create([
-                'user_name' => $users->user_name,
-                'user_email' => $users->user_email,
+                'user_name' => $users->name,
+                'user_email' => $users->email,
+                'google_id' => $users->id,
                 'password' => '',
                 'status' => 1
             ]);
@@ -99,10 +73,10 @@ class GoogleController extends Controller
         $long->login()->associate($exits);
         $long->save();
 
-        $account_name = User::where('user_id', $exits->user_id)->first();
+        $account_name = User::where('user_id', $long->user)->first();
         session()->put('user_id', $account_name->user_id);
         session()->put('user_name', $account_name->user_name);
 
-        return Redirect::to('/payment')->with('message', 'Login success');
+        return Redirect::to('/')->with('message', 'Login success');
     }
 }
