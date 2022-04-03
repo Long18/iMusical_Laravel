@@ -56,19 +56,20 @@
                                 @endphp
                                 <div class="card-media" style="padding-bottom: 3rem">
                                     <a href="item-details.html"><img src="
-                                                /<?php
-                                                if ($cart_item['product_image'] != null) {
-                                                    echo $cart_item['product_image'];
-                                                } else {
-                                                    echo 'public/frontend/images/box-item/nonImage.png';
-                                                }
+                                                                            /<?php
+                                                                            if ($cart_item['product_image'] != null) {
+                                                                                echo $cart_item['product_image'];
+                                                                            } else {
+                                                                                echo 'public/frontend/images/box-item/nonImage.png';
+                                                                            }
 
-                                                ?>
-                                                " alt="Image"></a>
-                                    <button class="wishlist-button heart"><span class="number-like">{{rand(10,10000)}}</span></button>
+                                                                            ?>
+                                                                            " alt="Image"></a>
+                                    <button class="wishlist-button heart"><span
+                                            class="number-like">{{ rand(10, 10000) }}</span></button>
                                     <div class="featured-countdown">
                                         <span class="slogan"></span>
-                                        <span class="js-countdown" data-timer="{{rand(600,716400)}}"
+                                        <span class="js-countdown" data-timer="{{ rand(600, 716400) }}"
                                             data-labels=" :  ,  : , : , "></span>
                                     </div>
                                 </div>
@@ -215,50 +216,64 @@
                                                 <h4 class="title-create-item">City</h4>
                                                 <div class="inner-row-form style-2">
                                                     <div class="seclect-box">
-                                                        <div id="item-create2" class="dropdown">
-                                                            <a href="#" class="btn-selector nolink">--- Pick A City
-                                                                ---</a>
-                                                            <ul>
-                                                                <li><span>Art</span></li>
-                                                                <li><span>Music</span></li>
-                                                                <li><span>Domain Names</span></li>
-                                                                <li><span>Virtual World</span></li>
-                                                                <li><span>Trading Cards</span></li>
-                                                                <li><span>Sports</span></li>
-                                                                <li><span>Utility</span></li>
-                                                            </ul>
-                                                        </div>
+                                                        <select
+                                                            class="form-control default-select no-link delivery_city choose"
+                                                            id="delivery_city" name="delivery_city"
+                                                            style="height: 5rem; font-size:20px; font-family: 'Urbanist', sans-serif;background: #14141f;color: #8A8AA0; border: 1px solid rgba(138,138,160,0.3); border-radius: 4px;">
+                                                            <option style="color: #fff;font-family: 'Urbanist', sans-serif"
+                                                                value="" selected>Select city</option>
+                                                            @foreach ($city as $key => $val)
+                                                                <option style="color: #fff" value="{{ $val->city_id }}">
+                                                                    {{ $val->city_name }}
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <h4 class="title-create-item">State / Province /
-                                                    Region</h4>
+                                                <h4 class="title-create-item">Province</h4>
                                                 <div class="inner-row-form style-2">
                                                     <div class="seclect-box">
-                                                        <div id="item-create" class="dropdown">
-                                                            <a href="#" class="btn-selector nolink">--- Pick A Province
-                                                                ---</a>
-                                                            <ul>
-                                                                <li><span>Art</span></li>
-                                                                <li><span>Music</span></li>
-                                                                <li><span>Domain Names</span></li>
-                                                                <li><span>Virtual World</span></li>
-                                                                <li><span>Trading Cards</span></li>
-                                                                <li><span>Sports</span></li>
-                                                                <li><span>Utility</span></li>
-                                                            </ul>
-                                                        </div>
+
+                                                        <select
+                                                            class="form-control default-select no-link delivery_province choose"
+                                                            id="delivery_province" name="delivery_province"
+                                                            style="height: 5rem; font-size:20px; font-family: 'Urbanist', sans-serif;background: #14141f;color: #8A8AA0; border: 1px solid rgba(138,138,160,0.3); border-radius: 4px;">
+                                                            <option style="color: #fff; font-family: 'Urbanist', sans-serif"
+                                                                value="" selected>Select province</option>
+                                                            @foreach ($province as $key => $val)
+                                                                <option style="color: #fff"
+                                                                    value="{{ $val->cprovince_id }}">
+                                                                    {{ $val->province_name }}
+                                                                </option>
+                                                            @endforeach
+
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
+
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <h4 class="title-create-item" style="padding-top: 3rem">Zip Code</h4>
-                                                <input type="number" name="order_zip_code"
-                                                    placeholder="Enter your zip code">
+                                                <h4 class="title-create-item" style="padding-top: 3rem">Wards</h4>
+                                                {{-- <input type="number" name="order_zip_code"
+                                                    placeholder="Enter your zip code"> --}}
+
+                                                <select class="form-control default-select no-link delivery_ward"
+                                                    id="delivery_ward" name="delivery_ward"
+                                                    style="height: 5rem; font-size:20px; font-family: 'Urbanist', sans-serif;background: #14141f;color: #8A8AA0; border: 1px solid rgba(138,138,160,0.3); border-radius: 4px;">
+                                                    <option style="color: #fff; font-family: 'Urbanist', sans-serif"
+                                                        value="" selected>Select ward</option>
+                                                    @foreach ($wards as $key => $val)
+                                                        <option style="color: #fff" value="{{ $val->ward_id }}">
+                                                            {{ $val->ward_name }}
+                                                        </option>
+                                                    @endforeach
+
+                                                </select>
                                             </div>
                                         </div>
 
@@ -337,7 +352,7 @@
                                                                 <li><span class='bi bi-cash-stack'>Cash</span></li>
                                                             </ul> --}}
 
-                                                            <input type="checkbox" name="order_payment_method" value="Momo">
+                                                            {{-- <input type="checkbox" name="order_payment_method" value="Momo">
                                                             <span class='bi bi-wallet' for="order_payment_method">
                                                                 Momo</span>
                                                             <input type="checkbox" name="order_payment_method"
@@ -346,8 +361,25 @@
                                                                 Paypal</span>
                                                             <input type="checkbox" name="order_payment_method" value="Cash">
                                                             <span class='bi bi-cash-stack' for="order_payment_method">
-                                                                Cash</span>
+                                                                Cash</span> --}}
+
+                                                            <select
+                                                                class="form-control default-select no-link delivery_province choose"
+                                                                id="delivery_province" name="delivery_province"
+                                                                style="height: 5rem; width: 100%; font-size:20px; font-family: 'Urbanist', sans-serif;background: #14141f;color: #8A8AA0; border: 1px solid rgba(138,138,160,0.3); border-radius: 4px;">
+                                                                <option
+                                                                    style="color: #fff; font-family: 'Urbanist', sans-serif"
+                                                                    value="" selected>Select a payment method</option>
+                                                                <option style="color: #fff" value="Momo">Momo</option>
+                                                                <option style="color: #fff" value="Paypal">Paypal</option>
+                                                                <option style="color: #fff" value="Cash">Cash</option>
+                                                                </option>
+
+                                                            </select>
+
+
                                                         </div>
+
                                                     </div>
                                                 </div>
 

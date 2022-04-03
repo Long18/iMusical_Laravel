@@ -494,6 +494,38 @@ if ($login_check) {
         }(document, 'script', 'facebook-jssdk'));
     </script>
 
+    <script>
+            $('.choose').on('change', function() {
+                // var city = $('.delivery_city').val();
+                // var province = $('.delivery_province').val();
+                // var ward = $('.delivery_ward').val();
+
+                var action = $(this).attr('id');
+                var id_result = $(this).val();
+                var token = $('input[name="_token"]').val();
+                var result = '';
+
+                if (action == 'delivery_city') {
+                    result = 'delivery_province';
+                } else {
+                    result = 'delivery_ward';
+                }
+                //alert(id_result);
+                $.ajax({
+                    url: '{{ url('/select-city') }}',
+                    method: 'POST',
+                    data: {
+                        action: action,
+                        id_result: id_result,
+                        _token: token
+                    },
+                    success: function(data) {
+                        $('#' + result).html(data);
+                    }
+                });
+
+            });
+    </script>
 
 
 </body>

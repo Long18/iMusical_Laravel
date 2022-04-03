@@ -61,6 +61,7 @@ class GoogleController extends Controller
 
         if (!$exits) {
 
+            session()->put('user_email', $users->email);
             $exits = User::create([
                 'user_name' => $users->name,
                 'user_email' => $users->email,

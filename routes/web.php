@@ -195,3 +195,5 @@ Route::post('/add-user', [ProfileController::class, 'add_user']);
 Route::get('/debug',[DebugController::class,'debug']);
 
 Route::post('get-product',[ProductAdminController::class,'get_product']);
+
+Route::post('/select-city',[PaymentController::class,'select_city']);

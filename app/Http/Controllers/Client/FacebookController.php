@@ -30,7 +30,8 @@ class FacebookController extends Controller
     public function callback_facebook()
     {
 
-        $users = Socialite::driver('facebook')->user();
+        $users = Socialite::driver('facebook')->stateless()->user();
+        dd($users);
         //
         $authUser = $this->findOrCreateUser($users, 'facebook');
         try{
@@ -62,6 +63,7 @@ class FacebookController extends Controller
 
         if (!$exits) {
 
+            session()->put('user_email', $users->email);
             $exits = User::create([
                 'user_name' => $users->name,
                 'user_email' => $users->email,
