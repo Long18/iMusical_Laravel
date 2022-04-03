@@ -56,15 +56,15 @@
                                 @endphp
                                 <div class="card-media" style="padding-bottom: 3rem">
                                     <a href="item-details.html"><img src="
-                                                                            /<?php
-                                                                            if ($cart_item['product_image'] != null) {
-                                                                                echo $cart_item['product_image'];
-                                                                            } else {
-                                                                                echo 'public/frontend/images/box-item/nonImage.png';
-                                                                            }
+                                                                                                    /<?php
+                                                                                                    if ($cart_item['product_image'] != null) {
+                                                                                                        echo $cart_item['product_image'];
+                                                                                                    } else {
+                                                                                                        echo 'public/frontend/images/box-item/nonImage.png';
+                                                                                                    }
 
-                                                                            ?>
-                                                                            " alt="Image"></a>
+                                                                                                    ?>
+                                                                                                    " alt="Image"></a>
                                     <button class="wishlist-button heart"><span
                                             class="number-like">{{ rand(10, 10000) }}</span></button>
                                     <div class="featured-countdown">
@@ -362,10 +362,8 @@
                                                             <input type="checkbox" name="order_payment_method" value="Cash">
                                                             <span class='bi bi-cash-stack' for="order_payment_method">
                                                                 Cash</span> --}}
-
-                                                            <select
-                                                                class="form-control default-select no-link delivery_province choose"
-                                                                id="delivery_province" name="delivery_province"
+                                                            <select class="form-control order_payment_method"
+                                                                id="order_payment_method" name="order_payment_method"
                                                                 style="height: 5rem; width: 100%; font-size:20px; font-family: 'Urbanist', sans-serif;background: #14141f;color: #8A8AA0; border: 1px solid rgba(138,138,160,0.3); border-radius: 4px;">
                                                                 <option
                                                                     style="color: #fff; font-family: 'Urbanist', sans-serif"
@@ -378,20 +376,35 @@
                                                             </select>
 
 
-                                                        </div>
 
+
+                                                        </div>
+                                                        <div class="row" style="padding-top: 3rem">
+                                                            <div class="col-md-6">
+                                                                <h4 class="title-create-item">Payment Total</h4>
+                                                                <input disabled type="text" name="order_total_price"
+                                                                    style="color: #42ff9d"
+                                                                    value="{{ number_format($total_price, 0, ',', '.') }} VND">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
 
                                             </div>
                                         </div>
 
+                                        @php
+                                            $vnd_to_usd = $total_price / 22839.0;
+                                        @endphp
 
-
+                                        <div id="paypal-button" style="display: none"></div>
+                                        <input type="hidden" id="order_total_price_vnd"
+                                            value="{{ round($vnd_to_usd, 3) }}">
                                         @if (Session::get('cart') != null)
-                                            <div class="form-inner" style="padding-top: 3rem">
-                                                <button class="tf-button-submit mg-t-15 submit" type="submit"
-                                                    name="place_order" value="Place your order">Place your
+                                            <div class="form-inner" style="padding-top: 3rem; display: none" id="result_payment_button"
+                                                name="result_payment_button">
+                                                <button class="tf-button-submit mg-t-15 submit result_payment_button"
+                                                    type="submit" name="" value="Place your order">Place your
                                                     order</button>
                                             </div>
                                         @else

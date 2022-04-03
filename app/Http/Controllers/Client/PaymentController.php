@@ -9,6 +9,7 @@ use App\Models\Wards;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 session_start();
 
@@ -58,5 +59,41 @@ class PaymentController extends Controller
             }
         }
         echo $output;
+    }
+
+    public function select_payment_method(Request $request)
+    {
+        $data = $request->all();
+
+        if ($data['payment_method']) {
+            $output = '';
+
+            if ($data['payment_method'] == 'Paypal') {
+                $output .= '<div id="paypal-button"></div>';
+            }
+
+            if ($data['payment_method'] == 'Momo') {
+                $output .= '<div class="form-inner" style="padding-top: 3rem" id="momo-button"></div>';
+            }
+
+            if ($data['payment_method'] == 'Cash') {
+                $output .= '<div class="form-inner" style="padding-top: 3rem">
+                <button class="tf-button-submit mg-t-15 submit" type="submit"
+                    name="place_order" value="Place your order">Place your
+                    order</button>
+            </div>';
+            }
+        }
+
+        echo $output;
+    }
+
+    public function create_transaction(){
+        return view('transaction');
+    }
+
+    public function process_transaction(Request $request){
+
+        //$provider = new PayPalCient;
     }
 }

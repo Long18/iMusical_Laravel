@@ -414,6 +414,49 @@ if ($login_check) {
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0&appId=435206154792265&autoLogAppEvents=1"
         nonce="UVTONwsm"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+
+    <script>
+        var usd = document.getElementById('order_total_price_vnd').value;
+        paypal.Button.render({
+            // Configure environment
+            env: 'sandbox',
+            client: {
+                sandbox: 'Afvu5F1jarO4Yxf4PS8QjxD-0xfYVE_TmWBM7rBMTRkPwLK8YKtVYM02g_tmWsjm-htFGIhdTuN3dBI-',
+                production: 'demo_production_client_id'
+            },
+            // Customize button (optional)
+            locale: 'en_US',
+            style: {
+                size: 'large',
+                color: 'gold',
+                shape: 'pill',
+            },
+
+            // Enable Pay Now checkout flow (optional)
+            commit: true,
+
+            // Set up a payment
+            payment: function(data, actions) {
+                return actions.payment.create({
+                    transactions: [{
+                        amount: {
+                            total: `${usd}`,
+                            currency: 'USD'
+                        }
+                    }]
+                });
+            },
+            // Execute the payment
+            onAuthorize: function(data, actions) {
+                return actions.payment.execute().then(function() {
+                    // Show a confirmation message to the buyer
+                    window.alert('Thank you for your purchase!');
+                });
+            }
+        }, '#paypal-button');
+    </script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -495,38 +538,68 @@ if ($login_check) {
     </script>
 
     <script>
-            $('.choose').on('change', function() {
-                // var city = $('.delivery_city').val();
-                // var province = $('.delivery_province').val();
-                // var ward = $('.delivery_ward').val();
+        $('.choose').on('change', function() {
+            // var city = $('.delivery_city').val();
+            // var province = $('.delivery_province').val();
+            // var ward = $('.delivery_ward').val();
 
-                var action = $(this).attr('id');
-                var id_result = $(this).val();
-                var token = $('input[name="_token"]').val();
-                var result = '';
+            var action = $(this).attr('id');
+            var id_result = $(this).val();
+            var token = $('input[name="_token"]').val();
+            var result = '';
 
-                if (action == 'delivery_city') {
-                    result = 'delivery_province';
-                } else {
-                    result = 'delivery_ward';
+            if (action == 'delivery_city') {
+                result = 'delivery_province';
+            } else {
+                result = 'delivery_ward';
+            }
+            //alert(id_result);
+            $.ajax({
+                url: '{{ url('/select-city') }}',
+                method: 'POST',
+                data: {
+                    action: action,
+                    id_result: id_result,
+                    _token: token
+                },
+                success: function(data) {
+                    $('#' + result).html(data);
                 }
-                //alert(id_result);
-                $.ajax({
-                    url: '{{ url('/select-city') }}',
-                    method: 'POST',
-                    data: {
-                        action: action,
-                        id_result: id_result,
-                        _token: token
-                    },
-                    success: function(data) {
-                        $('#' + result).html(data);
-                    }
-                });
-
             });
+
+        });
     </script>
 
+    <script>
+        $('.order_payment_method').on('change', function() {
+            var payment_method = $(this).val();
+            var token = $('input[name="_token"]').val();
+            if(payment_method == "Paypal"){
+                document.getElementById("paypal-button").style.display = "block";
+            }else{
+                document.getElementById("paypal-button").style.display = "none";
+            }
+
+            if(payment_method == "Cash"){
+                document.getElementById("result_payment_button").style.display = "block";
+            }else{
+                document.getElementById("result_payment_button").style.display = "none";
+            }
+
+            //alert(payment_method);
+            // $.ajax({
+            //     url: '{{ url('/select-payment-method') }}',
+            //     method: 'POST',
+            //     data: {
+            //         payment_method: payment_method,
+            //         _token: token
+            //     },
+            //     success: function(data) {
+            //         $('#result_payment_button').html(data);
+            //     }
+            // });
+        });
+    </script>
 
 </body>
 

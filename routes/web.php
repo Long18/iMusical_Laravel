@@ -188,6 +188,12 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login-success', [LoginController::class, 'login']);
 Route::post('/add-user', [ProfileController::class, 'add_user']);
 
+//Paypal
+Route::get('create-transaction', [PaymentController::class, 'create_transaction']);
+Route::get('process-transaction', [PaymentController::class, 'process_transaction']);
+Route::get('cancel-transaction', [PaymentController::class, 'cancel_transaction']);
+Route::get('success-transaction', [PaymentController::class, 'success_transaction']);
+
 
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -197,3 +203,4 @@ Route::get('/debug',[DebugController::class,'debug']);
 Route::post('get-product',[ProductAdminController::class,'get_product']);
 
 Route::post('/select-city',[PaymentController::class,'select_city']);
+Route::post('/select-payment-method',[PaymentController::class,'select_payment_method']);
