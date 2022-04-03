@@ -55,16 +55,17 @@
                                     $priceItem = $cart_item['product_price'];
                                 @endphp
                                 <div class="card-media" style="padding-bottom: 3rem">
-                                    <a href="item-details.html"><img src="
-                                                                                                    /<?php
-                                                                                                    if ($cart_item['product_image'] != null) {
-                                                                                                        echo $cart_item['product_image'];
-                                                                                                    } else {
-                                                                                                        echo 'public/frontend/images/box-item/nonImage.png';
-                                                                                                    }
+                                    <a href="item-details.html"><img
+                                            src="
+                                                                                                                            /<?php
+                                                                                                                            if ($cart_item['product_image'] != null) {
+                                                                                                                                echo $cart_item['product_image'];
+                                                                                                                            } else {
+                                                                                                                                echo 'public/frontend/images/box-item/nonImage.png';
+                                                                                                                            }
 
-                                                                                                    ?>
-                                                                                                    " alt="Image"></a>
+                                                                                                                            ?>
+                                                                                                                            " alt="Image"></a>
                                     <button class="wishlist-button heart"><span
                                             class="number-like">{{ rand(10, 10000) }}</span></button>
                                     <div class="featured-countdown">
@@ -370,6 +371,7 @@
                                                                     value="" selected>Select a payment method</option>
                                                                 <option style="color: #fff" value="Momo">Momo</option>
                                                                 <option style="color: #fff" value="Paypal">Paypal</option>
+                                                                <option style="color: #fff" value="VNPAY">VNPAY</option>
                                                                 <option style="color: #fff" value="Cash">Cash</option>
                                                                 </option>
 
@@ -401,30 +403,52 @@
                                         <input type="hidden" id="order_total_price_vnd"
                                             value="{{ round($vnd_to_usd, 3) }}">
                                         @if (Session::get('cart') != null)
-                                            <div class="form-inner" style="padding-top: 3rem; display: none" id="result_payment_button"
-                                                name="result_payment_button">
+                                            <div class="form-inner" style="padding-top: 3rem; display: none"
+                                                id="result_payment_button" name="result_payment_button">
                                                 <button class="tf-button-submit mg-t-15 submit result_payment_button"
                                                     type="submit" name="" value="Place your order">Place your
                                                     order</button>
                                             </div>
-                                        @else
-                                            <div class="form-inner" style="padding-top: 3rem">
-                                                <span href="{{ URL::to('/') }}" class="text-alert">Place some
-                                                    products</span>
+
+                                            <div class="form-inner" style="display: none" id="result_VNPAY_button"
+                                                name="result_VNPAY_button">
+                                                <form action="{{ URL::to('/vnpay-payment') }}" method="POST">
+                                                    @csrf
+                                                    <input hidden name="total_vnpay" value="{{ $total_price }}">
+                                                    <button class="tf-button-submit mg-t-15 submit result_VNPAY_button"
+                                                        type="submit" name="redirect" value="Place your order">VNPAY
+                                                        Payment</button>
+                                                </form>
                                             </div>
-                                        @endif
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-
                         </form>
+                        <div class="form-inner" style="display: none" id="result_momo_button" name="result_momo_button">
+                            <form action="{{ URL::to('/momo-payment') }}" method="POST"
+                                enctype="application/x-www-form-urlencoded">
+                                @csrf
+                                <input hidden name="total_momo" value="{{ $total_price }}">
+                                <button class="tf-button-submit mg-t-15 submit result_momo_button" type="submit"
+                                    name="payUrl" value="Place your order">Momo
+                                    Payment</button>
+                            </form>
+                        </div>
+                    @else
+                        <div class="form-inner" style="padding-top: 3rem">
+                            <span href="{{ URL::to('/') }}" class="text-alert">Place some
+                                products</span>
+                        </div>
+                        @endif
+
+
+
                     </div>
                 </div>
-
             </div>
+
+
         </div>
+    </div>
+
+    </div>
+    </div>
     </div>
 @endsection

@@ -208,8 +208,6 @@
                         <a href="{{ URL::to('/delete-all-cart') }}" class="sc-button fl-button pri-3"><span>Delete all
                                 products</span></a>
                         <a {{ $web }} class="sc-button fl-button pri-3"><span>Buy</span></a>
-                        <a href="{{ URL::to('/momo-payment') }}" class="sc-button fl-button pri-3"><span>Buy with
-                                Momo</span></a>
                     </div>
                     </form>
                 @else

@@ -164,9 +164,11 @@ Route::get('/payment', [OrdersController::class, 'payment']);
 
 //Payment
 Route::get('/checkout', [PaymentController::class, 'checkout']);
+Route::post('/momo-payment', [PaymentController::class, 'momo_payment']);
+Route::get('/vnpay-payment', [PaymentController::class, 'vnpay_payment']);
 
 //User routes
-Route::get('/user/{user_id}', [UserController::class, 'user']);
+Route::post('/user/{user_id}', [UserController::class, 'user']);
 
 //----------------------------------------------------------------------------------------------------------------------
 //Login routes

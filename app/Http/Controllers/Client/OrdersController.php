@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Province;
+use App\Models\Wards;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -28,6 +31,17 @@ class OrdersController extends Controller
         // Get current date, time
         $date = date('Y-m-d H:i:s');
 
+        $ward = Wards::where('ward_id', $request->delivery_ward)->first();
+        $province = Province::where('province_id', $request->delivery_province)->first();
+        $city = City::where('city_id', $request->delivery_city)->first();
+
+        $full_address = null;
+        // if ($ward->ward_name!=null || $province->province_name!=null || $city->city_name!=null) {
+        //     $full_address = $request->order_address
+        //         . ', ' . $ward->ward_name
+        //         . ', ' . $province->province_name
+        //         . ', ' . $city->city_name;
+        // }
 
         $data['user_id'] = $user_id;
         $data['created_at'] = $date;
@@ -36,6 +50,9 @@ class OrdersController extends Controller
         $data['delivery_name'] = $request->order_name;
         $data['delivery_phone'] = $request->order_phone;
         $data['delivery_notes'] = $request->order_description;
+        if ($full_address != null) {
+            $data['delivery_address'] = $full_address;
+        }
         $data['delivery_address'] = $request->order_address;
         $data['delivery_payment_method'] = $request->order_payment_method;
         $data['transport_fee'] = $request->order_shipping_fee;
@@ -67,9 +84,15 @@ class OrdersController extends Controller
         session()->put('order_id', $order_id);
         session()->put('order_method', $request->order_payment_method);
         session()->put('order_detail_id', $order_detail_id);
+        session()->put('order_total_price', $total_price);
         session()->remove('cart');
 
-        return Redirect::to('/payment');
+
+        if ($request->order_payment_method == "VNPAY") {
+            return Redirect::to('/vnpay-payment');
+        } else {
+            return Redirect::to('/payment');
+        }
     }
 
     public function payment()

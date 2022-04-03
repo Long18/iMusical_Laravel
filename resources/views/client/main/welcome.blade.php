@@ -574,15 +574,27 @@ if ($login_check) {
         $('.order_payment_method').on('change', function() {
             var payment_method = $(this).val();
             var token = $('input[name="_token"]').val();
-            if(payment_method == "Paypal"){
+            if (payment_method == "Paypal") {
                 document.getElementById("paypal-button").style.display = "block";
-            }else{
+            } else {
                 document.getElementById("paypal-button").style.display = "none";
             }
 
-            if(payment_method == "Cash"){
+            if (payment_method == "Momo") {
+                document.getElementById("result_momo_button").style.display = "block";
+            } else {
+                document.getElementById("result_momo_button").style.display = "none";
+            }
+
+            if (payment_method == "VNPAY") {
+                document.getElementById("result_VNPAY_button").style.display = "block";
+            } else {
+                document.getElementById("result_VNPAY_button").style.display = "none";
+            }
+
+            if (payment_method == "Cash") {
                 document.getElementById("result_payment_button").style.display = "block";
-            }else{
+            } else {
                 document.getElementById("result_payment_button").style.display = "none";
             }
 
