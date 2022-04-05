@@ -44,32 +44,40 @@ class GoogleController extends Controller
         return Redirect::to('/')->with('message', 'Login success');
     }
 
-    public function findOrCreateUser($users, $social)
+    public function findOrCreateUser($user_google, $social)
     {
-        $authUser = Social::where('provider_user_id', $users->id)->first();
+        $authUser = Social::where('provider_user_id', $user_google->id)->first();
         if ($authUser) {
             return $authUser;
         }
 
 
         $long = new Social([
-            'provider_user_id' => $users->id,
+            'provider_user_id' => $user_google->id,
             'provider' => $social,
         ]);
 
-        $exits = User::where('user_email', $users->email)->first();
+        $exits = User::where('user_email', $user_google->email)->first();
 
         if (!$exits) {
 
-            session()->put('user_email', $users->email);
+            session()->put('user_email', $user_google->email);
             $exits = User::create([
-                'user_name' => $users->name,
-                'user_email' => $users->email,
-                'google_id' => $users->id,
+                'user_name' => $user_google->name,
+                'user_email' => $user_google->email,
+                'google_id' => $user_google->id,
                 'password' => '',
                 'status' => 1
             ]);
+        }else{
+            $data = array();
+
+            $data['google_id'] = $user_google->id;
+            $data['status'] = 1;
+            $exits = User::where('user_email', $user_google->email)->update($data);
         }
+
+
 
         $long->login()->associate($exits);
         $long->save();
