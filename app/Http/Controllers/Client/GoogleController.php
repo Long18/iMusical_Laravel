@@ -33,7 +33,7 @@ class GoogleController extends Controller
         //
         $authUser = $this->findOrCreateUser($users, 'google');
         try{
-            $account_name = User::where('user_id', $authUser->user)->first();
+            $account_name = User::where('user_id', $authUser->users)->first();
         }catch(Exception $e){
 
         }
