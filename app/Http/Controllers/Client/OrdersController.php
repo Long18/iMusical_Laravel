@@ -102,7 +102,7 @@ class OrdersController extends Controller
         } else if (Session::get('order_method') == "Paypal") {
             return view('client.payment.paypal');
         } else {
-            return view('client.payment.cash');
+            return Redirect::to('/');
         }
 
         session()->remove('order_method');
