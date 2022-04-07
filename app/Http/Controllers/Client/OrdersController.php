@@ -107,6 +107,6 @@ class OrdersController extends Controller
 
         session()->remove('order_method');
 
-        return view('client.sub.cart.payment');
+        return Redirect::to('/');
     }
 }
