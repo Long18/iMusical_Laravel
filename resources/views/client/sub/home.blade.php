@@ -40,11 +40,11 @@
                                         the sensual life.
                                     </p>
                                     <div class="flat-bt-slider flex style2">
-                                        <a href="explore-1.html"
-                                            class="sc-button header-slider style style-1 rocket fl-button pri-1"><span>Explore
+                                        <a href="{{ URL::to('/explore') }}"
+                                            class="sc-button header-slider style style-1 rocket fl-button pri-1"><span>Product
                                             </span></a>
-                                        <a href="create-item.html"
-                                            class="sc-button header-slider style style-1 note fl-button pri-1"><span>Create
+                                        <a href="#TopSeller"
+                                            class="sc-button header-slider style style-1 note fl-button pri-1"><span>Top Seller
                                             </span></a>
                                     </div>
                                 </div>
@@ -63,20 +63,19 @@
                     <div class="slider-item">
                         <div class="themesflat-container">
                             <div class="wrap-heading flat-slider text-center two">
-                                <h2 class="heading">Discover, and collect
+                                <h2 class="heading">Let music flow in your heart and enrich your soul
                                 </h2>
-                                <h1 class="heading"><span class="tf-text s1">extraordinary</span>
-                                    <span>Monster NFTs</span>
+                                <h1 class="heading"><span class="tf-text s1">Let the Music Speak</span>
+                                    <span>Like music to my ears</span>
                                 </h1>
-                                <p class="sub-heading mg-t-29 mg-bt-50">Marketplace for monster character
-                                    cllections non fungible token NFTs
+                                <p class="sub-heading mg-t-29 mg-bt-50">Love is my weapon, music is my religion, peace is in my soul
                                 </p>
                                 <div class="flat-bt-slider flex">
-                                    <a href="explore-1.html"
-                                        class="sc-button header-slider style style-1 rocket fl-button pri-1"><span>Explore
+                                    <a href="{{ URL::to('/explore') }}"
+                                        class="sc-button header-slider style style-1 rocket fl-button pri-1"><span>Product
                                         </span></a>
-                                    <a href="create-item.html"
-                                        class="sc-button header-slider style style-1 note fl-button pri-1"><span>Create
+                                    <a href="#TopSeller"
+                                        class="sc-button header-slider style style-1 note fl-button pri-1"><span>Top Seller
                                         </span></a>
                                 </div>
                             </div>
@@ -93,20 +92,19 @@
                                     alt="Image">
                             </div>
                             <div class="wrap-heading flat-slider h3 three">
-                                <h2 class="heading">Discover, and collect
+                                <h2 class="heading">Music is what
                                 </h2>
-                                <h2 class="heading">extraordinary</h2>
-                                <h2 class="heading h3"><span class="fill">Monster </span>NFTs
+                                <h2 class="heading">feelings</h2>
+                                <h2 class="heading h3"><span class="fill">Sound </span>like
                                 </h2>
-                                <p class="sub-heading mt-29 mb-35">Marketplace for monster character cllections
-                                    non fungible token NFTs
+                                <p class="sub-heading mt-29 mb-35">Music made the pain fade
                                 </p>
                                 <div class="flat-bt-slider flex style2">
-                                    <a href="explore-1.html"
-                                        class="sc-button header-slider style style-1 rocket fl-button pri-1"><span>Explore
+                                    <a href="{{ URL::to('/explore') }}"
+                                        class="sc-button header-slider style style-1 rocket fl-button pri-1"><span>Product
                                         </span></a>
-                                    <a href="create-item.html"
-                                        class="sc-button header-slider style style-1 note fl-button pri-1"><span>Create
+                                    <a href="#TopSeller"
+                                        class="sc-button header-slider style style-1 note fl-button pri-1"><span>Top Seller
                                         </span></a>
                                 </div>
                             </div>
@@ -240,7 +238,7 @@
         </div>
     </section>
 
-    <section class="tf-section live-auctions style2 no-pt-mb tl-pb-0">
+    <section class="tf-section live-auctions style2 no-pt-mb tl-pb-0"  id=TopSeller>
         <div class="themesflat-container">
             <div class="row">
                 <div class="col-md-12">
@@ -329,13 +327,13 @@
                                                         </div>
                                                     </div>
                                                     <div class="content">
-                                                        <h3><a href="author01.html">{{ $category->type_name }}</a>
+                                                        <h3><a href="#">{{ $category->type_name }}</a>
                                                         </h3>
 
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="author02.html">
+                                            <a href="#">
                                                 <div class="media-images-collection">
                                                     <div class="box-left">
                                                         <img src="public/frontend/images/box-item/collection-item-2.jpg"
