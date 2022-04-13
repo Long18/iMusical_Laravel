@@ -26,7 +26,6 @@
                     <div class="breadcrumbs">
                         <ul>
                             <li><a href="{{ URL::to('/') }}">Home</a></li>
-                            <li><a href="#">Pages</a></li>
                             <li>Cart</li>
                         </ul>
                     </div>

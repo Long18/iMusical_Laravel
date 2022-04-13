@@ -62,44 +62,7 @@
                                     <nav id="main-nav" class="main-nav">
                                         <ul id="menu-primary-menu" class="menu">
                                             <li class="menu-item">
-                                                <a href="{{ URL::to('/explore') }}">Explore</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="{{ URL::to('/activity') }}">Activity</a>
-                                            </li>
-                                            <li class="menu-item menu-item-has-children">
-                                                <a href="#">Community</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item"><a
-                                                            href="{{ URL::to('/blog') }}">Blog</a></li>
-                                                    <li class="menu-item"><a
-                                                            href="{{ URL::to('/blog-detail') }}">Blog
-                                                            Details</a></li>
-                                                    <li class="menu-item"><a
-                                                            href="{{ URL::to('/help-center') }}">Help
-                                                            Center</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item menu-item-has-children">
-                                                <a href="#">Pages</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item"><a href="author01.html">Authors</a></li>
-                                                    <li class="menu-item"><a href="author02.html">Authors 2</a>
-                                                    </li>
-                                                    <li class="menu-item"><a href="connect-wallet.html">Wallet
-                                                            Connect</a></li>
-                                                    <li class="menu-item"><a href="create-item.html">Create
-                                                            Item</a></li>
-                                                    <li class="menu-item"><a href="profile.html">Edit Profile</a>
-                                                    </li>
-
-                                                    <li class="menu-item"><a href="ranking.html">Ranking</a></li>
-                                                    <li class="menu-item"><a href="login.html">Login</a></li>
-                                                    <li class="menu-item"><a href="signup.html">Sign Up</a></li>
-                                                    <li class="menu-item"><a href="no-result.html">No Result</a>
-                                                    </li>
-                                                    <li class="menu-item"><a href="faq.html">FAQ</a></li>
-                                                </ul>
+                                                <a href="{{ URL::to('/explore') }}">Product</a>
                                             </li>
                                             <li class="menu-item ">
                                                 <a href="{{ URL::to('/contact') }}">Contact</a>
@@ -164,12 +127,12 @@
 
                                         <div class="sc-btn-top mg-r-12" id="site-header"
                                             style="display: <?php
-if ($login_check) {
-    echo 'none';
-} else {
-    echo 'block';
-}
-?>">
+                                                            if ($login_check) {
+                                                                echo 'none';
+                                                            } else {
+                                                                echo 'block';
+                                                            }
+                                                            ?>">
                                             <a href="{{ URL::to('/login') }}" id="connectbtn"
                                                 class="sc-button header-slider style style-1 wallet fl-button pri-1"><span>Login
                                                 </span></a>
@@ -177,12 +140,12 @@ if ($login_check) {
 
                                         <div class="admin_active" id="header_admin"
                                             style="display: <?php
-if ($login_check) {
-    echo 'block';
-} else {
-    echo 'none';
-}
-?>">
+                                                    if ($login_check) {
+                                                        echo 'block';
+                                                    } else {
+                                                        echo 'none';
+                                                    }
+                                                    ?>">
                                             <div class="header_avatar">
                                                 <div class="popup-notification">
                                                     <div class="notification">

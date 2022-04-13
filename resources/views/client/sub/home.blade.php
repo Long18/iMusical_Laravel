@@ -137,7 +137,7 @@
 
                         if ($newProducts) {
                             foreach ($newProducts as $product) {
-                                $image = $product->getImgs();
+                                $image = $product->getImg();
                                 $author = $product->getCreator();
                                 $brand = $product->getBrand();
                                 $priceNPriceSale = Product::formatPriceToVND($product);
@@ -179,15 +179,15 @@
                                                 class="cart_product_author_{{ $product->product_id }}">
 
                                             <div class="card-media">
-                                                <a href="{{ URL::to('/item-detail/' . $product->product_id) }}"><img
+                                                <a href="{{ URL::to('/item-detail/' . $product->product_id) }}">
+                                                    <img
                                                         src="<?php
                                                         if ($image) {
                                                             echo $image->product_img_name;
                                                         } else {
                                                             echo 'public/frontend/images/box-item/nonImage.png';
-                                                        }
-
-                                                        ?>" alt="Image"></a>
+                                                        }?>" alt="Image">
+                                                </a>
                                                 <button class="wishlist-button heart"><span class="number-like">
                                                         {{ rand(10, 1000) }}</span></button>
                                                 <div class="featured-countdown">
@@ -219,7 +219,7 @@
                                                 </div>
                                             </div>
                                             <div class="price">
-                                                <span> {{ $priceNPriceSale->priceSale }} </span>
+                                                <span> <?php echo $priceNPriceSale->priceSale ?>  </span>
                                                 <h5> <?php echo $priceNPriceSale->price; ?> </h5>
                                             </div>
                                         </div>
@@ -255,15 +255,23 @@
                             <?php
 
                         foreach ($topSellers as $topSeller) {
+                            $image = $product->getImg();
                             $product = $topSeller->getProduct();
                             $author = $product->getUserImage();
-                            $priceNPriceSale = Product::formatPriceToVND($product->price);
+                            $priceNPriceSale = Product::formatPriceToVND($product);
                         ?>
                             <div class="swiper-slide">
                                 <div class="slider-item">
                                     <div class="sc-author-box style-2">
                                         <div class="author-avatar">
-                                            <img src="{{ $author->user_image }}" alt="" class="avatar">
+                                            <img src="<?php
+                                                        if ($image) {
+                                                            echo $image->product_img_name;
+                                                        } else {
+                                                            echo $author->user_img_name;
+                                                        }
+
+                                                        ?>" alt="" class="avatar">
                                             <div class="badge"></div>
                                         </div>
                                         <div class="author-infor">

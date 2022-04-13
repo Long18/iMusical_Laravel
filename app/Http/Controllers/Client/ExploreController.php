@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
 use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\ProductImages;
@@ -15,21 +16,9 @@ class ExploreController extends Controller
     public function index()
     {
         //get slider for home page
-        $sliders = Slider::where('status', '1')->get();
-
-        //get top 10 newest product
-        $newProducts = Product::where('status', '1')
-            ->orderBy('created_at', 'asc')
-            ->take(10)
-            ->get();
-
+        $brands = Brand::where('status', '1')->get();
 
         //get top 10 Top seller product
-        // return obj(product_id, total)
-        $topSellers = OrderDetail::groupBy('product_id')
-            ->selectRaw('product_id, sum(order_detail_quantity) as total')
-            ->orderBy('total', 'desc')
-            ->get();
 
         //get categories
         $categories = Type::where('status', 1)
@@ -46,9 +35,7 @@ class ExploreController extends Controller
         $productsImage = ProductImages::where('status', '1')->get();
 
         return view('client.sub.explore')
-            ->with('newProducts', $newProducts)
-            ->with('sliders', $sliders)
-            ->with('topSellers', $topSellers)
+            ->with('brands', $brands)
             ->with('categories', $categories)
             ->with('products', $products)
             ->with('productsImage', $productsImage);

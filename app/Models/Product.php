@@ -13,7 +13,7 @@ class Product extends Model{
 
     protected $primaryKey = 'product_id';
 
-    public function getImgs(){
+    public function getImg(){
         return ProductImages::where('product_id',$this->product_id)->first();
     }
 
@@ -47,6 +47,10 @@ class Product extends Model{
         return TypeDetail::where('product_id',$this->product_id)->get();
     }
 
+    public function getAllImg(){
+        return ProductImages::where('product_id',$this->product_id)->get();
+    }
+
     public static function formatPriceToVND($product){
         // have price and no price sale
         $priceNPriceSale =(object)array(
@@ -59,11 +63,11 @@ class Product extends Model{
             $priceNPriceSale->price = "<a href='' style='color: LightCoral;'>Please Contact</a>";
         }else{
             // if product has priceSale
-            if($product->product_price_sale){
-                $salePercent = floor(((float)$product->product_price_sale/(float)$product->product_price - 1)*100);
+            if($product->product_sale_price){
+                $salePercent = floor(((float)$product->product_sale_price/(float)$product->product_price - 1)*100);
 
                 $priceNPriceSale->priceSale = "<del>". number_format($product->product_price, 0, '', ',') . "</del> " . '  <b style="color: red"> '.$salePercent. "% </b>";
-                $priceNPriceSale->price = (number_format($product->product_price_sale, 0, '', ',') . " VND");
+                $priceNPriceSale->price = (number_format($product->product_sale_price, 0, '', ',') . " VND");
 
             }else{
                 $priceNPriceSale->price = (number_format($product->product_price, 0, '', ',') . " VND");
