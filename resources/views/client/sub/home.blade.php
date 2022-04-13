@@ -276,7 +276,7 @@
                                         </div>
                                         <div class="author-infor">
                                             <h5><a
-                                                    href="{{ URL::to('/user/' . $author->user_id) }}">{{ $product->product_name }}</a>
+                                                    href="#">{{ $product->product_name }}</a>
                                             </h5>
                                             <span class="price"><?php echo $priceNPriceSale->price; ?></span>
                                         </div>
@@ -302,7 +302,7 @@
                     <div class="heading-live-auctions">
                         <h2 class="tf-title pb-17 text-left">
                             Category</h2>
-                        <a href="explore-3.html" class="exp style2">EXPLORE MORE</a>
+                        <a href="#" class="exp style2">EXPLORE MORE</a>
                     </div>
                 </div>
                 <div class="col-md-12">

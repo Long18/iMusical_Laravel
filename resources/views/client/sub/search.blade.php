@@ -99,7 +99,7 @@
                             <div class="swiper-wrapper">
                                 @foreach ($search as $key => $product)
                                     @php
-                                        $image = $product->getImgs();
+                                        $image = $product->getImg();
                                         $name_creater = $product->getCreator();
                                         $brand = $product->getBrand();
                                         $priceNPriceSale = Product::formatPriceToVND($product);
@@ -189,7 +189,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="price">
-                                                        <span> {{ $priceNPriceSale->priceSale }} </span>
+                                                        <span> <?php echo $priceNPriceSale->priceSale; ?>  </span>
                                                         <h5> <?php echo $priceNPriceSale->price; ?> </h5>
                                                     </div>
                                                 </div>
