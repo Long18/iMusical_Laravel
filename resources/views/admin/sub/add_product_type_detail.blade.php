@@ -19,6 +19,7 @@
                             echo '<span class="text-alert">' . $message . '</span>';
                             Session::put('message', null);
                             // If message not empty -> make empty
+                            
                         }
                         ?>
                         <div class="form-validation">

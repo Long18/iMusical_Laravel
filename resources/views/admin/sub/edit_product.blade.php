@@ -99,7 +99,7 @@ use Illuminate\Support\Facades\Session;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_category_product" name="val_category_product" placeholder="..and confirm it!" value="{{$category->type_name}}">
+                                                <input type="text" class="form-control" id="val_category_product" name="val_category_product" placeholder="..and confirm it!" value="{{ $category->type_name }}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
