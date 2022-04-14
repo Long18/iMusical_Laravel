@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Product;
 use App\Models\Type;
 use App\Models\TypeDetail;
 use Illuminate\Http\Request;
@@ -163,6 +164,7 @@ class OrdersAdminController extends Controller
         $data['order_detail_total'] = $request->val_total;
 
         OrderDetail::where('order_detail_id', $order_detail_id)->update($data);
+        // $total = Product::caculateTotalSum($request->val_product_id,$order_id);
 
         Session::put('messenge', 'Your order was updated!!');
         return Redirect::to('admin/edit-order/'.$order_id);

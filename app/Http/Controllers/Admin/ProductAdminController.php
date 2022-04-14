@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Product;
+use App\Models\ProductImages;
 use App\Models\Type;
 use App\Models\TypeDetail;
 use Illuminate\Http\Request;
@@ -89,11 +90,13 @@ class ProductAdminController extends Controller
         $brands = Brand::where('status', 1)->get();
 
         $product_type_details = $edit_product->getTypeDetails();
+        $images = $edit_product->getAllImg();
 
         $manager_products = view('admin.sub.edit_product')
             ->with('edit_product', $edit_product)
             ->with('brands', $brands)
-            ->with('product_type_details', $product_type_details);
+            ->with('product_type_details', $product_type_details)
+            ->with('images', $images);
         Session::put('messenge', 'Your product was edited!!');
         return view('admin.main.admin_layout')->with('admin.sub.edit_product', $manager_products);
     }
@@ -178,7 +181,7 @@ class ProductAdminController extends Controller
         TypeDetail::where('type_detail_id', $type_detail_id)->update($data);
 
         Session::put('messenge', 'Your product was updated!!');
-        return Redirect::to('admin/edit-product/' . $product_id);
+        return Redirect::to('admin/edit-product/' . $product_id );
     }
 
     public function get_product(Request $request)
@@ -189,5 +192,13 @@ class ProductAdminController extends Controller
             $product = Product::where('product_id', $value)->first();
         }
         return response()->json(array('price' => $product->product_price, 'sale_price' => $product->product_sale_price));
+    }
+
+    public function delete_product_image($product_img_id)
+    {
+        $this->AuthLogin();
+        ProductImages::where('product_img_id', $product_img_id)->delete();
+        Session::put('messenge', 'Your product was deleted!!');
+        return Redirect::to('admin/all-products');
     }
 }

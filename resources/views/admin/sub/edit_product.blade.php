@@ -189,6 +189,47 @@ use Illuminate\Support\Facades\Session;
                     </div>
                 </div>
             </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Product Images | <a href="{{ URL::to('admin/add-product-image/'.$edit_product->product_id) }}" class="bg-success text-light " style="padding: 0.2rem 0.8rem; border-radius: 0.4rem;">Add Image</a></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="example3" class="display min-w850">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>URL</th>
+                                        <th>Type</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    if ($images) {
+                                        foreach ($images as $image) {                       
+                                    ?>
+                                        <tr>
+                                            <td><img class="rounded-circle" width="100" src="/{{$image->product_img_name}}" alt="">
+                                            <td>{{$image->product_img_name}}</td>
+                                            <td>{{$image->product_img_type}}</td>
+                                            <td>
+                                                <a href="{{ URL::to('admin/edit-product-image/'.$edit_product->product_id.'/'.$image->product_img_id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                                <a href="{{ URL::to('admin/delete-product-image/'.$image->product_img_id) }}" class="btn btn-danger btn-sm">Delete</a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>

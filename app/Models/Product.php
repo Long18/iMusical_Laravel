@@ -83,4 +83,20 @@ class Product extends Model{
         }
         return "0 VND";
     }
+
+    public static function caculateTotalSum($product_id, $order_id){
+        $typeDetail = OrderDetail::where('product_id',$product_id)
+        ->where()->get();
+        $total = 0;
+        if($typeDetail){
+            foreach ($typeDetail as $key => $value) {
+                $total += $value->quantity * $value->price;
+            }
+        }
+        $order = Order::where('order_id',$order_id)->first();
+        $order->total_price = $total;
+
+        Order::where('order_id', $order_id)->update($order);
+        return $total;
+    }
 }
