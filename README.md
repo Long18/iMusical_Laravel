@@ -9,17 +9,6 @@ Open direct folder of Laravel:
     - Change file .env.example to .env 
     - Run: **php artisan key:generate**
 
-Open file .env and change:
-
-    DB_CONNECTION=mysql
-    DB_HOST=27.74.219.184
-    DB_PORT=3306
-    DB_DATABASE=imusical
-    DB_USERNAME=remote
-    DB_PASSWORD=remote@123
-
-to connect to remote database ( MySQL Workbench ) 
-
 
 ## Using Laravel Project
 
